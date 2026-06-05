@@ -24,6 +24,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .critical-banner-text { font-size: 12px; color: #f85149; font-weight: 600; flex: 1; }
 .critical-banner-items { font-size: 11px; color: #c9d1d9; }
 .critical-banner-link { font-size: 11px; color: #58a6ff; cursor: pointer; text-decoration: underline; white-space: nowrap; }
+.critical-dropdown { position: absolute; top: 100%; left: 0; right: 0; background: #1a0505; border: 1px solid #6e2121; border-top: none; z-index: 100; max-height: 220px; overflow-y: auto; }
+.critical-dropdown-item { padding: 7px 18px; font-size: 12px; color: #e1e4e8; cursor: pointer; border-bottom: 1px solid #2d1010; display: flex; align-items: baseline; gap: 8px; }
+.critical-dropdown-item:hover { background: #2d1010; }
+.critical-dropdown-item .cd-mod { color: #f85149; font-weight: 600; white-space: nowrap; }
+.critical-dropdown-item .cd-prob { color: #c9d1d9; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#critical-banner { position: relative; }
 @keyframes pulse-red {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
@@ -294,9 +300,10 @@ svg#deps-svg { display: block; }
 <!-- Critical alert banner — shown when critical open tasks exist -->
 <div class="critical-banner" id="critical-banner">
   <span class="critical-banner-icon">🔴</span>
-  <span class="critical-banner-text" id="critical-banner-text">Critical issues require attention</span>
+  <span class="critical-banner-text" id="critical-banner-text"></span>
   <span class="critical-banner-items" id="critical-banner-items"></span>
-  <span class="critical-banner-link" onclick="showView('tasks')">→ Open Tasks</span>
+  <span class="critical-banner-link" id="critical-banner-link">→ View</span>
+  <div class="critical-dropdown" id="critical-dropdown" style="display:none"></div>
 </div>
 
 <div class="views">
@@ -554,10 +561,13 @@ window.onload = function() {
     _updateTaskNotifications(tasks);
   }).catch(function(){});
   // Keep notifications fresh in background every 15s regardless of active tab
+  var _lastTasksHash = '';
   setInterval(function() {
     fetch('/tasks').then(function(r){ return r.json(); }).then(function(tasks){
       _updateTaskNotifications(tasks);
-      if (document.getElementById('v-tasks').classList.contains('active')) {
+      var hash = JSON.stringify(tasks.map(function(t){ return t.id+t.status+(t.root_cause||'')+(t.solution||''); }));
+      if (hash !== _lastTasksHash && document.getElementById('v-tasks').classList.contains('active')) {
+        _lastTasksHash = hash;
         renderTasks(tasks);
       }
     }).catch(function(){});
@@ -1867,21 +1877,54 @@ function _updateTaskNotifications(tasks) {
   var banner = document.getElementById('critical-banner');
   var bannerText = document.getElementById('critical-banner-text');
   var bannerItems = document.getElementById('critical-banner-items');
+  var bannerLink = document.getElementById('critical-banner-link');
+  var bannerDrop = document.getElementById('critical-dropdown');
   if (banner) {
     if (criticals.length > 0) {
       banner.classList.add('visible');
       bannerText.textContent = criticals.length === 1
         ? '1 critical issue requires immediate attention'
         : criticals.length + ' critical issues require immediate attention';
-      var previews = criticals.slice(0, 2).map(function(t) {
-        return (t.module_id || '?') + ': ' + (t.problem || '').slice(0, 60);
-      });
-      if (criticals.length > 2) previews.push('...');
-      bannerItems.textContent = previews.join(' · ');
+      bannerItems.textContent = '';
+
+      if (criticals.length === 1) {
+        bannerLink.textContent = '→ Open';
+        bannerDrop.style.display = 'none';
+        bannerLink.onclick = function(e) { e.stopPropagation(); openTaskById(criticals[0].id); };
+      } else {
+        bannerLink.textContent = '▾ Show all (' + criticals.length + ')';
+        bannerLink.onclick = function(e) {
+          e.stopPropagation();
+          bannerDrop.style.display = bannerDrop.style.display === 'none' ? 'block' : 'none';
+        };
+        while (bannerDrop.firstChild) bannerDrop.removeChild(bannerDrop.firstChild);
+        criticals.forEach(function(t) {
+          var item = document.createElement('div');
+          item.className = 'critical-dropdown-item';
+          var mod = document.createElement('span'); mod.className = 'cd-mod'; mod.textContent = t.module_id || '?';
+          var prob = document.createElement('span'); prob.className = 'cd-prob'; prob.textContent = (t.problem || '').slice(0, 80);
+          item.appendChild(mod); item.appendChild(prob);
+          item.onclick = function(e) { e.stopPropagation(); bannerDrop.style.display = 'none'; openTaskById(t.id); };
+          bannerDrop.appendChild(item);
+        });
+      }
     } else {
       banner.classList.remove('visible');
+      if (bannerDrop) bannerDrop.style.display = 'none';
     }
   }
+}
+
+function openTaskById(id) {
+  showView('tasks');
+  setTimeout(function() {
+    var rows = document.querySelectorAll('[data-task-id="' + id + '"]');
+    if (rows.length > 0) {
+      var row = rows[0];
+      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (!row.classList.contains('tk-row-expanded')) row.click();
+    }
+  }, 150);
 }
 
 var _tkArchivedVisible = false;
@@ -1909,6 +1952,7 @@ function renderTasks(tasks) {
   toRender.forEach(function(tk) {
     var tr = document.createElement('tr');
     tr.className = 'tk-data-row';
+    tr.setAttribute('data-task-id', tk.id);
 
     function makeTd(style) {
       var c = document.createElement('td');
