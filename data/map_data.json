@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-06-05T18:05:27.248173+00:00",
+  "scanned_at": "2026-06-05T18:09:13.779413+00:00",
   "summary": {
     "errors": 0,
     "warnings": 3,
@@ -6674,90 +6674,105 @@
         },
         {
           "module": "tool_dispatcher",
+          "layer": "client",
           "description": "PTT press detected; routes to skill flow",
           "sends_to": "mode_management",
           "via": "PTT event"
         },
         {
           "module": "mode_management",
+          "layer": "client",
           "description": "SLEEPING \u2192 LISTENING",
           "sends_to": "audio_ducking",
           "via": "mode: LISTENING"
         },
         {
           "module": "audio_ducking",
+          "layer": "client",
           "description": "Background audio ducked; mic captures cleanly",
           "sends_to": "input_capture",
           "via": "audio ducked"
         },
         {
           "module": "input_capture",
+          "layer": "client",
           "description": "Microphone on; audio recorded while PTT held",
           "sends_to": "grpc_transport",
           "via": "audio buffer"
         },
         {
           "module": "grpc_transport",
+          "layer": "client",
           "description": "Audio frames streamed to server over gRPC",
           "sends_to": "speech_recognition",
           "via": "audio stream"
         },
         {
           "module": "speech_recognition",
+          "layer": "server",
           "description": "Whisper transcribes audio \u2192 text",
           "sends_to": "mode_management",
           "via": "transcript"
         },
         {
           "module": "mode_management",
+          "layer": "client",
           "description": "LISTENING \u2192 THINKING",
           "sends_to": "memory",
           "via": "mode: THINKING"
         },
         {
           "module": "memory",
+          "layer": "client",
           "description": "Recent conversation context loaded for LLM",
           "sends_to": "ai_processing",
           "via": "context"
         },
         {
           "module": "ai_processing",
+          "layer": "server",
           "description": "LLM processes text + context; runs skill tools if needed; streams response",
           "sends_to": "mode_management",
           "via": "first response chunk"
         },
         {
           "module": "mode_management",
+          "layer": "client",
           "description": "THINKING \u2192 SPEAKING",
           "sends_to": "audio_response",
           "via": "mode: SPEAKING"
         },
         {
           "module": "audio_response",
+          "layer": "server",
           "description": "TTS converts response text \u2192 audio chunks",
           "sends_to": "audio_ducking",
           "via": "audio chunks"
         },
         {
           "module": "audio_ducking",
+          "layer": "client",
           "description": "System audio ducked during playback",
           "sends_to": "speech_playback",
           "via": "ducking active"
         },
         {
           "module": "speech_playback",
+          "layer": "client",
           "description": "Audio chunks played to user",
           "sends_to": "memory",
           "via": "playback complete"
         },
         {
           "module": "memory",
+          "layer": "client",
           "description": "Conversation turn saved to history (async)",
           "sends_to": "mode_management",
           "via": "turn saved"
         },
         {
           "module": "mode_management",
+          "layer": "client",
           "description": "SPEAKING \u2192 SLEEPING; ready for next request"
         }
       ]
