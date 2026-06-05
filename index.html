@@ -1197,12 +1197,19 @@ function buildFlowMermaid(flow) {
     return parts.join('<br/>');
   };
 
+  // step.layer (from config.yaml) takes priority over module.zone from scanner
+  var stepLayer = {};
+  steps.forEach(function(s) { if (s.layer) stepLayer[s.module] = s.layer; });
+  var getZone = function(mid) {
+    return stepLayer[mid] || (mods[mid] || {}).zone || 'client';
+  };
+
   var seenMods = {}, orderedMods = [];
   steps.forEach(function(s) {
     if (!seenMods[s.module]) { seenMods[s.module] = true; orderedMods.push(s.module); }
   });
-  var clientMods = orderedMods.filter(function(mid) { return (mods[mid] || {}).zone !== 'server'; });
-  var serverMods = orderedMods.filter(function(mid) { return (mods[mid] || {}).zone === 'server'; });
+  var clientMods = orderedMods.filter(function(mid) { return getZone(mid) !== 'server'; });
+  var serverMods = orderedMods.filter(function(mid) { return getZone(mid) === 'server'; });
 
   var out = ['graph TD'];
   if (clientMods.length) {
@@ -1224,10 +1231,10 @@ function buildFlowMermaid(flow) {
     out.push('  ' + nid(s.module) + arrow + nid(nx.module));
   }
 
-  // Colors by status/zone
+  // Colors by status/zone (uses getZone() so step.layer is respected)
   orderedMods.forEach(function(mid) {
     var m = mods[mid] || {};
-    var st = m.status || 'ok', zone = m.zone || 'client';
+    var st = m.status || 'ok', zone = getZone(mid);
     var fill, stroke, text;
     if      (st === 'error')    { fill = '#3d0000'; stroke = '#ff4444'; text = '#ff8080'; }
     else if (st === 'warning')  { fill = '#3d2200'; stroke = '#f97316'; text = '#f97316'; }
