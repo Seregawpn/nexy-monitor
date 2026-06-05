@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-06-05T17:03:26.755212+00:00",
+  "scanned_at": "2026-06-05T17:08:16.022271+00:00",
   "summary": {
     "errors": 0,
     "warnings": 3,
@@ -42,7 +42,9 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "call"
+      ]
     },
     {
       "id": "constants",
@@ -95,6 +97,7 @@
       },
       "test_output": "",
       "methods": [
+        "_read_file",
         "build_memory_context",
         "build_global_context"
       ]
@@ -165,6 +168,7 @@
       },
       "test_output": "",
       "methods": [
+        "_try_repair_json",
         "parse_llm_response"
       ]
     },
@@ -198,7 +202,12 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_loop_hooks_composite.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "before_tool_call",
+        "after_tool_call",
+        "on_turn_end",
+        "on_skill_loaded"
+      ]
     },
     {
       "id": "memory",
@@ -288,7 +297,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_orchestrator.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_read_last_dream_date",
+        "_write_last_dream_date",
+        "_maybe_dream",
+        "_build_system_prompt",
+        "_dispatch_tool"
+      ]
     },
     {
       "id": "provider",
@@ -340,7 +355,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_session_registry.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "get_messages",
+        "set_messages",
+        "append_message",
+        "get_active_skill",
+        "set_active_skill"
+      ]
     },
     {
       "id": "tool_call_registry",
@@ -373,7 +394,10 @@
       },
       "test_output": "",
       "methods": [
-        "make_call_id"
+        "make_call_id",
+        "wait_for_result",
+        "resolve",
+        "cancel_all_for_session"
       ]
     },
     {
@@ -400,10 +424,7 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_orchestrator_external_tools.py"
       },
       "test_output": "",
-      "methods": [
-        "load_continuation_rules",
-        "count_open_candidates"
-      ]
+      "methods": []
     },
     {
       "id": "audio_generation",
@@ -435,7 +456,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_audio_generation_config.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_create_provider",
+        "generate_speech",
+        "generate_speech_streaming",
+        "cleanup"
+      ]
     },
     {
       "id": "browser_use",
@@ -465,7 +492,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_browser_use_session_cancel.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "process",
+        "cleanup",
+        "status",
+        "set_interrupt_workflow"
+      ]
     },
     {
       "id": "database",
@@ -497,7 +530,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_database_config_encryption_env.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_create_provider",
+        "_initialize_provider",
+        "_get_provider_config",
+        "create_user"
+      ]
     },
     {
       "id": "grpc_service",
@@ -544,7 +583,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_backpressure_manager"
+        "from_config",
+        "start",
+        "stop",
+        "acquire_stream",
+        "release_stream"
       ]
     },
     {
@@ -584,7 +627,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_interrupt_handling.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_initialize_components",
+        "process",
+        "interrupt_session",
+        "_set_global_interrupt_flags"
+      ]
     },
     {
       "id": "memory_management",
@@ -623,7 +672,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_memory_management_config.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "consolidate_hardware_day",
+        "_select_durable_fact_candidates",
+        "_extract_durable_fact_candidates_semantic",
+        "_build_summary_text",
+        "_normalized_key"
+      ]
     },
     {
       "id": "session_management",
@@ -656,7 +711,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_session_management.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_create_providers",
+        "_initialize_providers",
+        "create_session",
+        "get_session_status"
+      ]
     },
     {
       "id": "subscription",
@@ -722,7 +783,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_text_filtering_config.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_initialize_providers",
+        "process",
+        "filter_text",
+        "clean_text"
+      ]
     },
     {
       "id": "update",
@@ -758,7 +825,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_main_update_startup_contract.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_initialize_providers",
+        "start",
+        "check_update",
+        "get_manifest"
+      ]
     },
     {
       "id": "action_utils",
@@ -817,7 +890,11 @@
       },
       "test_output": "",
       "methods": [
-        "extract_text_streaming"
+        "feed",
+        "_extract_new_text",
+        "finalize",
+        "get_full_buffer",
+        "reset"
       ]
     },
     {
@@ -846,7 +923,11 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_module_factory.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "create",
+        "register",
+        "list_modules"
+      ]
     },
     {
       "id": "module_status",
@@ -872,7 +953,11 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_module_status.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "to_dict",
+        "is_ready",
+        "is_error"
+      ]
     },
     {
       "id": "server_owner_contracts",
@@ -939,7 +1024,10 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_token_usage_tracker.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "record_usage",
+        "get_stats"
+      ]
     },
     {
       "id": "universal_fallback_manager",
@@ -968,7 +1056,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_universal_fallback_manager.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "register_providers",
+        "process_with_fallback",
+        "_should_reset_circuit_breaker",
+        "_reset_circuit_breaker",
+        "_open_circuit_breaker"
+      ]
     },
     {
       "id": "universal_grpc_integration",
@@ -994,7 +1088,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "process_request",
+        "interrupt",
+        "cleanup",
+        "get_status"
+      ]
     },
     {
       "id": "universal_module_interface",
@@ -1022,7 +1122,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_universal_module_interface.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "process",
+        "cleanup",
+        "status",
+        "get_status_dict"
+      ]
     },
     {
       "id": "universal_provider_interface",
@@ -1048,7 +1154,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_universal_provider_interface.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "process",
+        "cleanup",
+        "health_check",
+        "_custom_health_check"
+      ]
     },
     {
       "id": "module_coordinator",
@@ -1077,7 +1189,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_module_coordinator.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "register",
+        "get",
+        "has",
+        "list_capabilities",
+        "list_modules"
+      ]
     },
     {
       "id": "module_coordinator_integration",
@@ -1103,7 +1221,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start_all_modules",
+        "stop_all_modules",
+        "cleanup_all_modules",
+        "add_module"
+      ]
     },
     {
       "id": "interrupt_workflow_integration",
@@ -1132,7 +1256,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_interrupt_workflow_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "check_interrupts",
+        "interrupt_session",
+        "process_with_interrupts",
+        "_call_interrupt_module"
+      ]
     },
     {
       "id": "memory_cache_bridge",
@@ -1193,7 +1323,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "get",
+        "set",
+        "update",
+        "pop",
+        "keys"
+      ]
     },
     {
       "id": "streaming_workflow_v3_integration",
@@ -1233,7 +1369,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_humanize_filename",
+        "_sanitize_for_voice",
+        "_replace_path",
+        "process_request_streaming",
+        "_grpc_dispatcher"
+      ]
     },
     {
       "id": "stripe_webhook",
@@ -1264,7 +1406,10 @@
       "test_output": "",
       "methods": [
         "stripe_webhook_handler",
-        "get_webhook_routes"
+        "_verify_and_construct_event",
+        "_normalize_webhook_secrets",
+        "_collect_webhook_secrets",
+        "_check_idempotency"
       ]
     },
     {
@@ -1382,10 +1527,11 @@
       },
       "test_output": "",
       "methods": [
+        "_load_shared_client_runtime_config",
+        "_get_shared_feature_enabled",
+        "_get_shared_feature_enabled_any",
         "get_version_from_file",
-        "get_default_updates_dir",
-        "get_config",
-        "reload_config"
+        "get_default_updates_dir"
       ]
     },
     {
@@ -1413,11 +1559,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_monitor",
         "record_request",
         "set_active_connections",
-        "get_metrics",
-        "get_status"
+        "_update_metrics",
+        "_check_limits",
+        "get_metrics"
       ]
     },
     {
@@ -1466,8 +1612,8 @@
         "validate_database_config",
         "health_handler",
         "root_handler",
-        "portal_handler",
-        "validate_forwarded_host"
+        "_with_stripe_mode",
+        "portal_handler"
       ]
     },
     {
@@ -1495,7 +1641,11 @@
       },
       "test_output": "",
       "methods": [
-        "main"
+        "provider_name",
+        "complete",
+        "_get_path",
+        "get_messages",
+        "set_messages"
       ]
     },
     {
@@ -1576,7 +1726,12 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_autostart_manager.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "enable_autostart",
+        "disable_autostart",
+        "get_autostart_status",
+        "cleanup_legacy_launch_agent"
+      ]
     },
     {
       "id": "browser_automation",
@@ -1620,9 +1775,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_browser_llm_runtime_owner_config",
-        "resolve_browser_llm_runtime_config",
-        "create_browser_llm_transport"
+        "_normalize_browser_action_format",
+        "_check_browser_use_available",
+        "_get_browser_use_classes",
+        "_reset_browser_use_cache",
+        "_browser_use_url_is_youtube"
       ]
     },
     {
@@ -1651,7 +1808,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_browser_progress.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "from_dict",
+        "is_terminal"
+      ]
     },
     {
       "id": "email_actions",
@@ -1737,8 +1897,11 @@
       },
       "test_output": "",
       "methods": [
-        "current_device_uid",
-        "set_current_device_uid"
+        "_fourcc",
+        "_selector_for_device_type",
+        "_property_address",
+        "_cfstring_to_str",
+        "_device_uid"
       ]
     },
     {
@@ -1818,7 +1981,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_grpc_client_interim_commit_gate.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "add_server",
+        "connect",
+        "_connect",
+        "_create_grpc_options",
+        "_create_stub"
+      ]
     },
     {
       "id": "hardware_id",
@@ -1862,8 +2031,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_config_manager",
-        "get_hardware_id_config"
+        "_create_default_config",
+        "load_config",
+        "save_config",
+        "get_config",
+        "update_config"
       ]
     },
     {
@@ -1978,7 +2150,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_interrupt_management_preempt_mode_skip.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "register_handler",
+        "register_priority_handler",
+        "trigger_interrupt",
+        "_execute_interrupt"
+      ]
     },
     {
       "id": "mcp_action",
@@ -2015,7 +2193,10 @@
       "test_output": "",
       "methods": [
         "open_mac_app",
-        "close_mac_app"
+        "close_mac_app",
+        "_combine_process_output",
+        "_classify_open_error",
+        "_classify_close_error"
       ]
     },
     {
@@ -2089,13 +2270,7 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_langchain_build_messages.py"
       },
       "test_output": "",
-      "methods": [
-        "is_contacts_permission_granted",
-        "normalize_identifier",
-        "normalize_phone_for_search",
-        "get_name_from_messages_db",
-        "get_name_from_addressbook_sqlite"
-      ]
+      "methods": []
     },
     {
       "id": "mode_management",
@@ -2135,7 +2310,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_mode_management_fixes.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "register_transition",
+        "register_mode_handler",
+        "register_mode_change_callback",
+        "switch_mode",
+        "can_switch_to"
+      ]
     },
     {
       "id": "network_manager",
@@ -2171,7 +2352,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_network_manager_thread_callback_fix.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "from_unified_config",
+        "to_network_config"
+      ]
     },
     {
       "id": "notes_actions",
@@ -2211,13 +2395,7 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_notes_actions.py"
       },
       "test_output": "",
-      "methods": [
-        "check_notes_automation_available",
-        "derive_title",
-        "build_notes_snapshot",
-        "refresh_notes_snapshot",
-        "get_notes_corpus"
-      ]
+      "methods": []
     },
     {
       "id": "permission_restart",
@@ -2263,7 +2441,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_permission_restart_handler_lock_hygiene.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "write",
+        "read_and_remove",
+        "peek",
+        "_is_valid",
+        "exists"
+      ]
     },
     {
       "id": "permissions",
@@ -2350,6 +2534,8 @@
       },
       "test_output": "",
       "methods": [
+        "load_config",
+        "_get_default_config",
         "get_screenshot_config"
       ]
     },
@@ -2389,7 +2575,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_speech_playback_config_centralization.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "shutdown",
+        "add_audio_data",
+        "_should_log_enqueue_diag",
+        "_log_add_audio_level_warning"
+      ]
     },
     {
       "id": "terminal_automation",
@@ -2443,10 +2635,7 @@
         "file": ""
       },
       "test_output": "",
-      "methods": [
-        "create_app",
-        "start_bridge_server"
-      ]
+      "methods": []
     },
     {
       "id": "tray_controller",
@@ -2489,7 +2678,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_tray_controller.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_get_default_config",
+        "load_config",
+        "save_config",
+        "get_config",
+        "update_config"
+      ]
     },
     {
       "id": "tutorial",
@@ -2565,7 +2760,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_updater_canonical_target.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_get_instance_lock_path",
+        "get_current_build",
+        "_read_bundle_build",
+        "_assert_expected_bundle_build",
+        "check_for_updates"
+      ]
     },
     {
       "id": "voice_recognition",
@@ -2609,7 +2810,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_voice_recognition_controller_wiring.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "shutdown",
+        "start_capture",
+        "stop_capture",
+        "cancel_capture"
+      ]
     },
     {
       "id": "voiceover_control",
@@ -2641,7 +2848,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_voiceover_controller_process_detection.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "is_supported",
+        "is_ducked",
+        "initialize",
+        "_has_accessibility_permission",
+        "apply_mode"
+      ]
     },
     {
       "id": "welcome_message",
@@ -2685,7 +2898,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_welcome_message.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "generate_audio",
+        "generate_server_audio",
+        "_generate_with_server",
+        "get_last_server_metadata",
+        "_load_grpc_settings"
+      ]
     },
     {
       "id": "whatsapp",
@@ -2763,7 +2982,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_do_initialize",
+        "_do_start"
+      ]
     },
     {
       "id": "coordinator_activity_bridge",
@@ -2859,7 +3084,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_error_handler.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "handle_error",
+        "handle",
+        "_get_log_level",
+        "_get_timestamp",
+        "get_error_history"
+      ]
     },
     {
       "id": "event_bus",
@@ -2891,7 +3122,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_event_bus_dispatch_policy.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_callback_key",
+        "_callback_name",
+        "_debug_log_event",
+        "_log_future_exception",
+        "_log_slow_callback"
+      ]
     },
     {
       "id": "event_types",
@@ -2997,10 +3234,7 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_gateways.py"
       },
       "test_output": "",
-      "methods": [
-        "create_ctx_from_snapshot",
-        "log_decision"
-      ]
+      "methods": []
     },
     {
       "id": "integration_factory",
@@ -3095,7 +3329,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_integration_factory.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "get_startup_order",
+        "create_all"
+      ]
     },
     {
       "id": "owner_contracts",
@@ -3239,7 +3476,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_simple_module_coordinator.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_ensure_event_bus",
+        "_ensure_state_manager",
+        "_ensure_error_handler",
+        "_ensure_bg_loop",
+        "_publish_app_shutdown_once"
+      ]
     },
     {
       "id": "state_keys",
@@ -3305,7 +3548,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_state_manager_mode_event_contract.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_track_task",
+        "attach_event_bus",
+        "set_mode",
+        "_publish_mode_changed",
+        "_publish_changes"
+      ]
     },
     {
       "id": "action_execution_integration",
@@ -3359,7 +3608,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_start_messages_store",
+        "_run"
+      ]
     },
     {
       "id": "autostart_manager_integration",
@@ -3397,7 +3652,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_on_app_startup",
+        "_on_check_status"
+      ]
     },
     {
       "id": "browser_progress_integration",
@@ -3435,7 +3696,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_on_browser_progress",
+        "get_status"
+      ]
     },
     {
       "id": "browser_use_integration",
@@ -3478,7 +3745,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_coerce_positive_timeout",
+        "_load_first_step_watchdog_config",
+        "_track_background_task",
+        "_cleanup",
+        "_enqueue_startup_tts"
+      ]
     },
     {
       "id": "email_inbox_watcher_integration",
@@ -3521,7 +3794,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_start_mail_store",
+        "_merge_and_prune"
+      ]
     },
     {
       "id": "external_audio_ducking_integration",
@@ -3559,7 +3838,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_external_audio_ducking_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_on_mode_changed",
+        "_on_mic_opened"
+      ]
     },
     {
       "id": "file_index_watcher_integration",
@@ -3590,7 +3875,11 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop"
+      ]
     },
     {
       "id": "first_run_permissions_integration",
@@ -3631,7 +3920,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "are_all_granted",
+        "initialize",
+        "start",
+        "completion_deferred",
+        "stop"
+      ]
     },
     {
       "id": "grpc_client_integration",
@@ -3689,7 +3984,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_should_publish_user_facing_grpc_lifecycle",
+        "_has_deferred_user_facing_special_intent",
+        "_ensure_deferred_user_facing_completion",
+        "_build_grpc_request_completed_payload",
+        "_semantic_grpc_terminal_already_published"
+      ]
     },
     {
       "id": "grpc_collect_bridge",
@@ -3782,7 +4083,8 @@
       "methods": [
         "build_browser_progress_payload",
         "build_grpc_end_summary",
-        "build_grpc_latency_summary"
+        "build_grpc_latency_summary",
+        "_append_delta"
       ]
     },
     {
@@ -3856,7 +4158,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_track_task",
+        "initialize",
+        "start",
+        "stop",
+        "_on_app_startup"
+      ]
     },
     {
       "id": "input_ingress_bridge",
@@ -3966,7 +4274,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_register_waiter",
+        "_remove_waiter",
+        "_resolve_waiters",
+        "initialize",
+        "_setup_event_handlers"
+      ]
     },
     {
       "id": "input_terminal_cycle_bridge",
@@ -4038,7 +4352,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "_has_recent_controlled_restart",
+        "_wait_for_controlled_restart_release",
+        "stop"
+      ]
     },
     {
       "id": "interrupt_management_integration",
@@ -4070,7 +4390,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_setup_interrupt_handlers",
+        "_on_app_startup"
+      ]
     },
     {
       "id": "mode_management_integration",
@@ -4114,7 +4440,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_is_processing_sleep_owner_source",
+        "_is_processing_commit_owner_source",
+        "_set_pending_action_intent",
+        "_drop_pending_action_intent",
+        "_clear_all_pending_action_intents"
+      ]
     },
     {
       "id": "network_manager_integration",
@@ -4156,7 +4488,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_on_app_startup",
+        "_on_app_shutdown"
+      ]
     },
     {
       "id": "notes_action_integration",
@@ -4204,7 +4542,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_notes_action_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_get_inflight_action_task",
+        "_set_inflight_action_task",
+        "_clear_inflight_action_task",
+        "_iter_inflight_action_tasks",
+        "_clear_all_inflight_action_tasks"
+      ]
     },
     {
       "id": "payment_integration",
@@ -4248,7 +4592,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_event_data",
+        "_on_buy_subscription"
+      ]
     },
     {
       "id": "permission_restart_integration",
@@ -4287,7 +4637,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_is_user_quit_intent",
+        "_do_stop",
+        "_subscribe"
+      ]
     },
     {
       "id": "screenshot_capture_integration",
@@ -4337,7 +4693,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_screenshot_capture_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_normalize_session_id",
+        "_load_config",
+        "initialize",
+        "start",
+        "stop"
+      ]
     },
     {
       "id": "screenshot_session_bridge",
@@ -4408,7 +4770,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_signal_integration_cancel_done_suppression.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_on_listen_cue",
+        "_on_welcome_completed"
+      ]
     },
     {
       "id": "signal_policy_bridge",
@@ -4512,7 +4880,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "_should_emit_audio_diag",
+        "start",
+        "stop",
+        "_set_capture_profile"
+      ]
     },
     {
       "id": "speech_playback_session_bridge",
@@ -4593,7 +4967,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_setup_event_handlers",
+        "_on_tray_quit"
+      ]
     },
     {
       "id": "tts_integration",
@@ -4630,7 +5010,11 @@
       },
       "test_output": "",
       "methods": [
-        "create_tts_integration"
+        "initialize",
+        "start",
+        "stop",
+        "_on_speech_request",
+        "_speak_text"
       ]
     },
     {
@@ -4671,7 +5055,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_tutorial_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_subscribe",
+        "_load_ledger"
+      ]
     },
     {
       "id": "update_notification_integration",
@@ -4711,7 +5101,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "from_dict",
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "_schedule_notification"
+      ]
     },
     {
       "id": "updater_integration",
@@ -4743,7 +5139,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_import_attr",
+        "_get_publish_loop",
+        "_publish_threadsafe",
+        "_task_is_active",
+        "_cancel_task"
+      ]
     },
     {
       "id": "voice_recognition_integration",
@@ -4780,7 +5182,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_has_stop_terminal_task",
+        "_set_stop_terminal_task",
+        "_pop_stop_terminal_task",
+        "_stop_terminal_task_map",
+        "_has_post_stop_finalize_task"
+      ]
     },
     {
       "id": "voice_session_bridge",
@@ -4807,11 +5215,11 @@
       },
       "test_output": "",
       "methods": [
+        "_terminal_state_parts",
         "should_publish_mic_closed",
         "resolve_callback_session_id",
         "prune_terminal_recognition_state",
-        "should_mark_terminal_recognition",
-        "should_defer_soft_fail_for_pending_terminal"
+        "should_mark_terminal_recognition"
       ]
     },
     {
@@ -4848,7 +5256,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_do_initialize",
+        "_do_start",
+        "_do_stop",
+        "handle_mode_change",
+        "handle_keyboard_press"
+      ]
     },
     {
       "id": "welcome_message_integration",
@@ -4899,7 +5313,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_spawn_background_task",
+        "_done",
+        "_ensure_welcome_start_task",
+        "_run_welcome_start",
+        "initialize"
+      ]
     },
     {
       "id": "whatsapp_integration",
@@ -4950,7 +5370,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_store_auth_queued_request",
+        "_get_auth_queued_request",
+        "_pop_auth_queued_request",
+        "_pop_auth_queued_request_if_same",
+        "_queued_auth_request_keys"
+      ]
     },
     {
       "id": "base_workflow",
@@ -4984,7 +5410,13 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "initialize",
+        "start",
+        "stop",
+        "_setup_subscriptions",
+        "_on_start"
+      ]
     },
     {
       "id": "listening_workflow",
@@ -5014,7 +5446,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_listening_workflow_no_timeout.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_setup_subscriptions",
+        "_on_start",
+        "_on_recording_start",
+        "_on_recording_stop",
+        "_on_interrupt_request"
+      ]
     },
     {
       "id": "processing_workflow",
@@ -5059,7 +5497,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_processing_workflow_session_guard.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_terminal_reason_to_result",
+        "_set_processing_interruptible_active",
+        "_store_buffered_screenshot",
+        "_pop_buffered_screenshot",
+        "_has_buffered_screenshot"
+      ]
     },
     {
       "id": "workflow_config",
@@ -5091,7 +5535,10 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "from_dict",
+        "default"
+      ]
     },
     {
       "id": "env_detection",
@@ -5254,11 +5701,11 @@
       },
       "test_output": "",
       "methods": [
-        "setup_logging",
-        "get_logger",
-        "is_logging_configured",
-        "get_effective_log_file_path",
-        "reset_logging_state"
+        "filter",
+        "_apply_library_noise_filters",
+        "_is_terminal_dev_launch",
+        "_resolve_log_file_path",
+        "setup_logging"
       ]
     },
     {
@@ -5330,11 +5777,11 @@
       },
       "test_output": "",
       "methods": [
+        "_resolve_app_name",
         "get_resource_path",
         "get_user_data_dir",
         "get_user_cache_dir",
-        "get_user_logs_dir",
-        "get_launch_agent_path"
+        "get_user_logs_dir"
       ]
     },
     {
@@ -5476,11 +5923,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_server_manager",
-        "get_all_servers",
-        "get_server",
-        "update_server",
-        "set_default_server"
+        "_load_config",
+        "_ensure_config",
+        "_save_config",
+        "_ensure_runtime_target_path",
+        "_resolve_target_for_server"
       ]
     },
     {
@@ -5520,11 +5967,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_version",
-        "get_appcast_url",
-        "get_grpc_host",
-        "get_grpc_port",
-        "get_log_file"
+        "level",
+        "file",
+        "max_size",
+        "backup_count",
+        "get_instance"
       ]
     },
     {
@@ -5568,11 +6015,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_updater_manager",
-        "get_updater_config",
-        "get_current_channel",
-        "switch_channel",
-        "update_channel_url"
+        "_load_config",
+        "_parse_updater_config",
+        "refresh_runtime_bindings",
+        "_resolve_environment_section",
+        "_deep_merge_dicts"
       ]
     },
     {
@@ -5603,6 +6050,7 @@
       },
       "test_output": "",
       "methods": [
+        "to_log_string",
         "create_ctx_from_snapshot",
         "log_decision"
       ]
@@ -5637,11 +6085,11 @@
       },
       "test_output": "",
       "methods": [
+        "_log_decision",
         "decide_start_listening",
         "decide_process_audio",
         "decide_route_manager_reconcile",
-        "decide_update_launch",
-        "decide_with_backoff"
+        "decide_update_launch"
       ]
     },
     {
@@ -5672,7 +6120,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_decision_engine.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_match",
+        "decide"
+      ]
     },
     {
       "id": "engine_loader",
@@ -5739,9 +6190,11 @@
       },
       "test_output": "",
       "methods": [
-        "decide_permission_restart_safety",
-        "decide_permission_restart_schedule",
-        "decide_permission_restart_wait"
+        "evaluate",
+        "build_reason",
+        "_normalise_permissions",
+        "is_idle_mode",
+        "is_update_in_progress"
       ]
     },
     {
@@ -5771,11 +6224,11 @@
       },
       "test_output": "",
       "methods": [
+        "_register",
+        "deco",
         "perm_mic",
         "perm_screen",
-        "perm_accessibility",
-        "permissions_missing_any",
-        "permissions_all_ready"
+        "perm_accessibility"
       ]
     },
     {
@@ -5806,6 +6259,9 @@
       },
       "test_output": "",
       "methods": [
+        "load_interaction_matrix",
+        "_to_priority",
+        "_to_decision",
         "load_rules_for_gateway"
       ]
     },
@@ -5894,7 +6350,9 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "play_pcm"
+      ]
     },
     {
       "id": "action_capabilities",
@@ -5933,11 +6391,11 @@
       },
       "test_output": "",
       "methods": [
+        "is_feature_enabled",
+        "_build_client_action_capabilities",
         "get_client_action_capabilities",
         "get_client_action_capability",
-        "get_valid_action_commands",
-        "get_action_feature_name",
-        "get_action_route"
+        "get_valid_action_commands"
       ]
     },
     {
@@ -5965,11 +6423,11 @@
       },
       "test_output": "",
       "methods": [
-        "setup_structured_logging",
-        "log_structured",
-        "log_server_start",
-        "log_server_stop",
-        "log_rpc_error"
+        "_mask_secrets",
+        "_is_user_content_key",
+        "_redact_user_content_value",
+        "format",
+        "_mask_secrets_in_dict"
       ]
     },
     {
@@ -5997,9 +6455,11 @@
       },
       "test_output": "",
       "methods": [
-        "get_metrics_collector",
-        "record_metric",
-        "record_decision_metric"
+        "_normalize_method_name",
+        "record_request",
+        "record_decision",
+        "_calculate_p95",
+        "_calculate_error_rate"
       ]
     },
     {
@@ -6039,6 +6499,10 @@
       },
       "test_output": "",
       "methods": [
+        "emit",
+        "_extract_module_id",
+        "_get_known_module_ids",
+        "_append_event",
         "attach_map_reporter"
       ]
     },
@@ -6116,7 +6580,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_tool_dispatcher_browser_loop.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "_get_browser_loop",
+        "dispatch",
+        "_screenshot",
+        "_run",
+        "_run_terminal"
+      ]
     },
     {
       "id": "client_main",
@@ -6158,11 +6628,11 @@
       },
       "test_output": "",
       "methods": [
+        "_apply_pyobjc_fix_early",
         "init_ffmpeg_for_pydub",
         "init_ssl_ca_bundle",
         "activate_nsapplication_for_menu_bar",
-        "safe_exit",
-        "hard_exit"
+        "safe_exit"
       ]
     }
   ],
