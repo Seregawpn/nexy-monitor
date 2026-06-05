@@ -5092,10 +5092,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-05",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "root_cause": "Flow tab showed text columns \u2014 no architectural diagram; module methods not in scanner data",
+    "solution": "Added _extract_methods() to scanner, buildFlowMermaid() generates mermaid from step data+methods, replaced two-column layout with single diagram",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
