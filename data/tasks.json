@@ -5064,5 +5064,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260605_164754_c23f3c15",
+    "created_at": "2026-06-05T16:47:54+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "map_html",
+    "problem": "Flow tab: render mermaid diagrams from flow docs as visual SVG schemas",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "_mdToDom() rendered mermaid code blocks as <pre> text \u2014 no mermaid.js in page",
+    "solution": "Added mermaid@10 CDN, initialize(dark), and mermaid.render() branch in _mdToDom() with DOMParser SVG insert",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
