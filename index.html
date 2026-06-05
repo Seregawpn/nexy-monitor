@@ -157,10 +157,12 @@ svg.graph { display: block; }
 .fsb-sub { padding-left: 24px; font-size: 11px; }
 .fsb-sub2 { padding-left: 36px; font-size: 10px; }
 .flow-body { flex: 1; display: flex; overflow: hidden; }
-.flow-steps { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
-.flow-diagram-wrap { flex: 1; overflow: auto; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+.flow-steps { flex: 1; overflow: hidden; display: flex; }
+.flow-col { flex: 1; display: flex; flex-direction: column; overflow: hidden; border-right: 1px solid #21262d; }
+.flow-col:last-child { border-right: none; }
+.flow-col-hdr { font-size: 10px; font-weight: 700; color: #444d56; text-transform: uppercase; letter-spacing: .08em; padding: 8px 16px; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+.flow-diagram-wrap { flex: 1; overflow: auto; padding: 16px; display: flex; flex-direction: column; align-items: center; }
 .flow-diagram-wrap svg { max-width: 100%; height: auto; }
-.flow-diagram-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; align-self: flex-start; }
 .flow-diagram-empty { color: #444d56; font-size: 13px; margin-top: 40px; }
 .step { display: flex; gap: 14px; margin-bottom: 4px; }
 .step-conn { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
@@ -1163,18 +1165,35 @@ function renderFlow() {
 
 /* FLOW DIAGRAM — generated from config.yaml steps + STATE.modules */
 
+// Global click handler — called from mermaid click directive
+window._flowNodeClick = function(moduleId) {
+  var mod = (STATE.modules || []).find(function(m) { return m.id === moduleId; });
+  if (mod) renderDetailPanel('flow-detail', mod);
+};
+
 function buildFlowMermaid(flow) {
   var steps = flow.steps || [];
   if (!steps.length) return '';
   var mods = {};
   (STATE.modules || []).forEach(function(m) { mods[m.id] = m; });
 
+  // Step description map for fallback when no public methods
+  var stepDesc = {};
+  steps.forEach(function(s) { stepDesc[s.module] = s.description || ''; });
+
   var nid = function(id) { return 'N_' + id.replace(/[^a-zA-Z0-9]/g, '_'); };
   var nodeLabel = function(mid) {
     var m = mods[mid] || {};
-    var methods = (m.methods || []).slice(0, 3);
+    // Public methods only — no _ prefix
+    var pub = (m.methods || []).filter(function(fn) { return !fn.startsWith('_'); }).slice(0, 3);
     var parts = [mid];
-    methods.forEach(function(fn) { parts.push(fn + '()'); });
+    if (pub.length > 0) {
+      pub.forEach(function(fn) { parts.push(fn + '()'); });
+    } else {
+      // Fallback: step description (trimmed)
+      var desc = stepDesc[mid] || '';
+      if (desc) parts.push(desc.length > 38 ? desc.slice(0, 36) + '…' : desc);
+    }
     return parts.join('<br/>');
   };
 
@@ -1185,7 +1204,7 @@ function buildFlowMermaid(flow) {
   var clientMods = orderedMods.filter(function(mid) { return (mods[mid] || {}).zone !== 'server'; });
   var serverMods = orderedMods.filter(function(mid) { return (mods[mid] || {}).zone === 'server'; });
 
-  var out = ['graph LR'];
+  var out = ['graph TD'];
   if (clientMods.length) {
     out.push('  subgraph Client');
     clientMods.forEach(function(mid) { out.push('    ' + nid(mid) + '["' + nodeLabel(mid) + '"]'); });
@@ -1197,6 +1216,7 @@ function buildFlowMermaid(flow) {
     out.push('  end');
   }
 
+  // Arrows in step order
   for (var i = 0; i < steps.length - 1; i++) {
     var s = steps[i], nx = steps[i + 1];
     var via = (s.via || '').replace(/"/g, "'");
@@ -1204,18 +1224,58 @@ function buildFlowMermaid(flow) {
     out.push('  ' + nid(s.module) + arrow + nid(nx.module));
   }
 
+  // Colors by status/zone
   orderedMods.forEach(function(mid) {
     var m = mods[mid] || {};
     var st = m.status || 'ok', zone = m.zone || 'client';
     var fill, stroke, text;
-    if      (st === 'error')   { fill = '#3d0000'; stroke = '#ff4444'; text = '#ff8080'; }
-    else if (st === 'warning') { fill = '#3d2200'; stroke = '#f97316'; text = '#f97316'; }
-    else if (zone === 'server'){ fill = '#1a2a4a'; stroke = '#3b82f6'; text = '#79c0ff'; }
-    else                       { fill = '#162a1a'; stroke = '#22c55e'; text = '#56d364'; }
+    if      (st === 'error')    { fill = '#3d0000'; stroke = '#ff4444'; text = '#ff8080'; }
+    else if (st === 'warning')  { fill = '#3d2200'; stroke = '#f97316'; text = '#f97316'; }
+    else if (zone === 'server') { fill = '#1a2a4a'; stroke = '#3b82f6'; text = '#79c0ff'; }
+    else                        { fill = '#162a1a'; stroke = '#22c55e'; text = '#56d364'; }
     out.push('  style ' + nid(mid) + ' fill:' + fill + ',stroke:' + stroke + ',color:' + text);
   });
 
+  // Click handlers
+  orderedMods.forEach(function(mid) {
+    out.push('  click ' + nid(mid) + ' call _flowNodeClick("' + mid + '")');
+  });
+
   return out.join('\n');
+}
+
+// Extract all mermaid code blocks from markdown text
+function _extractMermaidBlocks(md) {
+  var blocks = [], inBlock = false, buf = [];
+  md.split('\n').forEach(function(line) {
+    if (line.slice(0, 3) === '```') {
+      if (inBlock) { blocks.push(buf.join('\n')); buf = []; inBlock = false; }
+      else if (line.slice(3).trim() === 'mermaid') { inBlock = true; }
+    } else if (inBlock) { buf.push(line); }
+  });
+  return blocks;
+}
+
+// Render a mermaid definition string into a container element
+function _renderMermaid(def, container) {
+  if (!def) {
+    var e = document.createElement('div'); e.className = 'flow-diagram-empty';
+    e.textContent = 'No diagram.'; container.appendChild(e); return;
+  }
+  var loading = document.createElement('div');
+  loading.style.cssText = 'color:#444d56;font-size:12px;margin-top:16px';
+  loading.textContent = 'Rendering…';
+  container.appendChild(loading);
+  mermaid.render('mmd-' + Math.random().toString(36).slice(2), def)
+    .then(function(r) {
+      container.removeChild(loading);
+      var svgDoc = new DOMParser().parseFromString(r.svg, 'image/svg+xml');
+      container.appendChild(document.importNode(svgDoc.documentElement, true));
+    })
+    .catch(function(err) {
+      loading.textContent = 'Error: ' + ((err && err.message) || String(err));
+      loading.style.color = '#f85149';
+    });
 }
 
 function renderFlowSteps() {
@@ -1224,32 +1284,39 @@ function renderFlowSteps() {
   while (container.firstChild) container.removeChild(container.firstChild);
   if (!flow) return;
 
-  var wrap = document.createElement('div'); wrap.className = 'flow-diagram-wrap';
-  var title = document.createElement('div'); title.className = 'flow-diagram-title'; title.textContent = flow.name;
-  wrap.appendChild(title);
+  // ── Left column: Current (generated from config.yaml) ──
+  var leftCol = document.createElement('div'); leftCol.className = 'flow-col';
+  var leftHdr = document.createElement('div'); leftHdr.className = 'flow-col-hdr';
+  leftHdr.textContent = 'Current';
+  leftCol.appendChild(leftHdr);
+  var leftWrap = document.createElement('div'); leftWrap.className = 'flow-diagram-wrap';
+  leftCol.appendChild(leftWrap);
+  container.appendChild(leftCol);
+  _renderMermaid(buildFlowMermaid(flow), leftWrap);
 
-  var def = buildFlowMermaid(flow);
-  if (!def) {
-    var empty = document.createElement('div'); empty.className = 'flow-diagram-empty';
-    empty.textContent = 'No steps defined.';
-    wrap.appendChild(empty); container.appendChild(wrap); return;
-  }
+  // ── Right column: Ideal (from ideal/<id>.md) ──
+  var rightCol = document.createElement('div'); rightCol.className = 'flow-col';
+  var rightHdr = document.createElement('div'); rightHdr.className = 'flow-col-hdr';
+  rightHdr.textContent = 'Ideal';
+  rightCol.appendChild(rightHdr);
+  var rightWrap = document.createElement('div'); rightWrap.className = 'flow-diagram-wrap';
+  rightCol.appendChild(rightWrap);
+  container.appendChild(rightCol);
 
-  var loading = document.createElement('div');
-  loading.style.cssText = 'color:#444d56;font-size:13px;margin-top:20px';
-  loading.textContent = 'Rendering…';
-  wrap.appendChild(loading); container.appendChild(wrap);
-
-  mermaid.render('flow-' + Math.random().toString(36).slice(2), def)
-    .then(function(r) {
-      wrap.removeChild(loading);
-      var parser = new DOMParser();
-      var svgDoc = parser.parseFromString(r.svg, 'image/svg+xml');
-      wrap.appendChild(document.importNode(svgDoc.documentElement, true));
+  fetch('/flow-ideal/' + encodeURIComponent(flow.id))
+    .then(function(r) { return r.ok ? r.text() : null; })
+    .then(function(md) {
+      if (!md) { rightWrap.appendChild(Object.assign(document.createElement('div'), {className:'flow-diagram-empty', textContent:'—'})); return; }
+      var blocks = _extractMermaidBlocks(md);
+      if (!blocks.length) { rightWrap.appendChild(Object.assign(document.createElement('div'), {className:'flow-diagram-empty', textContent:'No diagrams in ideal doc.'})); return; }
+      blocks.forEach(function(def) {
+        var wrap = document.createElement('div'); wrap.className = 'flow-diagram-wrap'; wrap.style.padding = '0 0 24px';
+        rightWrap.appendChild(wrap);
+        _renderMermaid(def, wrap);
+      });
     })
-    .catch(function(err) {
-      loading.textContent = 'Diagram error: ' + ((err && err.message) || String(err));
-      loading.style.color = '#f85149';
+    .catch(function() {
+      rightWrap.appendChild(Object.assign(document.createElement('div'), {className:'flow-diagram-empty', textContent:'—'}));
     });
 }
 
