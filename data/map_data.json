@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-06-05T16:28:01.976925+00:00",
+  "scanned_at": "2026-06-05T16:28:51.864574+00:00",
   "summary": {
     "errors": 0,
     "warnings": 3,
@@ -1601,6 +1601,12 @@
       ],
       "recent_commits": [
         {
+          "hash": "6525b17e",
+          "date": "2026-06-05",
+          "author": "Sergiy Zasorin",
+          "message": "release v5.0.0.192 \u2014 fix process-tap duck: downgrade error log, reduce ready timeout"
+        },
+        {
           "hash": "88fd548c",
           "date": "2026-06-04",
           "author": "Sergiy Zasorin",
@@ -1611,12 +1617,6 @@
           "date": "2026-06-02",
           "author": "Sergiy Zasorin",
           "message": "release v5.0.0.66 \u2014 fix 2 real test failures + scan lock stale data bug"
-        },
-        {
-          "hash": "48ba77e0",
-          "date": "2026-05-29",
-          "author": "Sergiy Zasorin",
-          "message": "chore: flatten codebase and fix continuation guard bugs"
         }
       ],
       "tests": {
