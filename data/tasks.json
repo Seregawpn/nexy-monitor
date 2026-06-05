@@ -5098,5 +5098,39 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260605_175126_0b28468e",
+    "created_at": "2026-06-05T17:51:26+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "map_html",
+    "problem": "Flow view: two-column TD layout (Current|Ideal), public methods only, clickable nodes",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "Flow: LR layout, private methods shown, no Ideal column, nodes not clickable",
+    "solution": "TD layout, two columns Current|Ideal, public methods only with description fallback, click directives + _flowNodeClick handler",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260605_175252_07b0fa7f",
+    "created_at": "2026-06-05T17:52:52+00:00",
+    "source": "scan",
+    "priority": "medium",
+    "module_id": "email_actions",
+    "problem": "[CLIENT 17:52] Error: [EMAIL_BRIDGE] osascript timeout after 20.0s intent=read_contact_thread lane=bg",
+    "error_type": "runtime_error",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
