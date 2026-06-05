@@ -28,5 +28,65 @@
       "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
       "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg"
     ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 20.0s intent=list_account_inbox lane=fg",
+    "traceback": "",
+    "timestamp": "2026-06-05T18:03:16+00:00",
+    "log_context": [
+      "[INFO] idle_cpu_pct=0.70",
+      "[INFO] idle_ram_mb=113.89",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.70%, RAM: 113.89 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3427 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=100.47",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 100.47 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=95.47",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 95.47 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3427 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=95.83",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 95.83 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] provider failure intent=list_account_inbox error=osascript timed out after 20.0s",
+    "traceback": "",
+    "timestamp": "2026-06-05T18:03:16+00:00",
+    "log_context": [
+      "[INFO] idle_ram_mb=113.89",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.70%, RAM: 113.89 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3427 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=100.47",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 100.47 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=95.47",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 95.47 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3427 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=95.83",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 95.83 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg",
+      "[ERROR] [EMAIL_BRIDGE] osascript timeout after 20.0s intent=list_account_inbox lane=fg"
+    ]
   }
 ]
