@@ -5081,5 +5081,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260605_165707_9a4fa7c3",
+    "created_at": "2026-06-05T16:57:07+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "map_html",
+    "problem": "Flow view redesign: replace two-column layout with single dynamic architectural diagram from config.yaml + module data",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
