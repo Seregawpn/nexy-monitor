@@ -157,24 +157,11 @@ svg.graph { display: block; }
 .fsb-sub { padding-left: 24px; font-size: 11px; }
 .fsb-sub2 { padding-left: 36px; font-size: 10px; }
 .flow-body { flex: 1; display: flex; overflow: hidden; }
-.flow-steps { flex: 1; display: flex; overflow: hidden; }
-.flow-col { flex: 1; overflow-y: auto; padding: 20px; }
-.flow-col + .flow-col { border-left: 1px solid #30363d; }
-.flow-col-hdr { font-size: 10px; font-weight: 700; color: #444d56; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid #21262d; }
-.ideal-md h1,.ideal-md h2 { font-size: 13px; font-weight: 700; color: #e1e4e8; margin: 14px 0 5px; }
-.ideal-md h3 { font-size: 12px; font-weight: 700; color: #c9d1d9; margin: 10px 0 4px; }
-.ideal-md p { font-size: 12px; color: #8b949e; line-height: 1.6; margin-bottom: 6px; }
-.ideal-md hr { border: none; border-top: 1px solid #21262d; margin: 10px 0; }
-.ideal-md ul { margin: 0 0 8px 16px; }
-.ideal-md li { font-size: 12px; color: #8b949e; line-height: 1.6; }
-.ideal-md table { border-collapse: collapse; width: 100%; margin-bottom: 10px; }
-.ideal-md th { background: #161b22; color: #c9d1d9; font-size: 11px; padding: 4px 8px; border: 1px solid #30363d; text-align: left; }
-.ideal-md td { font-size: 11px; color: #8b949e; padding: 4px 8px; border: 1px solid #21262d; }
-.ideal-md code { background: #161b22; padding: 1px 4px; border-radius: 3px; font-size: 11px; color: #79c0ff; }
-.ideal-md pre { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px; font-size: 11px; color: #79c0ff; overflow-x: auto; margin-bottom: 8px; }
-.mermaid-diagram { margin: 12px 0; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px; overflow-x: auto; }
-.mermaid-diagram svg { max-width: 100%; height: auto; }
-.ideal-md strong { color: #c9d1d9; }
+.flow-steps { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+.flow-diagram-wrap { flex: 1; overflow: auto; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+.flow-diagram-wrap svg { max-width: 100%; height: auto; }
+.flow-diagram-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; align-self: flex-start; }
+.flow-diagram-empty { color: #444d56; font-size: 13px; margin-top: 40px; }
 .step { display: flex; gap: 14px; margin-bottom: 4px; }
 .step-conn { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
 .step-num { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
