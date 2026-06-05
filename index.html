@@ -433,6 +433,33 @@ if (IS_STATIC) {
 }
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ── Auth gate ─────────────────────────────────────────────────────────────────
+(function() {
+  var AUTH_KEY = 'nexy_map_auth';
+  var PWD_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
+  if (sessionStorage.getItem(AUTH_KEY) === PWD_HASH) {
+    document.getElementById('auth-gate').classList.add('hidden');
+  }
+  document.getElementById('auth-pwd').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') authCheck();
+  });
+  window.authCheck = function() {
+    var pwd = document.getElementById('auth-pwd').value;
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(pwd)).then(function(buf) {
+      var hash = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+      if (hash === PWD_HASH) {
+        sessionStorage.setItem(AUTH_KEY, PWD_HASH);
+        document.getElementById('auth-gate').classList.add('hidden');
+      } else {
+        document.getElementById('auth-err').textContent = 'Incorrect password';
+        document.getElementById('auth-pwd').value = '';
+        document.getElementById('auth-pwd').focus();
+      }
+    });
+  };
+})();
+// ─────────────────────────────────────────────────────────────────────────────
+
 var STATE = { modules: [], flows: [], file_tree: [], summary: {errors:0,warnings:0,ok:0} };
 var _tkSortCol = 'priority';
 var _tkSortDir = 1; // 1 = asc, -1 = desc
