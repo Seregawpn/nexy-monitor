@@ -4345,8 +4345,8 @@
     "date_detected": "2026-06-05",
     "root_cause": "",
     "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -4790,8 +4790,8 @@
     "date_detected": "2026-06-05",
     "root_cause": "",
     "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -4994,6 +4994,23 @@
     "solution": "",
     "verified": false,
     "status": "open",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260605_162020_266ec187",
+    "created_at": "2026-06-05T16:20:20+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "docs",
+    "problem": "Add password gate to map.html for GitHub Pages",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "",
+    "solution": "",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
