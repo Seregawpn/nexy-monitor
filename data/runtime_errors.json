@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 20.0s intent=read_contact_thread lane=bg",
+    "traceback": "",
+    "timestamp": "2026-06-05T17:52:47+00:00",
+    "log_context": [
+      "[DEBUG] AUDIO_PIPELINE phase=before_schedule kind=signal chunk=623 frames=12480 peak=0.6200 rms=0.3566",
+      "[DEBUG] INPUT: ignore playback.started for signal cue",
+      "[DEBUG] \ud83d\udcca Pre-copy peak (FULL): 0.6200, samples=12480",
+      "[DEBUG] \ud83d\udcca Buffer write check: idx=7 wrote=0.011047 read=0.011047",
+      "[INFO] CUE_TRACE phase=avf.render_start cue_id=ff19f2dd-14b9-49a6-8442-a84a0f0220ff:done:22442565 pattern=done frames=12480",
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 12480 frames | src_peak=0.6200 written_peak=0.6200 | engine=True, player=True",
+      "[INFO] \ud83d\udd0a [AFPLAY] Signal cue playing via afplay pid=1119 (bypass AVAudioEngine)",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=623 frames=12480 \u2014 engine rendered this buffer",
+      "[DEBUG] \u23f9\ufe0f Playback loop idle timeout (2s), exiting",
+      "[INFO] \ud83d\uded1 _playback_loop exited. _playing=True",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=playback_loop_exit delay=3.0s",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=7140 stderr_len=0",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2200 timeout_sec=20.0 intent=read_contact_thread lane=bg",
+      "[INFO] [EMAIL_BRIDGE] osascript gate wait_sec=3.00 lane=bg",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SKIP reason=playback_loop_exit playing=True",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=193.55",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 193.55 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=20.0 intent=list_account_inbox lane=fg"
+    ]
+  }
+]
