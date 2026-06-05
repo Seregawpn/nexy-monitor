@@ -1197,11 +1197,22 @@ function buildFlowMermaid(flow) {
     return parts.join('<br/>');
   };
 
-  // step.layer (from config.yaml) takes priority over module.zone from scanner
+  // Known server-side logical names (used when scanner zone is unknown)
+  var KNOWN_SERVER = {
+    speech_recognition: 1, ai_processing: 1, audio_response: 1,
+    grpc_service: 1, grpc_server: 1, whisper: 1,
+    assistant_runtime: 1, assistant_runtime_v3: 1
+  };
+
+  // Priority: step.layer (config.yaml) → module.zone (scanner) → KNOWN_SERVER → client
   var stepLayer = {};
   steps.forEach(function(s) { if (s.layer) stepLayer[s.module] = s.layer; });
   var getZone = function(mid) {
-    return stepLayer[mid] || (mods[mid] || {}).zone || 'client';
+    if (stepLayer[mid]) return stepLayer[mid];
+    var z = (mods[mid] || {}).zone;
+    if (z) return z;
+    if (KNOWN_SERVER[mid]) return 'server';
+    return 'client';
   };
 
   var seenMods = {}, orderedMods = [];
