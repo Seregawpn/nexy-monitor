@@ -5013,5 +5013,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260605_162713_9e616fb8",
+    "created_at": "2026-06-05T16:27:13+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "external_audio_duck",
+    "problem": "process-tap failure logs as ERROR causing critical map tasks; 5s _wait_until_ready timeout cascades to playback/mode watchdogs",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-05",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
