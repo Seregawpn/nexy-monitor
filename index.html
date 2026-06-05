@@ -247,9 +247,29 @@ svg#deps-svg { display: block; }
 .pv-mod-card:hover { border-color: #58a6ff; color: #e1e4e8; }
 .pv-mod-card.sel { border-color: #1f6feb; background: #1f2a3c; color: #58a6ff; }
 .pv-mod-unknown { color: #484f58; font-style: italic; cursor: default; border-color: #21262d; }
+/* ── Auth gate ── */
+#auth-gate { position:fixed; inset:0; background:#0f1117; z-index:9999; display:flex; align-items:center; justify-content:center; }
+#auth-gate.hidden { display:none; }
+.auth-card { background:#161b22; border:1px solid #30363d; border-radius:12px; padding:40px 48px; width:340px; text-align:center; }
+.auth-logo { font-size:22px; font-weight:700; color:#fff; margin-bottom:6px; }
+.auth-sub { font-size:13px; color:#8b949e; margin-bottom:28px; }
+.auth-input { width:100%; padding:10px 14px; background:#0d1117; border:1px solid #30363d; border-radius:6px; color:#e1e4e8; font-size:14px; outline:none; margin-bottom:14px; }
+.auth-input:focus { border-color:#1f6feb; }
+.auth-btn { width:100%; padding:10px; background:#1f6feb; border:none; border-radius:6px; color:#fff; font-size:14px; font-weight:600; cursor:pointer; }
+.auth-btn:hover { background:#388bfd; }
+.auth-err { font-size:12px; color:#f85149; margin-top:10px; min-height:16px; }
 </style>
 </head>
 <body>
+<div id="auth-gate">
+  <div class="auth-card">
+    <div class="auth-logo">Nexy Monitor</div>
+    <div class="auth-sub">Enter password to continue</div>
+    <input id="auth-pwd" class="auth-input" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="auth-btn" onclick="authCheck()">Sign in</button>
+    <div class="auth-err" id="auth-err"></div>
+  </div>
+</div>
 <div class="topbar">
   <span class="logo">&#x2B21; Nexy Map</span>
   <div class="tabs">
