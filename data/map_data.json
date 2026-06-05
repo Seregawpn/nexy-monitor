@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-06-05T17:01:53.325009+00:00",
+  "scanned_at": "2026-06-05T17:03:26.755212+00:00",
   "summary": {
     "errors": 0,
     "warnings": 3,
@@ -400,7 +400,10 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_orchestrator_external_tools.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "load_continuation_rules",
+        "count_open_candidates"
+      ]
     },
     {
       "id": "audio_generation",
@@ -541,10 +544,7 @@
       },
       "test_output": "",
       "methods": [
-        "get_streaming_pb2",
-        "get_streaming_pb2_grpc",
-        "get_run_server",
-        "get_new_streaming_servicer"
+        "get_backpressure_manager"
       ]
     },
     {
@@ -1736,7 +1736,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_external_audio_duck_controller.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "current_device_uid",
+        "set_current_device_uid"
+      ]
     },
     {
       "id": "file_search",
@@ -1815,10 +1818,7 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_grpc_client_interim_commit_gate.py"
       },
       "test_output": "",
-      "methods": [
-        "create_grpc_client",
-        "create_default_grpc_client"
-      ]
+      "methods": []
     },
     {
       "id": "hardware_id",
@@ -1862,11 +1862,8 @@
       },
       "test_output": "",
       "methods": [
-        "get_hardware_identifier",
-        "get_hardware_id",
-        "get_hardware_id_result",
-        "get_hardware_info",
-        "clear_hardware_id_cache"
+        "get_config_manager",
+        "get_hardware_id_config"
       ]
     },
     {
@@ -2016,7 +2013,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_mcp_action.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "open_mac_app",
+        "close_mac_app"
+      ]
     },
     {
       "id": "media_analysis",
@@ -2089,7 +2089,13 @@
         "file": "downloads/Nexy_v1.6.1.27/server/server/tests/test_ar3_langchain_build_messages.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "is_contacts_permission_granted",
+        "normalize_identifier",
+        "normalize_phone_for_search",
+        "get_name_from_messages_db",
+        "get_name_from_addressbook_sqlite"
+      ]
     },
     {
       "id": "mode_management",
@@ -2205,7 +2211,13 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_notes_actions.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "check_notes_automation_available",
+        "derive_title",
+        "build_notes_snapshot",
+        "refresh_notes_snapshot",
+        "get_notes_corpus"
+      ]
     },
     {
       "id": "permission_restart",
@@ -2337,7 +2349,9 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_screenshot_capture_integration.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "get_screenshot_config"
+      ]
     },
     {
       "id": "speech_playback",
@@ -2429,7 +2443,10 @@
         "file": ""
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "create_app",
+        "start_bridge_server"
+      ]
     },
     {
       "id": "tray_controller",
@@ -2980,7 +2997,10 @@
         "file": "downloads/Nexy_v1.6.1.27/client/tests/test_gateways.py"
       },
       "test_output": "",
-      "methods": []
+      "methods": [
+        "create_ctx_from_snapshot",
+        "log_decision"
+      ]
     },
     {
       "id": "integration_factory",
