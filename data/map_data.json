@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-06-05T16:08:22.587853+00:00",
+  "scanned_at": "2026-06-05T16:28:01.976925+00:00",
   "summary": {
     "errors": 0,
     "warnings": 3,
@@ -1561,6 +1561,12 @@
       "dependencies": [],
       "recent_commits": [
         {
+          "hash": "4fb1d4a4",
+          "date": "2026-06-05",
+          "author": "Sergiy Zasorin",
+          "message": "release v5.0.0.191 \u2014 fix osascript timeout: apply post-completion cooldown after heavy Mail.app calls"
+        },
+        {
           "hash": "28154905",
           "date": "2026-06-05",
           "author": "Sergiy Zasorin",
@@ -1571,12 +1577,6 @@
           "date": "2026-06-04",
           "author": "Sergiy Zasorin",
           "message": "release v5.0.0.152 \u2014 dedup email_actions: extract _default_account/_parse_sender to _helpers.py"
-        },
-        {
-          "hash": "7501cd7f",
-          "date": "2026-06-04",
-          "author": "Sergiy Zasorin",
-          "message": "release v5.0.0.132 \u2014 fix read_contact_thread timeout + clear stale SIGTERM events"
         }
       ],
       "tests": {
