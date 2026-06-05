@@ -172,6 +172,8 @@ svg.graph { display: block; }
 .ideal-md td { font-size: 11px; color: #8b949e; padding: 4px 8px; border: 1px solid #21262d; }
 .ideal-md code { background: #161b22; padding: 1px 4px; border-radius: 3px; font-size: 11px; color: #79c0ff; }
 .ideal-md pre { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px; font-size: 11px; color: #79c0ff; overflow-x: auto; margin-bottom: 8px; }
+.mermaid-diagram { margin: 12px 0; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px; overflow-x: auto; }
+.mermaid-diagram svg { max-width: 100%; height: auto; }
 .ideal-md strong { color: #c9d1d9; }
 .step { display: flex; gap: 14px; margin-bottom: 4px; }
 .step-conn { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
@@ -265,6 +267,7 @@ svg#deps-svg { display: block; }
 .auth-btn:hover { background:#388bfd; }
 .auth-err { font-size:12px; color:#f85149; margin-top:10px; min-height:16px; }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
 <div id="auth-gate">
@@ -414,6 +417,7 @@ svg#deps-svg { display: block; }
 </div>
 
 <script>
+mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
 // ── Static / GitHub Pages mode ────────────────────────────────────────────────
 var IS_STATIC = location.hostname !== 'localhost' && location.hostname !== '127.0.0.1';
 if (IS_STATIC) {
@@ -1308,7 +1312,7 @@ function _appendInline(el, text) {
 
 function _mdToDom(md, container) {
   var lines = md.split('\n');
-  var inCode = false, codeBuf = [];
+  var inCode = false, codeBuf = [], codeLang = '';
   var inList = null, inTable = null, tHead = null, tBody = null, inTbody = false;
 
   function flush() {
@@ -1322,12 +1326,32 @@ function _mdToDom(md, container) {
     if (raw.slice(0,3) === '```') {
       if (inCode) {
         flush();
-        var pre = document.createElement('pre');
-        var codeEl = document.createElement('code');
-        codeEl.textContent = codeBuf.join('\n');
-        pre.appendChild(codeEl); container.appendChild(pre);
-        codeBuf = []; inCode = false;
-      } else { flush(); inCode = true; }
+        var blockDef = codeBuf.join('\n');
+        if (codeLang === 'mermaid') {
+          var mDiv = document.createElement('div');
+          mDiv.className = 'mermaid-diagram';
+          container.appendChild(mDiv);
+          (function(el, def) {
+            mermaid.render('mmd-' + Math.random().toString(36).slice(2), def)
+              .then(function(r) {
+                var parser = new DOMParser();
+                var svgDoc = parser.parseFromString(r.svg, 'image/svg+xml');
+                el.appendChild(document.importNode(svgDoc.documentElement, true));
+              })
+              .catch(function() {
+                var fb = document.createElement('pre');
+                var fc = document.createElement('code'); fc.textContent = def;
+                fb.appendChild(fc); el.appendChild(fb);
+              });
+          })(mDiv, blockDef);
+        } else {
+          var pre = document.createElement('pre');
+          var codeEl = document.createElement('code');
+          codeEl.textContent = blockDef;
+          pre.appendChild(codeEl); container.appendChild(pre);
+        }
+        codeBuf = []; codeLang = ''; inCode = false;
+      } else { flush(); codeLang = raw.slice(3).trim(); inCode = true; }
       continue;
     }
     if (inCode) { codeBuf.push(raw); continue; }
