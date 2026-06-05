@@ -5024,10 +5024,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-05",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "logger.exception logged handled degradation as ERROR; 5s _wait_until_ready timeout blocked pipeline causing watchdog cascade",
+    "solution": "logger.exception \u2192 logger.warning(exc_info=True); timeout 5s \u2192 1s",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
