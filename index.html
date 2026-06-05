@@ -565,9 +565,9 @@ window.onload = function() {
 
   loadData();
   setInterval(function() {
-    if (document.getElementById('scan-btn').disabled) return;
+    if (!IS_STATIC && document.getElementById('scan-btn').disabled) return;
     fetch('/data').then(function(r) { return r.json(); }).then(function(d) {
-      if ((d.scanned_at && d.scanned_at !== _lastScannedAt) || (d.runtime_updated_at && d.runtime_updated_at !== _lastRuntimeAt)) { applyData(d); }
+      if (IS_STATIC || (d.scanned_at && d.scanned_at !== _lastScannedAt) || (d.runtime_updated_at && d.runtime_updated_at !== _lastRuntimeAt)) { applyData(d); }
     }).catch(function() {});
   }, 30000);
   function _connectSSE() {
