@@ -1197,11 +1197,21 @@ function buildFlowMermaid(flow) {
     return parts.join('<br/>');
   };
 
-  // Known server-side logical names (used when scanner zone is unknown)
+  // Known server-side modules (used when scanner zone is unknown or missing)
+  // Rule: anything that runs inside the server process = server
   var KNOWN_SERVER = {
-    speech_recognition: 1, ai_processing: 1, audio_response: 1,
-    grpc_service: 1, grpc_server: 1, whisper: 1,
-    assistant_runtime: 1, assistant_runtime_v3: 1
+    // AI / LLM layer
+    speech_recognition: 1, ai_processing: 1, assistant_runtime_v3: 1,
+    assistant_runtime: 1, whisper: 1, orchestrator: 1,
+    // TTS / Audio generation
+    audio_response: 1, audio_generation: 1,
+    // Memory / context (server owns conversation history)
+    memory: 1, context_assembly: 1, memory_management: 1,
+    memory_cache_bridge: 1, memory_workflow_integration: 1,
+    // gRPC service (server side)
+    grpc_service: 1, grpc_server: 1,
+    // Tool execution on server
+    tool_executor: 1
   };
 
   // Priority: step.layer (config.yaml) → module.zone (scanner) → KNOWN_SERVER → client
