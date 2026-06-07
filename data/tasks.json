@@ -7705,8 +7705,8 @@
     "date_detected": "2026-06-07",
     "root_cause": "commit gate gated screenshot only on screen_required regex; get_screenshot did not clear after use",
     "solution": "gate now always waits for screenshot (pending blocks, unavailable opens gracefully); pop_screenshot added to registry; orchestrator uses pop",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
