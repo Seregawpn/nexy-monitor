@@ -7562,10 +7562,10 @@
       "[INFO] [EMAIL_BRIDGE] osascript gate wait_sec=10.00 lane=fg"
     ],
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "open",
+    "root_cause": "Single transient osascript timeout (Mail.app busy with parallel list_accounts/list_account_inbox calls at 05:06-05:07 UTC); duplicate of task_20260607_050707_07ff0f34 created from the same runtime event (one via runtime reporter, one via periodic scanner)",
+    "solution": "Duplicate of task_20260607_050707_07ff0f34, which the scanner already auto-resolved as no longer detected. Event has not recurred in 8+ hours (recurrence=1). No code change needed.",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
