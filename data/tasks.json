@@ -7669,10 +7669,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "SKILL.md rule for email_find_info used only formal search phrasing; colloquial retrieval phrasing (\"dig up\", \"buried in my email\") not covered, causing LLM to fall back to email_read_all",
+    "solution": "Added KNOWN ROUTING GAP comment to FIND-CONTENT test case with pointer to root cause; extended SKILL.md disambiguation rule with colloquial examples and added explicit Retrieval phrasing rule; added table row for retrieval scenarios",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
