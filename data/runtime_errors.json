@@ -630,36 +630,6 @@
     ]
   },
   {
-    "module_id": "email_inbox_watcher_integration",
-    "source": "client",
-    "error_type": "Error",
-    "message": "[EMAIL_INBOX_WATCHER] History scanner failed: No Mail accounts found. Is Mail.app open?",
-    "traceback": "",
-    "timestamp": "2026-06-07T05:06:30+00:00",
-    "log_context": [
-      "[INFO] Screenshot captured: /var/folders/ys/xlx_chms3hqcs1lfyq37395c0000gn/T/nexy_screenshots/shot_47360000.webp",
-      "[INFO] TRACE phase=grpc.response ts=47361921 session=83fd500e-0520-452d-b675-e019d100c029 extra={chunk=1, delta_from_grpc_start_ms=2129}",
-      "[DEBUG] \ud83d\udd0d gRPC response #1: WhichOneof('content')=text_chunk",
-      "[INFO] gRPC received text_chunk len=22 session=83fd500e-0520-452d-b675-e019d100c029 preview=Reading your emails...",
-      "[INFO] TRACE phase=grpc.first_text ts=47361921 session=83fd500e-0520-452d-b675-e019d100c029 extra={chunk=1, delta_from_grpc_start_ms=2129}",
-      "[INFO] [F-2025-016-mcp-app-opening-integration] Text chunk received from gRPC: 'Reading your emails......'",
-      "[INFO] TRACE phase=grpc.first_audio ts=47362211 session=83fd500e-0520-452d-b675-e019d100c029 extra={chunk=3, delta_from_grpc_start_ms=2419}",
-      "[INFO] [\u23f1 TIMING] audio.first_chunk_CLIENT elapsed_ms=2419 session=83fd500e-0520-452d-b675-e019d100c029  \u2190 TOTAL TIME TO FIRST AUDIO",
-      "[INFO] \ud83d\udd0a [AUDIO_RECV] _on_audio_chunk received: session=83fd500e-0520-452d-b675-e019d100c029, bytes=3264",
-      "[INFO] \ud83d\udd2c [RAW_AUDIO_DIAG] session=83fd500e-0520-452d-b675-e019d100c029 bytes=3264 dtype=int16 first_bytes=0000000000000000 peak_int16=3.0000 all_zeros=False",
-      "[INFO] AUDIO_PIPELINE phase=before_queue session=83fd500e-0520-452d-b675-e019d100c029 samples=1632 peak=0.0001 rms=0.0000 dtype=float32",
-      "[DEBUG] AUDIO_SESSION_PROFILE reason=start_playback profile=playback applied=false dedup=true category=AVAudioSessionCategoryPlayback mode=AVAudioSessionModeDefault options=33 route=MacBook Air Speakers:Speaker",
-      "[INFO] \ud83d\udd0a [AVF_PLAYER] Volume set to 1.0 at playback start (mixer and player_node)",
-      "[DEBUG] \ud83d\udd0a AVAudioEngine already running",
-      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output snapshot: 48000.0Hz, 2ch, format=1",
-      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output route snapshot: MacBook Air Speakers (type: Speaker)",
-      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'}",
-      "[ERROR] [EMAIL_BRIDGE] osascript timeout after 15.0s intent=list_accounts lane=fg",
-      "[ERROR] [EMAIL_BRIDGE] provider failure intent=list_accounts error=osascript timed out after 15.0s",
-      "[INFO] [EMAIL_BRIDGE] osascript gate wait_sec=10.00 lane=fg"
-    ]
-  },
-  {
     "module_id": "tool_call_registry",
     "source": "server",
     "error_type": "Error",
