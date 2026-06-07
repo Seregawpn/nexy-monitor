@@ -7686,10 +7686,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Tool blocks contained routing logic (PROACTIVE RULE, ALWAYS/NEVER, Case A/B flows) that conflicted with the routing table \u2014 tool block ALWAYS overrides routing section",
+    "solution": "Removed routing logic from all 6 tool blocks (email_read_unread, email_read_all, email_find_info, email_send, email_reply, email_reply_to_last). Routing table is now single source of truth.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
