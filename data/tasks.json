@@ -7512,5 +7512,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260607_035131_45fa402b",
+    "created_at": "2026-06-07T03:51:31+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "browser_automation",
+    "problem": "Fix 3 runtime bugs: JSON parsing Extra data, agent_focus no-browser crash, grpc silent failure on exhausted retries",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-07",
+    "root_cause": "browser: rfind merges multiple JSON objects; create_page called on dead browser; grpc: silent drop after 3 failed retries",
+    "solution": "brace-counting for JSON, connectivity guard before create_page, publish grpc.request_failed event",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
