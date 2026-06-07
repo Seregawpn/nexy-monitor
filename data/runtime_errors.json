@@ -390,5 +390,65 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 71916 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "tool_call_registry",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[TOOL_REGISTRY] timeout call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f after 25.0s",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:22:23+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading your emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=3038 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13248 bytes, PCM=211968 bytes, chunks=53",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=241 chunks=53 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=3169 tokens=14 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=skill_view args={'name': 'email'} session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=skill_view elapsed_ms=1 result_len=31668 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.start iter=2 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=3429 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=3487 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=3721 tokens=13 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_code args={} session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_code call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f elapsed_ms=6896 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137, command=email_find_code",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 command=email_find_code feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 hardware=test-script-hw command=email_find_code"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_code returned error: tool call timeout \u2014 client did not respond",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:22:23+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13248 bytes, PCM=211968 bytes, chunks=53",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=241 chunks=53 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=3169 tokens=14 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=skill_view args={'name': 'email'} session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=skill_view elapsed_ms=1 result_len=31668 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.start iter=2 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=3429 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=3487 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=3721 tokens=13 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_code args={} session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_code call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f elapsed_ms=6896 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137, command=email_find_code",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 command=email_find_code feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137 hardware=test-script-hw command=email_find_code",
+      "[ERROR] [TOOL_REGISTRY] timeout call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f after 25.0s",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=3e606ef1-2b15-4dcf-98c3-af3f7a61d137:8bbb46ae-fe89-4a76-a471-f9ee4d63e40f got result_len=71",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_code elapsed_ms=25010 result_len=84 session=3e606ef1-2b15-4dcf-98c3-af3f7a61d137"
+    ]
   }
 ]
