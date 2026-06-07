@@ -1177,44 +1177,35 @@ function buildFlowMermaid(flow) {
   var mods = {};
   (STATE.modules || []).forEach(function(m) { mods[m.id] = m; });
 
-  // Step description map for fallback when no public methods
   var stepDesc = {};
   steps.forEach(function(s) { stepDesc[s.module] = s.description || ''; });
 
   var nid = function(id) { return 'N_' + id.replace(/[^a-zA-Z0-9]/g, '_'); };
   var nodeLabel = function(mid) {
     var m = mods[mid] || {};
-    // Public methods only — no _ prefix
     var pub = (m.methods || []).filter(function(fn) { return !fn.startsWith('_'); }).slice(0, 3);
     var parts = [mid];
     if (pub.length > 0) {
       pub.forEach(function(fn) { parts.push(fn + '()'); });
     } else {
-      // Fallback: step description (trimmed)
       var desc = stepDesc[mid] || '';
       if (desc) parts.push(desc.length > 38 ? desc.slice(0, 36) + '…' : desc);
     }
     return parts.join('<br/>');
   };
 
-  // Known server-side modules (used when scanner zone is unknown or missing)
-  // Rule: anything that runs inside the server process = server
+  // Known server-side modules (fallback when scanner zone is missing)
   var KNOWN_SERVER = {
-    // AI / LLM layer
     speech_recognition: 1, ai_processing: 1, assistant_runtime_v3: 1,
     assistant_runtime: 1, whisper: 1, orchestrator: 1,
-    // TTS / Audio generation
     audio_response: 1, audio_generation: 1,
-    // Memory / context (server owns conversation history)
     memory: 1, context_assembly: 1, memory_management: 1,
     memory_cache_bridge: 1, memory_workflow_integration: 1,
-    // gRPC service (server side)
-    grpc_service: 1, grpc_server: 1,
-    // Tool execution on server
-    tool_executor: 1
+    grpc_service: 1, grpc_server: 1, tool_executor: 1,
+    subscription: 1
   };
 
-  // Priority: step.layer (config.yaml) → module.zone (scanner) → KNOWN_SERVER → client
+  // Priority: step.layer → scanner zone → KNOWN_SERVER → client
   var stepLayer = {};
   steps.forEach(function(s) { if (s.layer) stepLayer[s.module] = s.layer; });
   var getZone = function(mid) {
@@ -1252,7 +1243,7 @@ function buildFlowMermaid(flow) {
     out.push('  ' + nid(s.module) + arrow + nid(nx.module));
   }
 
-  // Colors by status/zone (uses getZone() so step.layer is respected)
+  // Colors by status/zone
   orderedMods.forEach(function(mid) {
     var m = mods[mid] || {};
     var st = m.status || 'ok', zone = getZone(mid);
