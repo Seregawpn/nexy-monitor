@@ -418,5 +418,65 @@
       "[ERROR] \u274c Start playback failed: com.apple.coreaudio.avfaudio - player did not see an IO cycle.",
       "[ERROR] \u274c [AUDIO] Failed to (re)start AVFoundationPlayer playback"
     ]
+  },
+  {
+    "module_id": "speech_playback",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c Start playback failed: com.apple.coreaudio.avfaudio - player did not see an IO cycle.",
+    "traceback": "",
+    "timestamp": "2026-06-07T05:03:33+00:00",
+    "log_context": [
+      "[INFO] \ud83c\udfb5 [WELCOME_INTEGRATION] Sending audio to SpeechPlaybackIntegration (method=server, async context)",
+      "[INFO] \ud83c\udfb5 [WELCOME_INTEGRATION] Sending audio to SpeechPlaybackIntegration: 270720 samples",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] Data format: dtype=int16, shape=(270720,)",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] Range: min=-25449, max=19125",
+      "[INFO] \ud83d\udd0d [WELCOME_DIAG] Audio metrics: samples=270720, sr=48000Hz, ch=1, expected_duration=5.640s, config_sr=48000Hz",
+      "[INFO] AUDIO_PIPELINE phase=before_queue session=cd68079c-8784-485a-86f1-8c4d7ba39281 samples=270720 peak=25449.0000 rms=2519.7339 dtype=int16",
+      "[DEBUG] AUDIO_SESSION_PROFILE reason=start_playback profile=playback applied=false dedup=true category=AVAudioSessionCategoryPlayback mode=AVAudioSessionModeDefault options=33 route=MacBook Air Speakers:Speaker",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Volume set to 1.0 at playback start (mixer and player_node)",
+      "[INFO] \ud83d\udd04 [AVF_PLAYER] Re-connected player\u2192mixer after engine stop",
+      "[INFO] \ud83d\udd0a AVAudioEngine started successfully",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output snapshot: 48000.0Hz, 2ch, format=1",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output route snapshot: MacBook Air Speakers (type: Speaker)",
+      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'}",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3499 stderr_len=0",
+      "[DEBUG] Seeded 20 existing message IDs",
+      "[INFO] InboxWatcher started (poll every 30s)  account=Google",
+      "[INFO] [EMAIL_INBOX_WATCHER] Scanning emails from last 1.0 hours",
+      "[WARNING] \u26a0\ufe0f [AVF_PLAYER] player.play() IO cycle not ready, retrying in 50 ms",
+      "[INFO] DEBUG_INJECT: simulating recognized text='Any new emails?' session=81b30b9c-ba93-47a2-8617-db3d5136a944",
+      "[INFO] ContactStore replaced with 195 contacts"
+    ]
+  },
+  {
+    "module_id": "speech_playback_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c [AUDIO] Failed to (re)start AVFoundationPlayer playback",
+    "traceback": "",
+    "timestamp": "2026-06-07T05:03:33+00:00",
+    "log_context": [
+      "[INFO] \ud83c\udfb5 [WELCOME_INTEGRATION] Sending audio to SpeechPlaybackIntegration: 270720 samples",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] Data format: dtype=int16, shape=(270720,)",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] Range: min=-25449, max=19125",
+      "[INFO] \ud83d\udd0d [WELCOME_DIAG] Audio metrics: samples=270720, sr=48000Hz, ch=1, expected_duration=5.640s, config_sr=48000Hz",
+      "[INFO] AUDIO_PIPELINE phase=before_queue session=cd68079c-8784-485a-86f1-8c4d7ba39281 samples=270720 peak=25449.0000 rms=2519.7339 dtype=int16",
+      "[DEBUG] AUDIO_SESSION_PROFILE reason=start_playback profile=playback applied=false dedup=true category=AVAudioSessionCategoryPlayback mode=AVAudioSessionModeDefault options=33 route=MacBook Air Speakers:Speaker",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Volume set to 1.0 at playback start (mixer and player_node)",
+      "[INFO] \ud83d\udd04 [AVF_PLAYER] Re-connected player\u2192mixer after engine stop",
+      "[INFO] \ud83d\udd0a AVAudioEngine started successfully",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output snapshot: 48000.0Hz, 2ch, format=1",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output route snapshot: MacBook Air Speakers (type: Speaker)",
+      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'}",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3499 stderr_len=0",
+      "[DEBUG] Seeded 20 existing message IDs",
+      "[INFO] InboxWatcher started (poll every 30s)  account=Google",
+      "[INFO] [EMAIL_INBOX_WATCHER] Scanning emails from last 1.0 hours",
+      "[WARNING] \u26a0\ufe0f [AVF_PLAYER] player.play() IO cycle not ready, retrying in 50 ms",
+      "[INFO] DEBUG_INJECT: simulating recognized text='Any new emails?' session=81b30b9c-ba93-47a2-8617-db3d5136a944",
+      "[INFO] ContactStore replaced with 195 contacts",
+      "[ERROR] \u274c Start playback failed: com.apple.coreaudio.avfaudio - player did not see an IO cycle."
+    ]
   }
 ]
