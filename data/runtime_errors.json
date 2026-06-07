@@ -718,5 +718,65 @@
       "[INFO] idle_ram_mb=58.53",
       "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 58.53 MB"
     ]
+  },
+  {
+    "module_id": "grpc_client",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u23f0 Connection timeout to 127.0.0.1:50051",
+    "traceback": "",
+    "timestamp": "2026-06-07T04:55:08+00:00",
+    "log_context": [
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3499 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.10",
+      "[INFO] idle_ram_mb=58.53",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 58.53 MB",
+      "[ERROR] \u23f0 Connection timeout to 127.0.0.1:50051",
+      "[INFO] \ud83d\udd04 Connection state: failed",
+      "[WARNING] \u274c _ensure_connected: connect returned False (loop=4675175760, attempt=2/3)",
+      "[INFO] \ud83d\udd0c _ensure_connected: retrying in 2.0s (attempt=2/3)",
+      "[INFO] \ud83d\udd0c [DEBUG] Starting connection to server: local",
+      "[INFO] \ud83d\udd04 Connection state: connecting",
+      "[INFO] \ud83d\udd0c [DEBUG] Server config - address: 127.0.0.1:50051, use_ssl: False, ssl_verify: True",
+      "[INFO] \ud83d\udd0c [GRPC_LOOP] Creating channel in loop=4675175760 (running=True)",
+      "[INFO] \ud83d\udd0c [DEBUG] Creating channel - use_ssl=False, ssl_verify=True",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3499 stderr_len=0",
+      "[INFO] idle_cpu_pct=9.60",
+      "[INFO] idle_ram_mb=68.41",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 9.60%, RAM: 68.41 MB"
+    ]
+  },
+  {
+    "module_id": "grpc_client_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "E-GRPC-003 _ensure_connected: all 3 attempt(s) exhausted for server local (loop=4675175760)",
+    "traceback": "",
+    "timestamp": "2026-06-07T04:55:08+00:00",
+    "log_context": [
+      "[INFO] idle_ram_mb=58.53",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 58.53 MB",
+      "[ERROR] \u23f0 Connection timeout to 127.0.0.1:50051",
+      "[INFO] \ud83d\udd04 Connection state: failed",
+      "[WARNING] \u274c _ensure_connected: connect returned False (loop=4675175760, attempt=2/3)",
+      "[INFO] \ud83d\udd0c _ensure_connected: retrying in 2.0s (attempt=2/3)",
+      "[INFO] \ud83d\udd0c [DEBUG] Starting connection to server: local",
+      "[INFO] \ud83d\udd04 Connection state: connecting",
+      "[INFO] \ud83d\udd0c [DEBUG] Server config - address: 127.0.0.1:50051, use_ssl: False, ssl_verify: True",
+      "[INFO] \ud83d\udd0c [GRPC_LOOP] Creating channel in loop=4675175760 (running=True)",
+      "[INFO] \ud83d\udd0c [DEBUG] Creating channel - use_ssl=False, ssl_verify=True",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3499 stderr_len=0",
+      "[INFO] idle_cpu_pct=9.60",
+      "[INFO] idle_ram_mb=68.41",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 9.60%, RAM: 68.41 MB",
+      "[ERROR] \u23f0 Connection timeout to 127.0.0.1:50051",
+      "[INFO] \ud83d\udd04 Connection state: failed",
+      "[WARNING] \u274c _ensure_connected: connect returned False (loop=4675175760, attempt=3/3)"
+    ]
   }
 ]
