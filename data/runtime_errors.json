@@ -540,5 +540,65 @@
       "[INFO] REQUEST_PATH stage=action.streamed session=717e49d9-1000-4804-b898-11f32879ca8a hardware=e2e-fix-900baf3b command=email_find_code",
       "[INFO] Metrics snapshot"
     ]
+  },
+  {
+    "module_id": "tool_call_registry",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[TOOL_REGISTRY] timeout call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 after 25.0s",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:34:35+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] llm.start iter=2 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=20117 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13248 bytes, PCM=211968 bytes, chunks=53",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=282 chunks=53 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 17.760000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 3.850000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=26958 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=27007 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=27126 tokens=13 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_code args={} session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 elapsed_ms=47170 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=bdeed3a8-a745-4c69-be71-7d26e7bc8954, command=email_find_code",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 command=email_find_code feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 hardware=test-script-hw command=email_find_code",
+      "[INFO] Metrics snapshot"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_code returned error: tool call timeout \u2014 client did not respond",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:34:35+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=282 chunks=53 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 17.760000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 3.850000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=26958 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=27007 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=27126 tokens=13 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_code args={} session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 elapsed_ms=47170 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=bdeed3a8-a745-4c69-be71-7d26e7bc8954, command=email_find_code",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 command=email_find_code feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=bdeed3a8-a745-4c69-be71-7d26e7bc8954 hardware=test-script-hw command=email_find_code",
+      "[INFO] Metrics snapshot",
+      "[ERROR] [TOOL_REGISTRY] timeout call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 after 25.0s",
+      "[INFO] [V3_DISPATCH] tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 got result_len=71",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_code elapsed_ms=25010 result_len=84 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954"
+    ]
   }
 ]
