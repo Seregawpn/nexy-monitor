@@ -7692,5 +7692,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260607_172833_940d47ab",
+    "created_at": "2026-06-07T17:28:33+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "grpc_client_integration",
+    "problem": "screenshot always stored in registry: remove screen_required gate, add pop_screenshot consume-once",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-07",
+    "root_cause": "commit gate gated screenshot only on screen_required regex; get_screenshot did not clear after use",
+    "solution": "gate now always waits for screenshot (pending blocks, unavailable opens gracefully); pop_screenshot added to registry; orchestrator uses pop",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
