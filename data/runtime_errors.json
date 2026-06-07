@@ -600,5 +600,35 @@
       "[INFO] [V3_DISPATCH] tool=email_find_code call_id=bdeed3a8-a745-4c69-be71-7d26e7bc8954:edd9afcb-d25a-485e-a6a7-23b813a02fd9 got result_len=71",
       "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_code elapsed_ms=25010 result_len=84 session=bdeed3a8-a745-4c69-be71-7d26e7bc8954"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-07T22:05:51+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=37 for session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Finding information in your emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=3889 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=4060 tokens=16 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_info args={'days': 14} session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=18144 bytes, PCM=290304 bytes, chunks=72",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=372 chunks=72 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 elapsed_ms=8872 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=1c5e0958-0bc3-4e95-ad38-557f8498a48d, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=1c5e0958-0bc3-4e95-ad38-557f8498a48d command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=1c5e0958-0bc3-4e95-ad38-557f8498a48d hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 result_len=119",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_info elapsed_ms=35221 result_len=132 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d"
+    ]
   }
 ]
