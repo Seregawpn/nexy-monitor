@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "provider",
-    "source": "server",
-    "error_type": "APIConnectionError",
-    "message": "[V3] arun_streaming failed: Connection error.",
-    "traceback": "angchain_openai.py\", line 100, in astream\n    async for chunk in self._llm.astream(messages, **kwargs):\n    ...<8 lines>...\n                        yield text\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py\", line 907, in astream\n    async for chunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1865, in _astream\n    _handle_openai_api_error(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1665, in request\n    raise APIConnectionError(request=request) from err\nopenai.APIConnectionError: Connection error.\n",
-    "timestamp": "2026-06-07T14:55:52+00:00",
-    "log_context": [
-      "[WARNING] \u26a0\ufe0f Slow response: 16.74s (limit: 5.0s)",
-      "[INFO] Decision: start",
-      "[INFO] REQUEST_PATH stage=stream.received session=f39a7006-d312-41fb-9534-b027ce59ca71 hardware=email-test-hw-98b246ed has_prompt=True has_screenshot=False phase=REQUEST_PHASE_COMMIT",
-      "[INFO] REQUEST_PATH stage=stream.accepted session=f39a7006-d312-41fb-9534-b027ce59ca71 hardware=email-test-hw-98b246ed phase=REQUEST_PHASE_COMMIT",
-      "[INFO] COMMIT merge: session=f39a7006-d312-41fb-9534-b027ce59ca71 hardware=email-test-hw-98b246ed collect_chunks=0 collect_text_len=0 commit_prompt_len=55 final_prompt_len=55 preflight_status=miss preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.07",
-      "[INFO] REQUEST_PATH stage=commit.ready session=f39a7006-d312-41fb-9534-b027ce59ca71 hardware=email-test-hw-98b246ed media_attachments=0 prompt_len=55 screenshot_len=0",
-      "[INFO] \ud83d\udce8 Received StreamRequest: session=f39a7006-d312-41fb-9534-b027ce59ca71, hardware_id=email-test-hw-98b246ed, phase=REQUEST_PHASE_COMMIT",
-      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=55, screenshot_len=0",
-      "[INFO] Stream acquired: f39a7006-d312-41fb-9534-b027ce59ca71 (active: 1)",
-      "[WARNING] \u274c High error: 62.5% errors (limit: 5.0%)",
-      "[WARNING] \u26a0\ufe0f Slow response: 16.74s (limit: 5.0s)",
-      "[INFO] \ud83d\udd04 Processing request via modules...",
-      "[INFO] REQUEST_PATH stage=workflow.dispatch session=f39a7006-d312-41fb-9534-b027ce59ca71 hardware=email-test-hw-98b246ed phase=REQUEST_PHASE_COMMIT",
-      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Open that whole email from Sergiy and read it out ...', screenshot_exists=False",
-      "[INFO] \ud83d\udd04 Starting streaming processing for f39a7006-d312-41fb-9534-b027ce59ca71",
-      "[INFO] [\u23f1 TIMING] request.start session=f39a7006-d312-41fb-9534-b027ce59ca71 input='Open that whole email from Sergiy and read it out to me'",
-      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=1 history_msgs=0 session=f39a7006-d312-41fb-9534-b027ce59ca71",
-      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=f39a7006-d312-41fb-9534-b027ce59ca71",
-      "[INFO] Retrying request to /chat/completions in 0.453881 seconds",
-      "[INFO] Retrying request to /chat/completions in 0.997595 seconds"
-    ]
-  },
-  {
     "module_id": "audio_generation",
     "source": "server",
     "error_type": "Error",
