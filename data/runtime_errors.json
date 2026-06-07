@@ -329,5 +329,66 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 71916 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "client",
+    "error_type": "Error",
+    "message": "HARD_EXIT: reason=signal_handler signal=SIGINT code=0",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:11:37+00:00",
+    "log_context": [
+      "[INFO] \u2705 first_run_permissions stopped",
+      "[INFO] \u23f9\ufe0f Stop tray...",
+      "[INFO] \u23f9\ufe0f Stopping TrayControllerIntegration...",
+      "[INFO] \u23f9\ufe0f Stopping TrayController",
+      "[INFO] \ud83d\uded1 quit() called - enabling quit_allowed flag",
+      "[INFO] \ud83d\uded1 quit() skipping rumps.quit_application() \u2014 app.run() not started yet",
+      "[INFO] \u2705 TrayController stopped",
+      "[INFO] \u2705 TrayControllerIntegration stopped",
+      "[WARNING] Swift helper returned an error: Access to contacts denied",
+      "[INFO] \u2705 tray stopped",
+      "[INFO] Name not found for +12345678, fallback is used",
+      "[INFO] \u23f9\ufe0f Stopping Workflows...",
+      "[INFO] \u23f9\ufe0f Stop workflow listening...",
+      "[INFO] \ud83d\uded1 ListeningWorkflow: stopped",
+      "[INFO] \u2705 Workflow listening stopped",
+      "[INFO] \u23f9\ufe0f Stop workflow processing...",
+      "[DEBUG] Name found in cache for +12345678",
+      "[INFO] \ud83d\uded1 ProcessingWorkflow: stopped",
+      "[INFO] \u2705 Workflow processing stopped",
+      "[INFO] \u2705 All integrations and workflows are stopped"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 71916 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set ",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:12:02+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-07T18:12:02+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 71916 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
   }
 ]
