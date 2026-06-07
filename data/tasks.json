@@ -7585,5 +7585,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260607_141814_314480c9",
+    "created_at": "2026-06-07T14:18:14+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "server/test_email_scenarios",
+    "problem": "Rewrite email routing test scenarios with realistic human-language queries; imitate email_read_message via chain pattern",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-07",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
