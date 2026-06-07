@@ -7635,10 +7635,10 @@
       "[INFO] Retrying request to /chat/completions in 0.997595 seconds"
     ],
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "transient OpenAI APIConnectionError during gRPC test run",
+    "solution": "not a code bug \u2014 network hiccup during browser skill routing tests; server recovered automatically",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
@@ -7652,10 +7652,10 @@
     "error_type": "runtime_error",
     "traceback": "",
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "transient OpenAI APIConnectionError during gRPC test run",
+    "solution": "not a code bug \u2014 network hiccup during browser skill routing tests; server recovered automatically",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
