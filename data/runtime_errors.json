@@ -630,5 +630,35 @@
       "[INFO] [V3_DISPATCH] tool=email_find_info call_id=1c5e0958-0bc3-4e95-ad38-557f8498a48d:6dc5b15f-5eb7-42a4-aeb2-02c4ccc8d7a6 got result_len=119",
       "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_info elapsed_ms=35221 result_len=132 session=1c5e0958-0bc3-4e95-ad38-557f8498a48d"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-07T22:14:40+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Finding TELUS activation code in TELUS emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=37571 session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=37605 tokens=18 session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=email_find_info args={'days': 14} session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb session=38698fc5-29c8-4d17-9833-b28d83649754 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=23472 bytes, PCM=375552 bytes, chunks=94",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=578 chunks=94 session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb elapsed_ms=92444 session=38698fc5-29c8-4d17-9833-b28d83649754",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=38698fc5-29c8-4d17-9833-b28d83649754, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=38698fc5-29c8-4d17-9833-b28d83649754 command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=38698fc5-29c8-4d17-9833-b28d83649754 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb session=38698fc5-29c8-4d17-9833-b28d83649754 result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb result_len=119",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=38698fc5-29c8-4d17-9833-b28d83649754:b26346f6-4a99-4e7e-964d-9168c45a76bb got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_find_info elapsed_ms=35526 result_len=132 session=38698fc5-29c8-4d17-9833-b28d83649754"
+    ]
   }
 ]
