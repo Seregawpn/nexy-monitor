@@ -7658,5 +7658,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260607_152236_f0259f88",
+    "created_at": "2026-06-07T15:22:36+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "email_skill",
+    "problem": "document FIND-CONTENT known instability in test + add direct-vs-read-first rule to email SKILL.md",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-07",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
