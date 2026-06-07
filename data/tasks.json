@@ -7299,10 +7299,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "root_cause": "No way to drive the full real Flow (server routing -> action_message -> real client execution -> SubmitToolResult) without voice/microphone for E2E testing",
+    "solution": "Added NEXY_INJECT_TEXT debug-only env var (main.py:521-524, simple_module_coordinator.py: debug_inject_text + _schedule_debug_text_injection). Verified live: injected text=\"Open the Calculator app\" -> session 63273e0e -> gRPC routing -> server action_message open_app -> real tool execution (Calculator.app launched, PID 18396) -> submit_tool_result accepted=True -> LLM confirmation \"Calculator is open.\" Documented in FEATURE_FLAGS.md.",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -7596,10 +7596,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-07",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Old test_email_scenarios.py used 20 robotic/templated trigger-phrase queries that masked real LLM routing behavior; email_read_message had no coverage because it requires an emlx_id that only persists in conversation memory at turn-completion (orchestrator.set_messages is called only on final response/max-iterations, never mid-chain before a client tool finishes), which routing-only tests (no SubmitToolResult) never reach.",
+    "solution": "Rewrote all 11 TESTS entries as natural human-language queries grounded in SKILL.md routing rules, covering all 11 user-facing email tools (directly or via documented chains). Imitated email_read_message via the established CHAIN must_call_any_of pattern (same as get_note/analyze_image_file) since true multi-turn simulation is technically infeasible. Run result: 8/11 pass; 3 genuine routing-divergence findings reported to user (FIND-CONTENT, FIND-CODE, REPLY-CONTEXT \u2014 LLM calls email_read_all/email_read_unread instead of the SKILL.md-mandated email_find_info/email_find_code/email_find_info on natural phrasing), not fixed \u2014 out of scope for this test-rewrite task.",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
