@@ -67,6 +67,8 @@ body.is-static #tk-new-form { display: none !important; }
 .sb-item:hover { background: #21262d; color: #e1e4e8; }
 .sb-item.sel { background: #1f2a3c; border-left-color: #1f6feb; color: #58a6ff; }
 .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.local-dot { width: 5px; height: 5px; border-radius: 50%; background: #a371f7; flex-shrink: 0; margin-left: 3px; }
+.dp-local { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; padding: 2px 9px; border-radius: 20px; font-weight: 600; margin-bottom: 8px; margin-left: 6px; background: #2d1b69; color: #a371f7; border: 1px solid #4a2c9a; }
 
 .detail { width: 260px; background: #161b22; border-left: 1px solid #30363d; padding: 14px; overflow-y: auto; flex-shrink: 0; }
 .dp-empty { color: #8b949e; font-size: 12px; text-align: center; margin-top: 40px; }
@@ -901,6 +903,12 @@ function renderArchSidebar() {
         dot.style.background = STATUS_COLOR[m.status] || '#8b949e';
         item.appendChild(dot);
         item.appendChild(document.createTextNode(m.name));
+        if (m.has_local_changes) {
+          var ldot = document.createElement('span');
+          ldot.className = 'local-dot';
+          ldot.title = 'uncommitted local changes';
+          item.appendChild(ldot);
+        }
         item.addEventListener('click', function(e) { e.stopPropagation(); selectModule(m.id); });
         children.appendChild(item);
       });
@@ -1391,6 +1399,7 @@ function renderDetailPanel(panelId, m) {
   var title=document.createElement('div'); title.className='dp-title'; title.textContent=m.name; panel.appendChild(title);
   var path=document.createElement('div'); path.className='dp-path'; path.textContent=m.path; panel.appendChild(path);
   var st=document.createElement('div'); st.className='dp-status '+m.status; st.textContent='● '+m.status; panel.appendChild(st);
+  if (m.has_local_changes) { var lc=document.createElement('span'); lc.className='dp-local'; lc.textContent='✎ local changes'; panel.appendChild(lc); }
   appendDetailSections(panel, m);
 }
 
