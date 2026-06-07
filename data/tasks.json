@@ -7709,5 +7709,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260607_233743_cd3ca4c3",
+    "created_at": "2026-06-07T23:37:43+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "streaming_workflow_v3_integration",
+    "problem": "_sanitize_for_voice missing rules: empty parens, em dash, semicolons, ISO dates read badly by TTS",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-07",
+    "root_cause": "_sanitize_for_voice missing rules for ISO dates, em dash, semicolons, empty parens \u2014 TTS read them literally",
+    "solution": "Added date converter _iso_date_to_spoken, replaced em/en dashes with comma, semicolons with comma, removed empty parens, cleaned inline list markers",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
