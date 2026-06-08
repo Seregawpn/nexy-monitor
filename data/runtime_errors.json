@@ -1980,5 +1980,35 @@
       "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=506aa12b-1002-4558-8548-4d88883b9c1e:43adad4f-c7fe-4ce0-8119-d259d76548b3 got result_len=86",
       "[INFO] [\u23f1 TIMING] tool.done iter=5 tool=read_messages_all elapsed_ms=22 result_len=99 session=506aa12b-1002-4558-8548-4d88883b9c1e"
     ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] provider failure intent=list_account_inbox error=osascript failed",
+    "traceback": "",
+    "timestamp": "2026-06-08T23:27:29+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udd0d is_playing check: _playing=True, thread_alive=True, engine_running=True, player_playing=True, buffered_sec=5.092, recent_output_tail=False, route=Sergiy\u2019s AirPo:Bluetooth",
+      "[INFO] AUDIO_MIC_RECOVERY_ENTER session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 source=recording_stop current_session=None active_output=24b0e497-551a-4128-b6f5-f6e7be71117b capture_profile_session=None is_playing=True playback_context=False",
+      "[DEBUG] AUDIO_MIC_RECOVERY skipped: stale mic_closed session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 active_output=24b0e497-551a-4128-b6f5-f6e7be71117b current_session=None is_playing=True playback_context=False",
+      "[DEBUG] DUCK_MONITOR event=voice.mic_closed action=skip reason=not_ducked session=5e108387-d0ae-49ab-a05f-6fd8bfa42534",
+      "[INFO] \ud83c\udfa4 VOICE: microphone closed immediately for session 5e108387-d0ae-49ab-a05f-6fd8bfa42534",
+      "[INFO] ListeningWorkflow: recording stopped, session_id=5e108387-d0ae-49ab-a05f-6fd8bfa42534",
+      "[INFO] ListeningWorkflow: recording completed successfully, awaiting PROCESSING",
+      "[INFO] \ud83c\udfa4 ScreenshotCapture: Received voice.recording_stop, session_id=5e108387-d0ae-49ab-a05f-6fd8bfa42534",
+      "[INFO] \ud83d\udcf8 ScreenshotCapture: release path schedules direct capture in background, session_id=5e108387-d0ae-49ab-a05f-6fd8bfa42534",
+      "[INFO] TRACE phase=grpc.terminal_text_ready ts=140882226 session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 extra={text_len=40, recording_stopped=True, delta_from_recording_stop_ms=17, screen_required=False}",
+      "[DEBUG] \u2192 StreamAudio collect send: session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 seq=1 text_len=40 has_screenshot=False",
+      "[INFO] AUDIO_PIPELINE phase=collect_send semantic=precommit_buffer_only session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 seq=1 has_text=True has_screenshot=False recording_stopped=True ready_to_send=False",
+      "[INFO] AUDIO_PIPELINE phase=collect_buffered session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 seq=1 processing_started=False commit_dispatched=False",
+      "[INFO] \ud83d\udd0d screen_info type: <class 'dict'>",
+      "[INFO] \ud83d\udd0d screen_info content: {'width': None, 'height': None}",
+      "[DEBUG] VOICE: skip post-stop finalize due to session drift (session=5e108387-d0ae-49ab-a05f-6fd8bfa42534, active=None)",
+      "[INFO] AUDIO_PIPELINE phase=commit_gate decision=blocked reason=screenshot_pending session=5e108387-d0ae-49ab-a05f-6fd8bfa42534 screenshot_state=pending",
+      "[DEBUG] INPUT: recognition_completed ignored outside WAITING_FINAL_STT/STOPPING (sid=5e108387-d0ae-49ab-a05f-6fd8bfa42534, state=idle)",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=-15 stdout_len=0 stderr_len=0",
+      "[INFO] Name not found for +380939361100, fallback is used"
+    ]
   }
 ]
