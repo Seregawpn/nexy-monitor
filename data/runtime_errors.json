@@ -1380,5 +1380,35 @@
       "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 got result_len=127",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_from_contact elapsed_ms=22036 result_len=140 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_read_message returned error: not_found",
+    "traceback": "",
+    "timestamp": "2026-06-08T15:57:58+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=34 for session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading Dan Yates' swiping note...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=37399 session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=37454 tokens=16 session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=email_read_message args={'emlx_id': 10031} session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] [V3_DISPATCH] tool=email_read_message call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 session=21e70522-7213-48a1-9e66-323cc292521b \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=17280 bytes, PCM=276480 bytes, chunks=69",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=408 chunks=69 session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_read_message call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 elapsed_ms=91365 session=21e70522-7213-48a1-9e66-323cc292521b",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=21e70522-7213-48a1-9e66-323cc292521b, command=email_read_message",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=21e70522-7213-48a1-9e66-323cc292521b command=email_read_message feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=21e70522-7213-48a1-9e66-323cc292521b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_read_message",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 session=21e70522-7213-48a1-9e66-323cc292521b result_len=61",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 result_len=61",
+      "[INFO] [V3_DISPATCH] tool=email_read_message call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 got result_len=61",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_message elapsed_ms=956 result_len=74 session=21e70522-7213-48a1-9e66-323cc292521b"
+    ]
   }
 ]
