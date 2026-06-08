@@ -1950,5 +1950,65 @@
       "[INFO] [\u23f1 TIMING] sentence.received n=17 len=45 elapsed_ms=112955 session=57d043d9-adaf-4b68-a928-8b3b67eac53a",
       "[INFO] [\u23f1 TIMING] tts.start n=17 session=57d043d9-adaf-4b68-a928-8b3b67eac53a"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T18:03:30+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading the TELUS activation email...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=7171 session=4356658e-82a6-40ce-988e-5212ac11d10d",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=7456 tokens=18 session=4356658e-82a6-40ce-988e-5212ac11d10d",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_info args={'emails': ['telusservice@i.telus.com'], 'days': 14} session=4356658e-82a6-40ce-988e-5212ac11d10d",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 session=4356658e-82a6-40ce-988e-5212ac11d10d \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=18288 bytes, PCM=292608 bytes, chunks=73",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=588 chunks=73 session=4356658e-82a6-40ce-988e-5212ac11d10d",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 elapsed_ms=11467 session=4356658e-82a6-40ce-988e-5212ac11d10d",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=4356658e-82a6-40ce-988e-5212ac11d10d, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=4356658e-82a6-40ce-988e-5212ac11d10d command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=4356658e-82a6-40ce-988e-5212ac11d10d hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Metrics snapshot",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 session=4356658e-82a6-40ce-988e-5212ac11d10d result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 result_len=119",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=4356658e-82a6-40ce-988e-5212ac11d10d:976dfcfc-7bf8-4843-95a1-54c10d297ca8 got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_info elapsed_ms=35404 result_len=132 session=4356658e-82a6-40ce-988e-5212ac11d10d"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T18:06:25+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching for Groq invoice in your emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=4666 session=cf40f824-abeb-4194-845d-23eea7e9a71a",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=4893 tokens=18 session=cf40f824-abeb-4194-845d-23eea7e9a71a",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_info args={'days': 14} session=cf40f824-abeb-4194-845d-23eea7e9a71a",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 session=cf40f824-abeb-4194-845d-23eea7e9a71a \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=20304 bytes, PCM=324864 bytes, chunks=84",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=601 chunks=84 session=cf40f824-abeb-4194-845d-23eea7e9a71a",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 elapsed_ms=15012 session=cf40f824-abeb-4194-845d-23eea7e9a71a",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=cf40f824-abeb-4194-845d-23eea7e9a71a, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=cf40f824-abeb-4194-845d-23eea7e9a71a command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=cf40f824-abeb-4194-845d-23eea7e9a71a hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Metrics snapshot",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 session=cf40f824-abeb-4194-845d-23eea7e9a71a result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 result_len=119",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=cf40f824-abeb-4194-845d-23eea7e9a71a:21e77c98-0ee0-4882-9a62-113d1b65fec4 got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_info elapsed_ms=35464 result_len=132 session=cf40f824-abeb-4194-845d-23eea7e9a71a"
+    ]
   }
 ]
