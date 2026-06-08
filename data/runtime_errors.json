@@ -1320,5 +1320,65 @@
       "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=780c3c05-00a6-4403-bd61-03414e9e8755:2de5c115-9ce3-4c37-96ef-7090cfbf04c0 got result_len=86",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=read_messages_all elapsed_ms=677 result_len=99 session=780c3c05-00a6-4403-bd61-03414e9e8755"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T15:39:42+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=4162 session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching your emails for details...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=4312 tokens=16 session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=email_find_info args={'days': 14} session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 session=cfb0558f-7585-4163-a008-87f7970fc895 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=17856 bytes, PCM=285696 bytes, chunks=72",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=436 chunks=72 session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 elapsed_ms=12420 session=cfb0558f-7585-4163-a008-87f7970fc895",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=cfb0558f-7585-4163-a008-87f7970fc895, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=cfb0558f-7585-4163-a008-87f7970fc895 command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=cfb0558f-7585-4163-a008-87f7970fc895 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Metrics snapshot",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 session=cfb0558f-7585-4163-a008-87f7970fc895 result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 result_len=119",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=cfb0558f-7585-4163-a008-87f7970fc895:3195ec63-c4a0-4933-97c9-ac169ad9cbf7 got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_find_info elapsed_ms=35501 result_len=132 session=cfb0558f-7585-4163-a008-87f7970fc895"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_read_from_contact returned error: tool 'email_read_from_contact' timed out after 22s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T15:41:10+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading Joseph Hudson's emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=3292 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=17568 bytes, PCM=281088 bytes, chunks=71",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=500 chunks=71 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=6377 tokens=290 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=email_read_from_contact args={'emails': ['jhud7789@outlook.com'], 'days': 14} session=6d1022c6-939b-4a95-9b41-5659a26f6b6c",
+      "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 timeout=40.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_read_from_contact call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 elapsed_ms=13764 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=6d1022c6-939b-4a95-9b41-5659a26f6b6c, command=email_read_from_contact",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=6d1022c6-939b-4a95-9b41-5659a26f6b6c command=email_read_from_contact feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=6d1022c6-939b-4a95-9b41-5659a26f6b6c hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_read_from_contact",
+      "[INFO] Metrics snapshot",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c result_len=127",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 result_len=127",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=6d1022c6-939b-4a95-9b41-5659a26f6b6c:07ce920f-5cd9-4bd0-93d7-02dc7746e463 got result_len=127",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_from_contact elapsed_ms=22036 result_len=140 session=6d1022c6-939b-4a95-9b41-5659a26f6b6c"
+    ]
   }
 ]
