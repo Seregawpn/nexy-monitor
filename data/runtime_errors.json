@@ -2010,5 +2010,35 @@
       "[INFO] [EMAIL_BRIDGE] osascript finish returncode=-15 stdout_len=0 stderr_len=0",
       "[INFO] Name not found for +380939361100, fallback is used"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool read_messages_all returned error: Messages permissions are required.",
+    "traceback": "",
+    "timestamp": "2026-06-08T23:36:21+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=28 for session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading your recent texts...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=4197 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=4367 tokens=15 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=read_messages_all args={'days': 7} session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=15408 bytes, PCM=246528 bytes, chunks=61",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=441 chunks=61 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_messages_all call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 elapsed_ms=8858 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=ea0e19d5-7de0-467a-9899-9d11580fbdb8, command=read_messages_all",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=ea0e19d5-7de0-467a-9899-9d11580fbdb8 command=read_messages_all feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=ea0e19d5-7de0-467a-9899-9d11580fbdb8 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_messages_all",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8 result_len=86",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 result_len=86",
+      "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=ea0e19d5-7de0-467a-9899-9d11580fbdb8:8ab66c11-9304-4727-916f-be4963d66618 got result_len=86",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=read_messages_all elapsed_ms=428 result_len=99 session=ea0e19d5-7de0-467a-9899-9d11580fbdb8"
+    ]
   }
 ]
