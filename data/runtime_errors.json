@@ -810,5 +810,35 @@
       "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=fb5e84ad-8312-4bd8-ac80-69cb4cde68da:51e7d24b-6d85-40f9-a1af-15fa47888854 got result_len=127",
       "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_read_from_contact elapsed_ms=22280 result_len=140 session=fb5e84ad-8312-4bd8-ac80-69cb4cde68da"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_read_from_contact returned error: tool 'email_read_from_contact' timed out after 22s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T03:39:59+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Opening Joseph Hudson thread...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=7372 tokens=17 session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=email_read_from_contact args={'emails': ['jhud7789@outlook.com'], 'days': 14} session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 session=1682fc09-025d-4a86-8676-a0b9ce3ab837 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=7480 session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=16128 bytes, PCM=258048 bytes, chunks=65",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=412 chunks=65 session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_read_from_contact call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 elapsed_ms=7516 session=1682fc09-025d-4a86-8676-a0b9ce3ab837",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=1682fc09-025d-4a86-8676-a0b9ce3ab837, command=email_read_from_contact",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=1682fc09-025d-4a86-8676-a0b9ce3ab837 command=email_read_from_contact feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=1682fc09-025d-4a86-8676-a0b9ce3ab837 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_read_from_contact",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 session=1682fc09-025d-4a86-8676-a0b9ce3ab837 result_len=127",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 result_len=127",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_read_from_contact call_id=1682fc09-025d-4a86-8676-a0b9ce3ab837:4400dd53-a8a5-4af0-b1e5-9b0d573d4b02 got result_len=127",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=email_read_from_contact elapsed_ms=22555 result_len=140 session=1682fc09-025d-4a86-8676-a0b9ce3ab837"
+    ]
   }
 ]
