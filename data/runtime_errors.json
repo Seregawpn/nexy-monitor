@@ -1410,5 +1410,35 @@
       "[INFO] [V3_DISPATCH] tool=email_read_message call_id=21e70522-7213-48a1-9e66-323cc292521b:1aadf48f-8692-41ef-9fb5-2d4dd431d765 got result_len=61",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_message elapsed_ms=956 result_len=74 session=21e70522-7213-48a1-9e66-323cc292521b"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_find_info returned error: tool 'email_find_info' timed out after 35s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-08T16:01:10+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching for TELUS WiFi activation code...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=39171 session=a9d7c157-f7e5-4982-9935-63e1d90895ac",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=39655 tokens=90 session=a9d7c157-f7e5-4982-9935-63e1d90895ac",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=email_find_info args={'days': 14, 'emails': ['telusservice@i.telus.com']} session=a9d7c157-f7e5-4982-9935-63e1d90895ac",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a session=a9d7c157-f7e5-4982-9935-63e1d90895ac \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a timeout=40.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=21888 bytes, PCM=350208 bytes, chunks=87",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=624 chunks=87 session=a9d7c157-f7e5-4982-9935-63e1d90895ac",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_find_info call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a elapsed_ms=87484 session=a9d7c157-f7e5-4982-9935-63e1d90895ac",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=a9d7c157-f7e5-4982-9935-63e1d90895ac, command=email_find_info",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=a9d7c157-f7e5-4982-9935-63e1d90895ac command=email_find_info feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=a9d7c157-f7e5-4982-9935-63e1d90895ac hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_find_info",
+      "[INFO] Metrics snapshot",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a session=a9d7c157-f7e5-4982-9935-63e1d90895ac result_len=119",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a result_len=119",
+      "[INFO] Metrics snapshot",
+      "[INFO] [V3_DISPATCH] tool=email_find_info call_id=a9d7c157-f7e5-4982-9935-63e1d90895ac:1d2c48ef-c0d9-488d-b03b-4b772da0df2a got result_len=119",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_find_info elapsed_ms=35133 result_len=132 session=a9d7c157-f7e5-4982-9935-63e1d90895ac"
+    ]
   }
 ]
