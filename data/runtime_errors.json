@@ -1500,5 +1500,65 @@
       "[INFO] [\u23f1 TIMING] llm.start iter=1 session=2edb4b89-a89c-45f0-8f25-bc0a73798a0e",
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""
     ]
+  },
+  {
+    "module_id": "provider",
+    "source": "server",
+    "error_type": "BadRequestError",
+    "message": "[V3] arun_streaming failed: Error code: 400 - {'error': {'message': \"Invalid parameter: messages with role 'tool' must be a response to a preceeding message with 'tool_calls'.\", 'type': 'invalid_reque",
+    "traceback": ".venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py\", line 907, in astream\n    async for chunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1863, in _astream\n    _handle_openai_bad_request(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1698, in request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.BadRequestError: Error code: 400 - {'error': {'message': \"Invalid parameter: messages with role 'tool' must be a response to a preceeding message with 'tool_calls'.\", 'type': 'invalid_request_error', 'param': 'messages.[1].role', 'code': None}}\n",
+    "timestamp": "2026-06-08T16:10:39+00:00",
+    "log_context": [
+      "[INFO] Decision: complete",
+      "[INFO] Decision: start",
+      "[INFO] REQUEST_PATH stage=stream.received session=2cec1260-1356-4887-9f3e-819c28a3bfb3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 has_prompt=True has_screenshot=True phase=REQUEST_PHASE_COMMIT",
+      "[INFO] REQUEST_PATH stage=stream.accepted session=2cec1260-1356-4887-9f3e-819c28a3bfb3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
+      "[INFO] COMMIT merge: session=2cec1260-1356-4887-9f3e-819c28a3bfb3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 collect_chunks=2 collect_text_len=25 commit_prompt_len=25 final_prompt_len=25 preflight_status=pending preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.04",
+      "[INFO] REQUEST_PATH stage=commit.ready session=2cec1260-1356-4887-9f3e-819c28a3bfb3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 media_attachments=0 prompt_len=25 screenshot_len=100920",
+      "[INFO] \ud83d\udce8 Received StreamRequest: session=2cec1260-1356-4887-9f3e-819c28a3bfb3, hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2, phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=25, screenshot_len=100920",
+      "[INFO] Stream acquired: 2cec1260-1356-4887-9f3e-819c28a3bfb3 (active: 1)",
+      "[WARNING] \u274c High error: 8.6% errors (limit: 5.0%)",
+      "[WARNING] \u26a0\ufe0f Slow response: 24.25s (limit: 5.0s)",
+      "[INFO] \ud83d\udd04 Processing request via modules...",
+      "[INFO] REQUEST_PATH stage=workflow.dispatch session=2cec1260-1356-4887-9f3e-819c28a3bfb3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Who did I text this week?...', screenshot_exists=True",
+      "[INFO] \ud83d\udd04 Starting streaming processing for 2cec1260-1356-4887-9f3e-819c28a3bfb3",
+      "[INFO] [\u23f1 TIMING] request.start session=2cec1260-1356-4887-9f3e-819c28a3bfb3 input='Who did I text this week?'",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=14406 history_msgs=5 session=2cec1260-1356-4887-9f3e-819c28a3bfb3",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=2cec1260-1356-4887-9f3e-819c28a3bfb3",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""
+    ]
+  },
+  {
+    "module_id": "provider",
+    "source": "server",
+    "error_type": "BadRequestError",
+    "message": "[V3] arun_streaming failed: Error code: 400 - {'error': {'message': \"Invalid parameter: messages with role 'tool' must be a response to a preceeding message with 'tool_calls'.\", 'type': 'invalid_reque",
+    "traceback": ".venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py\", line 907, in astream\n    async for chunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1863, in _astream\n    _handle_openai_bad_request(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1698, in request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.BadRequestError: Error code: 400 - {'error': {'message': \"Invalid parameter: messages with role 'tool' must be a response to a preceeding message with 'tool_calls'.\", 'type': 'invalid_request_error', 'param': 'messages.[1].role', 'code': None}}\n",
+    "timestamp": "2026-06-08T16:13:28+00:00",
+    "log_context": [
+      "[INFO] Decision: complete",
+      "[INFO] Decision: start",
+      "[INFO] REQUEST_PATH stage=stream.received session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 has_prompt=True has_screenshot=True phase=REQUEST_PHASE_COMMIT",
+      "[INFO] REQUEST_PATH stage=stream.accepted session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
+      "[INFO] COMMIT merge: session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 collect_chunks=2 collect_text_len=24 commit_prompt_len=24 final_prompt_len=24 preflight_status=pending preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.03",
+      "[INFO] REQUEST_PATH stage=commit.ready session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 media_attachments=0 prompt_len=24 screenshot_len=106880",
+      "[INFO] \ud83d\udce8 Received StreamRequest: session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9, hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2, phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=24, screenshot_len=106880",
+      "[INFO] Stream acquired: 2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 (active: 1)",
+      "[WARNING] \u274c High error: 10.5% errors (limit: 5.0%)",
+      "[WARNING] \u26a0\ufe0f Slow response: 22.73s (limit: 5.0s)",
+      "[INFO] \ud83d\udd04 Processing request via modules...",
+      "[INFO] REQUEST_PATH stage=workflow.dispatch session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Any messages from Peter?...', screenshot_exists=True",
+      "[INFO] \ud83d\udd04 Starting streaming processing for 2732e09b-8a2a-4f7d-a80f-e10f0929d0d9",
+      "[INFO] [\u23f1 TIMING] request.start session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9 input='Any messages from Peter?'",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=11966 history_msgs=5 session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=2732e09b-8a2a-4f7d-a80f-e10f0929d0d9",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""
+    ]
   }
 ]
