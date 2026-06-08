@@ -7765,5 +7765,22 @@
     "status": "open",
     "recurrence": 6,
     "notes": ""
+  },
+  {
+    "id": "task_20260608_192539_3794c689",
+    "created_at": "2026-06-08T19:25:39+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "email_actions",
+    "problem": "get_messages_from_contact loops over ALL configured Mail accounts (3) -> 7 osascript calls -> exceeds 35s client timeout (T7 TELUS code search)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-08",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
