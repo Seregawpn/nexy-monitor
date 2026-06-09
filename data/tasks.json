@@ -7884,5 +7884,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260609_234401_5cb6b1de",
+    "created_at": "2026-06-09T23:44:01+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "server/assistant_runtime_v3/orchestrator",
+    "problem": "Markdown leaks into TTS speech (e.g. _review_ read as underscore review underscore) because _clean_for_speech() is only applied to web_search results, not the main streamed sentences",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
