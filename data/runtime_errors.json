@@ -2491,5 +2491,35 @@
       "[INFO] [V3_DISPATCH] tool=email_reply_to_last call_id=5474941d-5e56-4262-b204-c4f5e2342efa:5876a798-e0a8-4feb-a593-026ec9a3f3b6 got result_len=143",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_reply_to_last elapsed_ms=742 result_len=156 session=5474941d-5e56-4262-b204-c4f5e2342efa"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_reply_to_last returned error: No recent email context for zasorin.sergiy@gmail.com. Use email_read_from_contact first.",
+    "traceback": "",
+    "timestamp": "2026-06-09T16:49:39+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=21 for session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] [\u23f1 TIMING] tts.start n=3 session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Replying to Sergiy...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=4 elapsed_ms=9241 session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13104 bytes, PCM=209664 bytes, chunks=52",
+      "[INFO] [\u23f1 TIMING] tts.done n=3 elapsed_ms=404 chunks=52 session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] [\u23f1 TIMING] llm.done iter=4 total_ms=9677 tokens=26 session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] [\u23f1 TIMING] tool.start iter=4 tool=email_reply_to_last args={'contact_email': 'zasorin.sergiy@gmail.com', 'body': 'I\u2019m available tomorrow at 3pm. Let me know if that works.'} session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] [V3_DISPATCH] tool=email_reply_to_last call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 session=e760cba6-3316-4239-bcda-9729f3bdfca5 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_reply_to_last call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 elapsed_ms=34485 session=e760cba6-3316-4239-bcda-9729f3bdfca5",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=e760cba6-3316-4239-bcda-9729f3bdfca5, command=email_reply_to_last",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=e760cba6-3316-4239-bcda-9729f3bdfca5 command=email_reply_to_last feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=e760cba6-3316-4239-bcda-9729f3bdfca5 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_reply_to_last",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 session=e760cba6-3316-4239-bcda-9729f3bdfca5 result_len=143",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 result_len=143",
+      "[INFO] [V3_DISPATCH] tool=email_reply_to_last call_id=e760cba6-3316-4239-bcda-9729f3bdfca5:6a84dac5-c609-48ef-8010-337dd74b0dc9 got result_len=143",
+      "[INFO] [\u23f1 TIMING] tool.done iter=4 tool=email_reply_to_last elapsed_ms=15 result_len=156 session=e760cba6-3316-4239-bcda-9729f3bdfca5"
+    ]
   }
 ]
