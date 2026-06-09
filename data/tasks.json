@@ -7895,10 +7895,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-09",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "open",
+    "root_cause": "_clean_for_speech() (markdown/URL stripper for TTS) was only applied to web_search tool results; the 3 main sentence-yield points in arun_streaming (incremental, tail, fallback _split_sentences) sent raw LLM text to TTS, so markdown like _review_ or **bold** that the LLM occasionally emits despite prompt rules was read aloud literally (e.g. underscore review underscore)",
+    "solution": "Wrapped all 3 yield points in orchestrator.py with self._clean_for_speech(sentence), skipping yield if result is empty. Added regression test test_markdown_stripped_from_streamed_text. Updated Docs/architecture/server/orchestrator.md and INDEX.md. v5.0.0.301.",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
