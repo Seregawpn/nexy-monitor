@@ -7782,5 +7782,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260609_162343_aef1c65b",
+    "created_at": "2026-06-09T16:23:43+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "messages_skill",
+    "problem": "M5b FIND CONTINUATION: LLM used days=30 instead of days=60, missing Peter (32 days old)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "BOOTSTRAP had two conflicting references to days=30 (line 284 intermediate step, line 291 days=30/60 ambiguity) that overrode the correct days=60 on line 275",
+    "solution": "Removed contradictory [if still not found in 30 days] line; fixed ABSOLUTE RULE 4 from days=30/60 to days=60. M5b now passes with Turn 2 calling find_info_in_messages(days=60).",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
