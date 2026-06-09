@@ -7799,5 +7799,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260609_170833_df636771",
+    "created_at": "2026-06-09T17:08:33+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "test_e2e_real_client",
+    "problem": "Smoke test Messages M5b/M7/M9 \u2014 verify recent fixes and test pending cases",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
