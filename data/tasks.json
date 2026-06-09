@@ -7833,5 +7833,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260609_180726_50379adb",
+    "created_at": "2026-06-09T18:07:26+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "email_actions",
+    "problem": "email_find_code fallback: recursive glob for every inbox message causes 30-60s execution, consistently hits 22s client timeout (34 runtime events)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
