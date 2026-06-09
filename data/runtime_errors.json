@@ -1532,5 +1532,65 @@
       "[ERROR] Error writing to ffmpeg stdin: 503, message='Invalid response status', url='wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=d551deb0c7f74c8ba17a792c4c19560d&Sec-MS-GEC=F03AF9EBE0E31B8B2BC01E3DECB698792D7D04F465A6E8B9BE657FEA3223FC2A&Sec-MS-GEC-Version=1-143.0.3650.75'",
       "[ERROR] ffmpeg error (code 183): [in#0 @ 0xc60c40000] Error opening input: Invalid data found when processing input\nError opening input file pipe:0.\nError opening input files: Invalid data found when processing input\n"
     ]
+  },
+  {
+    "module_id": "browser_use",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[SessionManager] \u274c Error during agent_focus recovery: RuntimeError: {'code': -32000, 'message': 'Failed to open new tab - no browser is open'}",
+    "traceback": "",
+    "timestamp": "2026-06-09T18:16:34+00:00",
+    "log_context": [
+      "[DEBUG] MODE_REQUEST processing.unblock.playback ignored: no deferred terminal (session=db6f5cba-4b64-415f-b23b-f86cb3c5b736)",
+      "[INFO] SpeechPlayback: finalized session db6f5cba-4b64-415f-b23b-f86cb3c5b736",
+      "[INFO] \u23f9\ufe0f Playback stopped (force_stop_node=False)",
+      "[INFO] \ud83d\uded1 _playback_loop exited. _playing=False",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=playback_loop_exit delay=3.0s",
+      "[DEBUG] \ud83d\udd0d gRPC response #190: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #200: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0a [AUDIO_DIAG] Stream progress session=db6f5cba-4b64-415f-b23b-f86cb3c5b736 chunk#200 (audio=200 silent=59 non_silent=141)",
+      "[DEBUG] \ud83d\udd0d gRPC response #210: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #220: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #230: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #240: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #247: WhichOneof('content')=end_message",
+      "[INFO] gRPC received end_message: 'Processing complete' for session db6f5cba-4b64-415f-b23b-f86cb3c5b736",
+      "[INFO] \ud83d\udd0d [GRPC_END] session=db6f5cba-4b64-415f-b23b-f86cb3c5b736 exit_reason=end_message summary={chunks=247, audio_chunks=243, silent_audio_chunks=76, non_silent_audio_chunks=167, text_chunks=3, action_chunks=0, had_audio=True, had_text=True, action_like_text=False} latency={recording_stop_to_grpc_start_ms=36505, grpc_start_to_first_chunk_ms=2462, grpc_start_to_first_text_ms=2473, grpc_start_to_first_audio_ms=2853, grpc_start_to_terminal_ms=3690}",
+      "[DEBUG] gRPC session cleanup: session=db6f5cba-4b64-415f-b23b-f86cb3c5b736 reason=action_outcome_special_intent_complete",
+      "[WARNING] [SessionManager] Agent focus target C3296807... detached! Current focus: None (already cleared). Auto-recovering by switching to another target...",
+      "[WARNING] [SessionManager] No tabs remain! Creating new tab for agent...",
+      "[WARNING] Cannot navigate - browser not connected",
+      "[WARNING] Cannot navigate - browser not connected"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 30.0s intent=list_account_inbox lane=fg",
+    "traceback": "",
+    "timestamp": "2026-06-09T18:17:34+00:00",
+    "log_context": [
+      "[INFO] idle_ram_mb=51.22",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 51.22 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3444 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=54.56",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 54.56 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=57.12",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 57.12 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3444 stderr_len=0",
+      "[INFO] idle_cpu_pct=1.00",
+      "[INFO] idle_ram_mb=66.58",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 1.00%, RAM: 66.58 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=67.31",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 67.31 MB"
+    ]
   }
 ]
