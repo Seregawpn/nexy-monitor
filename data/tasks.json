@@ -7850,5 +7850,39 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260609_232350_4cdac1f8",
+    "created_at": "2026-06-09T23:23:50+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "docs.flows",
+    "problem": "Audit flow docs vs actual code for messages, email, computer, browser, notes, files skills",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260609_232413_98d6aa74",
+    "created_at": "2026-06-09T23:24:13+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "audio_generation",
+    "problem": "EdgeTTS cascade logging: one failure writes 4 ERROR events to map; 24 stale events from resolved external outages need cleanup",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-09",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
