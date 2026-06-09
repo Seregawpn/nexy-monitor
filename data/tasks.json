@@ -7846,8 +7846,8 @@
     "date_detected": "2026-06-09",
     "root_cause": "find_verification_code fallback ran glob.glob(recursive=True) for every inbox message (~100 per account), taking 30-60s and hitting 22s client timeout",
     "solution": "Added keyword pre-filter on subject+preview before any filesystem access; glob now runs only for 0-3 candidates that match. Server timeout raised to 45s as safety net.",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
