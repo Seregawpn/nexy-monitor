@@ -7810,10 +7810,27 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-09",
+    "root_cause": "find_info_in_messages filtered contacts by days=30 \u2192 Peter (32d) excluded \u2192 LLM hallucinated",
+    "solution": "days=0 mode returns all contacts; SKILL.md + BOOTSTRAP updated",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260609_172249_687935ab",
+    "created_at": "2026-06-09T17:22:49+00:00",
+    "source": "scan",
+    "priority": "high",
+    "module_id": "email_actions",
+    "problem": "Tests failed: ==================================== ERRORS ====================================; _________________ ERROR collecting tests/test_email_actions.py _________________; ERROR test_email_actions.py",
+    "error_type": "test_fail",
+    "traceback": "",
+    "date_detected": "2026-06-09",
     "root_cause": "",
     "solution": "",
     "verified": false,
-    "status": "in_progress",
+    "status": "open",
     "recurrence": 1,
     "notes": ""
   }
