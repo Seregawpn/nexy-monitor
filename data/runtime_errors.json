@@ -2100,5 +2100,35 @@
       "[INFO] \u23f9\ufe0f Stop action_execution...",
       "[INFO] Stopping ActionExecutionIntegration..."
     ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] provider failure intent=list_accounts error=osascript failed",
+    "traceback": "",
+    "timestamp": "2026-06-09T04:01:03+00:00",
+    "log_context": [
+      "[INFO] Starting ActionExecutionIntegration...",
+      "[INFO] [F-2025-016-mcp-app-opening-integration] Starting ActionExecutionIntegration (subscribing to grpc.response.action)",
+      "[INFO] [F-2025-016-mcp-app-opening-integration] ActionExecutionIntegration started",
+      "[INFO] ActionExecutionIntegration started successfully",
+      "[INFO] Starting FileIndexWatcherIntegration...",
+      "[INFO] [FILE_INDEX_WATCHER] FileWatcher started, initial scan running in background",
+      "[INFO] FileIndexWatcherIntegration started successfully",
+      "[INFO] Starting EmailInboxWatcherIntegration...",
+      "[INFO] Loaded 385 unread messages from /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/unread.json",
+      "[INFO] Loaded 200 contacts from /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/contacts.json",
+      "[INFO] [EMAIL_INBOX_WATCHER] Incremental scan \u2014 starting history scanner...",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_accounts command=['list-accounts']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=417 timeout_sec=15.0 intent=list_accounts lane=fg",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_accounts command=['list-accounts']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=417 timeout_sec=15.0 intent=list_accounts lane=fg",
+      "[INFO] Signal received: SIGTERM (PID: 39874)",
+      "[INFO] [EMAIL_BRIDGE] osascript gate wait_sec=0.23 lane=fg",
+      "[INFO] \ud83d\udce1 [SIGNAL_DIAG] stack at SIGINT:\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/main.py\", line 581, in <module>\n    loop.run_until_complete(main())\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py\", line 712, in run_until_complete\n    self.run_forever()\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py\", line 683, in run_forever\n    self._run_once()\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py\", line 2050, in _run_once\n    handle._run()\n  File \"/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/events.py\", line 89, in _run\n    self._context.run(self._callback, *self._args)\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/main.py\", line 539, in main\n    await coordinator.run()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/integration/core/simple_module_coordinator.py\", line 970, in run\n    success = await self.start()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/integration/core/simple_module_coordinator.py\", line 668, in start\n    success = await self.integrations[name].start()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/integration/core/base_integration.py\", line 79, in start\n    success = await self._do_start()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/integration/integrations/email_inbox_watcher_integration.py\", line 38, in _do_start\n    await self._start_mail_store()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/integration/integrations/email_inbox_watcher_integration.py\", line 216, in _start_mail_store\n    self._inbox_watcher = InboxWatcher(on_new_email=_on_new_email)\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/email_listener.py\", line 200, in __init__\n    self.account = account or _default_account()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/_helpers.py\", line 12, in _default_account\n    result = run_list_accounts()\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/prototype_bridge.py\", line 1022, in run_list_accounts\n    return _run_email_cli([\"list-accounts\"], empty_intent=\"list_accounts\")\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/prototype_bridge.py\", line 979, in _run_email_cli\n    return _dispatch_local_command(command_args, empty_intent=empty_intent)\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/prototype_bridge.py\", line 719, in _dispatch_local_command\n    accounts = _parse_accounts(_run_osascript(_accounts_script(), intent=\"list_accounts\"))\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/prototype_bridge.py\", line 155, in _run_osascript\n    with _gate_lock:\n",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=-15 stdout_len=0 stderr_len=0",
+      "[INFO] [EMAIL_BRIDGE] osascript gate wait_sec=0.35 lane=fg"
+    ]
   }
 ]
