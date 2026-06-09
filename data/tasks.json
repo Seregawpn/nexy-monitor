@@ -7878,10 +7878,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-09",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "root_cause": "One EdgeTTS outage produced up to 6 ERROR log records: intermediate cascade steps (ffmpeg stdin write, ffmpeg exit code, MP3-to-PCM wrapper, audio_processor re-raise) each logged ERROR in addition to the final retry-loop ERROR",
+    "solution": "Downgraded 4 intermediate cascade log calls to WARNING (edge_tts_provider.py:316,388,405; audio_processor.py:149). Single authoritative ERROR per incident: failed after 3 attempts. Cleaned 24 stale events from runtime_errors.json (external Microsoft outages, code behaved correctly)",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
