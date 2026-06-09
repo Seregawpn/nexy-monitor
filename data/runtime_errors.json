@@ -2221,5 +2221,65 @@
       "[INFO] [V3_DISPATCH] tool=read_messages_from_contact call_id=72c1ee13-a0d8-42a7-b13b-ee884f04872f:e01bbabf-4423-471a-a1d6-63535982f19f got result_len=97",
       "[INFO] [\u23f1 TIMING] tool.done iter=5 tool=read_messages_from_contact elapsed_ms=8 result_len=110 session=72c1ee13-a0d8-42a7-b13b-ee884f04872f"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_reply returned error: Message 10058 not found.",
+    "traceback": "",
+    "timestamp": "2026-06-09T14:55:42+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=29 for session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] [\u23f1 TIMING] tts.start n=4 session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Replying to Sergiy's email...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=5 elapsed_ms=5622 session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] [\u23f1 TIMING] llm.done iter=5 total_ms=5730 tokens=19 session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] [\u23f1 TIMING] tool.start iter=5 tool=email_reply args={'emlx_id': 10058, 'body': 'I agree.'} session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] [V3_DISPATCH] tool=email_reply call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 session=88805b74-85e3-4d82-afde-3bab9add9c25 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=15696 bytes, PCM=251136 bytes, chunks=63",
+      "[INFO] [\u23f1 TIMING] tts.done n=4 elapsed_ms=435 chunks=63 session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_reply call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 elapsed_ms=38114 session=88805b74-85e3-4d82-afde-3bab9add9c25",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=88805b74-85e3-4d82-afde-3bab9add9c25, command=email_reply",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=88805b74-85e3-4d82-afde-3bab9add9c25 command=email_reply feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=88805b74-85e3-4d82-afde-3bab9add9c25 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_reply",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 session=88805b74-85e3-4d82-afde-3bab9add9c25 result_len=79",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 result_len=79",
+      "[INFO] [V3_DISPATCH] tool=email_reply call_id=88805b74-85e3-4d82-afde-3bab9add9c25:7d67bf72-f700-40e8-9ebf-771c6cc40397 got result_len=79",
+      "[INFO] [\u23f1 TIMING] tool.done iter=5 tool=email_reply elapsed_ms=917 result_len=92 session=88805b74-85e3-4d82-afde-3bab9add9c25"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_reply returned error: Message 10058 not found.",
+    "traceback": "",
+    "timestamp": "2026-06-09T14:59:29+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=26 for session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] [\u23f1 TIMING] tts.start n=3 session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Sending reply to Sergiy...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=4 elapsed_ms=3221 session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=15120 bytes, PCM=241920 bytes, chunks=61",
+      "[INFO] [\u23f1 TIMING] tts.done n=3 elapsed_ms=445 chunks=61 session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] [\u23f1 TIMING] llm.done iter=4 total_ms=3632 tokens=27 session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] [\u23f1 TIMING] tool.start iter=4 tool=email_reply args={'emlx_id': 10058, 'body': 'I agree.'} session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] [V3_DISPATCH] tool=email_reply call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 session=9a0339b0-de3f-458d-94b6-a04e29ba9239 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_reply call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 elapsed_ms=36029 session=9a0339b0-de3f-458d-94b6-a04e29ba9239",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=9a0339b0-de3f-458d-94b6-a04e29ba9239, command=email_reply",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=9a0339b0-de3f-458d-94b6-a04e29ba9239 command=email_reply feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=9a0339b0-de3f-458d-94b6-a04e29ba9239 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_reply",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 session=9a0339b0-de3f-458d-94b6-a04e29ba9239 result_len=79",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 result_len=79",
+      "[INFO] [V3_DISPATCH] tool=email_reply call_id=9a0339b0-de3f-458d-94b6-a04e29ba9239:3afb0778-0889-4a34-ab6e-33a4cb882f45 got result_len=79",
+      "[INFO] [\u23f1 TIMING] tool.done iter=4 tool=email_reply elapsed_ms=739 result_len=92 session=9a0339b0-de3f-458d-94b6-a04e29ba9239"
+    ]
   }
 ]
