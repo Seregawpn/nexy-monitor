@@ -2611,5 +2611,36 @@
       "[INFO] \ud83c\udfa7 AudioCaptureController observed device change: MacBook Air Microphone",
       "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=50 frames=2048 \u2014 engine rendered this buffer"
     ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 1654 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/",
+    "traceback": "",
+    "timestamp": "2026-06-09T17:30:21+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-09T17:30:21+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 1654 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
   }
 ]
