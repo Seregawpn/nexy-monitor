@@ -2642,5 +2642,35 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 1654 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool messages returned error: unknown tool: messages",
+    "traceback": "",
+    "timestamp": "2026-06-09T17:43:58+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading your messages...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=1 elapsed_ms=2880 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=3021 tokens=14 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=messages args={'name': 'messages'} session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] [V3_DISPATCH] tool=messages call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 session=4945820b-f00a-4937-ae22-b904840d1621 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=3101 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13392 bytes, PCM=214272 bytes, chunks=54",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=301 chunks=54 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=messages call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 elapsed_ms=3144 session=4945820b-f00a-4937-ae22-b904840d1621",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=4945820b-f00a-4937-ae22-b904840d1621, command=messages",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=4945820b-f00a-4937-ae22-b904840d1621 command=messages feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=4945820b-f00a-4937-ae22-b904840d1621 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=messages",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 session=4945820b-f00a-4937-ae22-b904840d1621 result_len=74",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 result_len=74",
+      "[INFO] [V3_DISPATCH] tool=messages call_id=4945820b-f00a-4937-ae22-b904840d1621:ce5d03e1-a52c-4b46-a5dc-81dd4eb228f7 got result_len=74",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=messages elapsed_ms=714 result_len=87 session=4945820b-f00a-4937-ae22-b904840d1621"
+    ]
   }
 ]
