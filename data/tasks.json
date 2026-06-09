@@ -7759,10 +7759,10 @@
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 400 Bad Request\""
     ],
     "date_detected": "2026-06-08",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "compact_messages() returned slice starting with TextToolResult when EmailGuardHook injected +1 UserMsg shifting slice boundary \u2014 _build_messages converted it to ToolMessage causing OpenAI 400",
+    "solution": "Already fixed in v5.0.0.262 (Jun 8 17:56 UTC): compact_messages() now strips leading TextToolResult/ImageToolResult after slicing. Stale events from 16:05-16:19 UTC cleaned from runtime_errors.json.",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 6,
     "notes": ""
   },
