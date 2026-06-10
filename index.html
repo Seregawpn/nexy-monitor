@@ -43,6 +43,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .rp-chart-label { font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
 .rp-legend { display: flex; gap: 12px; margin-bottom: 6px; font-size: 11px; color: #8b949e; }
 .rp-leg-sq { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+.rp-subtabs { display: flex; gap: 2px; padding: 10px 24px 0; border-bottom: 1px solid #21262d; background: #0d1117; flex-shrink: 0; }
+.rp-subtab { font-size: 12px; font-weight: 600; color: #8b949e; padding: 6px 14px; border-radius: 6px 6px 0 0; cursor: pointer; border: 1px solid transparent; border-bottom: none; user-select: none; }
+.rp-subtab:hover { color: #c9d1d9; }
+.rp-subtab.active { color: #e1e4e8; background: #161b22; border-color: #30363d; }
+.rp-table-wrap { flex: 1; overflow: hidden; padding: 18px 24px; display: flex; flex-direction: column; gap: 10px; }
+.rp-table-title { font-size: 13px; font-weight: 700; color: #c9d1d9; }
+.rp-table-sub { font-size: 11px; font-weight: 400; color: #8b949e; margin-left: 8px; }
+.rp-table-scroll { overflow-x: auto; overflow-y: auto; flex: 1; }
+.rp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.rp-table th { text-align: left; padding: 7px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #8b949e; border-bottom: 1px solid #21262d; white-space: nowrap; }
+.rp-table td { padding: 7px 10px; border-bottom: 1px solid #161b22; color: #c9d1d9; vertical-align: top; }
+.rp-table tr:hover td { background: #161b22; }
+.rp-table .rp-tc-mono { font-family: monospace; font-size: 11px; color: #8b949e; }
+.rp-table .rp-tc-cost { color: #ba7517; font-weight: 600; }
+.rp-table .rp-tc-tool { display: inline-block; background: #21262d; border: 1px solid #30363d; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #8b949e; margin: 1px 2px 1px 0; }
+.rp-table .rp-tc-bar { height: 6px; background: #378add; border-radius: 3px; min-width: 2px; }
+.rp-empty-row td { color: #8b949e; font-style: italic; text-align: center; padding: 20px; }
 
 /* ── Phase CRUD ── */
 .ph-header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
@@ -471,7 +488,14 @@ svg#deps-svg { display: block; }
   </div>
 
   <div class="view" id="v-finance" style="flex-direction:column;overflow:hidden">
-    <div class="rp-wrap" id="rp-finance-wrap">
+    <div class="rp-subtabs">
+      <div class="rp-subtab active" id="rpst-overview" onclick="rpShowSubTab('overview')">Overview</div>
+      <div class="rp-subtab" id="rpst-users" onclick="rpShowSubTab('users')">Users</div>
+      <div class="rp-subtab" id="rpst-requests" onclick="rpShowSubTab('requests')">Requests</div>
+      <div class="rp-subtab" id="rpst-tools" onclick="rpShowSubTab('tools')">Tools</div>
+    </div>
+
+    <div class="rp-wrap" id="rp-sub-overview">
       <div class="rp-period">
         <button class="rp-pbtn active" id="rp-btn-today" onclick="rpSetPeriod('today')">Today</button>
         <button class="rp-pbtn" id="rp-btn-week" onclick="rpSetPeriod('week')">This week</button>
@@ -497,6 +521,36 @@ svg#deps-svg { display: block; }
       <div>
         <div class="rp-chart-label">Requests by hour — today</div>
         <div style="position:relative;height:110px"><canvas id="rp-reqs-chart" role="img" aria-label="Line chart of requests per hour today">Hourly requests chart.</canvas></div>
+      </div>
+    </div>
+
+    <div class="rp-wrap rp-table-wrap" id="rp-sub-users" style="display:none">
+      <div class="rp-table-title">Usage by user</div>
+      <div class="rp-table-scroll">
+        <table class="rp-table">
+          <thead><tr><th>User ID</th><th>Requests</th><th>Input tokens</th><th>Output tokens</th><th>Cost</th><th>Last seen</th></tr></thead>
+          <tbody id="rp-users-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="rp-wrap rp-table-wrap" id="rp-sub-requests" style="display:none">
+      <div class="rp-table-title">Request history <span class="rp-table-sub">last 200, grouped by session</span></div>
+      <div class="rp-table-scroll">
+        <table class="rp-table">
+          <thead><tr><th>Date / Time</th><th>User</th><th>In tokens</th><th>Out tokens</th><th>Cost</th><th>Tools used</th></tr></thead>
+          <tbody id="rp-requests-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="rp-wrap rp-table-wrap" id="rp-sub-tools" style="display:none">
+      <div class="rp-table-title">Tool breakdown</div>
+      <div class="rp-table-scroll">
+        <table class="rp-table">
+          <thead><tr><th>Tool</th><th>Calls</th><th>Cost</th><th>% of calls</th></tr></thead>
+          <tbody id="rp-tools-tbody"></tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -2567,6 +2621,112 @@ function renderProduct() {
 ════════════════════════════════════════════════════ */
 var _rpPeriod = 'today';
 var _rpCharts = {};
+var _rpSubTab = 'overview';
+var _rpLastData = null;
+
+function rpShowSubTab(name) {
+  _rpSubTab = name;
+  ['overview','users','requests','tools'].forEach(function(t) {
+    var btn = document.getElementById('rpst-' + t);
+    var wrap = document.getElementById('rp-sub-' + t);
+    if (btn)  btn.classList.toggle('active', t === name);
+    if (wrap) wrap.style.display = (t === name) ? '' : 'none';
+  });
+  if (_rpLastData) {
+    if (name === 'users')    rpRenderUsers(_rpLastData);
+    if (name === 'requests') rpRenderRequests(_rpLastData);
+    if (name === 'tools')    rpRenderTools(_rpLastData);
+  }
+}
+
+function rpRenderUsers(d) {
+  var tbody = document.getElementById('rp-users-tbody');
+  if (!tbody) return;
+  while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+  var users = d.users || [];
+  if (!users.length) {
+    var row = document.createElement('tr'); row.className = 'rp-empty-row';
+    var cell = document.createElement('td'); cell.colSpan = 6;
+    cell.textContent = 'No user data for this period.';
+    row.appendChild(cell); tbody.appendChild(row); return;
+  }
+  users.forEach(function(u) {
+    var tr = document.createElement('tr');
+    function td(txt, cls) { var c = document.createElement('td'); c.textContent = txt; if (cls) c.className = cls; tr.appendChild(c); }
+    td(u.id || 'unknown', 'rp-tc-mono');
+    td(u.requests || 0);
+    td((u.input_tokens || 0).toLocaleString());
+    td((u.output_tokens || 0).toLocaleString());
+    td('$' + ((u.cost || 0)).toFixed(4), 'rp-tc-cost');
+    var ls = (u.last_seen || '').replace('T', ' ').slice(0, 16);
+    td(ls || '—', 'rp-tc-mono');
+    tbody.appendChild(tr);
+  });
+}
+
+function rpRenderRequests(d) {
+  var tbody = document.getElementById('rp-requests-tbody');
+  if (!tbody) return;
+  while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+  var reqs = d.requests || [];
+  if (!reqs.length) {
+    var row = document.createElement('tr'); row.className = 'rp-empty-row';
+    var cell = document.createElement('td'); cell.colSpan = 6;
+    cell.textContent = 'No requests for this period.';
+    row.appendChild(cell); tbody.appendChild(row); return;
+  }
+  reqs.forEach(function(r) {
+    var tr = document.createElement('tr');
+    var ts = (r.timestamp || '').replace('T', ' ').slice(0, 16);
+    var tdTs = document.createElement('td'); tdTs.className = 'rp-tc-mono'; tdTs.textContent = ts || '—'; tr.appendChild(tdTs);
+    var tdU  = document.createElement('td'); tdU.className = 'rp-tc-mono';  tdU.textContent = r.hardware_id_short || '—'; tr.appendChild(tdU);
+    var tdIn = document.createElement('td'); tdIn.textContent = (r.input_tokens || 0).toLocaleString(); tr.appendChild(tdIn);
+    var tdOut= document.createElement('td'); tdOut.textContent = (r.output_tokens || 0).toLocaleString(); tr.appendChild(tdOut);
+    var tdC  = document.createElement('td'); tdC.className = 'rp-tc-cost'; tdC.textContent = '$' + ((r.cost || 0)).toFixed(4); tr.appendChild(tdC);
+    var tdTl = document.createElement('td');
+    (r.tools || []).forEach(function(t) {
+      if (!t || t === 'none') return;
+      var span = document.createElement('span'); span.className = 'rp-tc-tool'; span.textContent = t; tdTl.appendChild(span);
+    });
+    if (!tdTl.firstChild) { tdTl.textContent = '—'; }
+    tr.appendChild(tdTl);
+    tbody.appendChild(tr);
+  });
+}
+
+function rpRenderTools(d) {
+  var tbody = document.getElementById('rp-tools-tbody');
+  if (!tbody) return;
+  while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+  var tools = (d.tools || []).filter(function(t) { return t.tool !== 'none' && t.tool !== 'parse_error'; });
+  var totalCalls = tools.reduce(function(s, t) { return s + (t.count || 0); }, 0);
+  if (!tools.length) {
+    var row = document.createElement('tr'); row.className = 'rp-empty-row';
+    var cell = document.createElement('td'); cell.colSpan = 4;
+    cell.textContent = 'No tool calls for this period.';
+    row.appendChild(cell); tbody.appendChild(row); return;
+  }
+  tools.forEach(function(t) {
+    var tr = document.createElement('tr');
+    var pct = totalCalls ? Math.round((t.count / totalCalls) * 100) : 0;
+    function td(txt, cls) { var c = document.createElement('td'); c.textContent = txt; if (cls) c.className = cls; tr.appendChild(c); return c; }
+    td(t.tool);
+    td(t.count || 0);
+    td('$' + ((t.cost || 0)).toFixed(4), 'rp-tc-cost');
+    var tdP = td('');
+    var barWrap = document.createElement('div');
+    barWrap.style.cssText = 'display:flex;align-items:center;gap:6px';
+    var bar = document.createElement('div');
+    bar.className = 'rp-tc-bar';
+    bar.style.width = Math.max(pct, 2) + 'px';
+    var pctLbl = document.createElement('span');
+    pctLbl.style.cssText = 'font-size:11px;color:#8b949e';
+    pctLbl.textContent = pct + '%';
+    barWrap.appendChild(bar); barWrap.appendChild(pctLbl);
+    tdP.textContent = ''; tdP.appendChild(barWrap);
+    tbody.appendChild(tr);
+  });
+}
 
 function rpSetPeriod(p) {
   _rpPeriod = p;
@@ -2584,10 +2744,14 @@ function rpLoad() {
 }
 
 function rpRender(d) {
+  _rpLastData = d;
   document.getElementById('rp-cv-tokens').textContent = d.total_tokens_fmt || '0';
   document.getElementById('rp-cv-cost').textContent   = d.total_cost_fmt  || '$0.00';
   document.getElementById('rp-cv-reqs').textContent   = d.total_requests  || 0;
   document.getElementById('rp-cv-avg').textContent    = d.avg_cost_fmt    || '$0.0000';
+  if (_rpSubTab === 'users')    { rpRenderUsers(d);    return; }
+  if (_rpSubTab === 'requests') { rpRenderRequests(d); return; }
+  if (_rpSubTab === 'tools')    { rpRenderTools(d);    return; }
 
   var isDark = true;
   var textC = 'rgba(139,148,158,1)';
