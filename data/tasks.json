@@ -7963,10 +7963,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "speech_playback runtime errors were pre-fix artifacts from before v5.0.0.302 (recreate() race condition fix)",
+    "solution": "Removed 2 stale events for speech_playback_integration from runtime_errors.json",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
