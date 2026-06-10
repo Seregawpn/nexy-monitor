@@ -810,5 +810,35 @@
       "[INFO] [V3_DISPATCH] tool=file_search call_id=946d4ae8-7c20-4306-9602-6ac2a6e136b6:c234c196-6ab3-476e-9397-02258f821f70 got result_len=157",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=file_search elapsed_ms=552 result_len=170 session=946d4ae8-7c20-4306-9602-6ac2a6e136b6"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool files returned error: unknown tool: files",
+    "traceback": "",
+    "timestamp": "2026-06-10T19:02:44+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching for files...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=1 elapsed_ms=4883 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=4990 tokens=13 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=files args={} session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] [V3_DISPATCH] tool=files call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 session=a2204401-bece-4b0d-aa1c-4e559fe0183c \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=5209 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13824 bytes, PCM=221184 bytes, chunks=55",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=393 chunks=55 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=files call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 elapsed_ms=5260 session=a2204401-bece-4b0d-aa1c-4e559fe0183c",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=a2204401-bece-4b0d-aa1c-4e559fe0183c, command=files",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=a2204401-bece-4b0d-aa1c-4e559fe0183c command=files feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=a2204401-bece-4b0d-aa1c-4e559fe0183c hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=files",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 session=a2204401-bece-4b0d-aa1c-4e559fe0183c result_len=71",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 result_len=71",
+      "[INFO] [V3_DISPATCH] tool=files call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 got result_len=71",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=808 result_len=84 session=a2204401-bece-4b0d-aa1c-4e559fe0183c"
+    ]
   }
 ]
