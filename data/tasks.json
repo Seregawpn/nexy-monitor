@@ -8413,10 +8413,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "continuation_guard did not track terminal file ops; file_open used subprocess open which does not focus window on macOS Sequoia",
+    "solution": "added _terminal_file_action_called flag to guard; replaced subprocess open with Finder AppleScript in tool_dispatcher",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
