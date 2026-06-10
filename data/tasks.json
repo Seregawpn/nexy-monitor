@@ -8119,10 +8119,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "UI used term task instead of bug; no partner panel existed",
+    "solution": "Renamed Tasks\u2192Bugs in map.html (8 visible labels); created admin.html partner dashboard; added /admin route to server.py; added admin.html to cloud_push.py deploy",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
