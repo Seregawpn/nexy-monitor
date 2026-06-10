@@ -360,5 +360,65 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 84309 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "welcome_message",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c [WELCOME_PLAYER] Server generation returned an empty result",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:36:10+00:00",
+    "log_context": [
+      "[INFO] SCREENSHOT_RUNTIME stage=owner.capture_enter bridge=core_graphics format=webp timeout=disabled",
+      "[INFO] SCREENSHOT_RUNTIME stage=core_graphics.raw_capture_done elapsed_ms=33 region=full",
+      "[DEBUG] \u2705 WebP \u2192 Base64 directly: 1383x900, 81076 bytes, quality=85",
+      "[INFO] SCREENSHOT_RUNTIME stage=core_graphics.encode_done elapsed_ms=532 format=webp success=True",
+      "[INFO] SCREENSHOT_RUNTIME stage=owner.capture_exit bridge=core_graphics success=True elapsed_ms=580",
+      "[INFO] TRACE phase=screenshot.ready ts=1079545 session=8bf45608-f860-4f13-bc74-b4f2dae6fc1e extra={format=webp, early=False, delta_from_start_ms=unknown}",
+      "[DEBUG] \u2705 Screenshot Base64 received directly from event (format: webp)",
+      "[INFO] TRACE phase=grpc.screenshot_ready ts=1079548 session=8bf45608-f860-4f13-bc74-b4f2dae6fc1e extra={source=base64_event, width=1383, height=900, delta_from_recording_stop_ms=813}",
+      "[INFO] Name found via Contacts.framework (Swift): \u041e\u043b\u0435\u0433 Rejo",
+      "[DEBUG] Name found in cache for +380939361100",
+      "[INFO] scan_messages_history complete: 5 contacts, 0 unread",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3522 stderr_len=0",
+      "[DEBUG] Seeded 20 existing message IDs",
+      "[INFO] InboxWatcher started (poll every 30s)  account=Google",
+      "[WARNING] \u26a0\ufe0f [WELCOME_AUDIO] Timeout waiting for generate_welcome_audio (10.0s) \u2014 TTS service unavailable",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] audio_data is None: True",
+      "[WARNING] \u26a0\ufe0f [WELCOME_PLAYER] Server generation returned None (TTS unavailable, launching without audio)",
+      "[INFO] TRACE [WELCOME_PLAYER] _play_server_audio() returned: success=False",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] Server audio received: success=False, error=Server generation returned an empty result",
+      "[WARNING] \u26a0\ufe0f [WELCOME_PLAYER] Server welcome unavailable: Server generation returned an empty result"
+    ]
+  },
+  {
+    "module_id": "grpc_client",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u23f0 Connection timeout to 127.0.0.1:50051",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:36:28+00:00",
+    "log_context": [
+      "[ERROR] \u274c [WELCOME_PLAYER] Server generation returned an empty result",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] Calling _on_error callback",
+      "[WARNING] \u26a0\ufe0f [WELCOME_INTEGRATION] Welcome skipped: Server generation returned an empty result",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] Calling _on_completed callback (error)",
+      "[INFO] \ud83c\udfb5 [WELCOME_INTEGRATION] welcome_player completed: method=none, success=False",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] result.success=False, result.method=none",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] result.error=Server generation returned an empty result",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] result.metadata=None",
+      "[INFO] \ud83d\udd0d [WELCOME_INTEGRATION] welcome_player completion callback finished (semantic welcome completion stays on terminal playback path)",
+      "[INFO] TRACE [WELCOME_INT] welcome_player.play_welcome() returned: WelcomeResult(success=False, method='none', duration_sec=0.0, error='Server generation returned an empty result', metadata=None)",
+      "[WARNING] \u26a0\ufe0f [WELCOME_INTEGRATION] Primary welcome audio failed, trying canonical TTS fallback: Server generation returned an empty result",
+      "[INFO] [TTS] Request from welcome_message: 'Hi! Nexy is here. How can I help you today?...' (session=df7d6bd4-acc4-40dd-8929-2231603f2ec8) -> Routing to SERVER TTS",
+      "[INFO] \ud83c\udfb5 [WELCOME_INTEGRATION] Canonical TTS fallback requested (trigger=ui_loop_started, session_id=df7d6bd4-acc4-40dd-8929-2231603f2ec8)",
+      "[INFO] [TTS] user-facing playback wait enter session=df7d6bd4-acc4-40dd-8929-2231603f2ec8 timeout=120.00 wait_loop=4609164304",
+      "[INFO] \ud83d\udde3\ufe0f [SERVER_TTS] Requesting TTS for session df7d6bd4-acc4-40dd-8929-2231603f2ec8: 'Hi! Nexy is here. How can I help you today?...'",
+      "[INFO] [EMAIL_INBOX_WATCHER] Scanning emails from last 1.0 hours",
+      "[INFO] ContactStore replaced with 204 contacts",
+      "[INFO] idle_cpu_pct=78.00",
+      "[INFO] idle_ram_mb=666.31",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 78.00%, RAM: 666.31 MB"
+    ]
   }
 ]
