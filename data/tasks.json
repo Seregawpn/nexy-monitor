@@ -7862,9 +7862,9 @@
     "traceback": "",
     "date_detected": "2026-06-09",
     "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "solution": "Flow docs audit complete: added terminal_send_text, terminal_send_text_and_enter (computer.md), extract_pdf_text (files.md) \u2014 release v5.0.0.306",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
