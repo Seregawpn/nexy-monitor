@@ -329,5 +329,36 @@
       "[INFO] [V3_DISPATCH] tool=read_text_file call_id=165a80ba-e520-46c5-8dd5-f6f31e2664d5:a7999eba-4f20-46ca-92a9-f29c449969a5 got result_len=173",
       "[INFO] [\u23f1 TIMING] tool.done iter=13 tool=read_text_file elapsed_ms=89 result_len=186 session=165a80ba-e520-46c5-8dd5-f6f31e2664d5"
     ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 84309 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:14:23+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:14:23+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 84309 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
   }
 ]
