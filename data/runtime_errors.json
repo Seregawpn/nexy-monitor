@@ -900,5 +900,35 @@
       "[INFO] [V3_DISPATCH] tool=file_search call_id=3ece1a3d-18dd-4bfb-b6a1-d23ace2a7d30:5da06c6a-d1b5-4c14-aa81-70dd099ff5ee got result_len=127",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=file_search elapsed_ms=984 result_len=140 session=3ece1a3d-18dd-4bfb-b6a1-d23ace2a7d30"
     ]
+  },
+  {
+    "module_id": "grpc_client_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c gRPC RPC Error: code=StatusCode.UNAVAILABLE, details=Socket closed",
+    "traceback": "",
+    "timestamp": "2026-06-10T20:52:31+00:00",
+    "log_context": [
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK excluded_pids=[79929, 80362]",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK include_running_output_process=114 pid=17272",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK create_attempt=include_running_output_exclude_configured status=0 fourcc=\u0000\u0000\u0000\u0000 tap=127",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK tap_created=127 mode=include_running_output_exclude_configured",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK tap_format sample_rate=48000.0 channels=2 bytes_per_frame=8 format_id=1819304813",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK aggregate_created=128 tap_uid=1B481D50-E04F-4E1E-B255-FDDB6F55018F",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK output_started=85 gain=0.35",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK aggregate_started=128",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK ready",
+      "[INFO] DUCK_MONITOR backend=process_tap action=duck_ready scope=running_output_exclude_configured helper_pid=80362",
+      "[INFO] ProcessTapDuckBackend: duck started helper_pid=80362",
+      "[DEBUG] DuckController: duck started (ref=1)",
+      "[WARNING] EVENTBUS_SLOW_CALLBACK event=playback.started callback=ExternalAudioDuckingIntegration._on_playback_started duration_ms=193.6 dispatch_fast=False",
+      "[WARNING] EVENTBUS_SLOW_CALLBACK event=grpc.response.audio callback=SpeechPlaybackIntegration._on_audio_chunk duration_ms=203.6 dispatch_fast=False",
+      "[DEBUG] \ud83d\udd0d gRPC response #10: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #20: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #30: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #40: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #50: WhichOneof('content')=audio_chunk",
+      "[ERROR] \u274c Audio streaming error: <AioRpcError of RPC that terminated with:\n\tstatus = StatusCode.UNAVAILABLE\n\tdetails = \"Socket closed\"\n\tdebug_error_string = \"UNKNOWN:Error received from peer ipv4:127.0.0.1:50051 {grpc_message:\"Socket closed\", grpc_status:14}\"\n>"
+    ]
   }
 ]
