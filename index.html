@@ -23,6 +23,53 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .subtabbar.hidden { display: none; }
 .tab-count.visible { display: inline-block; }
 
+/* ── Reports ── */
+.rp-wrap { flex: 1; overflow-y: auto; padding: 18px 24px; display: flex; flex-direction: column; gap: 20px; }
+.rp-period { display: flex; gap: 6px; }
+.rp-pbtn { font-size: 12px; padding: 5px 14px; border-radius: 6px; border: 1px solid #30363d; background: transparent; color: #8b949e; cursor: pointer; }
+.rp-pbtn.active { background: #21262d; color: #e1e4e8; border-color: #8b949e; }
+.rp-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.rp-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px 14px; }
+.rp-card.critical { border-color: #6e2121; }
+.rp-card.critical .rp-cv { color: #f85149; }
+.rp-card.inprog { border-color: #1a3a5c; }
+.rp-card.inprog .rp-cv { color: #58a6ff; }
+.rp-card.ok { border-color: #1a5c33; }
+.rp-card.ok .rp-cv { color: #3fb950; }
+.rp-cl { font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.rp-cv { font-size: 24px; font-weight: 700; color: #e1e4e8; line-height: 1; }
+.rp-cs { font-size: 11px; color: #8b949e; margin-top: 4px; }
+.rp-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.rp-chart-label { font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.rp-legend { display: flex; gap: 12px; margin-bottom: 6px; font-size: 11px; color: #8b949e; }
+.rp-leg-sq { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 4px; vertical-align: middle; }
+
+/* ── Phase CRUD ── */
+.ph-header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+.ph-title { font-size: 15px; font-weight: 700; color: #e1e4e8; }
+.ph-add-btn { background: #238636; border: 1px solid #2ea043; color: #fff; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.ph-list { display: flex; flex-direction: column; gap: 10px; }
+.ph-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; cursor: pointer; transition: border-color .15s; }
+.ph-card:hover { border-color: #8b949e; }
+.ph-card-title { font-size: 13px; font-weight: 700; color: #e1e4e8; margin-bottom: 4px; }
+.ph-card-meta { font-size: 11px; color: #8b949e; display: flex; gap: 10px; flex-wrap: wrap; }
+.ph-card-goal { font-size: 12px; color: #c9d1d9; margin-top: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ph-st { display: inline-block; font-size: 10px; padding: 1px 7px; border-radius: 10px; font-weight: 600; }
+.ph-st.in_progress { background: #0d2d4a; color: #58a6ff; }
+.ph-st.done { background: #0d2d1a; color: #3fb950; }
+.ph-st.blocked { background: #3d1a1a; color: #f85149; }
+.ph-empty { color: #8b949e; font-size: 13px; padding: 20px 0; text-align: center; }
+.ph-form { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.ph-form-title { font-size: 13px; font-weight: 700; color: #e1e4e8; margin-bottom: 2px; }
+.ph-field label { display: block; font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.ph-field input, .ph-field textarea, .ph-field select { width: 100%; background: #161b22; border: 1px solid #30363d; color: #e1e4e8; border-radius: 4px; padding: 6px 9px; font-size: 12px; resize: vertical; box-sizing: border-box; }
+.ph-field textarea { min-height: 56px; }
+.ph-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ph-form-btns { display: flex; gap: 8px; margin-top: 4px; }
+.ph-save-btn { background: #238636; border: 1px solid #2ea043; color: #fff; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; }
+.ph-cancel-btn { background: transparent; border: 1px solid #30363d; color: #8b949e; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; }
+.ph-del-btn { background: transparent; border: 1px solid #6e2121; color: #f85149; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; margin-left: auto; }
+
 /* ── Critical alert banner ── */
 .critical-banner { display: none; background: #1a0505; border-bottom: 1px solid #6e2121; padding: 7px 18px; flex-shrink: 0; align-items: center; gap: 10px; }
 .critical-banner.visible { display: flex; }
@@ -265,6 +312,7 @@ svg#deps-svg { display: block; }
 .auth-err { font-size:12px; color:#f85149; margin-top:10px; min-height:16px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </head>
 <body>
 <div id="auth-gate">
@@ -281,6 +329,7 @@ svg#deps-svg { display: block; }
   <div class="top-tabs">
     <div class="top-tab active" id="ttab-product" onclick="showSection('product')">Product</div>
     <div class="top-tab" id="ttab-team" onclick="showSection('team')">Team</div>
+    <div class="top-tab" id="ttab-reports" onclick="showSection('reports')">Reports</div>
   </div>
   <div class="topbar-right">
     <span class="badge e" id="badge-e">0 errors</span>
@@ -290,6 +339,11 @@ svg#deps-svg { display: block; }
     <button class="scan-btn" id="scan-btn" onclick="runScan()">&#8635; Scan now</button>
     <span class="static-badge" id="static-badge" style="display:none">&#9679; LIVE</span>
   </div>
+</div>
+
+<div class="subtabbar hidden" id="subtabbar-reports">
+  <div class="tab active" id="tab-finance" onclick="showReportsView('finance')">Finance</div>
+  <div class="tab" id="tab-phases" onclick="showReportsView('phases')">Phases</div>
 </div>
 
 <div class="subtabbar" id="subtabbar">
@@ -413,6 +467,48 @@ svg#deps-svg { display: block; }
         </tr></thead>
         <tbody id="tk-tbody"></tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="view" id="v-finance" style="flex-direction:column;overflow:hidden">
+    <div class="rp-wrap" id="rp-finance-wrap">
+      <div class="rp-period">
+        <button class="rp-pbtn active" id="rp-btn-today" onclick="rpSetPeriod('today')">Today</button>
+        <button class="rp-pbtn" id="rp-btn-week" onclick="rpSetPeriod('week')">This week</button>
+        <button class="rp-pbtn" id="rp-btn-month" onclick="rpSetPeriod('month')">This month</button>
+      </div>
+      <div class="rp-cards">
+        <div class="rp-card critical"><div class="rp-cl">Tokens used</div><div class="rp-cv" id="rp-cv-tokens">—</div><div class="rp-cs" id="rp-cs-tokens">input + output</div></div>
+        <div class="rp-card"><div class="rp-cl">Cost</div><div class="rp-cv" id="rp-cv-cost">—</div><div class="rp-cs" id="rp-cs-cost"></div></div>
+        <div class="rp-card inprog"><div class="rp-cl">Requests</div><div class="rp-cv" id="rp-cv-reqs">—</div><div class="rp-cs" id="rp-cs-reqs">LLM calls</div></div>
+        <div class="rp-card ok"><div class="rp-cl">Avg per request</div><div class="rp-cv" id="rp-cv-avg">—</div><div class="rp-cs" id="rp-cs-avg">cost/call</div></div>
+      </div>
+      <div class="rp-charts">
+        <div>
+          <div class="rp-chart-label">Tokens per day</div>
+          <div class="rp-legend"><span><span class="rp-leg-sq" style="background:#378add"></span>Input</span><span><span class="rp-leg-sq" style="background:#1d9e75"></span>Output</span></div>
+          <div style="position:relative;height:160px"><canvas id="rp-tokens-chart" role="img" aria-label="Stacked bar chart of input and output tokens per period">Token usage chart.</canvas></div>
+        </div>
+        <div>
+          <div class="rp-chart-label">Cost per day ($)</div>
+          <div style="position:relative;height:180px"><canvas id="rp-cost-chart" role="img" aria-label="Bar chart of daily cost in dollars">Cost per day chart.</canvas></div>
+        </div>
+      </div>
+      <div>
+        <div class="rp-chart-label">Requests by hour — today</div>
+        <div style="position:relative;height:110px"><canvas id="rp-reqs-chart" role="img" aria-label="Line chart of requests per hour today">Hourly requests chart.</canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="view" id="v-phases" style="flex-direction:column;overflow:hidden">
+    <div class="rp-wrap">
+      <div class="ph-header">
+        <span class="ph-title">Phases</span>
+        <button class="ph-add-btn" id="ph-add-btn" onclick="phOpenForm(null)">+ New Phase</button>
+      </div>
+      <div id="ph-form-wrap" style="display:none"></div>
+      <div class="ph-list" id="ph-list"><div class="ph-empty">Loading phases...</div></div>
     </div>
   </div>
 
@@ -659,24 +755,46 @@ function applyData(d) {
 }
 
 var _lastSubView = 'arch';
+var _lastReportsView = 'finance';
 
 function showSection(name) {
-  ['product','team'].forEach(function(s) {
+  ['product','team','reports'].forEach(function(s) {
     var el = document.getElementById('ttab-' + s);
     if (el) el.classList.toggle('active', s === name);
   });
+
   var subtabbar = document.getElementById('subtabbar');
   if (subtabbar) subtabbar.classList.toggle('hidden', name !== 'product');
-  var teamView = document.getElementById('v-team');
-  if (teamView) teamView.classList.toggle('active', name === 'team');
+
+  var subtabbarReports = document.getElementById('subtabbar-reports');
+  if (subtabbarReports) subtabbarReports.classList.toggle('hidden', name !== 'reports');
+
+  var allViews = ['arch','flow','tree','deps','overview','changelog','tasks','team','finance','phases'];
+  allViews.forEach(function(v) {
+    var el = document.getElementById('v-' + v);
+    if (el) el.classList.remove('active');
+  });
+
   if (name === 'team') {
-    ['arch','flow','tree','deps','overview','changelog','tasks'].forEach(function(v) {
-      var el = document.getElementById('v-' + v);
-      if (el) el.classList.remove('active');
-    });
+    var tv = document.getElementById('v-team');
+    if (tv) tv.classList.add('active');
+  } else if (name === 'reports') {
+    showReportsView(_lastReportsView);
   } else {
     showView(_lastSubView);
   }
+}
+
+function showReportsView(name) {
+  _lastReportsView = name;
+  ['finance','phases'].forEach(function(v) {
+    var el = document.getElementById('v-' + v);
+    if (el) el.classList.toggle('active', v === name);
+    var tb = document.getElementById('tab-' + v);
+    if (tb) tb.classList.toggle('active', v === name);
+  });
+  if (name === 'finance') rpLoad();
+  if (name === 'phases') phLoad();
 }
 
 function showView(name) {
@@ -2437,6 +2555,301 @@ function renderProduct() {
   });
 
   drawProductArrows();
+}
+
+/* ════════════════════════════════════════════════════
+   FINANCE
+════════════════════════════════════════════════════ */
+var _rpPeriod = 'today';
+var _rpCharts = {};
+
+function rpSetPeriod(p) {
+  _rpPeriod = p;
+  ['today','week','month'].forEach(function(x) {
+    document.getElementById('rp-btn-' + x).classList.toggle('active', x === p);
+  });
+  rpLoad();
+}
+
+function rpLoad() {
+  fetch('/usage?period=' + _rpPeriod)
+    .then(function(r){ return r.json(); })
+    .then(function(d){ rpRender(d); })
+    .catch(function(){ });
+}
+
+function rpRender(d) {
+  document.getElementById('rp-cv-tokens').textContent = d.total_tokens_fmt || '0';
+  document.getElementById('rp-cv-cost').textContent   = d.total_cost_fmt  || '$0.00';
+  document.getElementById('rp-cv-reqs').textContent   = d.total_requests  || 0;
+  document.getElementById('rp-cv-avg').textContent    = d.avg_cost_fmt    || '$0.0000';
+
+  var isDark = true;
+  var textC = 'rgba(139,148,158,1)';
+  var gridC = 'rgba(48,54,61,1)';
+
+  function baseOpts(extra) {
+    return Object.assign({
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+        y: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 } } }
+      }
+    }, extra || {});
+  }
+
+  if (_rpCharts.tokens) { _rpCharts.tokens.destroy(); _rpCharts.cost.destroy(); _rpCharts.reqs.destroy(); }
+
+  var tokCtx = document.getElementById('rp-tokens-chart');
+  _rpCharts.tokens = new Chart(tokCtx, {
+    type: 'bar',
+    data: {
+      labels: d.labels || [],
+      datasets: [
+        { label: 'Input',  data: d.input  || [], backgroundColor: '#378add', stack: 's', borderRadius: 2, borderSkipped: false },
+        { label: 'Output', data: d.output || [], backgroundColor: '#1d9e75', stack: 's', borderRadius: 2 }
+      ]
+    },
+    options: baseOpts({ scales: {
+      x: { stacked: true, grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+      y: { stacked: true, grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, callback: function(v){ return v >= 1000 ? Math.round(v/1000)+'K' : v; } } }
+    }})
+  });
+
+  var costCtx = document.getElementById('rp-cost-chart');
+  _rpCharts.cost = new Chart(costCtx, {
+    type: 'bar',
+    data: { labels: d.labels || [], datasets: [{ label: 'Cost $', data: d.costs || [], backgroundColor: '#ba7517', borderRadius: 2, borderSkipped: false }] },
+    options: baseOpts({ scales: {
+      x: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
+      y: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, callback: function(v){ return '$' + v.toFixed(2); } } }
+    }})
+  });
+
+  var hours = d.hours || Array(24).fill(0);
+  var hourLabels = Array.from({length: 24}, function(_, i){ return i % 4 === 0 ? i + 'h' : ''; });
+  var reqsCtx = document.getElementById('rp-reqs-chart');
+  _rpCharts.reqs = new Chart(reqsCtx, {
+    type: 'line',
+    data: { labels: hourLabels, datasets: [{ label: 'Requests', data: hours, borderColor: '#a37add', backgroundColor: 'rgba(163,122,221,0.10)', fill: true, tension: 0.4, pointRadius: 2, borderWidth: 2 }] },
+    options: baseOpts({ scales: {
+      x: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, autoSkip: false } },
+      y: { grid: { color: gridC }, ticks: { color: textC, font: { size: 10 }, maxTicksLimit: 4 }, min: 0 }
+    }})
+  });
+}
+
+/* ════════════════════════════════════════════════════
+   PHASES
+════════════════════════════════════════════════════ */
+var _phAllPhases = [];
+var _phEditId = null;
+
+function phLoad() {
+  fetch('/phases').then(function(r){ return r.json(); }).then(function(phases){
+    _phAllPhases = phases || [];
+    phRender();
+  }).catch(function(){
+    var list = document.getElementById('ph-list');
+    while (list.firstChild) list.removeChild(list.firstChild);
+    var d = document.createElement('div');
+    d.className = 'ph-empty';
+    d.textContent = 'Failed to load phases.';
+    list.appendChild(d);
+  });
+}
+
+var _DAY_TYPES = ['Focus day','Mixed day','Admin day','Testing day','Research day','Release day'];
+var _PH_STATUSES = ['in_progress','done','blocked'];
+
+function phRender() {
+  var list = document.getElementById('ph-list');
+  while (list.firstChild) list.removeChild(list.firstChild);
+  if (_phAllPhases.length === 0) {
+    var emp = document.createElement('div');
+    emp.className = 'ph-empty';
+    emp.textContent = 'No phases yet. Click + New Phase to create one.';
+    list.appendChild(emp);
+    return;
+  }
+  _phAllPhases.forEach(function(ph) {
+    var card = document.createElement('div');
+    card.className = 'ph-card';
+    card.setAttribute('data-ph-id', ph.id);
+
+    var title = document.createElement('div');
+    title.className = 'ph-card-title';
+    title.textContent = ph.title || '(no title)';
+    card.appendChild(title);
+
+    var meta = document.createElement('div');
+    meta.className = 'ph-card-meta';
+    var stBadge = document.createElement('span');
+    stBadge.className = 'ph-st ' + (ph.status || 'in_progress');
+    stBadge.textContent = (ph.status || 'in_progress').replace('_',' ');
+    meta.appendChild(stBadge);
+    if (ph.day_type) {
+      var dt = document.createElement('span');
+      dt.textContent = ph.day_type;
+      meta.appendChild(dt);
+    }
+    if (ph.created_at) {
+      var da = document.createElement('span');
+      da.textContent = ph.created_at.slice(0,10);
+      meta.appendChild(da);
+    }
+    card.appendChild(meta);
+
+    if (ph.phase_goal) {
+      var goal = document.createElement('div');
+      goal.className = 'ph-card-goal';
+      goal.textContent = ph.phase_goal;
+      card.appendChild(goal);
+    }
+
+    card.addEventListener('click', function(){ phOpenForm(ph.id); });
+    list.appendChild(card);
+  });
+}
+
+function phOpenForm(id) {
+  _phEditId = id;
+  var ph = id ? _phAllPhases.find(function(p){ return p.id === id; }) : null;
+  var wrap = document.getElementById('ph-form-wrap');
+  wrap.style.display = 'block';
+  while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+
+  var form = document.createElement('div');
+  form.className = 'ph-form';
+
+  var ftitle = document.createElement('div');
+  ftitle.className = 'ph-form-title';
+  ftitle.textContent = id ? 'Edit Phase' : 'New Phase';
+  form.appendChild(ftitle);
+
+  function field(label, key, isTextarea, value) {
+    var wrap = document.createElement('div');
+    wrap.className = 'ph-field';
+    var lbl = document.createElement('label');
+    lbl.textContent = label;
+    wrap.appendChild(lbl);
+    var inp = isTextarea ? document.createElement('textarea') : document.createElement('input');
+    inp.id = 'ph-f-' + key;
+    if (!isTextarea) inp.type = 'text';
+    inp.value = value || '';
+    inp.placeholder = label;
+    wrap.appendChild(inp);
+    return wrap;
+  }
+
+  form.appendChild(field('Title', 'title', false, ph && ph.title));
+  form.appendChild(field('Phase goal', 'phase_goal', true, ph && ph.phase_goal));
+  form.appendChild(field("Today's plan", 'todays_plan', true, ph && ph.todays_plan));
+
+  var row2 = document.createElement('div');
+  row2.className = 'ph-row2';
+
+  var dtWrap = document.createElement('div');
+  dtWrap.className = 'ph-field';
+  var dtLbl = document.createElement('label');
+  dtLbl.textContent = 'Day type';
+  dtWrap.appendChild(dtLbl);
+  var dtSel = document.createElement('select');
+  dtSel.id = 'ph-f-day_type';
+  _DAY_TYPES.forEach(function(opt) {
+    var o = document.createElement('option');
+    o.value = opt;
+    o.textContent = opt;
+    if (ph && ph.day_type === opt) o.selected = true;
+    dtSel.appendChild(o);
+  });
+  dtWrap.appendChild(dtSel);
+  row2.appendChild(dtWrap);
+
+  var stWrap = document.createElement('div');
+  stWrap.className = 'ph-field';
+  var stLbl = document.createElement('label');
+  stLbl.textContent = 'Status';
+  stWrap.appendChild(stLbl);
+  var stSel = document.createElement('select');
+  stSel.id = 'ph-f-status';
+  _PH_STATUSES.forEach(function(opt) {
+    var o = document.createElement('option');
+    o.value = opt;
+    o.textContent = opt.replace('_',' ');
+    if ((ph ? ph.status : 'in_progress') === opt) o.selected = true;
+    stSel.appendChild(o);
+  });
+  stWrap.appendChild(stSel);
+  row2.appendChild(stWrap);
+  form.appendChild(row2);
+
+  form.appendChild(field('What happened', 'what_happened', true, ph && ph.what_happened));
+  form.appendChild(field('Result', 'result', false, ph && ph.result));
+  form.appendChild(field('Evidence / Findings', 'evidence', true, ph && ph.evidence));
+  form.appendChild(field('If blocked', 'if_blocked', false, ph && ph.if_blocked));
+  form.appendChild(field('Next step', 'next_step', false, ph && ph.next_step));
+
+  var btns = document.createElement('div');
+  btns.className = 'ph-form-btns';
+
+  var saveBtn = document.createElement('button');
+  saveBtn.className = 'ph-save-btn';
+  saveBtn.textContent = id ? 'Save changes' : 'Create Phase';
+  saveBtn.addEventListener('click', phSave);
+  btns.appendChild(saveBtn);
+
+  var cancelBtn = document.createElement('button');
+  cancelBtn.className = 'ph-cancel-btn';
+  cancelBtn.textContent = 'Cancel';
+  cancelBtn.addEventListener('click', phCloseForm);
+  btns.appendChild(cancelBtn);
+
+  if (id) {
+    var delBtn = document.createElement('button');
+    delBtn.className = 'ph-del-btn';
+    delBtn.textContent = 'Delete';
+    delBtn.addEventListener('click', function(){
+      if (!confirm('Delete this phase?')) return;
+      fetch('/phases/' + id, { method: 'DELETE' }).then(function(){ phCloseForm(); phLoad(); });
+    });
+    btns.appendChild(delBtn);
+  }
+
+  form.appendChild(btns);
+  wrap.appendChild(form);
+  wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function phCloseForm() {
+  var wrap = document.getElementById('ph-form-wrap');
+  wrap.style.display = 'none';
+  while (wrap.firstChild) wrap.removeChild(wrap.firstChild);
+  _phEditId = null;
+}
+
+function phSave() {
+  function val(key) {
+    var el = document.getElementById('ph-f-' + key);
+    return el ? el.value : '';
+  }
+  var payload = {
+    title:         val('title'),
+    phase_goal:    val('phase_goal'),
+    todays_plan:   val('todays_plan'),
+    day_type:      val('day_type'),
+    status:        val('status'),
+    what_happened: val('what_happened'),
+    result:        val('result'),
+    evidence:      val('evidence'),
+    if_blocked:    val('if_blocked'),
+    next_step:     val('next_step'),
+  };
+  var url    = _phEditId ? '/phases/' + _phEditId : '/phases';
+  var method = 'POST';
+  fetch(url, { method: method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    .then(function(){ phCloseForm(); phLoad(); });
 }
 </script>
 </body>
