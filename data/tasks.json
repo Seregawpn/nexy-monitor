@@ -8221,10 +8221,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "usage events did not store user_input or response_text",
+    "solution": "Added optional user_input+response_text params to _append_usage_event; passed on first/final iteration; aggregated per-session in server.py; added Query/Response columns to Requests table",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
