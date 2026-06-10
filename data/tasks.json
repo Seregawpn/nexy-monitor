@@ -7929,10 +7929,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "recreate() in avf_player.py nulls _engine/_player_node under lock without resetting _initialized; _ensure_player_ready() reads only _initialized and calls start_playback(), which sees engine/player_node==None during the brief recreate window and fails",
+    "solution": "_ensure_player_ready() retries start_playback() up to 3x with 50ms gaps before logging the error, covering the recreate() race window without touching avf_player locking",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
