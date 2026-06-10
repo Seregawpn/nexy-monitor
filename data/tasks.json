@@ -8261,5 +8261,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_145304_6ffded6d",
+    "created_at": "2026-06-10T14:53:04+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "orchestrator",
+    "problem": "read_text_file loop + csv not found in content search",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "LLM re-read same non-matching file 4x in one turn; csv files excluded from content search",
+    "solution": "mechanical guard in orchestrator blocks same-path re-read; spreadsheet added to file_type expansion in tool_dispatcher",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
