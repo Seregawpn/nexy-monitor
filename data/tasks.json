@@ -8210,5 +8210,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_022239_305a1643",
+    "created_at": "2026-06-10T02:22:39+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "finance_dashboard",
+    "problem": "Log user_input and response_text to usage events; show in Requests table",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
