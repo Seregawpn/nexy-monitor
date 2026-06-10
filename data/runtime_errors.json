@@ -840,5 +840,35 @@
       "[INFO] [V3_DISPATCH] tool=files call_id=a2204401-bece-4b0d-aa1c-4e559fe0183c:7de86e0c-5f5c-4b7f-9385-c27f809a2533 got result_len=71",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=808 result_len=84 session=a2204401-bece-4b0d-aa1c-4e559fe0183c"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_read returned error: unknown tool: file_read",
+    "traceback": "",
+    "timestamp": "2026-06-10T20:31:16+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=7810 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=7814 tokens=13 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=file_read args={'path': '/Users/sergiyzasorin/Desktop/data.csv'} session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3",
+      "[INFO] [V3_DISPATCH] tool=file_read call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=11952 bytes, PCM=191232 bytes, chunks=48",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=2512 chunks=48 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_read call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 elapsed_ms=20110 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3, command=file_read",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3 command=file_read feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_read",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3 result_len=75",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 result_len=75",
+      "[INFO] [V3_DISPATCH] tool=file_read call_id=db98dc22-89b7-475a-b7f5-f13f09c7b3c3:249c3dcd-c4e4-4031-94ad-058f84510071 got result_len=75",
+      "[INFO] Decision: start",
+      "[INFO] Decision: start",
+      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 32",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=file_read elapsed_ms=519 result_len=88 session=db98dc22-89b7-475a-b7f5-f13f09c7b3c3"
+    ]
   }
 ]
