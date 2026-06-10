@@ -59,6 +59,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .rp-table .rp-tc-cost { color: #ba7517; font-weight: 600; }
 .rp-table .rp-tc-tool { display: inline-block; background: #21262d; border: 1px solid #30363d; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #8b949e; margin: 1px 2px 1px 0; }
 .rp-table .rp-tc-bar { height: 6px; background: #378add; border-radius: 3px; min-width: 2px; }
+.rp-table .rp-tc-query { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: default; color: #c9d1d9; }
 .rp-empty-row td { color: #8b949e; font-style: italic; text-align: center; padding: 20px; }
 
 /* ── Phase CRUD ── */
@@ -538,7 +539,7 @@ svg#deps-svg { display: block; }
       <div class="rp-table-title">Request history <span class="rp-table-sub">last 200, grouped by session</span></div>
       <div class="rp-table-scroll">
         <table class="rp-table">
-          <thead><tr><th>Date / Time</th><th>User</th><th>In tokens</th><th>Out tokens</th><th>Cost</th><th>Tools used</th></tr></thead>
+          <thead><tr><th>Date / Time</th><th>User</th><th>Query</th><th>Response</th><th>In</th><th>Out</th><th>Cost</th><th>Tools</th></tr></thead>
           <tbody id="rp-requests-tbody"></tbody>
         </table>
       </div>
@@ -2686,12 +2687,24 @@ function rpRenderRequests(d) {
   }
   reqs.forEach(function(r) {
     var tr = document.createElement('tr');
+    function mkTd(txt, cls, title) {
+      var c = document.createElement('td');
+      c.textContent = txt;
+      if (cls) c.className = cls;
+      if (title) c.title = title;
+      tr.appendChild(c);
+      return c;
+    }
     var ts = (r.timestamp || '').replace('T', ' ').slice(0, 16);
-    var tdTs = document.createElement('td'); tdTs.className = 'rp-tc-mono'; tdTs.textContent = ts || '—'; tr.appendChild(tdTs);
-    var tdU  = document.createElement('td'); tdU.className = 'rp-tc-mono';  tdU.textContent = r.hardware_id_short || '—'; tr.appendChild(tdU);
-    var tdIn = document.createElement('td'); tdIn.textContent = (r.input_tokens || 0).toLocaleString(); tr.appendChild(tdIn);
-    var tdOut= document.createElement('td'); tdOut.textContent = (r.output_tokens || 0).toLocaleString(); tr.appendChild(tdOut);
-    var tdC  = document.createElement('td'); tdC.className = 'rp-tc-cost'; tdC.textContent = '$' + ((r.cost || 0)).toFixed(4); tr.appendChild(tdC);
+    mkTd(ts || '—', 'rp-tc-mono');
+    mkTd(r.hardware_id_short || '—', 'rp-tc-mono');
+    var qi = r.user_input || '';
+    mkTd(qi.length > 55 ? qi.slice(0, 55) + '…' : (qi || '—'), 'rp-tc-query', qi || '');
+    var ri = r.response_text || '';
+    mkTd(ri.length > 55 ? ri.slice(0, 55) + '…' : (ri || '—'), 'rp-tc-query', ri || '');
+    mkTd((r.input_tokens || 0).toLocaleString());
+    mkTd((r.output_tokens || 0).toLocaleString());
+    mkTd('$' + ((r.cost || 0)).toFixed(4), 'rp-tc-cost');
     var tdTl = document.createElement('td');
     (r.tools || []).forEach(function(t) {
       if (!t || t === 'none') return;
