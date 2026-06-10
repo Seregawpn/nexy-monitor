@@ -528,7 +528,7 @@ svg#deps-svg { display: block; }
       <div class="rp-table-title">Usage by user</div>
       <div class="rp-table-scroll">
         <table class="rp-table">
-          <thead><tr><th>User ID</th><th>Requests</th><th>Input tokens</th><th>Output tokens</th><th>Cost</th><th>Last seen</th></tr></thead>
+          <thead><tr><th>User ID</th><th>Requests</th><th>Input tokens</th><th>Output tokens</th><th>Cost</th><th>Last seen</th><th>Tools used</th></tr></thead>
           <tbody id="rp-users-tbody"></tbody>
         </table>
       </div>
@@ -2652,7 +2652,7 @@ function rpRenderUsers(d) {
   }
   users.forEach(function(u) {
     var tr = document.createElement('tr');
-    function td(txt, cls) { var c = document.createElement('td'); c.textContent = txt; if (cls) c.className = cls; tr.appendChild(c); }
+    function td(txt, cls) { var c = document.createElement('td'); c.textContent = txt; if (cls) c.className = cls; tr.appendChild(c); return c; }
     td(u.id || 'unknown', 'rp-tc-mono');
     td(u.requests || 0);
     td((u.input_tokens || 0).toLocaleString());
@@ -2660,6 +2660,15 @@ function rpRenderUsers(d) {
     td('$' + ((u.cost || 0)).toFixed(4), 'rp-tc-cost');
     var ls = (u.last_seen || '').replace('T', ' ').slice(0, 16);
     td(ls || '—', 'rp-tc-mono');
+    var tdTl = document.createElement('td');
+    (u.tools || []).forEach(function(t) {
+      var span = document.createElement('span');
+      span.className = 'rp-tc-tool';
+      span.textContent = t.tool + ' ×' + t.count;
+      tdTl.appendChild(span);
+    });
+    if (!tdTl.firstChild) { tdTl.textContent = '—'; }
+    tr.appendChild(tdTl);
     tbody.appendChild(tr);
   });
 }
