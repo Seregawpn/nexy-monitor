@@ -8368,5 +8368,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_183357_7175b409",
+    "created_at": "2026-06-10T18:33:57+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "client/file_search/file_searcher",
+    "problem": "file_search ranks 1342 candidates without query relevance \u2014 add keyword bonus scoring so e.g. Statements.pdf surfaces for find bank statements",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
