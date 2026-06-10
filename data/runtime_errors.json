@@ -510,5 +510,65 @@
       "[INFO] idle_ram_mb=420.72",
       "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.20%, RAM: 420.72 MB"
     ]
+  },
+  {
+    "module_id": "file_search",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_search returned error: ToolDispatcher._file_search() got an unexpected keyword argument 'pattern'",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:43:42+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=4197 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13824 bytes, PCM=221184 bytes, chunks=55",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=409 chunks=55 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=3998 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=4029 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=4268 tokens=20 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=file_search args={'file_type': ['document', 'image'], 'pattern': 'South America GDP data', 'limit': 50} session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b session=e98932e2-3b4b-4b86-940e-33cab99b5afb \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_search call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b elapsed_ms=8360 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=e98932e2-3b4b-4b86-940e-33cab99b5afb, command=file_search",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=e98932e2-3b4b-4b86-940e-33cab99b5afb command=file_search feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=e98932e2-3b4b-4b86-940e-33cab99b5afb hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_search",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b session=e98932e2-3b4b-4b86-940e-33cab99b5afb result_len=126",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b result_len=126",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:2f424327-54bb-4943-9a40-9275de2f498b got result_len=126",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=file_search elapsed_ms=22 result_len=139 session=e98932e2-3b4b-4b86-940e-33cab99b5afb"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool read_text_file returned error: File does not exist: /Users/sergiyzasorin/Desktop/SA_GDP_2023.pdf",
+    "traceback": "",
+    "timestamp": "2026-06-10T15:43:53+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=44 for session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] tts.start n=2 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading the file SA_GDP_2023.pdf contents...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=5 elapsed_ms=3169 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] llm.done iter=5 total_ms=3363 tokens=16 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] tool.start iter=5 tool=read_text_file args={'path': '~/Desktop/SA_GDP_2023.pdf'} session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 session=e98932e2-3b4b-4b86-940e-33cab99b5afb \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=40320 bytes, PCM=645120 bytes, chunks=161",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=770 chunks=161 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 elapsed_ms=18790 session=e98932e2-3b4b-4b86-940e-33cab99b5afb",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=e98932e2-3b4b-4b86-940e-33cab99b5afb, command=read_text_file",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=e98932e2-3b4b-4b86-940e-33cab99b5afb command=read_text_file feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=e98932e2-3b4b-4b86-940e-33cab99b5afb hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 session=e98932e2-3b4b-4b86-940e-33cab99b5afb result_len=117",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 result_len=117",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=e98932e2-3b4b-4b86-940e-33cab99b5afb:1f64a9a4-6849-4fab-b27c-df58a9e85420 got result_len=117",
+      "[INFO] [\u23f1 TIMING] tool.done iter=5 tool=read_text_file elapsed_ms=944 result_len=130 session=e98932e2-3b4b-4b86-940e-33cab99b5afb"
+    ]
   }
 ]
