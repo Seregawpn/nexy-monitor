@@ -524,8 +524,9 @@ svg#deps-svg { display: block; }
     <div class="rp-wrap" id="rp-sub-overview">
       <div class="rp-period">
         <button class="rp-pbtn active" id="rp-btn-today" onclick="rpSetPeriod('today')">Today</button>
-        <button class="rp-pbtn" id="rp-btn-week" onclick="rpSetPeriod('week')">This week</button>
-        <button class="rp-pbtn" id="rp-btn-month" onclick="rpSetPeriod('month')">This month</button>
+        <button class="rp-pbtn" id="rp-btn-week" onclick="rpSetPeriod('week')">Week</button>
+        <button class="rp-pbtn" id="rp-btn-month" onclick="rpSetPeriod('month')">Month</button>
+        <button class="rp-pbtn" id="rp-btn-quarter" onclick="rpSetPeriod('quarter')">Quarter</button>
       </div>
       <div class="rp-cards">
         <div class="rp-card critical"><div class="rp-cl">Tokens used</div><div class="rp-cv" id="rp-cv-tokens">—</div><div class="rp-cs" id="rp-cs-tokens">input + output</div></div>
@@ -2953,7 +2954,7 @@ function rpRenderTools(d) {
 
 function rpSetPeriod(p) {
   _rpPeriod = p;
-  ['today','week','month'].forEach(function(x) {
+  ['today','week','month','quarter'].forEach(function(x) {
     document.getElementById('rp-btn-' + x).classList.toggle('active', x === p);
   });
   rpLoad();
