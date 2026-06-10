@@ -7966,7 +7966,24 @@
     "root_cause": "speech_playback runtime errors were pre-fix artifacts from before v5.0.0.302 (recreate() race condition fix)",
     "solution": "Removed 2 stale events for speech_playback_integration from runtime_errors.json",
     "verified": false,
-    "status": "resolved",
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260610_011215_ea56ce16",
+    "created_at": "2026-06-10T01:12:15+00:00",
+    "source": "scan",
+    "priority": "medium",
+    "module_id": "orchestrator",
+    "problem": "[SERVER 01:11] Error: [ORC3-stream] MAX ITERATIONS REACHED session=261cbea3-c4c6-4182-96f7-964193097e53 hardware_id=E03D24",
+    "error_type": "runtime_error",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
     "recurrence": 1,
     "notes": ""
   }
