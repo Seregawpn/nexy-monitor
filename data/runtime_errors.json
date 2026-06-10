@@ -179,5 +179,35 @@
       "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.30%, RAM: 47.06 MB",
       "[WARNING] \u26a0\ufe0f Health check failed (419/3)"
     ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] provider failure intent=list_account_inbox error=osascript failed",
+    "traceback": "",
+    "timestamp": "2026-06-10T02:13:01+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udd0d gRPC response #1490: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Incoming: shape=(2048,), dtype=float32, size=2048",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] INPUT peak=0.2654, min=-0.2510, max=0.2654",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Already float: peak=0.265350",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Made copy: peak after copy=0.265350",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Queued chunk chunk_4671348272: 2048 samples, queue_size=1",
+      "[DEBUG] \ud83d\udcca [QUEUE_EXTRACT] peak=0.265350, first_10=[0.04370117 0.04150391 0.03652954 0.02938843 0.02401733]",
+      "[DEBUG] \ud83d\udd0d gRPC response #1500: WhichOneof('content')=audio_chunk",
+      "[INFO] \ud83d\udd0a [AUDIO_RECV] _on_audio_chunk received: session=821dcf68-a707-49f8-876f-0394bc6ec3fe, bytes=4096",
+      "[INFO] \ud83d\udd2c [RAW_AUDIO_DIAG] session=821dcf68-a707-49f8-876f-0394bc6ec3fe bytes=4096 dtype=int16 first_bytes=9303ee0241029a01 peak_int16=2873.0000 all_zeros=False",
+      "[DEBUG] AUDIO_PIPELINE phase=before_schedule kind=grpc_audio chunk=1500 frames=2048 peak=0.2654 rms=0.0817",
+      "[INFO] AUDIO_PIPELINE phase=before_queue session=821dcf68-a707-49f8-876f-0394bc6ec3fe samples=2048 peak=0.0877 rms=0.0314 dtype=float32",
+      "[DEBUG] \ud83d\udcca Pre-copy peak (FULL): 0.2654, samples=2048",
+      "[DEBUG] \ud83d\udcca Buffer write check: idx=0 wrote=0.043701 read=0.043701",
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 2048 frames | src_peak=0.2654 written_peak=0.2654 | engine=True, player=True",
+      "[DEBUG] \ud83d\udd0d gRPC response #1510: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0a [AUDIO_DIAG] Stream progress session=821dcf68-a707-49f8-876f-0394bc6ec3fe chunk#1500 (audio=1500 silent=136 non_silent=1364)",
+      "[DEBUG] \ud83d\udd0d gRPC response #1520: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1530: WhichOneof('content')=audio_chunk",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=-15 stdout_len=0 stderr_len=0"
+    ]
   }
 ]
