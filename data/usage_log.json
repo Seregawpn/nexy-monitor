@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-06-10T02:18:57+00:00",
+    "session_id": "ses_001",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 1240,
+    "output_tokens": 92,
+    "cost_usd": 0.000182,
+    "tool_name": "web_search",
+    "user_input": "What's the weather in London today?"
+  },
+  {
+    "timestamp": "2026-06-10T02:20:09+00:00",
+    "session_id": "ses_001",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 980,
+    "output_tokens": 71,
+    "cost_usd": 0.000141,
+    "tool_name": "none",
+    "response_text": "It's currently 18\u00b0C and partly cloudy in London. Expect some light rain in the afternoon."
+  },
+  {
+    "timestamp": "2026-06-10T01:12:57+00:00",
+    "session_id": "ses_002",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 1520,
+    "output_tokens": 108,
+    "cost_usd": 0.000221,
+    "tool_name": "email_reply",
+    "user_input": "Reply to Alex that I'll be at the meeting tomorrow at 10am"
+  },
+  {
+    "timestamp": "2026-06-10T01:18:57+00:00",
+    "session_id": "ses_002",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 870,
+    "output_tokens": 65,
+    "cost_usd": 0.000128,
+    "tool_name": "none",
+    "response_text": "Done. I replied to Alex confirming you'll be at the meeting tomorrow at 10am."
+  },
+  {
+    "timestamp": "2026-06-09T23:54:57+00:00",
+    "session_id": "ses_003",
+    "hardware_id": "hw_xxyyzz998877",
+    "model": "gpt-5-nano",
+    "input_tokens": 1100,
+    "output_tokens": 84,
+    "cost_usd": 0.000161,
+    "tool_name": "file_search",
+    "user_input": "Find the Q1 sales report"
+  },
+  {
+    "timestamp": "2026-06-10T00:00:57+00:00",
+    "session_id": "ses_003",
+    "hardware_id": "hw_xxyyzz998877",
+    "model": "gpt-5-nano",
+    "input_tokens": 760,
+    "output_tokens": 58,
+    "cost_usd": 0.000113,
+    "tool_name": "none",
+    "response_text": "Found Q1_Sales_Report_2026.pdf on your Desktop. It was last modified on March 31st."
+  },
+  {
+    "timestamp": "2026-06-09T22:24:57+00:00",
+    "session_id": "ses_004",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 1380,
+    "output_tokens": 99,
+    "cost_usd": 0.000201,
+    "tool_name": "web_search",
+    "user_input": "What's the latest news about OpenAI?"
+  },
+  {
+    "timestamp": "2026-06-09T22:30:57+00:00",
+    "session_id": "ses_004",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 910,
+    "output_tokens": 70,
+    "cost_usd": 0.000134,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-09T22:36:57+00:00",
+    "session_id": "ses_004",
+    "hardware_id": "hw_aabbccdd1122",
+    "model": "gpt-5-nano",
+    "input_tokens": 840,
+    "output_tokens": 63,
+    "cost_usd": 0.000123,
+    "tool_name": "none",
+    "response_text": "OpenAI announced GPT-5 with improved reasoning capabilities. They also launched a new API tier for enterprise customers this week."
+  },
+  {
+    "timestamp": "2026-06-09T20:24:57+00:00",
+    "session_id": "ses_005",
+    "hardware_id": "hw_xxyyzz998877",
+    "model": "gpt-5-nano",
+    "input_tokens": 990,
+    "output_tokens": 76,
+    "cost_usd": 0.000145,
+    "tool_name": "web_search",
+    "user_input": "Set a reminder for my dentist appointment on Friday at 3pm"
+  },
+  {
+    "timestamp": "2026-06-09T20:30:57+00:00",
+    "session_id": "ses_005",
+    "hardware_id": "hw_xxyyzz998877",
+    "model": "gpt-5-nano",
+    "input_tokens": 720,
+    "output_tokens": 55,
+    "cost_usd": 0.000107,
+    "tool_name": "none",
+    "response_text": "Reminder set for Friday at 3:00 PM \u2014 Dentist appointment."
+  }
+]
