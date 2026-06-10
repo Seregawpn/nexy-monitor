@@ -8176,5 +8176,22 @@
     "status": "in_progress",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_020821_5299200b",
+    "created_at": "2026-06-10T02:08:21+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "orchestrator",
+    "problem": "LLM hallucinating file paths from filenames and re-reading same file in loop \u2014 files/SKILL.md missing two guard rules",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "usage_log events lacked hardware_id and tool_name; Finance UI had no per-user/request/tool breakdown",
+    "solution": "Added hardware_id+tool_name to _append_usage_event; extended _aggregate_usage with users/requests/tools aggregation; added Finance sub-tabs Overview/Users/Requests/Tools with tables",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
