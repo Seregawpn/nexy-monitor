@@ -8351,5 +8351,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_164755_6d0a2b46",
+    "created_at": "2026-06-10T16:47:55+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "server/assistant_runtime_v3/hooks/continuation_guard",
+    "problem": "file_search directory scope: LLM sets directory without enforcement, no broaden-on-irrelevant-results fallback (F4f leads CSV on Desktop not found, search scoped to documents)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
