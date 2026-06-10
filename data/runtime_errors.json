@@ -1080,5 +1080,35 @@
       "[INFO] [V3_DISPATCH] tool=files call_id=3d6859a0-bbe9-4e3e-a54a-dbc2deb70da2:4598b1b0-f574-4ee8-80ec-765396ca8d05 got result_len=71",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=570 result_len=84 session=3d6859a0-bbe9-4e3e-a54a-dbc2deb70da2"
     ]
+  },
+  {
+    "module_id": "file_search",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_search returned error: ToolDispatcher._file_search() got an unexpected keyword argument 'file_name'. Did you mean 'file_type'?",
+    "traceback": "",
+    "timestamp": "2026-06-10T22:22:17+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching your files...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=1 elapsed_ms=2701 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=2907 tokens=16 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=file_search args={'directory': 'desktop', 'file_name': 'data.csv'} session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 session=092f83c7-e3aa-4b6c-8321-93fa447170e2 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=3034 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13392 bytes, PCM=214272 bytes, chunks=54",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=430 chunks=54 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_search call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 elapsed_ms=3101 session=092f83c7-e3aa-4b6c-8321-93fa447170e2",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=092f83c7-e3aa-4b6c-8321-93fa447170e2, command=file_search",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=092f83c7-e3aa-4b6c-8321-93fa447170e2 command=file_search feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=092f83c7-e3aa-4b6c-8321-93fa447170e2 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_search",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 session=092f83c7-e3aa-4b6c-8321-93fa447170e2 result_len=155",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 result_len=155",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=092f83c7-e3aa-4b6c-8321-93fa447170e2:afbbe795-a9eb-4d69-b83a-3e9a6895c1c9 got result_len=155",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=file_search elapsed_ms=447 result_len=168 session=092f83c7-e3aa-4b6c-8321-93fa447170e2"
+    ]
   }
 ]
