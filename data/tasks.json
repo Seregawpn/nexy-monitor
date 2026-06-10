@@ -8204,10 +8204,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Users table lacked per-tool breakdown",
+    "solution": "Added tools:[{tool,count,cost}] to each user entry in _aggregate_usage; added Tools used column to rpRenderUsers",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
