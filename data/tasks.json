@@ -7934,10 +7934,10 @@
       "[ERROR] \u274c UNKNOWN: cannot import name 'run_reply_partial_emlx' from 'modules.email_actions.prototype_bridge' (/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/email_actions/prototype_bridge.py)"
     ],
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event \u2014 not a real bug",
+    "solution": "closed as non-actionable",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -7973,10 +7973,10 @@
       "[INFO] Extracted text via binary streamtyped parser: I'll be there..."
     ],
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event \u2014 not a real bug",
+    "solution": "closed as non-actionable",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -8012,10 +8012,10 @@
       "[INFO] Extracted text via binary streamtyped parser: hello..."
     ],
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event \u2014 not a real bug",
+    "solution": "closed as non-actionable",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -8051,10 +8051,10 @@
       "[ERROR] \u274c FasterWhisperController init failed: cannot schedule new futures after interpreter shutdown"
     ],
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event \u2014 not a real bug",
+    "solution": "closed as non-actionable",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
