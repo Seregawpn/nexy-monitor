@@ -8153,10 +8153,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "flow docs missing 3 registered tools: terminal_send_text, terminal_send_text_and_enter (computer), extract_pdf_text (files)",
-    "solution": "added all 3 to docs routing tables and rules; also flagged resolve_email_recipient as dead code in dispatcher (docs correctly say removed)",
+    "root_cause": "No Reports section, no usage tracking, no phase docs",
+    "solution": "orchestrator.py: _append_usage_event on every LLM call; server.py: /usage + /phases endpoints; map.html: Reports top-level tab with Finance+Phases; cloud_push synced",
     "verified": true,
-    "status": "closed",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
