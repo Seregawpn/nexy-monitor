@@ -1020,5 +1020,35 @@
       "[INFO] [V3_DISPATCH] tool=file_rename call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a got result_len=77",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=file_rename elapsed_ms=480 result_len=90 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_move returned error: Destination already exists: ~/Desktop/test_renamed.txt. Pass overwrite=true to replace.",
+    "traceback": "",
+    "timestamp": "2026-06-10T21:06:19+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=36 for session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Renaming the file on your Desktop...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=6358 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=6809 tokens=19 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=file_move args={'src': '~/Desktop/test.txt', 'dst': '~/Desktop/test_renamed.txt'} session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] [V3_DISPATCH] tool=file_move call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f session=5e7cb657-9e1c-46df-8dac-d3f3185f3822 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=18288 bytes, PCM=292608 bytes, chunks=72",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=537 chunks=72 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_move call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f elapsed_ms=11854 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=5e7cb657-9e1c-46df-8dac-d3f3185f3822, command=file_move",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=5e7cb657-9e1c-46df-8dac-d3f3185f3822 command=file_move feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=5e7cb657-9e1c-46df-8dac-d3f3185f3822 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_move",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f session=5e7cb657-9e1c-46df-8dac-d3f3185f3822 result_len=141",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f result_len=141",
+      "[INFO] [V3_DISPATCH] tool=file_move call_id=5e7cb657-9e1c-46df-8dac-d3f3185f3822:40fa1dc6-3c86-4944-8119-adadce49ca9f got result_len=141",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=file_move elapsed_ms=149 result_len=154 session=5e7cb657-9e1c-46df-8dac-d3f3185f3822"
+    ]
   }
 ]
