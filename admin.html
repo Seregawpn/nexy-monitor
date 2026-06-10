@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexy — Bug Tracker</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e1e4e8; min-height: 100vh; display: flex; flex-direction: column; }
+
+#auth-gate { position: fixed; inset: 0; background: #0f1117; display: flex; align-items: center; justify-content: center; z-index: 999; }
+#auth-gate.hidden { display: none; }
+.auth-box { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 32px; width: 320px; text-align: center; }
+.auth-logo { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.auth-sub { font-size: 13px; color: #8b949e; margin-bottom: 24px; }
+.auth-input { width: 100%; background: #0d1117; border: 1px solid #30363d; color: #e1e4e8; border-radius: 6px; padding: 9px 12px; font-size: 14px; margin-bottom: 10px; }
+.auth-input:focus { outline: none; border-color: #1f6feb; }
+.auth-btn { width: 100%; background: #238636; border: 1px solid #2ea043; color: #fff; font-size: 14px; padding: 9px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.auth-btn:hover { background: #2ea043; }
+.auth-err { font-size: 12px; color: #f85149; margin-top: 8px; min-height: 18px; }
+
+.topbar { background: #161b22; border-bottom: 1px solid #30363d; padding: 12px 24px; display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.logo { font-weight: 700; font-size: 16px; color: #fff; }
+.logo-sub { font-size: 12px; color: #8b949e; }
+.topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #3fb950; margin-right: 5px; animation: pulse-green 2s ease-in-out infinite; }
+@keyframes pulse-green { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.badge-live { font-size: 11px; color: #8b949e; }
+.muted { color: #8b949e; }
+
+.summary { display: flex; gap: 12px; padding: 18px 24px; flex-shrink: 0; flex-wrap: wrap; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 14px 20px; min-width: 130px; flex: 1; }
+.card-label { font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.card-value { font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
+.card-sub { font-size: 11px; color: #8b949e; margin-top: 4px; }
+.card.critical { border-color: #6e2121; }
+.card.critical .card-value { color: #f85149; }
+.card.inprogress { border-color: #1a3a5c; }
+.card.inprogress .card-value { color: #58a6ff; }
+.card.resolved { border-color: #1a5c33; }
+.card.resolved .card-value { color: #3fb950; }
+
+.crit-banner { display: none; background: #1a0505; border-bottom: 1px solid #6e2121; padding: 8px 24px; align-items: center; gap: 10px; flex-shrink: 0; }
+.crit-banner.visible { display: flex; }
+.crit-icon { font-size: 14px; animation: pulse-red 1.4s ease-in-out infinite; }
+@keyframes pulse-red { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.crit-text { font-size: 12px; color: #f85149; font-weight: 600; }
+.crit-list { font-size: 11px; color: #c9d1d9; }
+
+.table-wrap { flex: 1; overflow: auto; padding: 0 24px 24px; }
+.section-label { font-size: 11px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; padding: 12px 0 8px; }
+.bug-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.bug-table th { text-align: left; padding: 7px 10px; font-size: 10px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #30363d; white-space: nowrap; }
+.bug-table td { padding: 8px 10px; border-bottom: 1px solid #21262d; color: #c9d1d9; vertical-align: top; }
+.bug-table tbody tr:hover td { background: #161b22; }
+
+.prio { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.prio.critical { background: #3d1a1a; color: #f85149; border: 1px solid #6e2121; }
+.prio.high     { background: #3d2000; color: #f97316; border: 1px solid #7a3a00; }
+.prio.medium   { background: #3d3000; color: #e3b341; border: 1px solid #6a5000; }
+.prio.low      { background: #0d2d4a; color: #58a6ff; border: 1px solid #1a5c99; }
+
+.st { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.st.open        { background: #3d1a1a; color: #f85149; border: 1px solid #6e2121; }
+.st.in_progress { background: #0d2d4a; color: #58a6ff; border: 1px solid #1a5c99; }
+.st.waiting     { background: #3d2d00; color: #e3b341; border: 1px solid #6a5000; }
+.st.resolved    { background: #0d2d1a; color: #3fb950; border: 1px solid #1a5c33; }
+.st.closed      { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
+
+.rec-badge { font-size: 10px; font-weight: 700; color: #e3b341; }
+.mono { font-family: monospace; font-size: 11px; color: #58a6ff; }
+.prob-cell { max-width: 340px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rc-cell { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.arch-toggle { display: none; font-size: 11px; color: #58a6ff; cursor: pointer; padding: 4px 0; margin-top: 8px; }
+.arch-toggle:hover { text-decoration: underline; }
+.footer { padding: 10px 24px; font-size: 11px; color: #8b949e; border-top: 1px solid #21262d; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div id="auth-gate">
+  <div class="auth-box">
+    <div class="auth-logo">Nexy</div>
+    <div class="auth-sub">Bug Tracker — Partner View</div>
+    <input class="auth-input" id="auth-pwd" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="auth-btn" onclick="authCheck()">Sign in</button>
+    <div class="auth-err" id="auth-err"></div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div>
+    <div class="logo">Nexy Bug Tracker</div>
+    <div class="logo-sub">Partner status dashboard</div>
+  </div>
+  <div class="topbar-right">
+    <span class="badge-live" id="live-badge"><span class="live-dot"></span>Live</span>
+    <span class="muted" id="last-updated"></span>
+  </div>
+</div>
+
+<div class="crit-banner" id="crit-banner">
+  <span class="crit-icon">&#128308;</span>
+  <span class="crit-text" id="crit-text"></span>
+  <span class="crit-list" id="crit-list"></span>
+</div>
+
+<div class="summary">
+  <div class="card critical">
+    <div class="card-label">Critical</div>
+    <div class="card-value" id="c-critical">—</div>
+    <div class="card-sub">open bugs</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Open</div>
+    <div class="card-value" id="c-open">—</div>
+    <div class="card-sub">awaiting fix</div>
+  </div>
+  <div class="card inprogress">
+    <div class="card-label">In Progress</div>
+    <div class="card-value" id="c-inprogress">—</div>
+    <div class="card-sub">being worked on</div>
+  </div>
+  <div class="card resolved">
+    <div class="card-label">Resolved</div>
+    <div class="card-value" id="c-resolved">—</div>
+    <div class="card-sub">fixed &amp; verified</div>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <div class="section-label">Active Bugs</div>
+  <table class="bug-table">
+    <thead>
+      <tr>
+        <th>Priority</th>
+        <th title="Recurrence">Rec</th>
+        <th>Module</th>
+        <th>Problem</th>
+        <th>Root Cause</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="bug-tbody"></tbody>
+  </table>
+  <span class="arch-toggle" id="arch-toggle" onclick="toggleArchived()"></span>
+</div>
+
+<div class="footer" id="footer">Connecting…</div>
+
+<script>
+var IS_STATIC = location.hostname !== 'localhost' && location.hostname !== '127.0.0.1';
+if (IS_STATIC) {
+  var _STATIC_BASE = 'https://raw.githubusercontent.com/Seregawpn/nexy-monitor/gh-pages/data';
+  var _origFetch = window.fetch.bind(window);
+  window.fetch = function(url, opts) {
+    opts = opts || {};
+    if (opts.method && opts.method.toUpperCase() !== 'GET') {
+      return Promise.resolve({ ok: true, status: 200,
+        json: function(){ return Promise.resolve({}); },
+        text: function(){ return Promise.resolve(''); } });
+    }
+    if (url === '/tasks') return _origFetch(_STATIC_BASE + '/tasks.json?_t=' + Date.now());
+    return Promise.resolve({ ok: false, json: function(){ return Promise.resolve(null); } });
+  };
+}
+
+(function() {
+  var AUTH_KEY = 'nexy_map_auth';
+  var PWD_HASH = '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918';
+  if (sessionStorage.getItem(AUTH_KEY) === PWD_HASH) {
+    document.getElementById('auth-gate').classList.add('hidden');
+  }
+  document.getElementById('auth-pwd').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') authCheck();
+  });
+  window.authCheck = function() {
+    var pwd = document.getElementById('auth-pwd').value;
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(pwd)).then(function(buf) {
+      var hash = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+      if (hash === PWD_HASH) {
+        sessionStorage.setItem(AUTH_KEY, PWD_HASH);
+        document.getElementById('auth-gate').classList.add('hidden');
+        loadBugs();
+      } else {
+        document.getElementById('auth-err').textContent = 'Incorrect password';
+        document.getElementById('auth-pwd').value = '';
+        document.getElementById('auth-pwd').focus();
+      }
+    });
+  };
+})();
+
+var _allBugs = [];
+var _archivedVisible = false;
+var _PRIO_ORDER   = { critical: 0, high: 1, medium: 2, low: 3 };
+var _STATUS_ORDER = { open: 0, in_progress: 1, waiting: 2, resolved: 3, closed: 4 };
+
+function loadBugs() {
+  fetch('/tasks').then(function(r){ return r.json(); }).then(function(bugs) {
+    if (!bugs) return;
+    _allBugs = bugs;
+    render(bugs);
+    var now = new Date();
+    var ts = now.getHours().toString().padStart(2,'0') + ':' +
+             now.getMinutes().toString().padStart(2,'0') + ':' +
+             now.getSeconds().toString().padStart(2,'0');
+    document.getElementById('last-updated').textContent = 'Updated ' + ts;
+    document.getElementById('footer').textContent = 'Last updated: ' + ts;
+  }).catch(function() {
+    document.getElementById('footer').textContent = 'Failed to load data';
+  });
+}
+
+function sortBugs(list) {
+  return list.slice().sort(function(a, b) {
+    var pa = _PRIO_ORDER[a.priority] !== undefined ? _PRIO_ORDER[a.priority] : 4;
+    var pb = _PRIO_ORDER[b.priority] !== undefined ? _PRIO_ORDER[b.priority] : 4;
+    if (pa !== pb) return pa - pb;
+    var sa = _STATUS_ORDER[a.status] !== undefined ? _STATUS_ORDER[a.status] : 4;
+    var sb = _STATUS_ORDER[b.status] !== undefined ? _STATUS_ORDER[b.status] : 4;
+    if (sa !== sb) return sa - sb;
+    return (a.created_at || '') < (b.created_at || '') ? -1 : 1;
+  });
+}
+
+function makeTd(className) {
+  var td = document.createElement('td');
+  if (className) td.className = className;
+  return td;
+}
+
+function render(bugs) {
+  var open     = bugs.filter(function(b){ return b.status === 'open'; });
+  var inprog   = bugs.filter(function(b){ return b.status === 'in_progress'; });
+  var waiting  = bugs.filter(function(b){ return b.status === 'waiting'; });
+  var critical = bugs.filter(function(b){ return b.priority === 'critical' && (b.status === 'open' || b.status === 'in_progress'); });
+  var resolved = bugs.filter(function(b){ return b.status === 'resolved' || b.status === 'closed'; });
+  var active   = open.concat(inprog).concat(waiting);
+
+  document.getElementById('c-open').textContent      = open.length;
+  document.getElementById('c-inprogress').textContent = inprog.length;
+  document.getElementById('c-critical').textContent  = critical.length;
+  document.getElementById('c-resolved').textContent  = resolved.length;
+
+  var banner = document.getElementById('crit-banner');
+  if (critical.length > 0) {
+    banner.classList.add('visible');
+    document.getElementById('crit-text').textContent = critical.length + ' critical bug' + (critical.length > 1 ? 's' : '') + ' open';
+    document.getElementById('crit-list').textContent = critical.slice(0,3).map(function(b){
+      return (b.module_id || '?') + ': ' + (b.problem || '').slice(0,60);
+    }).join(' · ');
+  } else {
+    banner.classList.remove('visible');
+  }
+
+  var tbody = document.getElementById('bug-tbody');
+  while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+
+  var toRender = sortBugs(active).concat(_archivedVisible ? sortBugs(resolved) : []);
+
+  if (toRender.length === 0) {
+    var etr = document.createElement('tr');
+    var etd = makeTd('');
+    etd.colSpan = 7;
+    etd.style.textAlign = 'center';
+    etd.style.color = '#8b949e';
+    etd.style.padding = '40px';
+    etd.textContent = 'No active bugs.';
+    etr.appendChild(etd);
+    tbody.appendChild(etr);
+  } else {
+    toRender.forEach(function(b) {
+      var tr = document.createElement('tr');
+
+      var prioTd = makeTd('');
+      var prioBadge = document.createElement('span');
+      prioBadge.className = 'prio ' + (b.priority || 'low');
+      prioBadge.textContent = b.priority || 'low';
+      prioTd.appendChild(prioBadge);
+      tr.appendChild(prioTd);
+
+      var recTd = makeTd('');
+      recTd.style.whiteSpace = 'nowrap';
+      if (b.recurrence && b.recurrence > 1) {
+        var recSpan = document.createElement('span');
+        recSpan.className = 'rec-badge';
+        recSpan.textContent = '×' + b.recurrence;
+        recSpan.title = 'Occurred ' + b.recurrence + ' times';
+        recTd.appendChild(recSpan);
+      }
+      tr.appendChild(recTd);
+
+      var modTd = makeTd('mono');
+      modTd.textContent = b.module_id || '';
+      tr.appendChild(modTd);
+
+      var probTd = makeTd('prob-cell');
+      probTd.textContent = b.problem || '';
+      probTd.title = b.problem || '';
+      tr.appendChild(probTd);
+
+      var rcTd = makeTd('rc-cell');
+      rcTd.textContent = b.root_cause || '';
+      rcTd.title = b.root_cause || '';
+      if (!b.root_cause) rcTd.style.color = '#30363d';
+      tr.appendChild(rcTd);
+
+      var dateTd = makeTd('muted');
+      dateTd.style.whiteSpace = 'nowrap';
+      dateTd.textContent = (b.date_detected || '').slice(0, 10);
+      tr.appendChild(dateTd);
+
+      var stTd = makeTd('');
+      var stBadge = document.createElement('span');
+      stBadge.className = 'st ' + (b.status || 'open');
+      stBadge.textContent = (b.status || 'open').replace('_', ' ');
+      stTd.appendChild(stBadge);
+      tr.appendChild(stTd);
+
+      tbody.appendChild(tr);
+    });
+  }
+
+  var toggle = document.getElementById('arch-toggle');
+  if (resolved.length > 0) {
+    toggle.style.display = 'inline-block';
+    toggle.textContent = _archivedVisible
+      ? 'Hide resolved / closed (' + resolved.length + ')'
+      : 'Show resolved / closed (' + resolved.length + ')';
+  } else {
+    toggle.style.display = 'none';
+  }
+}
+
+function toggleArchived() {
+  _archivedVisible = !_archivedVisible;
+  render(_allBugs);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (sessionStorage.getItem('nexy_map_auth') === '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918') {
+    loadBugs();
+  }
+
+  if (IS_STATIC) {
+    setInterval(loadBugs, 30000);
+    return;
+  }
+
+  try {
+    var es = new EventSource('/events');
+    es.onmessage = function(e) { if (e.data === 'scan_complete') loadBugs(); };
+  } catch(e) {}
+
+  setInterval(loadBugs, 30000);
+});
+</script>
+</body>
+</html>
