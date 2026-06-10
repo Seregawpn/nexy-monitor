@@ -528,7 +528,11 @@ mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' }
 var IS_STATIC = location.hostname !== 'localhost' && location.hostname !== '127.0.0.1';
 if (IS_STATIC) {
   var _STATIC_BASE = 'https://raw.githubusercontent.com/Seregawpn/nexy-monitor/gh-pages/data';
-  var _STATIC_MAP = { '/data': '/map_data.json', '/tasks': '/tasks.json', '/changelog': '/changelog.json' };
+  var _STATIC_MAP = { '/data': '/map_data.json', '/tasks': '/tasks.json', '/changelog': '/changelog.json', '/phases': '/phases.json' };
+  function _staticUrl(url) {
+    if (url.startsWith('/usage')) return _STATIC_BASE + '/usage_log.json?_t=' + Date.now();
+    return _STATIC_MAP[url] ? _STATIC_BASE + _STATIC_MAP[url] + '?_t=' + Date.now() : null;
+  }
   var _origFetch = window.fetch.bind(window);
   window.fetch = function(url, opts) {
     opts = opts || {};
@@ -537,8 +541,9 @@ if (IS_STATIC) {
         json: function(){ return Promise.resolve({}); },
         text: function(){ return Promise.resolve(''); } });
     }
-    if (typeof url === 'string' && _STATIC_MAP[url]) {
-      return _origFetch(_STATIC_BASE + _STATIC_MAP[url] + '?_t=' + Date.now());
+    if (typeof url === 'string') {
+      var mapped = _staticUrl(url);
+      if (mapped) return _origFetch(mapped);
     }
     return Promise.resolve({ ok: false, json: function(){ return Promise.resolve(null); } });
   };
