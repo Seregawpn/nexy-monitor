@@ -7864,7 +7864,7 @@
     "root_cause": "",
     "solution": "",
     "verified": false,
-    "status": "open",
+    "status": "in_progress",
     "recurrence": 1,
     "notes": ""
   },
@@ -8138,8 +8138,25 @@
     "date_detected": "2026-06-10",
     "root_cause": "Flat 7-tab nav had no room for future sections like Team",
     "solution": "2-level nav: top-level Product/Team + subtabbar with all 7 sub-tabs; v-product renamed to v-overview; showSection() added; v-team placeholder created",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260610_014544_881fc309",
+    "created_at": "2026-06-10T01:45:44+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "tools_map",
+    "problem": "Reports tab: Finance (usage_log \u2192 charts) + Phases CRUD",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
     "verified": false,
-    "status": "resolved",
+    "status": "open",
     "recurrence": 1,
     "notes": ""
   }
