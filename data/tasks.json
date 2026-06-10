@@ -8255,10 +8255,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "root_cause": "Finance dashboard timestamps used UTC midnight as cutoff and displayed raw UTC strings, making all times 4h ahead of Montreal local time",
+    "solution": "server.py: _aggregate_usage now uses zoneinfo America/Montreal for cutoffs and hour-bucket assignments; map.html: added rpFmtTs() helper using Intl.DateTimeFormat Montreal, replaced all 4 raw UTC display patterns",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
