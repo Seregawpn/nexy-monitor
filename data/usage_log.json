@@ -1,1 +1,307 @@
-[]
+[
+  {
+    "timestamp": "2026-06-10T17:15:18+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6557,
+    "output_tokens": 237,
+    "cost_usd": 0.00042265,
+    "tool_name": "skill_view",
+    "user_input": "Show me the files on my Desktop"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:23+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11237,
+    "output_tokens": 495,
+    "cost_usd": 0.00079185,
+    "tool_name": "list_workspace_files"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:27+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11340,
+    "output_tokens": 377,
+    "cost_usd": 0.00077348,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:32+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11510,
+    "output_tokens": 471,
+    "cost_usd": 0.00082022,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:39+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11732,
+    "output_tokens": 349,
+    "cost_usd": 0.00078316,
+    "tool_name": "none",
+    "response_text": "I couldn't retrieve the Desktop files due to a tool issue. I attempted a broader search across the workspace but found no matches with those parameters. Would you like me to try an even more targeted search (for example, PDFs only) or list what I can see on the Desktop if you grant permission to take a quick look manually?"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:46+00:00",
+    "session_id": "e2e-files-read-test-nexy",
+    "hardware_id": "e2e-files-read-test-nexy-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6568,
+    "output_tokens": 814,
+    "cost_usd": 0.000686,
+    "tool_name": "skill_view",
+    "user_input": "Read the file ~/Desktop/test_nexy.txt and tell me exactly what's written in it"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:51+00:00",
+    "session_id": "e2e-files-read-test-nexy",
+    "hardware_id": "e2e-files-read-test-nexy-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11260,
+    "output_tokens": 431,
+    "cost_usd": 0.0007674,
+    "tool_name": "read_text_file"
+  },
+  {
+    "timestamp": "2026-06-10T17:15:55+00:00",
+    "session_id": "e2e-files-read-test-nexy",
+    "hardware_id": "e2e-files-read-test-nexy-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11369,
+    "output_tokens": 364,
+    "cost_usd": 0.00076973,
+    "tool_name": "none",
+    "response_text": "I ran into an internal error while trying to read the file. The system reported: No module named 'modules.file_search'. I couldn't read ~/Desktop/test_nexy.txt. Would you like me to retry reading the file, or try an alternative method (for example, reading from a different location or using a fallback method) to fetch the contents?"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:00+00:00",
+    "session_id": "e2e-files-find-pdf-desktop",
+    "hardware_id": "e2e-files-find-pdf-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6563,
+    "output_tokens": 493,
+    "cost_usd": 0.00055735,
+    "tool_name": "skill_view",
+    "user_input": "Find a PDF on my Desktop and tell me what it is about"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:03+00:00",
+    "session_id": "e2e-files-find-pdf-desktop",
+    "hardware_id": "e2e-files-find-pdf-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11249,
+    "output_tokens": 303,
+    "cost_usd": 0.00071565,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:07+00:00",
+    "session_id": "e2e-files-find-pdf-desktop",
+    "hardware_id": "e2e-files-find-pdf-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11406,
+    "output_tokens": 327,
+    "cost_usd": 0.00075678,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:10+00:00",
+    "session_id": "e2e-files-find-pdf-desktop",
+    "hardware_id": "e2e-files-find-pdf-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11609,
+    "output_tokens": 307,
+    "cost_usd": 0.00075957,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:14+00:00",
+    "session_id": "e2e-files-find-pdf-desktop",
+    "hardware_id": "e2e-files-find-pdf-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11916,
+    "output_tokens": 270,
+    "cost_usd": 0.0007614,
+    "tool_name": "none",
+    "response_text": "I'm having trouble accessing the file search tool right now. I can't locate a PDF on your Desktop at the moment. I can try again in a moment, or you can tell me to broaden the search options and I\u2019ll retry once the tool is available."
+  },
+  {
+    "timestamp": "2026-06-10T17:16:18+00:00",
+    "session_id": "e2e-files-read-pdf",
+    "hardware_id": "e2e-files-read-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6566,
+    "output_tokens": 301,
+    "cost_usd": 0.0004487,
+    "tool_name": "skill_view",
+    "user_input": "Read the file ~/Desktop/tax form.pdf and tell me what it is about"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:22+00:00",
+    "session_id": "e2e-files-read-pdf",
+    "hardware_id": "e2e-files-read-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11255,
+    "output_tokens": 367,
+    "cost_usd": 0.00074155,
+    "tool_name": "analyze_pdf_file"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:25+00:00",
+    "session_id": "e2e-files-read-pdf",
+    "hardware_id": "e2e-files-read-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11367,
+    "output_tokens": 275,
+    "cost_usd": 0.00073403,
+    "tool_name": "none",
+    "response_text": "I tried to read the PDF, but I hit an internal reading error: No module named 'config.unified_config_loader'. I can retry reading the file, try an alternate approach (OCR the PDF), or attempt reading as text if you\u2019d like. What would you prefer?"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:29+00:00",
+    "session_id": "e2e-files-open",
+    "hardware_id": "e2e-files-open-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6558,
+    "output_tokens": 301,
+    "cost_usd": 0.0004803,
+    "tool_name": "skill_view",
+    "user_input": "Open ~/Desktop/test_nexy.txt"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:34+00:00",
+    "session_id": "e2e-files-open",
+    "hardware_id": "e2e-files-open-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11239,
+    "output_tokens": 434,
+    "cost_usd": 0.00076755,
+    "tool_name": "file_open"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:35+00:00",
+    "session_id": "e2e-files-open",
+    "hardware_id": "e2e-files-open-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11332,
+    "output_tokens": 22,
+    "cost_usd": 0.00063108,
+    "tool_name": "none"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:40+00:00",
+    "session_id": "scenario-49157e21",
+    "hardware_id": "scenario-49157e21",
+    "model": "gpt-5-nano",
+    "input_tokens": 6556,
+    "output_tokens": 557,
+    "cost_usd": 0.0005826,
+    "tool_name": "skill_view",
+    "user_input": "Any files someone sent me?"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:44+00:00",
+    "session_id": "scenario-49157e21",
+    "hardware_id": "scenario-49157e21",
+    "model": "gpt-5-nano",
+    "input_tokens": 11234,
+    "output_tokens": 370,
+    "cost_usd": 0.0007417,
+    "tool_name": "none",
+    "response_text": "Do you want me to look for attachments in your emails, or search your files on the Mac for received items?"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:47+00:00",
+    "session_id": "integration-files-find-pdf-session",
+    "hardware_id": "integration-files-find-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6556,
+    "output_tokens": 237,
+    "cost_usd": 0.0004546,
+    "tool_name": "skill_view",
+    "user_input": "Find my invoice PDF in Downloads"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:53+00:00",
+    "session_id": "integration-files-find-pdf-session",
+    "hardware_id": "integration-files-find-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11235,
+    "output_tokens": 446,
+    "cost_usd": 0.00077215,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:55+00:00",
+    "session_id": "integration-files-find-pdf-session",
+    "hardware_id": "integration-files-find-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11357,
+    "output_tokens": 189,
+    "cost_usd": 0.00069913,
+    "tool_name": "file_found"
+  },
+  {
+    "timestamp": "2026-06-10T17:16:56+00:00",
+    "session_id": "integration-files-find-pdf-session",
+    "hardware_id": "integration-files-find-pdf-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11461,
+    "output_tokens": 35,
+    "cost_usd": 0.00064337,
+    "tool_name": "none",
+    "response_text": "invoice may pdf is in your Downloads \u2014 it's an invoice from May."
+  },
+  {
+    "timestamp": "2026-06-10T17:17:00+00:00",
+    "session_id": "integration-files-unanalyzed-session",
+    "hardware_id": "integration-files-unanalyzed-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 6560,
+    "output_tokens": 301,
+    "cost_usd": 0.0004804,
+    "tool_name": "skill_view",
+    "user_input": "Find my invoice PDF and tell me the total amount"
+  },
+  {
+    "timestamp": "2026-06-10T17:17:05+00:00",
+    "session_id": "integration-files-unanalyzed-session",
+    "hardware_id": "integration-files-unanalyzed-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11243,
+    "output_tokens": 431,
+    "cost_usd": 0.00076655,
+    "tool_name": "file_search"
+  },
+  {
+    "timestamp": "2026-06-10T17:17:08+00:00",
+    "session_id": "integration-files-unanalyzed-session",
+    "hardware_id": "integration-files-unanalyzed-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11340,
+    "output_tokens": 249,
+    "cost_usd": 0.0006666,
+    "tool_name": "file_found"
+  },
+  {
+    "timestamp": "2026-06-10T17:17:09+00:00",
+    "session_id": "integration-files-unanalyzed-session",
+    "hardware_id": "integration-files-unanalyzed-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11442,
+    "output_tokens": 35,
+    "cost_usd": 0.00064178,
+    "tool_name": "none",
+    "response_text": "Invoice found. Analyzing the PDF to extract the total amount..."
+  }
+]
