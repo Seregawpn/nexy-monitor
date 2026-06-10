@@ -299,5 +299,35 @@
       "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 32",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=540 result_len=84 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa"
     ]
+  },
+  {
+    "module_id": "error_handler",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c UNKNOWN: Task <Task pending name='Task-97' coro=<TrayController._publish_event() running at /Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/modules/tray_controller/core/tray_controller.",
+    "traceback": "",
+    "timestamp": "2026-06-10T14:06:34+00:00",
+    "log_context": [
+      "[INFO] \u23f9\ufe0f Stop interrupt...",
+      "[INFO] \u2705 interrupt stopped",
+      "[INFO] \u23f9\ufe0f Stop screenshot_capture...",
+      "[INFO] ScreenshotCaptureIntegration stopped",
+      "[INFO] \u2705 screenshot_capture stopped",
+      "[INFO] \u23f9\ufe0f Stop voice_recognition...",
+      "[INFO] \ud83d\uded1 AudioRouteMonitor stopped",
+      "[INFO] \ud83d\uded1 AudioCaptureController shutdown",
+      "[INFO] VoiceRecognitionIntegration stopped",
+      "[INFO] \u2705 voice_recognition stopped",
+      "[INFO] \u23f9\ufe0f Stop mode_management...",
+      "[INFO] \u2705 mode_management stopped",
+      "[INFO] \u23f9\ufe0f Stop grpc...",
+      "[INFO] \ud83d\udd04 Connection state: disconnected",
+      "[INFO] \ud83d\udd0c Disconnecting from server",
+      "[INFO] \ud83e\uddf9 ConnectionManager cleaned up",
+      "[INFO] \ud83e\uddf9 GrpcClient cleared",
+      "[INFO] \u2705 grpc stopped",
+      "[INFO] \u23f9\ufe0f Stop action_execution...",
+      "[INFO] Stopping ActionExecutionIntegration..."
+    ]
   }
 ]
