@@ -8244,5 +8244,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_140529_001ba99d",
+    "created_at": "2026-06-10T14:05:29+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "finance_dashboard",
+    "problem": "All timestamps shown in UTC instead of America/Montreal; today period cut at UTC midnight",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
