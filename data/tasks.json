@@ -7918,5 +7918,22 @@
     "status": "in_progress",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_000734_59d423ae",
+    "created_at": "2026-06-10T00:07:34+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "speech_playback",
+    "problem": "Race condition: recreate() nulls _engine/_player_node without resetting _initialized, causing start_playback() to fail with Player internals unavailable during route changes",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
