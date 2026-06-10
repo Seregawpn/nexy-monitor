@@ -7935,5 +7935,39 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_010238_c2bc7e7a",
+    "created_at": "2026-06-10T01:02:38+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "files_skill",
+    "problem": "file_search returns 33+ results \u2014 LLM lists all filenames verbally \u2192 timeout. Add browse-by-type response rule to SKILL.md",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "SKILL.md had no rule for browse-by-type results \u2014 LLM listed all 33 filenames verbally causing 180s timeout",
+    "solution": "Added Browse by type section: 6+ results \u2192 count + 3 examples + offer specific file; never list all, never read files unless user asks",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260610_010320_6ed352e8",
+    "created_at": "2026-06-10T01:03:20+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "speech_playback_integration",
+    "problem": "Clear stale runtime_errors.json events for speech_playback_integration \u2014 pre-fix artifacts from before v5.0.0.302",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
