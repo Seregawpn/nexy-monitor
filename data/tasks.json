@@ -8153,10 +8153,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "open",
+    "root_cause": "flow docs missing 3 registered tools: terminal_send_text, terminal_send_text_and_enter (computer), extract_pdf_text (files)",
+    "solution": "added all 3 to docs routing tables and rules; also flagged resolve_email_recipient as dead code in dispatcher (docs correctly say removed)",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
