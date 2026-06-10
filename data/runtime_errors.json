@@ -269,5 +269,35 @@
       "[INFO] [V3_DISPATCH] tool=read_text_file call_id=c84d9ebe-d713-401d-aec7-26aad1081ee9:8a527d8f-6d4e-4590-9a23-9fc6a99b4597 got result_len=2030",
       "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=46 result_len=2043 session=c84d9ebe-d713-401d-aec7-26aad1081ee9"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool files returned error: unknown tool: files",
+    "traceback": "",
+    "timestamp": "2026-06-10T04:17:41+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=3595 tokens=23 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=files args={'operation': 'file_search', 'extensions': ['pdf', 'doc', 'docx', 'xlsx'], 'directories': ['Downloads', 'Documents', 'De session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa",
+      "[INFO] [V3_DISPATCH] tool=files call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=3703 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13824 bytes, PCM=221184 bytes, chunks=56",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=581 chunks=56 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=files call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 elapsed_ms=3761 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa, command=files",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa command=files feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=files",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa result_len=71",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 result_len=71",
+      "[INFO] [V3_DISPATCH] tool=files call_id=8a9fe767-dec9-4312-ba7d-55ce5bc950fa:23d4f612-8938-4bac-be13-f65e46d712e7 got result_len=71",
+      "[INFO] Decision: start",
+      "[INFO] Decision: start",
+      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 32",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=540 result_len=84 session=8a9fe767-dec9-4312-ba7d-55ce5bc950fa"
+    ]
   }
 ]
