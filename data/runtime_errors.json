@@ -58,5 +58,65 @@
       "[DEBUG] \ud83d\udd0d gRPC response #1230: WhichOneof('content')=audio_chunk",
       "[ERROR] \u274c Audio streaming error: <AioRpcError of RPC that terminated with:\n\tstatus = StatusCode.INTERNAL\n\tdetails = \"frame of size 4120 overflows local window of 3664\"\n\tdebug_error_string = \"UNKNOWN:Error received from peer ipv4:127.0.0.1:50051 {grpc_status:13, grpc_message:\"frame of size 4120 overflows local window of 3664\"}\"\n>"
     ]
+  },
+  {
+    "module_id": "orchestrator",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[ORC3-stream] MAX ITERATIONS REACHED session=261cbea3-c4c6-4182-96f7-964193097e53 hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2 input=\"What's in the PDF 5005-r-fill-25e.pdf in my Downloads?\"",
+    "traceback": "",
+    "timestamp": "2026-06-10T01:11:27+00:00",
+    "log_context": [
+      "[INFO] [TOOL_REGISTRY] resolved call_id=261cbea3-c4c6-4182-96f7-964193097e53:6b4dba2d-a1a4-40d9-8870-f7920328787d result_len=107",
+      "[INFO] [V3_DISPATCH] tool=file_update_index call_id=261cbea3-c4c6-4182-96f7-964193097e53:6b4dba2d-a1a4-40d9-8870-f7920328787d got result_len=107",
+      "[INFO] [\u23f1 TIMING] llm.start iter=15 session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=15 elapsed_ms=783 session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] [\u23f1 TIMING] action.tool iter=15 elapsed_ms=838 session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] [\u23f1 TIMING] llm.done iter=15 total_ms=1173 tokens=17 session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] [\u23f1 TIMING] tool.start iter=15 tool=read_text_file args={'path': '/Users/sergiyzasorin/Downloads/Nexy Pitch Deck.pdf'} session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 session=261cbea3-c4c6-4182-96f7-964193097e53 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 elapsed_ms=65678 session=261cbea3-c4c6-4182-96f7-964193097e53",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=261cbea3-c4c6-4182-96f7-964193097e53, command=read_text_file",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=261cbea3-c4c6-4182-96f7-964193097e53 command=read_text_file feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=261cbea3-c4c6-4182-96f7-964193097e53 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 session=261cbea3-c4c6-4182-96f7-964193097e53 result_len=5053",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 result_len=5053",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=261cbea3-c4c6-4182-96f7-964193097e53:c2aa725c-a54d-4f7b-952e-a3a4fff9d638 got result_len=5053",
+      "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=135 result_len=5066 session=261cbea3-c4c6-4182-96f7-964193097e53"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] provider failure intent=list_account_inbox error=osascript failed",
+    "traceback": "",
+    "timestamp": "2026-06-10T01:12:04+00:00",
+    "log_context": [
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK hold_seconds=0.0",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK create_aggregate=true",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK rebroadcast=true gain=0.35",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK fade_ms=250 restore_ms=700",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=2 frames=12480 \u2014 engine rendered this buffer",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK excluded_process_objects=[128, 127]",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK excluded_pids=[80300, 80580]",
+      "[DEBUG] ProcessTap helper: PROCESS_TAP_DUCK include_running_output_processes=none",
+      "[WARNING] DuckController: process-tap duck failed \u2014 switching to fallback",
+      "[WARNING] DuckController: process-tap failed; no fallback enabled",
+      "[DEBUG] DuckController: duck started (ref=1)",
+      "[WARNING] EVENTBUS_SLOW_CALLBACK event=playback.started callback=ExternalAudioDuckingIntegration._on_playback_started duration_ms=224.6 dispatch_fast=False",
+      "[WARNING] EVENTBUS_SLOW_CALLBACK event=grpc.response.audio callback=SpeechPlaybackIntegration._on_audio_chunk duration_ms=244.9 dispatch_fast=False",
+      "[DEBUG] \ud83d\udd0d gRPC response #10: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #20: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #30: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #40: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #50: WhichOneof('content')=audio_chunk",
+      "[DEBUG] [EMAIL_INBOX_WATCHER] History scanner interrupted: AppleScript error: ",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=-15 stdout_len=0 stderr_len=0"
+    ]
   }
 ]
