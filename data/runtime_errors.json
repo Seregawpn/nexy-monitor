@@ -148,5 +148,35 @@
       "[INFO] [V3_DISPATCH] tool=read_text_file call_id=440f6566-a433-4ea9-9590-0b285d0a6e84:cb39aad1-2e2f-4ab5-8948-9d7be724c73b got result_len=128",
       "[INFO] [\u23f1 TIMING] tool.done iter=7 tool=read_text_file elapsed_ms=3 result_len=141 session=440f6566-a433-4ea9-9590-0b285d0a6e84"
     ]
+  },
+  {
+    "module_id": "orchestrator",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[ORC3-stream] MAX ITERATIONS REACHED session=93b45fa2-c94d-488e-94f8-eaa24536dc6f hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2 input='In my files'",
+    "traceback": "",
+    "timestamp": "2026-06-10T01:54:46+00:00",
+    "log_context": [
+      "[INFO] [TOOL_REGISTRY] resolved call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:b4d7d460-498b-4d25-b8c3-d4e10be6d7eb result_len=131",
+      "[INFO] [V3_DISPATCH] tool=file_update_index call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:b4d7d460-498b-4d25-b8c3-d4e10be6d7eb got result_len=131",
+      "[INFO] [\u23f1 TIMING] llm.start iter=15 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=15 elapsed_ms=1368 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] [\u23f1 TIMING] action.tool iter=15 elapsed_ms=1459 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] [\u23f1 TIMING] llm.done iter=15 total_ms=1870 tokens=14 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] [\u23f1 TIMING] tool.start iter=15 tool=read_text_file args={'path': '/Users/sergiyzasorin/Documents/Commuication/docs/Nexy_Assistant_Context.md'} session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d session=93b45fa2-c94d-488e-94f8-eaa24536dc6f \u2014 waiting for client",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d elapsed_ms=51938 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d timeout=25.0s",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=93b45fa2-c94d-488e-94f8-eaa24536dc6f, command=read_text_file",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=93b45fa2-c94d-488e-94f8-eaa24536dc6f command=read_text_file feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=93b45fa2-c94d-488e-94f8-eaa24536dc6f hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d session=93b45fa2-c94d-488e-94f8-eaa24536dc6f result_len=5564",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d result_len=5564",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=93b45fa2-c94d-488e-94f8-eaa24536dc6f:53de4b18-7a01-465d-95f5-7c6c15cf4c4d got result_len=5564",
+      "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=32 result_len=5577 session=93b45fa2-c94d-488e-94f8-eaa24536dc6f"
+    ]
   }
 ]
