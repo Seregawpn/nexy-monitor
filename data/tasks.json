@@ -8362,10 +8362,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "file_search default scope was effectively single-folder: LLM often passed directory=\"documents\" (or other folder) even when the user did not name a folder, and _DIRECTORY_KEYWORDS[\"documents\"]=(\"document\",) matched the generic word \"document\" in queries like \"find my bank statements document\", so Guard #1 never stripped it. With no broaden-on-empty retry and file_searcher requiring an exact folder match when directory was set, results were silently confined to one folder.",
+    "solution": "Guard #1 (before_tool_call) now strips directory from file_search unless the user actually named that folder via _DIRECTORY_KEYWORDS; documents now requires explicit phrases (\"documents folder\",\"my documents\",\"in documents\",\"in the documents\") so the bare word \"document\" no longer matches. Guard #2 (on_turn_end) forces one retry without directory if a scoped search returns 0 candidates. file_searcher.search() defaults to {desktop,downloads,documents} when directory is omitted (Messages/Mail still require explicit directory). Verified via 35/35 unit tests in test_hook_continuation_guard.py + new tests in test_file_searcher.py, and F4f/F4g E2E re-runs showing broadened result sets including Desktop. Released as v5.0.0.85 (commit c2fce347).",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
