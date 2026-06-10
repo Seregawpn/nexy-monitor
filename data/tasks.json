@@ -8159,5 +8159,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_020102_9e3d9cf1",
+    "created_at": "2026-06-10T02:01:02+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "finance_dashboard",
+    "problem": "Add hardware_id + tool_name to usage events; Finance sub-tabs: Users, Requests, Tools",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
