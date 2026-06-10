@@ -209,5 +209,65 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 1961 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "file_search",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_search returned error: ToolDispatcher._file_search() got an unexpected keyword argument 'limit'",
+    "traceback": "",
+    "timestamp": "2026-06-10T02:03:41+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=3370 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13824 bytes, PCM=221184 bytes, chunks=55",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=301 chunks=55 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=2334 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=2369 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=2560 tokens=16 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=file_search args={'file_type': ['document'], 'directory': 'documents', 'limit': 5} session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_search call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 elapsed_ms=5904 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471, command=file_search",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471 command=file_search feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_search",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471 result_len=124",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 result_len=124",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=bdae11e9-a58f-4dc8-acd5-8e88a6aae471:dfd2738a-f90e-4220-af66-1b1770ce9295 got result_len=124",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=file_search elapsed_ms=28 result_len=137 session=bdae11e9-a58f-4dc8-acd5-8e88a6aae471"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 30.0s intent=list_account_inbox lane=fg",
+    "traceback": "",
+    "timestamp": "2026-06-10T02:07:42+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 47.41 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (409/3)",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3497 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.40",
+      "[INFO] idle_ram_mb=48.45",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.40%, RAM: 48.45 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (410/3)",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3497 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.10",
+      "[INFO] idle_ram_mb=40.17",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 40.17 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (411/3)",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.20",
+      "[INFO] idle_ram_mb=46.78",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.20%, RAM: 46.78 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (412/3)"
+    ]
   }
 ]
