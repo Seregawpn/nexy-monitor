@@ -8238,10 +8238,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Requests table had no interactivity",
+    "solution": "Added filter bar (text/user/tool), column sorting (5 columns), click-to-open modal with full Query+Response, CSV export with active filter applied",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
