@@ -990,5 +990,35 @@
       "[INFO] [V3_DISPATCH] tool=files call_id=c8ef4831-ba84-4380-ba2a-00f38fa7ca64:013964fc-96b2-4733-a622-814166e5a4f6 got result_len=71",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=files elapsed_ms=301 result_len=84 session=c8ef4831-ba84-4380-ba2a-00f38fa7ca64"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_rename returned error: unknown tool: file_rename",
+    "traceback": "",
+    "timestamp": "2026-06-10T20:59:13+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Searching for files...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=1 elapsed_ms=2212 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=2466 tokens=16 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=file_rename args={'old_path': '~/Desktop/test.txt', 'new_path': '~/Desktop/test_renamed.txt'} session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] [V3_DISPATCH] tool=file_rename call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a session=f5f3e1c1-1521-41a2-90f1-128890cd44b5 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=2677 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=13824 bytes, PCM=221184 bytes, chunks=56",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=588 chunks=56 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_rename call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a elapsed_ms=2793 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=f5f3e1c1-1521-41a2-90f1-128890cd44b5, command=file_rename",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=f5f3e1c1-1521-41a2-90f1-128890cd44b5 command=file_rename feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=f5f3e1c1-1521-41a2-90f1-128890cd44b5 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_rename",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a session=f5f3e1c1-1521-41a2-90f1-128890cd44b5 result_len=77",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a result_len=77",
+      "[INFO] [V3_DISPATCH] tool=file_rename call_id=f5f3e1c1-1521-41a2-90f1-128890cd44b5:ec75adc3-1d27-42d6-b49c-3bb6ec0f436a got result_len=77",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=file_rename elapsed_ms=480 result_len=90 session=f5f3e1c1-1521-41a2-90f1-128890cd44b5"
+    ]
   }
 ]
