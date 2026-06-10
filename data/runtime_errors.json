@@ -149,5 +149,35 @@
       "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.20%, RAM: 46.78 MB",
       "[WARNING] \u26a0\ufe0f Health check failed (412/3)"
     ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 30.0s intent=list_account_inbox lane=fg",
+    "traceback": "",
+    "timestamp": "2026-06-10T02:11:11+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.40%, RAM: 65.45 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (416/3)",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3497 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.10",
+      "[INFO] idle_ram_mb=60.34",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 60.34 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (417/3)",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3497 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.10",
+      "[INFO] idle_ram_mb=46.27",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.10%, RAM: 46.27 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (418/3)",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.30",
+      "[INFO] idle_ram_mb=47.06",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.30%, RAM: 47.06 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (419/3)"
+    ]
   }
 ]
