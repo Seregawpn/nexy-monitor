@@ -8419,5 +8419,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_204949_c0ce062e",
+    "created_at": "2026-06-10T20:49:49+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "files_skill",
+    "problem": "SKILL.md Search&Find flow always terminates via file_found \u2014 LLM never calls file_open/delete/move after locating file",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "SKILL.md Search&Find flow had file_found as only terminal signal regardless of intent",
+    "solution": "added terminal action table \u2014 file_open/delete/move chosen by intent; file_found only for find/locate requests",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
