@@ -8278,5 +8278,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_155850_48cee98c",
+    "created_at": "2026-06-10T15:58:50+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "files_skill",
+    "problem": "LLM hallucination: invents file paths instead of using file_search results; SKILL.md Step A too strict (explicit-only match misses semantic equiv)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "SKILL.md used explicit-only keyword matching in Step A (missed semantic equiv); LLM invented file paths instead of using search results",
+    "solution": "SKILL.md: semantic Step A + analyzed:true ambiguous files as Step 2 candidates; orchestrator: capture file_search result paths, block read_text_file for non-result paths",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
