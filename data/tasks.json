@@ -8379,10 +8379,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "file_search ranked candidates only by extension/date/folder/analyzed/recency \u2014 files matching the user's query semantically (e.g. statement files for a bank-statement request) had no scoring advantage and could fall outside the first 8 forced reads.",
+    "solution": "Added optional keywords param (1-3 nouns from user request) to file_search/search()/_score(): additive bonus +25 if keyword matches file name, +15 if it matches summary/keyInfo. Non-matching files keep base score and remain in results \u2014 bonus ranks, never filters. SKILL.md updated so LLM populates keywords.",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
