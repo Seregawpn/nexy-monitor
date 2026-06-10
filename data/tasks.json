@@ -8227,5 +8227,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_022645_e8572d8e",
+    "created_at": "2026-06-10T02:26:45+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "finance_dashboard",
+    "problem": "Requests table: full-text modal, column sorting, filter panel, CSV export",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
