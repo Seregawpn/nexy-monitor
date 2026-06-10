@@ -8396,10 +8396,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-10",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "continuation_guard.before_tool_call had no check for tool==file_found, accepting it unconditionally even for analyzed:false (unread) candidates \u2014 violating SKILL.md prohibition on filename-only matches",
+    "solution": "Added Guard #6 in before_tool_call: blocks file_found if path in self._pending_paths (unread analyzed:false), forcing read_text_file first. analyzed:true paths and already-read paths pass through unchanged.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
