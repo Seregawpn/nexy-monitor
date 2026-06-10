@@ -59,7 +59,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .rp-table .rp-tc-cost { color: #ba7517; font-weight: 600; }
 .rp-table .rp-tc-tool { display: inline-block; background: #21262d; border: 1px solid #30363d; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #8b949e; margin: 1px 2px 1px 0; }
 .rp-table .rp-tc-bar { height: 6px; background: #378add; border-radius: 3px; min-width: 2px; }
-.rp-table .rp-tc-query { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: default; color: #c9d1d9; }
+.rp-table .rp-tc-query { max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; color: #c9d1d9; }
+.rp-table tr.rp-clickable:hover td { background: #1c2128; cursor: pointer; }
+.rp-table th.rp-sortable { cursor: pointer; user-select: none; }
+.rp-table th.rp-sortable:hover { color: #c9d1d9; }
+.rp-sort-arrow { margin-left: 4px; font-size: 9px; opacity: 0.5; }
+.rp-sort-arrow.active { opacity: 1; color: #58a6ff; }
+.rp-filter-bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.rp-filter-input { background: #161b22; border: 1px solid #30363d; color: #c9d1d9; font-size: 12px; padding: 5px 10px; border-radius: 6px; outline: none; flex: 1; min-width: 160px; }
+.rp-filter-input:focus { border-color: #58a6ff; }
+.rp-filter-select { background: #161b22; border: 1px solid #30363d; color: #c9d1d9; font-size: 12px; padding: 5px 8px; border-radius: 6px; cursor: pointer; outline: none; }
+.rp-filter-select:focus { border-color: #58a6ff; }
+.rp-export-btn { background: #21262d; border: 1px solid #30363d; color: #8b949e; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.rp-export-btn:hover { border-color: #8b949e; color: #c9d1d9; }
+.rp-filter-count { font-size: 11px; color: #8b949e; white-space: nowrap; }
+/* Modal */
+.rp-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 900; align-items: center; justify-content: center; }
+.rp-modal-overlay.open { display: flex; }
+.rp-modal { background: #161b22; border: 1px solid #30363d; border-radius: 10px; width: min(760px, 92vw); max-height: 80vh; display: flex; flex-direction: column; overflow: hidden; }
+.rp-modal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid #21262d; flex-shrink: 0; }
+.rp-modal-title { font-size: 13px; font-weight: 700; color: #c9d1d9; }
+.rp-modal-meta { font-size: 11px; color: #8b949e; }
+.rp-modal-close { background: none; border: none; color: #8b949e; font-size: 18px; cursor: pointer; padding: 0 4px; line-height: 1; }
+.rp-modal-close:hover { color: #c9d1d9; }
+.rp-modal-body { overflow-y: auto; padding: 16px 18px; display: flex; flex-direction: column; gap: 16px; }
+.rp-modal-section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #8b949e; margin-bottom: 6px; }
+.rp-modal-text { font-size: 13px; color: #c9d1d9; line-height: 1.7; white-space: pre-wrap; word-break: break-word; background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 12px 14px; }
 .rp-empty-row td { color: #8b949e; font-style: italic; text-align: center; padding: 20px; }
 
 /* ── Phase CRUD ── */
@@ -536,12 +561,55 @@ svg#deps-svg { display: block; }
     </div>
 
     <div class="rp-wrap rp-table-wrap" id="rp-sub-requests" style="display:none">
-      <div class="rp-table-title">Request history <span class="rp-table-sub">last 200, grouped by session</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div class="rp-table-title">Request history <span class="rp-table-sub">last 200, grouped by session</span></div>
+        <button class="rp-export-btn" onclick="rpExportCSV()">&#8595; CSV</button>
+      </div>
+      <div class="rp-filter-bar">
+        <input class="rp-filter-input" id="rp-flt-text" placeholder="Search query or response…" oninput="rpApplyFilters()">
+        <select class="rp-filter-select" id="rp-flt-user" onchange="rpApplyFilters()"><option value="">All users</option></select>
+        <select class="rp-filter-select" id="rp-flt-tool" onchange="rpApplyFilters()"><option value="">All tools</option></select>
+        <span class="rp-filter-count" id="rp-flt-count"></span>
+      </div>
       <div class="rp-table-scroll">
         <table class="rp-table">
-          <thead><tr><th>Date / Time</th><th>User</th><th>Query</th><th>Response</th><th>In</th><th>Out</th><th>Cost</th><th>Tools</th></tr></thead>
+          <thead>
+            <tr>
+              <th class="rp-sortable" data-col="timestamp" onclick="rpSort('timestamp')">Date / Time <span class="rp-sort-arrow" id="rp-sa-timestamp">&#8597;</span></th>
+              <th class="rp-sortable" data-col="hardware_id_short" onclick="rpSort('hardware_id_short')">User <span class="rp-sort-arrow" id="rp-sa-hardware_id_short">&#8597;</span></th>
+              <th>Query</th>
+              <th>Response</th>
+              <th class="rp-sortable" data-col="input_tokens" onclick="rpSort('input_tokens')">In <span class="rp-sort-arrow" id="rp-sa-input_tokens">&#8597;</span></th>
+              <th class="rp-sortable" data-col="output_tokens" onclick="rpSort('output_tokens')">Out <span class="rp-sort-arrow" id="rp-sa-output_tokens">&#8597;</span></th>
+              <th class="rp-sortable" data-col="cost" onclick="rpSort('cost')">Cost <span class="rp-sort-arrow" id="rp-sa-cost">&#8597;</span></th>
+              <th>Tools</th>
+            </tr>
+          </thead>
           <tbody id="rp-requests-tbody"></tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- Request detail modal -->
+    <div class="rp-modal-overlay" id="rp-modal-overlay" onclick="rpCloseModal(event)">
+      <div class="rp-modal">
+        <div class="rp-modal-head">
+          <div>
+            <div class="rp-modal-title" id="rp-modal-title">Request detail</div>
+            <div class="rp-modal-meta" id="rp-modal-meta"></div>
+          </div>
+          <button class="rp-modal-close" onclick="rpCloseModal()">&#10005;</button>
+        </div>
+        <div class="rp-modal-body">
+          <div>
+            <div class="rp-modal-section-label">Query</div>
+            <div class="rp-modal-text" id="rp-modal-query"></div>
+          </div>
+          <div>
+            <div class="rp-modal-section-label">Response</div>
+            <div class="rp-modal-text" id="rp-modal-response"></div>
+          </div>
+        </div>
       </div>
     </div>
 
