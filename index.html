@@ -2708,6 +2708,17 @@ function rpShowSubTab(name) {
   }
 }
 
+function rpFmtTs(isoStr) {
+  if (!isoStr) return '—';
+  try {
+    return new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'America/Montreal',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false
+    }).format(new Date(isoStr)).replace(',', '');
+  } catch(e) { return isoStr.replace('T', ' ').slice(0, 16); }
+}
+
 function rpRenderUsers(d) {
   var tbody = document.getElementById('rp-users-tbody');
   if (!tbody) return;
@@ -2727,7 +2738,7 @@ function rpRenderUsers(d) {
     td((u.input_tokens || 0).toLocaleString());
     td((u.output_tokens || 0).toLocaleString());
     td('$' + ((u.cost || 0)).toFixed(4), 'rp-tc-cost');
-    var ls = (u.last_seen || '').replace('T', ' ').slice(0, 16);
+    var ls = rpFmtTs(u.last_seen);
     td(ls || '—', 'rp-tc-mono');
     var tdTl = document.createElement('td');
     (u.tools || []).forEach(function(t) {
@@ -2840,7 +2851,7 @@ function rpSortAndDraw() {
       tr.appendChild(c);
       return c;
     }
-    var ts = (r.timestamp || '').replace('T', ' ').slice(0, 16);
+    var ts = rpFmtTs(r.timestamp);
     mkTd(ts || '—', 'rp-tc-mono');
     mkTd(r.hardware_id_short || '—', 'rp-tc-mono');
     var qi = r.user_input || '';
@@ -2862,7 +2873,7 @@ function rpSortAndDraw() {
 }
 
 function rpOpenModal(r) {
-  document.getElementById('rp-modal-title').textContent = (r.timestamp || '').replace('T', ' ').slice(0, 16) + '  ·  ' + (r.hardware_id_short || '?');
+  document.getElementById('rp-modal-title').textContent = rpFmtTs(r.timestamp) + '  ·  ' + (r.hardware_id_short || '?');
   var tools = (r.tools || []).filter(function(t) { return t && t !== 'none'; });
   document.getElementById('rp-modal-meta').textContent =
     'in: ' + (r.input_tokens || 0).toLocaleString() + '  out: ' + (r.output_tokens || 0).toLocaleString() +
@@ -2888,7 +2899,7 @@ function rpExportCSV() {
   var lines = [headers.map(esc).join(',')];
   rows.forEach(function(r) {
     lines.push([
-      esc((r.timestamp || '').replace('T',' ').slice(0,16)),
+      esc(rpFmtTs(r.timestamp)),
       esc(r.hardware_id_short || ''),
       esc(r.user_input || ''),
       esc(r.response_text || ''),
