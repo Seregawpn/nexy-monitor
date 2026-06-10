@@ -8402,5 +8402,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260610_204040_ae791243",
+    "created_at": "2026-06-10T20:40:40+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "continuation_guard",
+    "problem": "file_open: guard forces extra read_text_file; window not brought to front on macOS Sequoia",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-10",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
