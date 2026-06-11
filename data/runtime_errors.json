@@ -1950,5 +1950,35 @@
       "[INFO] [\u23f1 TIMING] request.done iter=3 total_ms=9670 session=dd048f25-316f-4cc6-88ab-1d2969fd8d50",
       "[ERROR] Failed to ensure session: insert or update on table \"sessions\" violates foreign key constraint \"sessions_user_id_fkey\"\nDETAIL:  Key (user_id)=(e03d2455-8ef1-5270-aa03-13b5771c7cb2) is not present in table \"users\".\n"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_read_all returned error: tool 'email_read_all' timed out after 22s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:10:11+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=36 for session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=4008 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Looking for attachments in emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=4133 tokens=18 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=email_read_all args={'days': 7, 'has_attachments': True} session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] [V3_DISPATCH] tool=email_read_all call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e session=ae844709-0154-4efe-8b07-7f5ac0e9fb87 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=17568 bytes, PCM=281088 bytes, chunks=70",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=452 chunks=70 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=email_read_all call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e elapsed_ms=11479 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=ae844709-0154-4efe-8b07-7f5ac0e9fb87, command=email_read_all",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=ae844709-0154-4efe-8b07-7f5ac0e9fb87 command=email_read_all feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=ae844709-0154-4efe-8b07-7f5ac0e9fb87 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=email_read_all",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e session=ae844709-0154-4efe-8b07-7f5ac0e9fb87 result_len=118",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e result_len=118",
+      "[INFO] [V3_DISPATCH] tool=email_read_all call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e got result_len=118",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_all elapsed_ms=22355 result_len=131 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87"
+    ]
   }
 ]
