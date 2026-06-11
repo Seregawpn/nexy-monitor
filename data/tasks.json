@@ -8602,8 +8602,8 @@
     "date_detected": "2026-06-11",
     "root_cause": "Full Disk Access permission texts only described Messages/Mail, missing file management (create/edit/move/delete files).",
     "solution": "Updated announcement_text in unified_config.yaml, NSFullDiskAccessUsageDescription in Nexy.spec, description field (+ fixed Russian text), and PACKAGING_FINAL_GUIDE.md F-2025-016 note.",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
