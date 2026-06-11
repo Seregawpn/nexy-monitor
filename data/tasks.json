@@ -8498,10 +8498,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Not a bug in current code - T16b (send-attach with confirmation) had simply never been run since the v5.0.0.115/v5.0.0.309 attachment_path passthrough fix landed. The previously reported issue (Mail says sent but no attachment) predates that fix.",
+    "solution": "Ran T16b e2e: Turn1 auto-sent email_send(attachment_path=~/Downloads/Nexy Pitch Deck.pdf) to Peter; verified directly in Mail.app [Gmail]/Sent Mail - message has 1 attachment Nexy Pitch Deck.pdf, byte-identical (477B) to source. Updated test_e2e_real_client.py and Docs/plans/2026-06-08-e2e-pipeline-test-results.md.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
