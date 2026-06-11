@@ -2161,5 +2161,35 @@
       "[INFO] [V3_DISPATCH] tool=file_search call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 got result_len=103",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=file_search elapsed_ms=267 result_len=116 session=856d475a-9648-4e61-9cff-7199023a3bca"
     ]
+  },
+  {
+    "module_id": "welcome_message",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c [WELCOME_PLAYER] Server generation returned an empty result",
+    "traceback": "",
+    "timestamp": "2026-06-11T16:07:33+00:00",
+    "log_context": [
+      "[DEBUG] Name found in cache for +380939361100",
+      "[INFO] scan_messages_history complete: 5 contacts, 1 unread",
+      "[INFO] SCREENSHOT_RUNTIME stage=owner.capture_enter bridge=core_graphics format=webp timeout=disabled",
+      "[INFO] SCREENSHOT_RUNTIME stage=core_graphics.raw_capture_done elapsed_ms=29 region=full",
+      "[DEBUG] \u2705 WebP \u2192 Base64 directly: 1383x900, 83964 bytes, quality=85",
+      "[INFO] SCREENSHOT_RUNTIME stage=core_graphics.encode_done elapsed_ms=429 format=webp success=True",
+      "[INFO] SCREENSHOT_RUNTIME stage=owner.capture_exit bridge=core_graphics success=True elapsed_ms=473",
+      "[INFO] TRACE phase=screenshot.ready ts=45685096 session=b598ec12-1301-41aa-9e5a-628c3da118da extra={format=webp, early=False, delta_from_start_ms=unknown}",
+      "[DEBUG] \u2705 Screenshot Base64 received directly from event (format: webp)",
+      "[INFO] TRACE phase=grpc.screenshot_ready ts=45685098 session=b598ec12-1301-41aa-9e5a-628c3da118da extra={source=base64_event, width=1383, height=900, delta_from_recording_stop_ms=679}",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3738 stderr_len=0",
+      "[DEBUG] Seeded 20 existing message IDs",
+      "[INFO] InboxWatcher started (poll every 30s)  account=Google",
+      "[INFO] [EMAIL_INBOX_WATCHER] Scanning emails from last 1440.0 hours",
+      "[WARNING] \u26a0\ufe0f [WELCOME_AUDIO] Timeout waiting for generate_welcome_audio (10.0s) \u2014 TTS service unavailable",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] audio_data is None: True",
+      "[WARNING] \u26a0\ufe0f [WELCOME_PLAYER] Server generation returned None (TTS unavailable, launching without audio)",
+      "[INFO] TRACE [WELCOME_PLAYER] _play_server_audio() returned: success=False",
+      "[INFO] \ud83d\udd0d [WELCOME_PLAYER] Server audio received: success=False, error=Server generation returned an empty result",
+      "[WARNING] \u26a0\ufe0f [WELCOME_PLAYER] Server welcome unavailable: Server generation returned an empty result"
+    ]
   }
 ]
