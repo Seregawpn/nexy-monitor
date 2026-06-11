@@ -1952,36 +1952,6 @@
     ]
   },
   {
-    "module_id": "orchestrator",
-    "source": "server",
-    "error_type": "Error",
-    "message": "[ORC3-stream] MAX ITERATIONS REACHED session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9 hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2 input='Yes, send it'",
-    "traceback": "",
-    "timestamp": "2026-06-11T02:21:44+00:00",
-    "log_context": [
-      "[INFO] \u2192 StreamAudio: sending ActionMessage session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9, command=read_text_file",
-      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9 command=read_text_file feature=",
-      "[INFO] REQUEST_PATH stage=action.streamed session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
-      "[INFO] Decision: start",
-      "[INFO] [SUBMIT_TOOL] call_id=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9:6ea3328d-b55a-42e1-bec3-ed634b5e7ac5 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9 result_len=5092",
-      "[INFO] Decision: complete",
-      "[INFO] [TOOL_REGISTRY] resolved call_id=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9:6ea3328d-b55a-42e1-bec3-ed634b5e7ac5 result_len=5092",
-      "[INFO] Metrics snapshot",
-      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9:6ea3328d-b55a-42e1-bec3-ed634b5e7ac5 got result_len=5092",
-      "[INFO] [\u23f1 TIMING] tool.done iter=14 tool=read_text_file elapsed_ms=497 result_len=5105 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[INFO] [\u23f1 TIMING] llm.start iter=15 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
-      "[INFO] Retrying request to /chat/completions in 4.387000 seconds",
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
-      "[INFO] [\u23f1 TIMING] llm.first_token iter=15 elapsed_ms=8108 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[INFO] [\u23f1 TIMING] action.tool iter=15 elapsed_ms=8147 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[INFO] [\u23f1 TIMING] llm.done iter=15 total_ms=8587 tokens=14 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[INFO] [\u23f1 TIMING] tool.start iter=15 tool=read_text_file args={'path': '/Users/sergiyzasorin/Downloads/Nexy_Pitch_Deck---5625038a-891c-4344-82d2-697cefe6bbee.pdf'} session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9",
-      "[WARNING] [ORC3] read_text_file blocked: already read /Users/sergiyzasorin/Downloads/Nexy_Pitch_Deck---5625038a-891c-4344-82d2-697cefe6bbee.pdf this turn",
-      "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=0 result_len=220 session=9e76756a-e7d3-4d5c-8142-eadaa8d0e5b9"
-    ]
-  },
-  {
     "module_id": "tools",
     "source": "server",
     "error_type": "Error",
@@ -2039,36 +2009,6 @@
       "[INFO] [TOOL_REGISTRY] resolved call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 result_len=198",
       "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 got result_len=198",
       "[INFO] [\u23f1 TIMING] tool.done iter=6 tool=read_text_file elapsed_ms=37 result_len=211 session=472fa8bf-56d9-47b5-905a-5cb6b0577185"
-    ]
-  },
-  {
-    "module_id": "orchestrator",
-    "source": "server",
-    "error_type": "Error",
-    "message": "[ORC3-stream] MAX ITERATIONS REACHED session=472fa8bf-56d9-47b5-905a-5cb6b0577185 hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2 input='Save the Anthropic invoice to my Downloads'",
-    "traceback": "",
-    "timestamp": "2026-06-11T02:38:18+00:00",
-    "log_context": [
-      "[INFO] Retrying request to /chat/completions in 3.030000 seconds",
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
-      "[INFO] Retrying request to /chat/completions in 1.212000 seconds",
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
-      "[INFO] [\u23f1 TIMING] llm.first_token iter=15 elapsed_ms=16258 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
-      "[INFO] [\u23f1 TIMING] action.tool iter=15 elapsed_ms=16328 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
-      "[INFO] [\u23f1 TIMING] llm.done iter=15 total_ms=16604 tokens=11 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
-      "[INFO] [\u23f1 TIMING] tool.start iter=15 tool=read_text_file args={'path': '/Users/sergiyzasorin/Downloads/5005-r-fill-25e.pdf'} session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
-      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 \u2014 waiting for client",
-      "[INFO] [TOOL_REGISTRY] waiting call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 timeout=25.0s",
-      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 elapsed_ms=65268 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
-      "[INFO] \u2192 StreamAudio: sending ActionMessage session=472fa8bf-56d9-47b5-905a-5cb6b0577185, command=read_text_file",
-      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=472fa8bf-56d9-47b5-905a-5cb6b0577185 command=read_text_file feature=",
-      "[INFO] REQUEST_PATH stage=action.streamed session=472fa8bf-56d9-47b5-905a-5cb6b0577185 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
-      "[INFO] Decision: start",
-      "[INFO] [SUBMIT_TOOL] call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 result_len=22613",
-      "[INFO] Decision: complete",
-      "[INFO] [TOOL_REGISTRY] resolved call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 result_len=22613",
-      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 got result_len=22613",
-      "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=355 result_len=22626 session=472fa8bf-56d9-47b5-905a-5cb6b0577185"
     ]
   },
   {
