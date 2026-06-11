@@ -8606,5 +8606,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_163923_83ab5c09",
+    "created_at": "2026-06-11T16:39:23+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "packaging",
+    "problem": "Missing hiddenimports in Nexy.spec: watchdog library, modules.terminal_automation, modules.media_analysis, and 30+ explicit integration/core/workflow/bridge modules",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "Nexy.spec hiddenimports did not include watchdog library (third-party), modules.terminal_automation and modules.media_analysis (lazy imports in tool_dispatcher.py), 30+ integration bridge/workflow modules; pyobjc frameworks were on mixed 11.1/12.1 versions",
+    "solution": "Added all missing hiddenimports to Nexy.spec; aligned all pyobjc-framework-* to 12.1 in requirements.txt",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
