@@ -1980,5 +1980,35 @@
       "[INFO] [V3_DISPATCH] tool=email_read_all call_id=ae844709-0154-4efe-8b07-7f5ac0e9fb87:0941d029-9abd-45ad-ba7e-65675f82e90e got result_len=118",
       "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=email_read_all elapsed_ms=22355 result_len=131 session=ae844709-0154-4efe-8b07-7f5ac0e9fb87"
     ]
+  },
+  {
+    "module_id": "email_inbox_watcher_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_INBOX_WATCHER] History scanner failed: Command '['osascript', '-e', 'tell application \"Mail\"\\n    set fieldSep to character id 31\\n    set recordSep to character id 30\\n    set output to \"\"\\n  ",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:15:23+00:00",
+    "log_context": [
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=132.45",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 132.45 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3781 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.90",
+      "[INFO] idle_ram_mb=132.84",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.90%, RAM: 132.84 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3781 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=113.47",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 113.47 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=113.62",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 113.62 MB"
+    ]
   }
 ]
