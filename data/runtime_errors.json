@@ -3,21 +3,6 @@
     "module_id": "__main__",
     "source": "server",
     "error_type": "Error",
-    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 84309 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS",
-    "traceback": "",
-    "timestamp": "2026-06-10T15:14:23+00:00",
-    "log_context": [
-      "[INFO] Update Server module found",
-      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
-      "[INFO] Server started",
-      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
-      "[INFO] [F-2025-017] Subscription module disabled by config"
-    ]
-  },
-  {
-    "module_id": "__main__",
-    "source": "server",
-    "error_type": "Error",
     "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
     "traceback": "",
     "timestamp": "2026-06-10T15:14:23+00:00",
@@ -2939,6 +2924,36 @@
       "[ERROR] PostgreSQL Provider initialization failed",
       "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
       "[ERROR] Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. Check that PostgreSQL is running and accessible 2. Verify database credentials in config.env 3. Ensure the database user 'nexy_user' exists and has proper permissions"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[browser_llm_proxy] upstream error: Cannot connect to host openrouter.ai:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local is",
+    "traceback": "",
+    "timestamp": "2026-06-11T22:37:19+00:00",
+    "log_context": [
+      "[INFO] \u2705 MemoryWorkflowIntegration initialized successfully",
+      "[INFO] Initialization of InterruptWorkflowIntegration...",
+      "[INFO] \u2705 InterruptWorkflowIntegration initialized successfully",
+      "[INFO] \u2705 gRPC Service Manager initialized",
+      "[INFO] \ud83c\udf89 New gRPC server fully initialized",
+      "[INFO] \u2705 Optimized server setup on 0.0.0.0:50051",
+      "[INFO] \ud83d\udcca Performance settings:",
+      "[INFO]    - Workers: 100",
+      "[INFO]    - Keep-alive: 30s",
+      "[INFO]    - Buffers: 4MB",
+      "[INFO]    - Client timeout: 5 minutes",
+      "[INFO] \ud83c\udf89 Optimized gRPC server started on 0.0.0.0:50051",
+      "[INFO] 127.0.0.1 [11/Jun/2026:18:36:54 -0400] \"GET /health HTTP/1.1\" 200 327 \"-\" \"curl/8.7.1\"",
+      "[INFO] Decision: start",
+      "[INFO] Decision: start",
+      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 43",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Hi! Nexy is here. How can I help you today?... (attempt 1/3)",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=33840 bytes, PCM=541440 bytes, chunks=133",
+      "[INFO] Decision: complete",
+      "[INFO] Decision: complete"
     ]
   }
 ]
