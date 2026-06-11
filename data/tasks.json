@@ -8702,10 +8702,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "API keys stored inline in yaml \u2014 security risk and not configurable per environment",
+    "solution": "Replaced gemini_api_key and openai_api_key with env var references (gemini_api_key_env / openai_api_key_env); added gemini_api_key_env resolution logic in google branch of resolve_browser_llm_runtime_config",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
