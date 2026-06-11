@@ -2221,5 +2221,35 @@
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 5708 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool email_read_all returned error: tool 'email_read_all' timed out after 22s \u2014 try a more specific query or location",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:53:58+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] request.start session=baf8fd14-aa6b-4539-9d23-a21f271adac7 input='Send Peter an email with the Nexy pitch deck from my Downloads attached'",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=1 history_msgs=0 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=1 elapsed_ms=6391 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] sentence.received n=0 len=22 elapsed_ms=6465 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=22 for session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Reading your emails...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=1 elapsed_ms=9476 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] llm.done iter=1 total_ms=9482 tokens=14 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] tool.start iter=1 tool=skill_view args={'name': 'email'} session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=c3607d5b-b209-427e-9768-fc4af56604e0:6aca7990-1b9f-421e-a602-3d8413083210 session=c3607d5b-b209-427e-9768-fc4af56604e0 result_len=118",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=c3607d5b-b209-427e-9768-fc4af56604e0:6aca7990-1b9f-421e-a602-3d8413083210 result_len=118",
+      "[INFO] [V3_DISPATCH] tool=email_read_all call_id=c3607d5b-b209-427e-9768-fc4af56604e0:6aca7990-1b9f-421e-a602-3d8413083210 got result_len=118",
+      "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=skill_view elapsed_ms=8 result_len=44656 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] llm.start iter=2 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_read_all elapsed_ms=23398 result_len=131 session=c3607d5b-b209-427e-9768-fc4af56604e0"
+    ]
   }
 ]
