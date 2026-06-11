@@ -8781,5 +8781,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_223700_d092ba2e",
+    "created_at": "2026-06-11T22:37:00+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "orchestrator",
+    "problem": "Add real input/output token logging per LLM iteration in arun_streaming \u2014 currently logs word count instead of tokens",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
