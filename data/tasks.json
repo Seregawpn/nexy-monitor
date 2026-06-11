@@ -8330,8 +8330,8 @@
     "date_detected": "2026-06-10",
     "root_cause": "",
     "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
