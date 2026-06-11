@@ -2849,5 +2849,35 @@
       "[INFO] 127.0.0.1 [11/Jun/2026:19:32:03 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 3065 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
       "[INFO] Decision: start"
     ]
+  },
+  {
+    "module_id": "browser_use",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[SessionManager] \u274c Error during agent_focus recovery: RuntimeError: {'code': -32000, 'message': 'Failed to open new tab - no browser is open'}",
+    "traceback": "",
+    "timestamp": "2026-06-11T23:34:16+00:00",
+    "log_context": [
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SKIP reason=playback_loop_exit playing=True",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=115.91",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 115.91 MB",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3604 stderr_len=0",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=100.34",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 100.34 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3604 stderr_len=0",
+      "[INFO] [EMAIL_INBOX_WATCHER] Scan complete: 206 contacts, 390 unread",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=1865 timeout_sec=30.0 intent=read_contact_thread lane=bg",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=206.16",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 206.16 MB",
+      "[WARNING] [SessionManager] Agent focus target 83D6EE1F... detached! Current focus: None (already cleared). Auto-recovering by switching to another target...",
+      "[WARNING] [SessionManager] No tabs remain! Creating new tab for agent..."
+    ]
   }
 ]
