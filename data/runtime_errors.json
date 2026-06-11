@@ -2251,5 +2251,35 @@
       "[INFO] [\u23f1 TIMING] llm.start iter=2 session=baf8fd14-aa6b-4539-9d23-a21f271adac7",
       "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_read_all elapsed_ms=23398 result_len=131 session=c3607d5b-b209-427e-9768-fc4af56604e0"
     ]
+  },
+  {
+    "module_id": "file_search",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool file_search returned error: Either 'extensions' or 'file_type' must be provided",
+    "traceback": "",
+    "timestamp": "2026-06-11T04:17:56+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tool.start iter=3 tool=file_search args={'directory': 'Downloads', 'keywords': ['Nexy', 'pitch', 'deck']} session=856d475a-9648-4e61-9cff-7199023a3bca",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 session=856d475a-9648-4e61-9cff-7199023a3bca \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] sentence.received n=2 len=37 elapsed_ms=14432 session=59b129a8-76d7-461a-9b25-b04b78ea4728",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=37 for session=59b129a8-76d7-461a-9b25-b04b78ea4728",
+      "[INFO] [\u23f1 TIMING] tts.start n=2 session=59b129a8-76d7-461a-9b25-b04b78ea4728",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Checking older messages with Peter...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=3 elapsed_ms=1883 session=59b129a8-76d7-461a-9b25-b04b78ea4728",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=20304 bytes, PCM=324864 bytes, chunks=82",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=551 chunks=82 session=856d475a-9648-4e61-9cff-7199023a3bca",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=file_search call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 elapsed_ms=19387 session=856d475a-9648-4e61-9cff-7199023a3bca",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=856d475a-9648-4e61-9cff-7199023a3bca, command=file_search",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=856d475a-9648-4e61-9cff-7199023a3bca command=file_search feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=856d475a-9648-4e61-9cff-7199023a3bca hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=file_search",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 session=856d475a-9648-4e61-9cff-7199023a3bca result_len=103",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 result_len=103",
+      "[INFO] [V3_DISPATCH] tool=file_search call_id=856d475a-9648-4e61-9cff-7199023a3bca:d9863993-7d4c-44ee-8686-69af9c7cf437 got result_len=103",
+      "[INFO] [\u23f1 TIMING] tool.done iter=3 tool=file_search elapsed_ms=267 result_len=116 session=856d475a-9648-4e61-9cff-7199023a3bca"
+    ]
   }
 ]
