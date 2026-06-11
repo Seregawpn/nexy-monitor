@@ -1380,5 +1380,65 @@
       "[INFO] [\u23f1 TIMING] request.done iter=3 total_ms=53665 session=9a6f997a-c16b-4f9b-9799-afe0f86a72a8",
       "[ERROR] Failed to ensure session: insert or update on table \"sessions\" violates foreign key constraint \"sessions_user_id_fkey\"\nDETAIL:  Key (user_id)=(e03d2455-8ef1-5270-aa03-13b5771c7cb2) is not present in table \"users\".\n"
     ]
+  },
+  {
+    "module_id": "database",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to ensure session: insert or update on table \"sessions\" violates foreign key constraint \"sessions_user_id_fkey\"\nDETAIL:  Key (user_id)=(e03d2455-8ef1-5270-aa03-13b5771c7cb2) is not present in t",
+    "traceback": "",
+    "timestamp": "2026-06-11T00:56:16+00:00",
+    "log_context": [
+      "[INFO] [V3_DISPATCH] tool=email_read_all call_id=80626bc3-9405-4c35-a4c0-586591538c9b:afacdcf6-1369-4c8b-8269-ee3f43b06f09 got result_len=10858",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_read_all elapsed_ms=677 result_len=10871 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] llm.start iter=3 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=3 elapsed_ms=3675 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] sentence.received n=2 len=53 elapsed_ms=13641 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=53 for session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] tts.start n=2 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Found Peter's contact and ready to draft the email...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.null iter=3 elapsed_ms=3783 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] sentence.first iter=3 elapsed_ms=3910 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=23616 bytes, PCM=377856 bytes, chunks=96",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=569 chunks=96 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [V3] voice_sanitize: removed junk before='I found Peter at peter@seattlesign.shop.' after='I found Peter at .'",
+      "[INFO] [\u23f1 TIMING] sentence.received n=3 len=40 elapsed_ms=14211 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=18 for session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] tts.start n=3 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 generating speech for text: I found Peter at .... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=4503 tokens=67 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] request.done iter=3 total_ms=14378 session=80626bc3-9405-4c35-a4c0-586591538c9b"
+    ]
+  },
+  {
+    "module_id": "database",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to ensure command: Session not found: 80626bc3-9405-4c35-a4c0-586591538c9b",
+    "traceback": "",
+    "timestamp": "2026-06-11T00:56:16+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=email_read_all elapsed_ms=677 result_len=10871 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] llm.start iter=3 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=3 elapsed_ms=3675 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] sentence.received n=2 len=53 elapsed_ms=13641 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=53 for session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] tts.start n=2 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Found Peter's contact and ready to draft the email...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.null iter=3 elapsed_ms=3783 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] sentence.first iter=3 elapsed_ms=3910 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=23616 bytes, PCM=377856 bytes, chunks=96",
+      "[INFO] [\u23f1 TIMING] tts.done n=2 elapsed_ms=569 chunks=96 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [V3] voice_sanitize: removed junk before='I found Peter at peter@seattlesign.shop.' after='I found Peter at .'",
+      "[INFO] [\u23f1 TIMING] sentence.received n=3 len=40 elapsed_ms=14211 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=18 for session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] tts.start n=3 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] EdgeTTS \u2192 generating speech for text: I found Peter at .... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] llm.done iter=3 total_ms=4503 tokens=67 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[INFO] [\u23f1 TIMING] request.done iter=3 total_ms=14378 session=80626bc3-9405-4c35-a4c0-586591538c9b",
+      "[ERROR] Failed to ensure session: insert or update on table \"sessions\" violates foreign key constraint \"sessions_user_id_fkey\"\nDETAIL:  Key (user_id)=(e03d2455-8ef1-5270-aa03-13b5771c7cb2) is not present in table \"users\".\n"
+    ]
   }
 ]
