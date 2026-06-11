@@ -303,5 +303,196 @@
     "cost_usd": 0.00064178,
     "tool_name": "none",
     "response_text": "Invoice found. Analyzing the PDF to extract the total amount..."
+  },
+  {
+    "timestamp": "2026-06-11T17:02:00+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error",
+    "user_input": "hello"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:00+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:08+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8273,
+    "output_tokens": 303,
+    "cost_usd": 0.00053485,
+    "tool_name": "skill_view",
+    "user_input": "Go to example.com and tell me what you see on the page"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:11+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9205,
+    "output_tokens": 314,
+    "cost_usd": 0.00062681,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:15+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9330,
+    "output_tokens": 401,
+    "cost_usd": 0.00067234,
+    "tool_name": "none",
+    "response_text": "I hit a tooling issue while loading the page. The browser automation module isn\u2019t available right now. I can retry loading example.com, or I can fetch a quick web description of the page content. Which would you prefer?"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:18+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8279,
+    "output_tokens": 250,
+    "cost_usd": 0.00055491,
+    "tool_name": "web_search",
+    "user_input": "On google.com, search for 'nexy ai assistant' and return the first result title"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:38+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8503,
+    "output_tokens": 303,
+    "cost_usd": 0.00054635,
+    "tool_name": "none",
+    "response_text": "The first Google result is: Nexy \u2014 Chrome Web Store page for a smart browser AI assistant."
+  },
+  {
+    "timestamp": "2026-06-11T17:02:41+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8263,
+    "output_tokens": 366,
+    "cost_usd": 0.00060051,
+    "tool_name": "skill_view",
+    "user_input": "Close the browser"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:46+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9185,
+    "output_tokens": 427,
+    "cost_usd": 0.00067101,
+    "tool_name": "close_browser"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:49+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9279,
+    "output_tokens": 239,
+    "cost_usd": 0.00060051,
+    "tool_name": "none",
+    "response_text": "I couldn't close the browser due to an internal error. Would you like me to try again?"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:51+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8264,
+    "output_tokens": 173,
+    "cost_usd": 0.00052336,
+    "tool_name": "skill_view",
+    "user_input": "Check my Gmail inbox"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:55+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21522,
+    "output_tokens": 310,
+    "cost_usd": 0.00124106,
+    "tool_name": "email_read_unread"
+  },
+  {
+    "timestamp": "2026-06-11T17:02:59+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21664,
+    "output_tokens": 411,
+    "cost_usd": 0.00135448,
+    "tool_name": "none",
+    "response_text": "I hit a hiccup while fetching unread emails. The system reported a module error: No module named 'modules.email_actions'. I can't access unread emails right now. I can try again in a moment, or I can scan for recent emails from the last 7 days using email_read_all. What would you prefer?"
+  },
+  {
+    "timestamp": "2026-06-11T17:03:03+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8272,
+    "output_tokens": 494,
+    "cost_usd": 0.00065216,
+    "tool_name": "browser_use",
+    "user_input": "Go to booking.com and find hotels in Paris for next weekend"
+  },
+  {
+    "timestamp": "2026-06-11T17:03:05+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8379,
+    "output_tokens": 174,
+    "cost_usd": 0.00052951,
+    "tool_name": "skill_view"
+  },
+  {
+    "timestamp": "2026-06-11T17:03:08+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9310,
+    "output_tokens": 192,
+    "cost_usd": 0.00058326,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-11T17:03:11+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9440,
+    "output_tokens": 247,
+    "cost_usd": 0.00061688,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-11T17:03:19+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9772,
+    "output_tokens": 446,
+    "cost_usd": 0.00071372,
+    "tool_name": "none",
+    "response_text": "Before I pull options, which exact dates should I search for Paris hotels next weekend (and would you like me to target any budget or area preferences after I fetch results)?"
   }
 ]
