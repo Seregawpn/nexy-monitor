@@ -112,6 +112,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .ph-save-btn { background: #238636; border: 1px solid #2ea043; color: #fff; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; }
 .ph-cancel-btn { background: transparent; border: 1px solid #30363d; color: #8b949e; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; }
 .ph-del-btn { background: transparent; border: 1px solid #6e2121; color: #f85149; font-size: 12px; padding: 5px 14px; border-radius: 6px; cursor: pointer; margin-left: auto; }
+.ph-date-header { font-size: 12px; font-weight: 700; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin: 14px 0 2px; padding-bottom: 4px; border-bottom: 1px solid #21262d; }
+.ph-date-header:first-child { margin-top: 0; }
+.ph-attachments { display: flex; flex-direction: column; gap: 8px; }
+.ph-attach-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.ph-attach-item { display: flex; align-items: center; gap: 6px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 4px 8px; font-size: 11px; color: #c9d1d9; }
+.ph-attach-item a { color: #58a6ff; text-decoration: none; }
+.ph-attach-item a:hover { text-decoration: underline; }
+.ph-attach-thumb { width: 32px; height: 32px; object-fit: cover; border-radius: 4px; border: 1px solid #30363d; }
+.ph-attach-del { background: transparent; border: none; color: #f85149; cursor: pointer; font-size: 13px; line-height: 1; padding: 0 2px; }
+.ph-attach-upload { display: flex; align-items: center; gap: 8px; }
+.ph-attach-hint { color: #8b949e; font-size: 11px; }
 
 /* ── Critical alert banner ── */
 .critical-banner { display: none; background: #1a0505; border-bottom: 1px solid #6e2121; padding: 7px 18px; flex-shrink: 0; align-items: center; gap: 10px; }
@@ -3056,6 +3067,10 @@ function phLoad() {
 var _DAY_TYPES = ['Focus day','Mixed day','Admin day','Testing day','Research day','Release day'];
 var _PH_STATUSES = ['in_progress','done','blocked'];
 
+function phReportDate(ph) {
+  return ph.report_date || (ph.created_at ? ph.created_at.slice(0,10) : '');
+}
+
 function phRender() {
   var list = document.getElementById('ph-list');
   while (list.firstChild) list.removeChild(list.firstChild);
@@ -3066,7 +3081,20 @@ function phRender() {
     list.appendChild(emp);
     return;
   }
-  _phAllPhases.forEach(function(ph) {
+  var sorted = _phAllPhases.slice().sort(function(a, b) {
+    return phReportDate(b).localeCompare(phReportDate(a));
+  });
+  var lastDate = null;
+  sorted.forEach(function(ph) {
+    var date = phReportDate(ph);
+    if (date !== lastDate) {
+      var hdr = document.createElement('div');
+      hdr.className = 'ph-date-header';
+      hdr.textContent = date || 'No date';
+      list.appendChild(hdr);
+      lastDate = date;
+    }
+
     var card = document.createElement('div');
     card.className = 'ph-card';
     card.setAttribute('data-ph-id', ph.id);
@@ -3087,10 +3115,10 @@ function phRender() {
       dt.textContent = ph.day_type;
       meta.appendChild(dt);
     }
-    if (ph.created_at) {
-      var da = document.createElement('span');
-      da.textContent = ph.created_at.slice(0,10);
-      meta.appendChild(da);
+    if ((ph.attachments || []).length) {
+      var att = document.createElement('span');
+      att.textContent = '📎 ' + ph.attachments.length;
+      meta.appendChild(att);
     }
     card.appendChild(meta);
 
@@ -3121,7 +3149,7 @@ function phOpenForm(id) {
   ftitle.textContent = id ? 'Edit Phase' : 'New Phase';
   form.appendChild(ftitle);
 
-  function field(label, key, isTextarea, value) {
+  function field(label, key, isTextarea, value, inputType) {
     var wrap = document.createElement('div');
     wrap.className = 'ph-field';
     var lbl = document.createElement('label');
@@ -3129,7 +3157,7 @@ function phOpenForm(id) {
     wrap.appendChild(lbl);
     var inp = isTextarea ? document.createElement('textarea') : document.createElement('input');
     inp.id = 'ph-f-' + key;
-    if (!isTextarea) inp.type = 'text';
+    if (!isTextarea) inp.type = inputType || 'text';
     inp.value = value || '';
     inp.placeholder = label;
     wrap.appendChild(inp);
@@ -3137,6 +3165,7 @@ function phOpenForm(id) {
   }
 
   form.appendChild(field('Title', 'title', false, ph && ph.title));
+  form.appendChild(field('Report date', 'report_date', false, (ph && ph.report_date) || new Date().toISOString().slice(0,10), 'date'));
   form.appendChild(field('Phase goal', 'phase_goal', true, ph && ph.phase_goal));
   form.appendChild(field("Today's plan", 'todays_plan', true, ph && ph.todays_plan));
 
@@ -3184,6 +3213,20 @@ function phOpenForm(id) {
   form.appendChild(field('If blocked', 'if_blocked', false, ph && ph.if_blocked));
   form.appendChild(field('Next step', 'next_step', false, ph && ph.next_step));
 
+  if (id) {
+    var attWrap = document.createElement('div');
+    attWrap.className = 'ph-field';
+    var attLbl = document.createElement('label');
+    attLbl.textContent = 'Attachments';
+    attWrap.appendChild(attLbl);
+    var attBody = document.createElement('div');
+    attBody.className = 'ph-attachments';
+    attBody.id = 'ph-attachments-body';
+    attWrap.appendChild(attBody);
+    form.appendChild(attWrap);
+    phRenderAttachments(ph);
+  }
+
   var btns = document.createElement('div');
   btns.className = 'ph-form-btns';
 
@@ -3229,6 +3272,7 @@ function phSave() {
   }
   var payload = {
     title:         val('title'),
+    report_date:   val('report_date'),
     phase_goal:    val('phase_goal'),
     todays_plan:   val('todays_plan'),
     day_type:      val('day_type'),
@@ -3239,10 +3283,121 @@ function phSave() {
     if_blocked:    val('if_blocked'),
     next_step:     val('next_step'),
   };
+  var wasNew = !_phEditId;
   var url    = _phEditId ? '/phases/' + _phEditId : '/phases';
-  var method = 'POST';
-  fetch(url, { method: method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-    .then(function(){ phCloseForm(); phLoad(); });
+  fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (wasNew && data && data.id) {
+        fetch('/phases').then(function(r){ return r.json(); }).then(function(phases){
+          _phAllPhases = phases || [];
+          phRender();
+          phOpenForm(data.id);
+        });
+      } else {
+        phCloseForm();
+        phLoad();
+      }
+    });
+}
+
+/* ── Phase attachments ── */
+var _PH_IMAGE_EXT = ['png','jpg','jpeg','gif','webp','svg'];
+
+function phAttachmentUrl(phaseId, filename) {
+  return '/phases/' + phaseId + '/attachments/' + encodeURIComponent(filename);
+}
+
+function phRenderAttachments(ph) {
+  var body = document.getElementById('ph-attachments-body');
+  if (!body) return;
+  while (body.firstChild) body.removeChild(body.firstChild);
+
+  var attachments = ph.attachments || [];
+  var listEl = document.createElement('div');
+  listEl.className = 'ph-attach-list';
+  if (attachments.length === 0) {
+    var none = document.createElement('span');
+    none.className = 'ph-attach-hint';
+    none.textContent = 'No files attached yet.';
+    listEl.appendChild(none);
+  } else {
+    attachments.forEach(function(att) {
+      var item = document.createElement('div');
+      item.className = 'ph-attach-item';
+      var url = phAttachmentUrl(ph.id, att.filename);
+      var ext = (att.filename.split('.').pop() || '').toLowerCase();
+      if (_PH_IMAGE_EXT.indexOf(ext) !== -1) {
+        var img = document.createElement('img');
+        img.className = 'ph-attach-thumb';
+        img.src = url;
+        img.alt = att.filename;
+        item.appendChild(img);
+      }
+      var link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = att.filename;
+      item.appendChild(link);
+      var del = document.createElement('button');
+      del.className = 'ph-attach-del';
+      del.textContent = '×';
+      del.title = 'Remove attachment';
+      del.addEventListener('click', function(){ phDeleteAttachment(ph.id, att.filename); });
+      item.appendChild(del);
+      listEl.appendChild(item);
+    });
+  }
+  body.appendChild(listEl);
+
+  var uploadWrap = document.createElement('div');
+  uploadWrap.className = 'ph-attach-upload';
+  var fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.id = 'ph-attach-file';
+  fileInput.addEventListener('change', function(){ phUploadAttachment(ph.id, fileInput); });
+  uploadWrap.appendChild(fileInput);
+  var hint = document.createElement('span');
+  hint.className = 'ph-attach-hint';
+  hint.textContent = 'Max 5 MB';
+  uploadWrap.appendChild(hint);
+  body.appendChild(uploadWrap);
+}
+
+function phReloadAndReopen(phaseId) {
+  fetch('/phases').then(function(r){ return r.json(); }).then(function(phases){
+    _phAllPhases = phases || [];
+    phRender();
+    phOpenForm(phaseId);
+  });
+}
+
+function phUploadAttachment(phaseId, fileInput) {
+  var file = fileInput.files && fileInput.files[0];
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) {
+    alert('File too large — max 5 MB.');
+    fileInput.value = '';
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function() {
+    var dataUrl = reader.result;
+    var base64 = dataUrl.slice(dataUrl.indexOf(',') + 1);
+    fetch('/phases/' + phaseId + '/attachments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename: file.name, content_base64: base64 })
+    }).then(function(){ phReloadAndReopen(phaseId); });
+  };
+  reader.readAsDataURL(file);
+}
+
+function phDeleteAttachment(phaseId, filename) {
+  if (!confirm('Remove "' + filename + '"?')) return;
+  fetch(phAttachmentUrl(phaseId, filename), { method: 'DELETE' })
+    .then(function(){ phReloadAndReopen(phaseId); });
 }
 </script>
 </body>
