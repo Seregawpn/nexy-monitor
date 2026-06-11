@@ -8758,10 +8758,10 @@
       "[INFO] TRACE phase=playback.end ts=5181296 session=fd43faf3-edc6-46ec-b6b9-3802ec1eb11e extra={error=Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 187431, Requested 20454. Please try again in 2.365s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}, failed=true}"
     ],
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event from previous server run",
+    "solution": "closed as artifact of old run",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 3,
     "notes": ""
   },
@@ -8848,10 +8848,10 @@
       "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg"
     ],
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event from previous server run",
+    "solution": "closed as artifact of old run",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -8865,10 +8865,10 @@
     "error_type": "runtime_error",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale runtime event from previous server run",
+    "solution": "closed as artifact of old run",
     "verified": false,
-    "status": "open",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
@@ -8899,10 +8899,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "ChatOpenAI for server_proxy created without max_tokens \u2014 OpenRouter defaults to model maximum 65535, 8x higher than old Google API default 8192",
+    "solution": "Added max_tokens=8192 to ChatOpenAI in create_browser_llm_transport() server_proxy branch",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
