@@ -8888,5 +8888,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_232433_d14485f0",
+    "created_at": "2026-06-11T23:24:33+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "browser_automation",
+    "problem": "ChatOpenAI server_proxy created without max_tokens \u2014 OpenRouter defaults to 65535, 8x higher than old Google API default of 8192, causes 402 on low balance",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
