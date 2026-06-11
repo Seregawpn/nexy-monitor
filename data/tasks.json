@@ -8792,10 +8792,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "llm.done logged word count instead of real tokens; _iter_usage was accumulated after the log",
+    "solution": "Moved _iter_usage before log; replaced tokens=word_count with in=/out=/cost=; added session.tokens total log before DB write",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
