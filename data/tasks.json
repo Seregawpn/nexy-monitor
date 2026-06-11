@@ -8470,5 +8470,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_021451_46f25961",
+    "created_at": "2026-06-11T02:14:51+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "messages",
+    "problem": "Architecture doc: attachment search now queries chat.db directly (v5.0.0.105-106)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "read_messages_all(has_attachments=True) filtered by last_message.attachments (JSON cache) \u2014 missed contacts whose last message was text but older messages had attachments. read_messages_from_contact returned messages without attachment data \u2014 LLM could never see filenames.",
+    "solution": "v5.0.0.105: read_messages_all direct SQL JOIN on message_attachment_join+attachment, returns attachments_found[]. v5.0.0.106: read_messages_from_contact calls _get_attachments per message row, each message now includes attachments[]. M7c multi-turn flow passes.",
+    "verified": true,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
