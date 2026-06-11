@@ -8504,5 +8504,39 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_045643_7631099a",
+    "created_at": "2026-06-11T04:56:43+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "messages",
+    "problem": "send-attach: LLM uses last_message.attachments path from history instead of file_search on Downloads; contact re-resolved redundantly on Turn2",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260611_045847_5ee65388",
+    "created_at": "2026-06-11T04:58:47+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "server.skills.email",
+    "problem": "Cross-turn file memory: after FILES skill calls file_found, EMAIL send flow Step 1b should reuse that path via a Locked file marker instead of re-asking which file to attach",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
