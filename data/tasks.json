@@ -8798,5 +8798,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_230307_49541c73",
+    "created_at": "2026-06-11T23:03:07+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "orchestrator",
+    "problem": "browser_use error hallucination: LLM invents success when tool returns status=error",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "arun_streaming() detected status=error in browser_use tool result but only logged it, then fed the error JSON to LLM on next iteration causing hallucination",
+    "solution": "added early-exit guard: if browser_use returns status=error, yield fixed failure message and return before LLM is called",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
