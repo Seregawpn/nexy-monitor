@@ -8464,10 +8464,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "orchestrator v3 never wrote to token_usage/commands/llm_answers: (A) client stopped calling ReportUsage for main_llm since May 2; (B) ensure_command/create_llm_answer methods existed in DatabaseManager but were never called from orchestrator v3",
+    "solution": "(A) Added token_usage_tracker to OrchestratorV3; astream captures usage via stream_usage=True in last chunk; write to DB via asyncio.create_task in arun_streaming and sync in run(). (B) Added db_manager to OrchestratorV3; after each final response fire-and-forget ensure_session+ensure_command+create_llm_answer. Wired both in grpc_service_manager._create_orchestrator_v3()",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
