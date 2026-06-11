@@ -8719,10 +8719,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Browser LLM API key was stored on client side \u2014 theft risk",
+    "solution": "Added /v1/chat/completions proxy endpoint on server (main.py); client uses ChatOpenAI with base_url pointing to server; key NEXY_BROWSER_LLM_API_KEY stays in server config.env only",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
@@ -8763,6 +8763,23 @@
     "verified": false,
     "status": "open",
     "recurrence": 3,
+    "notes": ""
+  },
+  {
+    "id": "task_20260611_223011_163c5b72",
+    "created_at": "2026-06-11T22:30:11+00:00",
+    "source": "scan",
+    "priority": "medium",
+    "module_id": "processing_workflow",
+    "problem": "[CLIENT 22:26] Error: \ud83d\udd0a ProcessingWorkflow: playback error - Error code: 429 - {'error': {'message': 'Rate limit reached f",
+    "error_type": "runtime_error",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
     "notes": ""
   }
 ]
