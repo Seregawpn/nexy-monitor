@@ -8532,10 +8532,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "FILES skill file_found result was never carried into conversation text, so EMAIL Step 1b had no way to know a file was already located in a prior turn \u2014 only re-asked the user which file to attach.",
+    "solution": "files/SKILL.md: file_found now appends \"Locked file: [filename] - [reason]\" to the final answer. email/SKILL.md Step 1b: broadened trigger to cover \"send it/that file\" and added a Locked file lookup that feeds file_search keywords silently (no which-file prompt) when the marker is present.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
@@ -8585,8 +8585,8 @@
     "date_detected": "2026-06-11",
     "root_cause": "Reports/Phases tab had no date dimension and no way to attach result files to a daily report entry.",
     "solution": "Added report_date field (default=today) to phases.json entries with date-grouped/sorted list in map.html. Added base64-JSON attachment endpoints (POST/GET/DELETE /phases/<id>/attachments[/<filename>]) storing files under tools/map/report_attachments/<phase_id>/, with filename sanitization (basename + whitelist regex rejecting . and ..) and 5MB limit. Frontend shows attachment list with image thumbnails, links, delete buttons, and an upload input. DELETE /phases/<id> now also removes its attachments dir. Added 4 passing tests covering report_date defaulting, upload/download/delete, path-traversal/oversize rejection, and cleanup on phase delete. Updated Docs/architecture/tools/map.md and INDEX.md.",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
