@@ -8871,5 +8871,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_231735_ca094ad4",
+    "created_at": "2026-06-11T23:17:35+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "browser_automation",
+    "problem": "browser_use stops with 3 consecutive LLM failures, run() returns without calling done_callback, no terminal event emitted, run_and_collect returns default Task completed, client submits status=ok, server guard bypassed, LLM hallucinates",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "browser_use SDK stops due to consecutive LLM failures: agent.run() returns normally without calling done_callback, event queue stays empty, run_and_collect returns default Task completed, client submits status=ok, server hallucination guard (status==error) bypassed",
+    "solution": "Added _drained_terminal flag in _run_agent() else branch after agent_task.done(). If no terminal event was drained from queue, yields BROWSER_TASK_FAILED \u2014 run_and_collect raises RuntimeError, client submits status=error, server guard fires correctly",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
