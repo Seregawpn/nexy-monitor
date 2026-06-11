@@ -8487,5 +8487,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_043119_048d28cf",
+    "created_at": "2026-06-11T04:31:19+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "email_actions",
+    "problem": "T16b: verify email_send with attachment actually attaches Nexy Pitch Deck.pdf to the sent email to Peter (reported success but attachment missing previously)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
