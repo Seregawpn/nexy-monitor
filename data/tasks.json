@@ -8691,5 +8691,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_170829_a88842f8",
+    "created_at": "2026-06-11T17:08:29+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "browser_automation",
+    "problem": "Remove inline API keys from unified_config.yaml, move to env var references",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
