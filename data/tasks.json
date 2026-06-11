@@ -8719,10 +8719,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "Browser LLM API key was stored on client side \u2014 theft risk",
-    "solution": "Added /v1/chat/completions proxy endpoint on server (main.py); client uses ChatOpenAI with base_url pointing to server; key NEXY_BROWSER_LLM_API_KEY stays in server config.env only",
+    "root_cause": "",
+    "solution": "",
     "verified": false,
-    "status": "resolved",
+    "status": "in_progress",
     "recurrence": 1,
     "notes": ""
   },
