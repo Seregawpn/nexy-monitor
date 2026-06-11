@@ -8583,10 +8583,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Reports/Phases tab had no date dimension and no way to attach result files to a daily report entry.",
+    "solution": "Added report_date field (default=today) to phases.json entries with date-grouped/sorted list in map.html. Added base64-JSON attachment endpoints (POST/GET/DELETE /phases/<id>/attachments[/<filename>]) storing files under tools/map/report_attachments/<phase_id>/, with filename sanitization (basename + whitelist regex rejecting . and ..) and 5MB limit. Frontend shows attachment list with image thumbnails, links, delete buttons, and an upload input. DELETE /phases/<id> now also removes its attachments dir. Added 4 passing tests covering report_date defaulting, upload/download/delete, path-traversal/oversize rejection, and cleanup on phase delete. Updated Docs/architecture/tools/map.md and INDEX.md.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
