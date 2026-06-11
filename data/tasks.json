@@ -8518,7 +8518,7 @@
     "root_cause": "messages SKILL.md send-attachment flow had no rule for attachment_path source when contact is re-resolved in a new session_id (Turn2 of M7b); LLM fell back to last_message.attachments[].path (a stale path from a prior send cached in contacts_store) instead of re-running file_search. Separately, the apparent re-search of the contact in Turn2 (\"\u043e\u043f\u044f\u0442\u044c \u043f\u043e\u0448\u0451\u043b \u0438\u0441\u043a\u0430\u0442\u044c \u043a\u043e\u043d\u0442\u0430\u043a\u0442\") is NOT a bug: each user utterance gets a fresh session_id with empty L1SessionRegistry._messages, so re-resolving via read_messages_all is expected.",
     "solution": "Updated Docs/architecture/flows/messages.md (Send Flow Step 4 attachment source note; Session Memory Rule scope clarification + attachment exception) and messages/SKILL.md (line 41 + new guard before Step 1 of send flow): attachment_path for a new send must always come from file_search in the current conversation, never from last_message.attachments[].path. Updated INDEX.md date. Prompt-only change, no code touched. Ran test_ar3_skill_index/view/view_dedup (23 passed).",
     "verified": false,
-    "status": "resolved",
+    "status": "in_progress",
     "recurrence": 1,
     "notes": ""
   },
@@ -8569,7 +8569,7 @@
     "root_cause": "",
     "solution": "",
     "verified": false,
-    "status": "open",
+    "status": "in_progress",
     "recurrence": 1,
     "notes": ""
   },
