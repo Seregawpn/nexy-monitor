@@ -8623,5 +8623,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_165233_25ac8d8c",
+    "created_at": "2026-06-11T16:52:33+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "packaging",
+    "problem": "ProcessTapDuck.app native Swift binary missing from Nexy.spec datas \u2014 audio ducking silently broken in packaged app",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "ProcessTapDuck.app native Swift binary was not in spec datas; process_tap_backend.py resolves path via Path(__file__).parents[2] which expects the binary at modules/external_audio_duck/native/process_tap/build/ProcessTapDuck.app",
+    "solution": "Added ProcessTapDuck.app directory entry to spec datas with correct destination path",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
