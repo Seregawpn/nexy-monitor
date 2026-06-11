@@ -8905,5 +8905,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260611_233046_8fe5d614",
+    "created_at": "2026-06-11T23:30:46+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "tutorial",
+    "problem": "Add files_delta_v1 tutorial pack with file_create step to unified_config.yaml",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-11",
+    "root_cause": "No tutorial pack existed for files feature",
+    "solution": "Added files_delta_v1 pack and file_create step to unified_config.yaml",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
