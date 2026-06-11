@@ -2130,5 +2130,96 @@
       "[INFO] [V3_DISPATCH] tool=messages call_id=72b97f67-7fa8-4fad-8a48-6907710c45d3:0341464a-66f2-42bd-919a-f71e6f9406fc got result_len=74",
       "[INFO] [\u23f1 TIMING] tool.done iter=1 tool=messages elapsed_ms=760 result_len=87 session=72b97f67-7fa8-4fad-8a48-6907710c45d3"
     ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool read_text_file returned error: File does not exist: /Users/sergiyzasorin/Desktop/mcp-test/.venv/lib/python3.12/site-packages/google_resumable_media-2.8.2.dist-info/top_level.txt",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:37:35+00:00",
+    "log_context": [
+      "[INFO] EdgeTTS \u2192 generating speech for text: Would you like me to search all files for an Anthropic invoice or another file you want saved to Dow... (attempt 1/3)",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=39600 bytes, PCM=633600 bytes, chunks=157",
+      "[INFO] [\u23f1 TIMING] tts.done n=3 elapsed_ms=682 chunks=157 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=6 elapsed_ms=4362 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] action.tool iter=6 elapsed_ms=4429 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] llm.done iter=6 total_ms=4841 tokens=12 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] tool.start iter=6 tool=read_text_file args={'path': '/Users/sergiyzasorin/Desktop/mcp-test/.venv/lib/python3.12/site-packages/google_resumable_media-2.8.2.dist-inf session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 elapsed_ms=22059 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=472fa8bf-56d9-47b5-905a-5cb6b0577185, command=read_text_file",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=472fa8bf-56d9-47b5-905a-5cb6b0577185 command=read_text_file feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=472fa8bf-56d9-47b5-905a-5cb6b0577185 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 result_len=198",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 result_len=198",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:e59947a8-dce6-40d1-b758-f504f3f76462 got result_len=198",
+      "[INFO] [\u23f1 TIMING] tool.done iter=6 tool=read_text_file elapsed_ms=37 result_len=211 session=472fa8bf-56d9-47b5-905a-5cb6b0577185"
+    ]
+  },
+  {
+    "module_id": "orchestrator",
+    "source": "server",
+    "error_type": "Error",
+    "message": "[ORC3-stream] MAX ITERATIONS REACHED session=472fa8bf-56d9-47b5-905a-5cb6b0577185 hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2 input='Save the Anthropic invoice to my Downloads'",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:38:18+00:00",
+    "log_context": [
+      "[INFO] Retrying request to /chat/completions in 3.030000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 1.212000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
+      "[INFO] [\u23f1 TIMING] llm.first_token iter=15 elapsed_ms=16258 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] action.tool iter=15 elapsed_ms=16328 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] llm.done iter=15 total_ms=16604 tokens=11 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [\u23f1 TIMING] tool.start iter=15 tool=read_text_file args={'path': '/Users/sergiyzasorin/Downloads/5005-r-fill-25e.pdf'} session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 elapsed_ms=65268 session=472fa8bf-56d9-47b5-905a-5cb6b0577185",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=472fa8bf-56d9-47b5-905a-5cb6b0577185, command=read_text_file",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=472fa8bf-56d9-47b5-905a-5cb6b0577185 command=read_text_file feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=472fa8bf-56d9-47b5-905a-5cb6b0577185 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_text_file",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 session=472fa8bf-56d9-47b5-905a-5cb6b0577185 result_len=22613",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 result_len=22613",
+      "[INFO] [V3_DISPATCH] tool=read_text_file call_id=472fa8bf-56d9-47b5-905a-5cb6b0577185:ce604c52-7d9f-4aa8-8d03-f57d6d2d1974 got result_len=22613",
+      "[INFO] [\u23f1 TIMING] tool.done iter=15 tool=read_text_file elapsed_ms=355 result_len=22626 session=472fa8bf-56d9-47b5-905a-5cb6b0577185"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 5708 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:40:07+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-11T02:40:07+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 5708 (/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
   }
 ]
