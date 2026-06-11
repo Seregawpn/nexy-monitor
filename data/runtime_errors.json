@@ -2401,5 +2401,35 @@
       "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
       "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg"
     ]
+  },
+  {
+    "module_id": "speech_playback",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\u274c Start playback failed: com.apple.coreaudio.avfaudio - player did not see an IO cycle.",
+    "traceback": "",
+    "timestamp": "2026-06-11T20:47:53+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udd04 Route change ignored: recreate already in flight",
+      "[DEBUG] \ud83d\udd04 Route change ignored: recreate already in flight",
+      "[DEBUG] AUDIO_SESSION_ALREADY_ACTIVE reason=initialize",
+      "[INFO] AUDIO_SESSION_PROFILE reason=initialize profile=playback applied=true category=AVAudioSessionCategoryPlayback mode=AVAudioSessionModeDefault options=33 route=MacBook Air Speakers:Speaker before={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'} after={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'}",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Volume set to 1.0 (mixer and player_node)",
+      "[INFO] \u2705 AVFoundationPlayer initialized (AVAudioEngine)",
+      "[DEBUG] \ud83d\udd14 Registered for output route changes",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_CANCEL",
+      "[DEBUG] AUDIO_SESSION_PROFILE reason=start_playback profile=playback applied=false dedup=true category=AVAudioSessionCategoryPlayback mode=AVAudioSessionModeDefault options=33 route=MacBook Air Speakers:Speaker",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Volume set to 1.0 at playback start (mixer and player_node)",
+      "[INFO] \ud83d\udd04 [AVF_PLAYER] Re-connected player\u2192mixer after engine stop",
+      "[INFO] \ud83d\udd0a AVAudioEngine started successfully",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output snapshot: 48000.0Hz, 2ch, format=1",
+      "[INFO] \ud83d\udd0a [AVF_PLAYER] Output route snapshot: MacBook Air Speakers (type: Speaker)",
+      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'MacBook Air Speakers:Speaker'}",
+      "[WARNING] \u26a0\ufe0f [AVF_PLAYER] player.play() IO cycle not ready, retrying in 50 ms",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=120.02",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 120.02 MB",
+      "[WARNING] \u26a0\ufe0f Health check failed (44/3)"
+    ]
   }
 ]
