@@ -8534,8 +8534,8 @@
     "date_detected": "2026-06-11",
     "root_cause": "FILES skill file_found result was never carried into conversation text, so EMAIL Step 1b had no way to know a file was already located in a prior turn \u2014 only re-asked the user which file to attach.",
     "solution": "files/SKILL.md: file_found now appends \"Locked file: [filename] - [reason]\" to the final answer. email/SKILL.md Step 1b: broadened trigger to cover \"send it/that file\" and added a Locked file lookup that feeds file_search keywords silently (no which-file prompt) when the marker is present.",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   },
