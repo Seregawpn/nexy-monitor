@@ -9194,5 +9194,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_160813_e5a4e1d5",
+    "created_at": "2026-06-12T16:08:13+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "subscription",
+    "problem": "Browser LLM cost tracking: pass hardware_id via X-Hardware-Id header to server proxy, record cost server-side; remove ReportUsage path from tool_dispatcher",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
