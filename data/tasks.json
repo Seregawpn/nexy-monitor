@@ -8950,10 +8950,10 @@
     "error_type": "test_fail",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "files_delta_v1 pack added to unified_config.yaml; test used real registry so reconciler now found two unresolved delta packs, executing browser_website AND file_create \u2014 test assertion expected only browser_website",
+    "solution": "Updated test assertion to expect both browser_website and file_create, plus added pack status assertions for browser_delta_v1 and files_delta_v1",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
@@ -8967,10 +8967,10 @@
     "error_type": "test_fail",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "duplicate task \u2014 same test failure caused by files_delta_v1 addition",
+    "solution": "same fix as task_20260612_000745_520dbe5f",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
