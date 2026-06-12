@@ -9041,5 +9041,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_020402_ef3a8aa0",
+    "created_at": "2026-06-12T02:04:02+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "browser_automation",
+    "problem": "browser_use.server_proxy_url is hardcoded to http://127.0.0.1:8080/v1, breaks when active gRPC server profile is production/staging/fallback (remote) instead of local",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
