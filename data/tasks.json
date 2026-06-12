@@ -8984,10 +8984,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "Client owned the browser_use LLM model choice (primary_model in unified_config.yaml); server proxy forwarded body.model as-is, so changing the model required a client app update.",
+    "solution": "Added NEXY_BROWSER_LLM_MODEL env var; browser_llm_proxy_handler overrides body[\"model\"] with it before forwarding to OpenRouter. Model can now be changed by editing server config.env + restart, no client update needed.",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
