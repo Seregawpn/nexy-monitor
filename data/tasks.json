@@ -9037,8 +9037,8 @@
     "date_detected": "2026-06-12",
     "root_cause": "_on_grpc_tts_incoming eagerly set _had_audio_for_session[sid]=True on grpc.tts_request, which _add_audio_chunk also uses as the first-chunk marker for publishing playback.started \u2014 so playback.started never fired for any grpc_audio TTS session, causing _run_and_wait_for_user_facing_playback/_wait_for_playback_completion to timeout (120s/15s), backing up the TTS serialization queue so only the first 1-2 of 5 first-run permission announcements got audio",
     "solution": "introduced separate self._grpc_audio_expected set; _on_grpc_tts_incoming marks it instead of _had_audio_for_session; _on_grpc_completed checks both flags to preserve the no-premature-finalize guard; cleanup mirrored in _reset_playback_cycle_state/_emit_terminal_playback_event/_apply_cancel_state; v5.0.0.336",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
