@@ -8829,6 +8829,23 @@
     "root_cause": "",
     "solution": "",
     "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260612_230646_674ce6e8",
+    "created_at": "2026-06-12T23:06:46+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "client/speech_playback",
+    "problem": "Audible click on AirPods caused by AVAudioSession category switch (A2DP<->HFP) on every PTT press/release",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
     "status": "in_progress",
     "recurrence": 1,
     "notes": ""
