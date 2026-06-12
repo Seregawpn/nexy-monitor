@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. C",
-    "traceback": "",
-    "timestamp": "2026-06-11T23:30:56+00:00",
-    "log_context": [
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider...",
-      "[ERROR] Error creating connection pool: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] PostgreSQL Provider initialization failed",
-      "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "\u274c Error initializing adapter database: Failed to initialize DatabaseManager.Check the database configuration in config.env.The server will continue to operate without database functionality..This is a",
     "traceback": "",
     "timestamp": "2026-06-11T23:30:56+00:00",
@@ -2997,6 +2967,36 @@
       "[INFO] idle_cpu_pct=1.00",
       "[INFO] idle_ram_mb=177.31",
       "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 1.00%, RAM: 177.31 MB"
+    ]
+  },
+  {
+    "module_id": "browser_use",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[SessionManager] \u274c Error during agent_focus recovery: RuntimeError: {'code': -32000, 'message': 'Failed to open new tab - no browser is open'}",
+    "traceback": "",
+    "timestamp": "2026-06-12T14:18:11+00:00",
+    "log_context": [
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] idle_cpu_pct=1.00",
+      "[INFO] idle_ram_mb=177.31",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 1.00%, RAM: 177.31 MB",
+      "[ERROR] E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
+      "[INFO] \ud83d\udd04 MODE_REQUEST: target=AppMode.SLEEPING, source=watchdog_E-MOD-004, session_id=None, priority=None",
+      "[INFO] \ud83d\udd04 MODE_REQUEST: current_mode=AppMode.PROCESSING, target=AppMode.SLEEPING, source=watchdog_E-MOD-004",
+      "[INFO] MODE_REQUEST rejected: non-owner SLEEPING source during PROCESSING (source=watchdog_E-MOD-004, session_id=40be7b27-47c5-41d5-86ae-d04b62904ad2)",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3445 stderr_len=0",
+      "[WARNING] BROWSER_DIAGNOSTIC first_step_soft_timeout session_id=40be7b27-47c5-41d5-86ae-d04b62904ad2 timeout_sec=30.0 active_sessions=['40be7b27-47c5-41d5-86ae-d04b62904ad2']",
+      "[INFO] idle_cpu_pct=0.80",
+      "[INFO] idle_ram_mb=139.25",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 139.25 MB",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3445 stderr_len=0",
+      "[WARNING] [SessionManager] Agent focus target 6F05C166... detached! Current focus: None (already cleared). Auto-recovering by switching to another target...",
+      "[WARNING] [SessionManager] No tabs remain! Creating new tab for agent...",
+      "[WARNING] Cannot navigate - browser not connected",
+      "[WARNING] Cannot navigate - browser not connected"
     ]
   }
 ]
