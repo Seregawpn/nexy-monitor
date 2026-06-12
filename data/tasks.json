@@ -9052,10 +9052,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "browser_use.server_proxy_url was a static config field hardcoded to http://127.0.0.1:8080/v1, which only resolves correctly when the active gRPC server profile is local; production/staging/fallback profiles point at a remote host so the browser proxy could never reach the server.",
+    "solution": "Added UnifiedConfigLoader.get_active_server_http_base_url() (mirrors PaymentIntegration._resolve_billing_base_url routing: local -> http://{host}:8080, remote -> {scheme}://{host}[:port]). resolve_browser_llm_runtime_config() server_proxy branch now derives base_url dynamically from the active gRPC profile + \"/v1\", with optional NEXY_BROWSER_LLM_PROXY_URL env override. Removed static server_proxy_url from unified_config.yaml. Released v5.0.0.337.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
