@@ -8719,10 +8719,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "stale task entry \u2014 feature already shipped across v5.0.0.323-343 (server_proxy is the sole provider, key lives on server via NEXY_BROWSER_LLM_API_KEY, client never has it)",
+    "solution": "verified implementation in client/modules/browser_automation/module.py:467-517 and server/server/main.py:426 (browser_llm_proxy_handler); no code change needed, marking resolved",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
@@ -8845,8 +8845,8 @@
     "date_detected": "2026-06-12",
     "root_cause": "On AirPods, every voice_recording_start/voice_mic_closed switches AVAudioSessionCategoryPlayback (AllowBluetoothA2DP) <-> AVAudioSessionCategoryPlayAndRecord (no AllowBluetoothA2DP), forcing an A2DP<->HFP profile renegotiation on the headset; if audio is actively playing at that instant (or player_node.stop() cuts mid-buffer on interrupt), the renegotiation/stop is audible as a click. Confirmed applied=true on 28/28 AirPods PTT cycles in nexy-dev.log.",
     "solution": "avf_player.py: new _mute_for_transition()/_restore_player_volume(); _apply_audio_session_profile() mutes player_node before setCategory and restores volume after; stop_playback(force_stop_node=True) mutes before player_node.stop(). Released as v5.0.0.348.",
-    "verified": false,
-    "status": "resolved",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
