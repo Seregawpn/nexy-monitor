@@ -9177,5 +9177,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_155948_aa829233",
+    "created_at": "2026-06-12T15:59:48+00:00",
+    "source": "manual",
+    "priority": "critical",
+    "module_id": "grpc_client_integration",
+    "problem": "buy_subscription/manage_subscription routed to ToolDispatcher which raises RuntimeError \u2014 EventBus never receives ui.action.* event, checkout never opens",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "grpc_client_integration routed buy_subscription/manage_subscription to ToolDispatcher which raised RuntimeError \u2014 PaymentIntegration EventBus subscriber never triggered",
+    "solution": "Added elif branch before ToolDispatcher: publishes ui.action.{tool} to EventBus with source=llm_command",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
