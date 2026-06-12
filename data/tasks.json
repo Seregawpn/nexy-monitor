@@ -9109,5 +9109,22 @@
     "status": "in_progress",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_154217_72f6e9e8",
+    "created_at": "2026-06-12T15:42:17+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "payment_integration",
+    "problem": "No voice announcement before opening Stripe checkout/portal \u2014 blind users (VoiceOver) get no guidance",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "No voice guidance before browser opens \u2014 blind users had no indication payment page was loading or how to switch to it",
+    "solution": "Added _announce_before_checkout() and _announce_before_portal() with grpc.tts_request, called before _open_url_safely() in both checkout and portal flows",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
