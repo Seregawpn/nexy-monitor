@@ -8798,5 +8798,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_191000_22326ea8",
+    "created_at": "2026-06-12T19:10:00+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "client/integration/integrations/email_inbox_watcher_integration.py",
+    "problem": "EmailInboxWatcherIntegration scans Mail.app at every app startup (unconditional), triggering Mail Automation TCC prompt simultaneously with first-run permission wizard dialogs",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
