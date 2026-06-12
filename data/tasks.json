@@ -9058,5 +9058,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_144028_2b13b309",
+    "created_at": "2026-06-12T14:40:28+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "client/browser_automation",
+    "problem": "server_proxy LLM invoke has no client-side timeout (invoke_timeout_sec=None), causing infinite hang + endless preserving/recovery loop when proxy never responds",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
