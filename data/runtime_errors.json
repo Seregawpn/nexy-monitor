@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "__main__",
-    "source": "server",
-    "error_type": "Error",
-    "message": "[browser_llm_proxy] upstream error: Cannot connect to host openrouter.ai:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local is",
-    "traceback": "",
-    "timestamp": "2026-06-11T22:40:36+00:00",
-    "log_context": [
-      "[INFO] REQUEST_PATH stage=stream.received session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 has_prompt=True has_screenshot=True phase=REQUEST_PHASE_COMMIT",
-      "[INFO] REQUEST_PATH stage=stream.accepted session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
-      "[INFO] COMMIT merge: session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 collect_chunks=2 collect_text_len=53 commit_prompt_len=53 final_prompt_len=53 preflight_status=pending preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.06",
-      "[INFO] REQUEST_PATH stage=commit.ready session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 media_attachments=0 prompt_len=53 screenshot_len=187688",
-      "[INFO] \ud83d\udce8 Received StreamRequest: session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b, hardware_id=E03D2455-8EF1-5270-AA03-13B5771C7CB2, phase=REQUEST_PHASE_COMMIT",
-      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=53, screenshot_len=187688",
-      "[INFO] Stream acquired: 0b8b63ea-d91b-4191-a37a-fd212fcfe51b (active: 1)",
-      "[WARNING] \u26a0\ufe0f Slow response: 5.93s (limit: 5.0s)",
-      "[INFO] \ud83d\udd04 Processing request via modules...",
-      "[INFO] REQUEST_PATH stage=workflow.dispatch session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 phase=REQUEST_PHASE_COMMIT",
-      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='I don't even see on the screen right now what I ha...', screenshot_exists=True",
-      "[INFO] \ud83d\udd04 Starting streaming processing for 0b8b63ea-d91b-4191-a37a-fd212fcfe51b",
-      "[INFO] [\u23f1 TIMING] request.start session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b input=\"I don't even see on the screen right now what I have.\"",
-      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=1 history_msgs=20 session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b",
-      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=0b8b63ea-d91b-4191-a37a-fd212fcfe51b",
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
-      "[INFO] Retrying request to /chat/completions in 10.718000 seconds",
-      "[INFO] Metrics snapshot",
-      "[INFO] 127.0.0.1 [11/Jun/2026:18:40:36 -0400] \"GET /health HTTP/1.1\" 200 327 \"-\" \"Python/3.13 aiohttp/3.13.5\"",
-      "[INFO] 127.0.0.1 [11/Jun/2026:18:40:36 -0400] \"POST /v1/chat/completions HTTP/1.1\" 401 229 \"-\" \"Python/3.13 aiohttp/3.13.5\""
-    ]
-  },
-  {
     "module_id": "email_actions",
     "source": "client",
     "error_type": "Error",
@@ -2997,6 +2967,36 @@
       "[DEBUG] [PERMISSION_RESTART] Spawned delayed relaunch helper (label=dev)",
       "[INFO] [PERMISSION_RESTART] Delayed dev relaunch helper armed",
       "[DEBUG] [PERMISSION_RESTART] Sleeping 1.00s to allow dev process helper to arm"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 30.0s intent=read_contact_thread lane=bg",
+    "traceback": "",
+    "timestamp": "2026-06-12T02:24:51+00:00",
+    "log_context": [
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 12480 frames | src_peak=0.6200 written_peak=0.6200 | engine=True, player=True",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4007 frames=12480 \u2014 engine rendered this buffer",
+      "[INFO] DUCK_MONITOR backend=process_tap action=restore_complete scope=global_exclude_configured fade_ms=700",
+      "[INFO] ProcessTapDuckBackend: duck restored",
+      "[DEBUG] DuckController: restore completed (ref=0)",
+      "[DEBUG] ExternalAudioDuckingIntegration: restored active refs (mode_sleeping)",
+      "[WARNING] EVENTBUS_SLOW_CALLBACK event=app.mode_changed callback=ExternalAudioDuckingIntegration._on_mode_changed duration_ms=729.2 dispatch_fast=False",
+      "[DEBUG] VOICE: mode changed to AppMode.SLEEPING, ensuring listening stopped",
+      "[DEBUG] ListeningWorkflow: mode changed to sleeping",
+      "[INFO] \ud83d\udd04 Mode change coordination: sleeping",
+      "[INFO] Application mode changed to: AppMode.SLEEPING",
+      "[DEBUG] \u23f9\ufe0f Playback loop idle timeout (2s), exiting",
+      "[INFO] \ud83d\uded1 _playback_loop exited. _playing=True",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=playback_loop_exit delay=3.0s",
+      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
+      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SKIP reason=playback_loop_exit playing=True",
+      "[INFO] idle_cpu_pct=0.70",
+      "[INFO] idle_ram_mb=97.50",
+      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.70%, RAM: 97.50 MB"
     ]
   }
 ]
