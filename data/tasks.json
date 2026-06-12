@@ -9069,10 +9069,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "resolve_browser_llm_runtime_config() hardcoded invoke_timeout_sec=None for all 3 providers, so the existing asyncio.wait_for guard in _await_llm_invoke() was never active \u2014 a hung server_proxy ainvoke() blocked agent_task forever, and the persistent-session health-check loop kept logging \"crashed but recoverable \u2014 preserving\" every 0.5s with is_healthy=True, never cancelling/retrying",
+    "solution": "resolve_browser_llm_runtime_config() now reads browser_use.primary_invoke_timeout_sec from config and applies it to all 3 provider branches; unified_config.yaml: primary_invoke_timeout_sec null -> 120.0 (matches first_step_hard_timeout_sec and server-side ClientTimeout(total=120)); docs updated (CONTRACT_CATALOG.md, CHANGELOG.md, LATEST_CHANGES.md, flows/browser.md, INDEX.md); VERSION -> 5.0.0.338",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
