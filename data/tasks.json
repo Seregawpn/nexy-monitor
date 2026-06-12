@@ -8826,10 +8826,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "PROJECT_ROOT already resolves to client/ (Path(__file__).resolve().parent.parent), so CRITICAL_PACKAGING entry \"client/VERSION_INFO.json\" resolved to client/client/VERSION_INFO.json which never exists, failing check_packaging_files() and blocking build_final.sh verify_imports preflight",
+    "solution": "changed CRITICAL_PACKAGING entry to \"VERSION_INFO.json\" in client/scripts/verify_imports.py; verified all 14 checks pass; committed as v5.0.0.349 (a89a6907)",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
