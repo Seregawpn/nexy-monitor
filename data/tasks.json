@@ -8933,10 +8933,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-11",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "browser_step TTS sources intentionally skip grpc.request_completed, leaving _finalize_on_silence in infinite loop after browser tasks \u2014 both E-PTT-003 watchdogs fail silently",
+    "solution": "Added _GRPC_DONE_FALLBACK_SEC=3.0 and fallback path in _finalize_on_silence: if audio is completely silent for 3s while _grpc_done is False, finalize anyway; multi-burst safety preserved via counter reset on non-silent state",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   },
