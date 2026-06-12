@@ -8990,5 +8990,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_012909_910df056",
+    "created_at": "2026-06-12T01:29:09+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "browser_automation",
+    "problem": "Make browser_use primary_model optional (server NEXY_BROWSER_LLM_MODEL is authoritative) and rewrite stale ARCHITECTURE_OVERVIEW.md browser LLM config contract section",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
