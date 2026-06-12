@@ -2878,5 +2878,65 @@
       "[INFO] \u23f9\ufe0f Stop action_execution...",
       "[INFO] Stopping ActionExecutionIntegration..."
     ]
+  },
+  {
+    "module_id": "provider",
+    "source": "server",
+    "error_type": "APIConnectionError",
+    "message": "[V3] arun_streaming failed: Connection error.",
+    "traceback": "angchain_openai.py\", line 101, in astream\n    async for chunk in self._llm.astream(messages, **kwargs):\n    ...<9 lines>...\n                        yield text\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py\", line 907, in astream\n    async for chunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1865, in _astream\n    _handle_openai_api_error(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1665, in request\n    raise APIConnectionError(request=request) from err\nopenai.APIConnectionError: Connection error.\n",
+    "timestamp": "2026-06-12T16:27:08+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=11289de7-36fa-4548-8ad4-1bebf0368294",
+      "[INFO] Retrying request to /chat/completions in 0.390815 seconds",
+      "[INFO] Retrying request to /chat/completions in 0.789379 seconds",
+      "[INFO] Decision: start",
+      "[INFO] REQUEST_PATH stage=stream.received session=25c74819-6371-4076-a276-2b5d1734ffa6 hardware=grpc-imessage-live-test has_prompt=True has_screenshot=False phase=REQUEST_PHASE_COMMIT",
+      "[INFO] REQUEST_PATH stage=stream.accepted session=25c74819-6371-4076-a276-2b5d1734ffa6 hardware=grpc-imessage-live-test phase=REQUEST_PHASE_COMMIT",
+      "[INFO] COMMIT merge: session=25c74819-6371-4076-a276-2b5d1734ffa6 hardware=grpc-imessage-live-test collect_chunks=0 collect_text_len=0 commit_prompt_len=17 final_prompt_len=17 preflight_status=miss preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.01",
+      "[INFO] REQUEST_PATH stage=commit.ready session=25c74819-6371-4076-a276-2b5d1734ffa6 hardware=grpc-imessage-live-test media_attachments=0 prompt_len=17 screenshot_len=0",
+      "[INFO] \ud83d\udce8 Received StreamRequest: session=25c74819-6371-4076-a276-2b5d1734ffa6, hardware_id=grpc-imessage-live-test, phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=17, screenshot_len=0",
+      "[INFO] Stream acquired: 25c74819-6371-4076-a276-2b5d1734ffa6 (active: 2)",
+      "[WARNING] \u26a0\ufe0f Slow response: 18.13s (limit: 5.0s)",
+      "[INFO] \ud83d\udd04 Processing request via modules...",
+      "[INFO] REQUEST_PATH stage=workflow.dispatch session=25c74819-6371-4076-a276-2b5d1734ffa6 hardware=grpc-imessage-live-test phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Any new messages?...', screenshot_exists=False",
+      "[INFO] \ud83d\udd04 Starting streaming processing for 25c74819-6371-4076-a276-2b5d1734ffa6",
+      "[INFO] [\u23f1 TIMING] request.start session=25c74819-6371-4076-a276-2b5d1734ffa6 input='Any new messages?'",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=0 history_msgs=28 session=25c74819-6371-4076-a276-2b5d1734ffa6",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=25c74819-6371-4076-a276-2b5d1734ffa6",
+      "[INFO] Retrying request to /chat/completions in 0.452806 seconds"
+    ]
+  },
+  {
+    "module_id": "audio_generation",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Edge TTS Provider failed after 3 attempts: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+    "traceback": "",
+    "timestamp": "2026-06-12T16:27:37+00:00",
+    "log_context": [
+      "[WARNING] ffmpeg error (code 183): [in#0 @ 0x927044000] Error opening input: Invalid data found when processing input\nError opening input file pipe:0.\nError opening input files: Invalid data found when processing input\n",
+      "[WARNING] Error in streaming MP3\u2192PCM conversion: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+      "[WARNING] Edge TTS Provider attempt 2 failed: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Server error. Please try again.... (attempt 3/3)",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Server error. Please try again.... (attempt 3/3)",
+      "[INFO] Retrying request to /chat/completions in 0.750566 seconds",
+      "[ERROR] [V3] arun_streaming failed: Connection error.",
+      "[INFO] [\u23f1 TIMING] sentence.received n=0 len=31 elapsed_ms=10649 session=ff75cc06-fd80-4528-9bcd-e8143b93798d",
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=31 for session=ff75cc06-fd80-4528-9bcd-e8143b93798d",
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=ff75cc06-fd80-4528-9bcd-e8143b93798d",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Server error. Please try again.... (attempt 1/3)",
+      "[WARNING] Error writing to ffmpeg stdin: Cannot connect to host speech.platform.bing.com:443 ssl:True [SSLCertVerificationError: (1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'speech.platform.bing.com'. (_ssl.c:1032)\")]",
+      "[WARNING] ffmpeg error (code 183): [in#0 @ 0x72ac38000] Error opening input: Invalid data found when processing input\nError opening input file pipe:0.\nError opening input files: Invalid data found when processing input\n",
+      "[WARNING] Error in streaming MP3\u2192PCM conversion: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+      "[WARNING] Edge TTS Provider attempt 1 failed: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Server error. Please try again.... (attempt 2/3)",
+      "[WARNING] Error writing to ffmpeg stdin: Cannot connect to host speech.platform.bing.com:443 ssl:True [SSLCertVerificationError: (1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'speech.platform.bing.com'. (_ssl.c:1032)\")]",
+      "[WARNING] ffmpeg error (code 183): [in#0 @ 0x844c2c000] Error opening input: Invalid data found when processing input\nError opening input file pipe:0.\nError opening input files: Invalid data found when processing input\n",
+      "[WARNING] Error in streaming MP3\u2192PCM conversion: ffmpeg exited with code 183 (MP3 received: 0 bytes)",
+      "[WARNING] Edge TTS Provider attempt 3 failed: ffmpeg exited with code 183 (MP3 received: 0 bytes)"
+    ]
   }
 ]
