@@ -6908,5 +6908,164 @@
     "output_tokens": 5,
     "cost_usd": 0.0,
     "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:00+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error",
+    "user_input": "hello"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:00+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:40+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8273,
+    "output_tokens": 303,
+    "cost_usd": 0.00053485,
+    "tool_name": "browser_use",
+    "user_input": "Go to example.com and tell me what you see on the page"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:43+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8381,
+    "output_tokens": 174,
+    "cost_usd": 0.00052961,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:47+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8488,
+    "output_tokens": 432,
+    "cost_usd": 0.0006388,
+    "tool_name": "skill_view"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:50+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9422,
+    "output_tokens": 187,
+    "cost_usd": 0.0005875,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-12T14:16:53+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9548,
+    "output_tokens": 280,
+    "cost_usd": 0.00063612,
+    "tool_name": "none",
+    "response_text": "I tried to open example.com in the browser, but the browser automation module isn\u2019t available right now. I can fetch the page contents using a web search instead. Would you like me to pull the current content of example.com via a web lookup?"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:00+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8279,
+    "output_tokens": 635,
+    "cost_usd": 0.00070891,
+    "tool_name": "web_search",
+    "user_input": "On google.com, search for 'nexy ai assistant' and return the first result title"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:11+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8845,
+    "output_tokens": 441,
+    "cost_usd": 0.00065961,
+    "tool_name": "none",
+    "response_text": "The first result is 'Nexy (Chrome Web Store)' described as a smart AI browser assistant."
+  },
+  {
+    "timestamp": "2026-06-12T14:17:14+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8263,
+    "output_tokens": 174,
+    "cost_usd": 0.00048275,
+    "tool_name": "skill_view",
+    "user_input": "Close the browser"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:16+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9185,
+    "output_tokens": 170,
+    "cost_usd": 0.00056821,
+    "tool_name": "close_browser"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:20+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9278,
+    "output_tokens": 255,
+    "cost_usd": 0.00061134,
+    "tool_name": "none",
+    "response_text": "I ran into a technical problem closing the browser. Would you like me to try again, or should I close it manually from your side?"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:25+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8264,
+    "output_tokens": 302,
+    "cost_usd": 0.00057496,
+    "tool_name": "skill_view",
+    "user_input": "Check my Gmail inbox"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:28+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21522,
+    "output_tokens": 178,
+    "cost_usd": 0.00118826,
+    "tool_name": "email_read_unread"
+  },
+  {
+    "timestamp": "2026-06-12T14:17:34+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21660,
+    "output_tokens": 355,
+    "cost_usd": 0.00133188,
+    "tool_name": "none",
+    "response_text": "I ran into an internal error while checking your unread emails: the email actions module isn\u2019t available right now. I can retry the unread check in a moment, or I can switch to scanning your recent emails for anything new in the last week. Which would you prefer: retry the unread lookup, or scan the last 7 days of emails for anything notable?"
   }
 ]
