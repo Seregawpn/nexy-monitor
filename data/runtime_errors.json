@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "PostgreSQL Provider initialization failed",
-    "traceback": "",
-    "timestamp": "2026-06-11T23:18:49+00:00",
-    "log_context": [
-      "[INFO] \u2705 MemoryAnalyzer initialized with OpenAI provider",
-      "[INFO] \u2705 MemoryAnalyzer initialized successfully",
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider...",
-      "[ERROR] Error creating connection pool: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
     "traceback": "",
     "timestamp": "2026-06-11T23:18:49+00:00",
@@ -2997,6 +2967,36 @@
       "[INFO] Metrics snapshot",
       "[INFO] 127.0.0.1 [12/Jun/2026:09:54:17 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 5844 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
       "[INFO] Decision: start"
+    ]
+  },
+  {
+    "module_id": "processing_workflow",
+    "source": "client",
+    "error_type": "Error",
+    "message": "\ud83c\udf10 ProcessingWorkflow: gRPC request failed - cancelled (code=None)",
+    "traceback": "",
+    "timestamp": "2026-06-12T13:58:55+00:00",
+    "log_context": [
+      "[DEBUG] AUDIO_SESSION_DEFERRED_CANCEL",
+      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=stop_playback delay=3.0s",
+      "[INFO] \ud83d\uded1 SpeechPlayback: player stopped synchronously",
+      "[INFO] \ud83d\uded1 SpeechPlayback: session e123cee6-f18e-43c1-9326-9164db171c34 added to cancelled_sessions (had_audio=True, source=grpc_cancel)",
+      "[DEBUG] \ud83d\uded1 SpeechPlayback: cancel dedup (sid=e123cee6-f18e-43c1-9326-9164db171c34)",
+      "[INFO] DUCK_MONITOR event=playback.cancelled action=restore_request scope=running_output_exclude_configured session=e123cee6-f18e-43c1-9326-9164db171c34 fade_ms=100",
+      "[DEBUG] DuckController: restore completed (ref=0)",
+      "[INFO] MODE_REQUEST finalize apply: session=e123cee6-f18e-43c1-9326-9164db171c34 source=ProcessingWorkflow.processing_interrupted via=processing.unblock.playback",
+      "[INFO] \ud83d\udd04Mode changed: processing \u2192 sleeping",
+      "[INFO] \u2705 Mode changed: processing \u2192 sleeping",
+      "[INFO] Signals: CANCEL (playback.cancelled)",
+      "[INFO] \ud83d\uded1 [BROWSER] Interruption requested, cancelling active tasks...",
+      "[INFO] \u2139\ufe0f [BROWSER] No active tasks to cancel",
+      "[INFO] TRACE phase=playback.end ts=26124388 session=e123cee6-f18e-43c1-9326-9164db171c34 extra={error=cancelled, failed=true}",
+      "[DEBUG] Terminal playback event dedup: sid=e123cee6-f18e-43c1-9326-9164db171c34 already emitted=playback.cancelled, skip=playback.failed",
+      "[INFO] INPUT: preserving interrupted hold context across grpc_failed_terminal (press_id=f0c8f178-40c3-4f02-8c7b-56905a0e3d88, session=e123cee6-f18e-43c1-9326-9164db171c34)",
+      "[INFO] PTT_STATE: waiting_grpc -> idle (reason=grpc_failed_terminal, press_id=f0c8f178-40c3-4f02-8c7b-56905a0e3d88, session=e123cee6-f18e-43c1-9326-9164db171c34)",
+      "[DEBUG] \ud83d\udd04 Session ID updated (without publishing event): e123cee6-f18e-43c1-9326-9164db171c34 \u2192 None",
+      "[DEBUG] Session id update: e123cee6-f18e-43c1-9326-9164db171c34 -> None (grpc_failed)",
+      "[INFO] INPUT: scheduled interrupted-hold rearm timer (press_id=f0c8f178-40c3-4f02-8c7b-56905a0e3d88, delay_sec=0.487, reason=grpc_failed_resume)"
     ]
   }
 ]
