@@ -9211,5 +9211,22 @@
     "status": "in_progress",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_161726_aa4c7c1c",
+    "created_at": "2026-06-12T16:17:26+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "subscription",
+    "problem": "Centralize remote server public URL: single NEXY_PUBLIC_URL env var drives all Stripe redirect URLs",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
