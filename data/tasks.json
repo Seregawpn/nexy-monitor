@@ -9018,10 +9018,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "client unified_config.yaml required browser_use.primary_model even though NEXY_BROWSER_LLM_MODEL on server is now authoritative for server_proxy (v5.0.0.334); ARCHITECTURE_OVERVIEW.md owner-contract docs referenced a non-existent get_api_key() and unused config fields, and unified_config_loader.py carried dead bundled-credentials code that those stale docs described",
+    "solution": "made primary_model optional in resolve_browser_llm_runtime_config for server_proxy (placeholder server-default, still required for openai/google); removed primary_model + 2 dead comments from unified_config.yaml; removed dead _get_bundled_credentials_path/_load_bundled_credentials/_bundled_credentials from unified_config_loader.py; rewrote ARCHITECTURE_OVERVIEW.md into one accurate Browser LLM Owner Contract; updated verify_model_config.py + added tests in test_browser_automation.py; release v5.0.0.335",
     "verified": false,
-    "status": "open",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
