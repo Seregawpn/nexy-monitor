@@ -9239,10 +9239,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "email bodies cached in unread.json on client disk \u2014 sensitive content stored at rest without encryption",
+    "solution": "removed body field from unread_store entries, deleted update_body() and _prewarm_contact_bodies, fixed PII logging",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
