@@ -9126,5 +9126,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_154952_211456dc",
+    "created_at": "2026-06-12T15:49:52+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "orchestrator",
+    "problem": "Payment commands (buy/manage subscription) not routed in LLM \u2014 _BOOTSTRAP has no PAYMENT section",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
