@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "mode_management_integration",
-    "source": "client",
-    "error_type": "Error",
-    "message": "E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
-    "traceback": "",
-    "timestamp": "2026-06-11T22:39:59+00:00",
-    "log_context": [
-      "[INFO] AUDIO_PIPELINE phase=before_queue session=e7f19daf-22b5-4810-ab34-33394d94a437 samples=2048 peak=0.2035 rms=0.0690 dtype=float32",
-      "[DEBUG] \ud83d\udd0d gRPC response #130: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #140: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #150: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #151: WhichOneof('content')=action_message",
-      "[INFO] [ACTION_MSG] gRPC tool call: call_id=e7f19daf-22b5-4810-ab34-33394d94a437:41f8047b-038d-4d29-b45f-12482a0e9cca session=e7f19daf-22b5-4810-ab34-33394d94a437 action={\"command\": \"read_messages_unread\", \"args\": {\"days\": 2}, \"call_id\": \"e7f19daf-22b5-4810-ab34-33394d94a437:41f8047b-038d-",
-      "[INFO] \ud83d\udd27 ProcessingWorkflow: tool.submit_pending command=read_messages_unread (session=e7f19daf-22b5-4810-ab34-33394d94a437) \u2014 blocking premature chain completion",
-      "[INFO] [\u23f1 TIMING] tool.exec_start tool=read_messages_unread call_id=e7f19daf-22b5-4810-ab34-33394d94a437:41f8047b-038d-4d29-b45f-12482a0e9cca session=e7f19daf-22b5-4810-ab34-33394d94a437",
-      "[INFO] [\u23f1 TIMING] tool.exec_done tool=read_messages_unread call_id=e7f19daf-22b5-4810-ab34-33394d94a437:41f8047b-038d-4d29-b45f-12482a0e9cca status=ok elapsed_ms=2 session=e7f19daf-22b5-4810-ab34-33394d94a437",
-      "[INFO] [GRPC_CLIENT] submit_tool_result call_id=e7f19daf-22b5-4810-ab34-33394d94a437:41f8047b-038d-4d29-b45f-12482a0e9cca accepted=True",
-      "[INFO] \ud83d\udd27 ProcessingWorkflow: tool.submit_completed command=read_messages_unread accepted=True (session=e7f19daf-22b5-4810-ab34-33394d94a437)",
-      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=800 frames=2048 \u2014 engine rendered this buffer",
-      "[DEBUG] \u23f9\ufe0f Playback loop idle timeout (2s), exiting",
-      "[INFO] \ud83d\uded1 _playback_loop exited. _playing=True",
-      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=playback_loop_exit delay=3.0s",
-      "[DEBUG] AUDIO_SESSION_DEFERRED_SKIP reason=playback_loop_exit playing=True",
-      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
-      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
-      "[DEBUG] E-PTT-003 guard: session=e7f19daf-22b5-4810-ab34-33394d94a437 still active at 10s, not stuck",
-      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3661 stderr_len=0"
-    ]
-  },
-  {
     "module_id": "__main__",
     "source": "server",
     "error_type": "Error",
@@ -2997,6 +2967,36 @@
       "[ERROR] PostgreSQL Provider initialization failed",
       "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
       "[ERROR] Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. Check that PostgreSQL is running and accessible 2. Verify database credentials in config.env 3. Ensure the database user 'nexy_user' exists and has proper permissions"
+    ]
+  },
+  {
+    "module_id": "email_actions",
+    "source": "client",
+    "error_type": "Error",
+    "message": "[EMAIL_BRIDGE] osascript timeout after 30.0s intent=read_contact_thread lane=bg",
+    "traceback": "",
+    "timestamp": "2026-06-12T02:20:58+00:00",
+    "log_context": [
+      "[DEBUG] [V2_INTEGRATION] Emitting permissions.v2.restart_scheduled: {'reason': 'Restart required after core first-run permissions'}",
+      "[DEBUG] Saved ledger to /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/permission_ledger.json",
+      "[WARNING] \u26a0\ufe0f [ATOMIC_FLAG] Flag is too old (TTL expired): age_ms=2826907 > 60000ms, ignoring and removing",
+      "[WARNING] \u26a0\ufe0f [ATOMIC_FLAG] Flag is invalid or expired (peek): age=2826.91s, pid=91827",
+      "[INFO] \u2705 [ATOMIC_FLAG] Restart flag removed: /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/restart_completed.flag",
+      "[INFO] [PERMISSION_RESTART] Restart requested (reason=permission_activation, permissions=['microphone', 'screen_capture', 'input_monitoring', 'accessibility', 'full_disk_access'])",
+      "[DEBUG] [V2_INTEGRATION] Emitting permissions.v2.restart_started: {'restart_count': 1}",
+      "[INFO] [PERMISSION_RESTART] Acquired restart lock (fd=81)",
+      "[DEBUG] [PERMISSION_RESTART] _perform_restart start (packaged_unavailable=False)",
+      "[INFO] [PERMISSION_RESTART] Restart requested: reason=permission_activation permissions=('microphone', 'screen_capture', 'input_monitoring', 'accessibility', 'full_disk_access')",
+      "[INFO] [PERMISSION_RESTART] Dev restart preferred (non-frozen build), scheduling delayed dev relaunch",
+      "[INFO] \u2705 [ATOMIC_FLAG] Restart flag written (atomic write -> rename): /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/restart_completed.flag (pid=16510, reason=permission_activation, timestamp=1781230858.64)",
+      "[INFO] [PERMISSION_RESTART] \u2705 Atomic restart flag written: /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/restart_completed.flag (reason=permission_activation, permissions=['microphone', 'screen_capture', 'input_monitoring', 'accessibility', 'full_disk_access'])",
+      "[INFO] \u2705 [ATOMIC_FLAG] Restart flag written (atomic write -> rename): /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/controlled_restart.flag (pid=16510, reason=permission_activation, timestamp=1781230858.64)",
+      "[INFO] [PERMISSION_RESTART] \u2705 Controlled restart marker written: /Users/sergiyzasorin/Library/Application Support/Nexy-Dev/controlled_restart.flag",
+      "[INFO] [PERMISSION_RESTART] Scheduling dev process launch: ['/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/.venv/bin/python', '/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client/main.py'] (cwd=/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/client)",
+      "[INFO] [PERMISSION_RESTART] Setting NEXY_FIRST_RUN_RESTARTED=1 for relaunched process",
+      "[DEBUG] [PERMISSION_RESTART] Spawned delayed relaunch helper (label=dev)",
+      "[INFO] [PERMISSION_RESTART] Delayed dev relaunch helper armed",
+      "[DEBUG] [PERMISSION_RESTART] Sleeping 1.00s to allow dev process helper to arm"
     ]
   }
 ]
