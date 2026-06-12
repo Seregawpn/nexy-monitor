@@ -720,36 +720,6 @@
     ]
   },
   {
-    "module_id": "grpc_client_integration",
-    "source": "client",
-    "error_type": "Error",
-    "message": "\u274c [SERVER_TTS] Error from server: <AioRpcError of RPC that terminated with:\n\tstatus = StatusCode.UNAVAILABLE\n\tdetails = \"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: ",
-    "traceback": "",
-    "timestamp": "2026-06-12T02:11:39+00:00",
-    "log_context": [
-      "[INFO] TRACE phase=playback.end ts=16468366 session=83dcb85d-1afd-4922-8087-d97555aa2e57 extra={finalized=true}",
-      "[INFO] \ud83d\udd0d [PLAYBACK_END] session=83dcb85d-1afd-4922-8087-d97555aa2e57 exit_reason=queue_drained summary={had_audio=True, wait_duration_sec=4.08}",
-      "[INFO] DUCK_MONITOR event=playback.completed action=restore_scheduled scope=running_output_exclude_configured session=83dcb85d-1afd-4922-8087-d97555aa2e57 delay_sec=0.90",
-      "[DEBUG] MODE_REQUEST processing.unblock.playback ignored: no deferred terminal (session=83dcb85d-1afd-4922-8087-d97555aa2e57)",
-      "[INFO] [TTS] observed playback.completed session=83dcb85d-1afd-4922-8087-d97555aa2e57 started=True callback_loop=4677535056 wait_loop=4677535056",
-      "[INFO] [TTS] mark_playback_terminal status=completed session=83dcb85d-1afd-4922-8087-d97555aa2e57 wait_loop=4677535056",
-      "[INFO] SpeechPlayback: finalized session 83dcb85d-1afd-4922-8087-d97555aa2e57",
-      "[INFO] \u23f9\ufe0f Playback stopped (force_stop_node=False)",
-      "[INFO] [TTS] user-facing playback reached terminal status=completed session=83dcb85d-1afd-4922-8087-d97555aa2e57",
-      "[INFO] [TTS] publishing user-facing terminal event=tts.user_facing.completed status=completed session=83dcb85d-1afd-4922-8087-d97555aa2e57",
-      "[INFO] [TTS] published user-facing terminal event=tts.user_facing.completed status=completed session=83dcb85d-1afd-4922-8087-d97555aa2e57",
-      "[INFO] [TTS] user-facing playback wait exit session=83dcb85d-1afd-4922-8087-d97555aa2e57 terminal_status=completed",
-      "[INFO] \ud83d\uded1 _playback_loop exited. _playing=False",
-      "[DEBUG] AUDIO_SESSION_DEFERRED_SCHEDULE reason=playback_loop_exit delay=3.0s",
-      "[DEBUG] Session ID validation failed for '3b47d89a-a985-435e-b3e6-a06e066d8bf2:intro:1': badly formed hexadecimal UUID string",
-      "[DEBUG] [TTS] Non-UUID session normalized: source=tutorial_integration original=3b47d89a-a985-435e-b3e6-a06e066d8bf2:intro:1 normalized=8ce62ed5-0b97-4808-aa99-78d708ae17df",
-      "[INFO] [TTS] Request from tutorial_integration: 'Your main control center is the Nexy icon in the m...' (session=8ce62ed5-0b97-4808-aa99-78d708ae17df) -> Routing to SERVER TTS",
-      "[INFO] [TTS] user-facing playback wait enter session=8ce62ed5-0b97-4808-aa99-78d708ae17df timeout=120.00 wait_loop=4677535056",
-      "[INFO] \ud83d\udde3\ufe0f [SERVER_TTS] Requesting TTS for session 8ce62ed5-0b97-4808-aa99-78d708ae17df: 'Your main control center is the Nexy icon in the m...'",
-      "[ERROR] \u274c stream_tts_audio error: <AioRpcError of RPC that terminated with:\n\tstatus = StatusCode.UNAVAILABLE\n\tdetails = \"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (61)\"\n\tdebug_error_string = \"UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:\"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (61)\"}\"\n>"
-    ]
-  },
-  {
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
