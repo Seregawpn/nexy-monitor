@@ -8809,10 +8809,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-12",
-    "root_cause": "",
-    "solution": "",
-    "verified": false,
-    "status": "in_progress",
+    "root_cause": "EmailInboxWatcherIntegration._do_start() unconditionally called _start_mail_store(), which spawns daemon threads making AppleScript calls to Mail.app at app startup, concurrently with the sequential first-run permission wizard \u2014 causing the Mail Automation TCC prompt to appear together with all other permission prompts instead of on-demand.",
+    "solution": "_do_start() now subscribes to tool.submit_pending (LOW priority) instead of calling _start_mail_store() directly. New _on_tool_submit_pending(event) starts _start_mail_store() only on the first dispatched command in EMAIL_ACTION_COMMANDS (12 commands owned by EmailInboxWatcherIntegration, via get_action_commands_by_owner). _do_stop() unsubscribes. Mail Automation prompt now appears only on first voice-driven email request.",
+    "verified": true,
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
