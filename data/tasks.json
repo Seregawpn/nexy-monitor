@@ -8781,5 +8781,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_190354_14021b93",
+    "created_at": "2026-06-12T19:03:54+00:00",
+    "source": "manual",
+    "priority": "critical",
+    "module_id": "instance_manager",
+    "problem": "Installed app restart loop every 18-24s: auto_restart=true causes instance_manager to SIGKILL the launchd-managed instance, which launchd immediately respawns",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "launchd-managed application.com.nexy.assistant.* job auto-respawns its PID on exit (\"because launch job demand\"); instance_manager.auto_restart=true caused a second LaunchServices-spawned instance to detect the launchd-managed one as a duplicate and SIGKILL it after a 4s grace period, which launchd immediately respawned, repeating every 18-40s",
+    "solution": "Disabled integrations.instance_manager.auto_restart in client/config/unified_config.yaml (true -> false), released as v5.0.0.346. Source of the recurring second instance itself remains unidentified - tracked separately.",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
