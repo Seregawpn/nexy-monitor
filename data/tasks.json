@@ -8973,5 +8973,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260612_011435_4e3ddd24",
+    "created_at": "2026-06-12T01:14:35+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "browser_automation",
+    "problem": "Allow server-side override of browser_use LLM model via NEXY_BROWSER_LLM_MODEL env var, so model can be changed without client app update",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-12",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
