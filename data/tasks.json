@@ -9169,6 +9169,23 @@
     "root_cause": "",
     "solution": "",
     "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260613_220400_3db1f6d8",
+    "created_at": "2026-06-13T22:04:00+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "tools/map",
+    "problem": "Convert cloud_push.py from continuous KeepAlive daemon (5min heartbeat + file watcher) to once-daily launchd job",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
     "status": "open",
     "recurrence": 1,
     "notes": ""
