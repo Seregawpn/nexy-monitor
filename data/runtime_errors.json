@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. C",
-    "traceback": "",
-    "timestamp": "2026-06-12T14:15:01+00:00",
-    "log_context": [
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider...",
-      "[ERROR] Error creating connection pool: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] PostgreSQL Provider initialization failed",
-      "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "\u274c Error initializing adapter database: Failed to initialize DatabaseManager.Check the database configuration in config.env.The server will continue to operate without database functionality..This is a",
     "traceback": "",
     "timestamp": "2026-06-12T14:15:01+00:00",
@@ -2939,6 +2909,36 @@
       "[DEBUG] gRPC session cleanup: session=f7483c16-8d88-4cf7-b945-3759cdc5e98a reason=stream_exit:end_message",
       "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=450 frames=2048 \u2014 engine rendered this buffer",
       "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=500 frames=2048 \u2014 engine rendered this buffer"
+    ]
+  },
+  {
+    "module_id": "provider",
+    "source": "server",
+    "error_type": "RateLimitError",
+    "message": "[V3] arun_streaming failed: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 185193, ",
+    "traceback": "hunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1865, in _astream\n    _handle_openai_api_error(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1698, in request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 185193, Requested 16322. Please try again in 454ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}\n",
+    "timestamp": "2026-06-13T17:50:10+00:00",
+    "log_context": [
+      "[WARNING] \u26a0\ufe0f Slow response: 10.57s (limit: 5.0s)",
+      "[INFO] \ud83d\udd04 Processing request via modules...",
+      "[INFO] REQUEST_PATH stage=workflow.dispatch session=5a9ea23f-4dc0-4eef-b823-9040d53f3d34 hardware=grpc-imessage-live-test phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Any messages from John?...', screenshot_exists=False",
+      "[INFO] \ud83d\udd04 Starting streaming processing for 5a9ea23f-4dc0-4eef-b823-9040d53f3d34",
+      "[INFO] [\u23f1 TIMING] request.start session=5a9ea23f-4dc0-4eef-b823-9040d53f3d34 input='Any messages from John?'",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=2 history_msgs=7 session=5a9ea23f-4dc0-4eef-b823-9040d53f3d34",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=5a9ea23f-4dc0-4eef-b823-9040d53f3d34",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 3.738000 seconds",
+      "[INFO] Decision: start",
+      "[INFO] Decision: start",
+      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 204",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Now we are testing how to ask Nexy to search the internet. After the beep, activate the microphone a... (attempt 1/3)",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 4.896000 seconds",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=83376 bytes, PCM=1334016 bytes, chunks=332",
+      "[INFO] Decision: complete",
+      "[INFO] Decision: complete",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\""
     ]
   }
 ]
