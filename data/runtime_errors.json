@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "Error creating connection pool: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection t",
-    "traceback": "",
-    "timestamp": "2026-06-12T13:40:58+00:00",
-    "log_context": [
-      "[INFO] Initializing adapter memory_management...",
-      "[INFO] TokenUsageTracker initialized for MemoryManager",
-      "[INFO] \u2705 MemoryAnalyzer initialized with OpenAI provider",
-      "[INFO] \u2705 MemoryAnalyzer initialized successfully",
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider..."
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nco",
     "traceback": "",
     "timestamp": "2026-06-12T13:40:58+00:00",
@@ -2997,6 +2967,36 @@
       "[ERROR] PostgreSQL Provider initialization failed",
       "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
       "[ERROR] Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. Check that PostgreSQL is running and accessible 2. Verify database credentials in config.env 3. Ensure the database user 'nexy_user' exists and has proper permissions"
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool read_messages_all returned error: Messages permissions are required.",
+    "traceback": "",
+    "timestamp": "2026-06-13T01:41:16+00:00",
+    "log_context": [
+      "[INFO] \u2192 StreamAudio: sending text_chunk len=32 for session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] [\u23f1 TIMING] tts.start n=1 session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Looking through your messages...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=6934 session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=7158 in=0 out=0 cost=$0.000000 session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=read_messages_all args={'days': 7} session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee session=660f029d-a3b8-4de1-9be4-c76839b7def0 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee timeout=25.0s",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=14688 bytes, PCM=235008 bytes, chunks=59",
+      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=606 chunks=59 session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_messages_all call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee elapsed_ms=13917 session=660f029d-a3b8-4de1-9be4-c76839b7def0",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=660f029d-a3b8-4de1-9be4-c76839b7def0, command=read_messages_all",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=660f029d-a3b8-4de1-9be4-c76839b7def0 command=read_messages_all feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=660f029d-a3b8-4de1-9be4-c76839b7def0 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_messages_all",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee session=660f029d-a3b8-4de1-9be4-c76839b7def0 result_len=86",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee result_len=86",
+      "[INFO] [V3_DISPATCH] tool=read_messages_all call_id=660f029d-a3b8-4de1-9be4-c76839b7def0:70d7fe33-59aa-4b59-8247-6820750738ee got result_len=86",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=read_messages_all elapsed_ms=374 result_len=99 session=660f029d-a3b8-4de1-9be4-c76839b7def0"
     ]
   }
 ]
