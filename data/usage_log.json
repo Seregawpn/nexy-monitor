@@ -14023,5 +14023,133 @@
     "output_tokens": 436,
     "cost_usd": 0.0013881,
     "tool_name": "email_read_from_contact"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:09+00:00",
+    "session_id": "find-info-search-my--55160",
+    "request_id": "8778ea72-7743-49dd-b873-85278f827732",
+    "hardware_id": "find-info-search-my--55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 8513,
+    "output_tokens": 297,
+    "cost_usd": 0.00054445,
+    "tool_name": "skill_view",
+    "user_input": "Search my emails for delivery info"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:09+00:00",
+    "session_id": "conv-show-me-my-3ec669c9",
+    "request_id": "c6ac6815-a365-4597-b828-73a5c58adb5e",
+    "hardware_id": "conv-show-me-my-3ec669c9",
+    "model": "gpt-5-nano",
+    "input_tokens": 22681,
+    "output_tokens": 250,
+    "cost_usd": 0.00134413,
+    "tool_name": "none",
+    "response_text": "John Smith's email (Project update) is loaded and ready for a reply. What would you like me to say in your reply to this message?"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:19+00:00",
+    "session_id": "find-info-search-my--55160",
+    "request_id": "8778ea72-7743-49dd-b873-85278f827732",
+    "hardware_id": "find-info-search-my--55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 21849,
+    "output_tokens": 242,
+    "cost_usd": 0.00123149,
+    "tool_name": "email_find_info"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:31+00:00",
+    "session_id": "conv-notfound-f6744f95",
+    "request_id": "89d3c42c-c544-44e1-87ee-a44fcef10372",
+    "hardware_id": "conv-notfound-f6744f95",
+    "model": "gpt-5-nano",
+    "input_tokens": 8514,
+    "output_tokens": 489,
+    "cost_usd": 0.0006213,
+    "tool_name": "skill_view",
+    "user_input": "Show me my email thread with John"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:35+00:00",
+    "session_id": "find-info-search-my--55160",
+    "request_id": "8778ea72-7743-49dd-b873-85278f827732",
+    "hardware_id": "find-info-search-my--55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 22222,
+    "output_tokens": 310,
+    "cost_usd": 0.0013439,
+    "tool_name": "none",
+    "response_text": "I found John Smith's email about the office address (ID 4001). What would you like to reply with to that message?"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:41+00:00",
+    "session_id": "find-info-find-the-o-55160",
+    "request_id": "f69571b2-37f6-4717-ad48-f85c44bbd767",
+    "hardware_id": "find-info-find-the-o-55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 8516,
+    "output_tokens": 425,
+    "cost_usd": 0.00063804,
+    "tool_name": "skill_view",
+    "user_input": "Find the office address someone sent me in emails"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:45+00:00",
+    "session_id": "find-info-find-the-o-55160",
+    "request_id": "f69571b2-37f6-4717-ad48-f85c44bbd767",
+    "hardware_id": "find-info-find-the-o-55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 21855,
+    "output_tokens": 177,
+    "cost_usd": 0.00120579,
+    "tool_name": "email_find_info"
+  },
+  {
+    "timestamp": "2026-06-13T17:14:52+00:00",
+    "session_id": "find-info-find-the-o-55160",
+    "request_id": "f69571b2-37f6-4717-ad48-f85c44bbd767",
+    "hardware_id": "find-info-find-the-o-55160",
+    "model": "gpt-5-nano",
+    "input_tokens": 22227,
+    "output_tokens": 340,
+    "cost_usd": 0.00124735,
+    "tool_name": "none",
+    "response_text": "I found John Smith's message titled 'Office address'. The address mentioned is 742 Evergreen Terrace, Suite 12. How would you like me to reply to this email? Please provide the reply body, or tell me if you'd like me to just confirm the address back to him."
+  },
+  {
+    "timestamp": "2026-06-13T17:14:56+00:00",
+    "session_id": "find-info2-find-the-m-5c250b3b",
+    "request_id": "51eb59c7-6d41-4dc9-b38c-ddfba7ca95b9",
+    "hardware_id": "find-info2-find-the-m-5c250b3b",
+    "model": "gpt-5-nano",
+    "input_tokens": 8516,
+    "output_tokens": 361,
+    "cost_usd": 0.00061244,
+    "tool_name": "skill_view",
+    "user_input": "Find the meeting time John sent in his emails"
+  },
+  {
+    "timestamp": "2026-06-13T17:15:02+00:00",
+    "session_id": "find-info2-find-the-m-5c250b3b",
+    "request_id": "51eb59c7-6d41-4dc9-b38c-ddfba7ca95b9",
+    "hardware_id": "find-info2-find-the-m-5c250b3b",
+    "model": "gpt-5-nano",
+    "input_tokens": 21855,
+    "output_tokens": 307,
+    "cost_usd": 0.00125779,
+    "tool_name": "email_find_info"
+  },
+  {
+    "timestamp": "2026-06-13T17:15:04+00:00",
+    "session_id": "conv-notfound-f6744f95",
+    "request_id": "89d3c42c-c544-44e1-87ee-a44fcef10372",
+    "hardware_id": "conv-notfound-f6744f95",
+    "model": "gpt-5-nano",
+    "input_tokens": 21856,
+    "output_tokens": 564,
+    "cost_usd": 0.00136064,
+    "tool_name": "email_read_all"
   }
 ]
