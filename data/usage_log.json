@@ -14776,5 +14776,63 @@
     "cost_usd": 0.00138045,
     "tool_name": "none",
     "response_text": "I didn't find a verification code from GitHub in your email in the last day. Should I search the past 7 days for GitHub codes?"
+  },
+  {
+    "timestamp": "2026-06-13T17:20:50+00:00",
+    "session_id": "edge-96eb10c0",
+    "request_id": "2dbc9149-4f28-4657-a5f6-25cb6bb3bc99",
+    "hardware_id": "edge-96eb10c0",
+    "model": "gpt-5-nano",
+    "input_tokens": 23046,
+    "output_tokens": 137,
+    "cost_usd": 0.00132102,
+    "tool_name": "email_read_message"
+  },
+  {
+    "timestamp": "2026-06-13T17:20:51+00:00",
+    "session_id": "edge-96eb10c0",
+    "request_id": "2dbc9149-4f28-4657-a5f6-25cb6bb3bc99",
+    "hardware_id": "edge-96eb10c0",
+    "model": "gpt-5-nano",
+    "input_tokens": 23212,
+    "output_tokens": 31,
+    "cost_usd": 0.0012882,
+    "tool_name": "none",
+    "response_text": "Your GitHub verification code is 847291."
+  },
+  {
+    "timestamp": "2026-06-13T17:20:59+00:00",
+    "session_id": "find-info-search-my--57973",
+    "request_id": "3339509c-1cd9-4b39-8b32-de86464bcdd7",
+    "hardware_id": "find-info-search-my--57973",
+    "model": "gpt-5-nano",
+    "input_tokens": 8513,
+    "output_tokens": 169,
+    "cost_usd": 0.00053549,
+    "tool_name": "skill_view",
+    "user_input": "Search my emails for delivery info"
+  },
+  {
+    "timestamp": "2026-06-13T17:21:02+00:00",
+    "session_id": "find-info-search-my--57973",
+    "request_id": "3339509c-1cd9-4b39-8b32-de86464bcdd7",
+    "hardware_id": "find-info-search-my--57973",
+    "model": "gpt-5-nano",
+    "input_tokens": 21849,
+    "output_tokens": 242,
+    "cost_usd": 0.00123149,
+    "tool_name": "email_find_info"
+  },
+  {
+    "timestamp": "2026-06-13T17:21:03+00:00",
+    "session_id": "high-risk-7d3e7daa",
+    "request_id": "e8308b6c-da24-4297-a426-4451ac1a149d",
+    "hardware_id": "high-risk-7d3e7daa",
+    "model": "gpt-5-nano",
+    "input_tokens": 8518,
+    "output_tokens": 169,
+    "cost_usd": 0.00053574,
+    "tool_name": "skill_view",
+    "user_input": "Email John, tell him I'll be late to the meeting"
   }
 ]
