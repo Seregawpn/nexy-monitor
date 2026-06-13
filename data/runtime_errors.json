@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "PostgreSQL Provider initialization failed",
-    "traceback": "",
-    "timestamp": "2026-06-12T14:40:46+00:00",
-    "log_context": [
-      "[INFO] \u2705 MemoryAnalyzer initialized with OpenAI provider",
-      "[INFO] \u2705 MemoryAnalyzer initialized successfully",
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider...",
-      "[ERROR] Error creating connection pool: connection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
     "traceback": "",
     "timestamp": "2026-06-12T14:40:46+00:00",
@@ -2939,6 +2909,36 @@
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
       "[INFO] Retrying request to /chat/completions in 0.866000 seconds",
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\""
+    ]
+  },
+  {
+    "module_id": "tools",
+    "source": "server",
+    "error_type": "Error",
+    "message": "tool read_messages_unread returned error: Messages permissions are required.",
+    "traceback": "",
+    "timestamp": "2026-06-13T19:26:42+00:00",
+    "log_context": [
+      "[INFO] [\u23f1 TIMING] tts.start n=0 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] EdgeTTS \u2192 generating speech for text: Checking for new unread messages...... (attempt 1/3)",
+      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=2696 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=2850 in=0 out=0 cost=$0.000000 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=read_messages_unread args={'days': 2} session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] [V3_DISPATCH] tool=read_messages_unread call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade session=536bae30-7955-478d-a472-ecc0fab91051 \u2014 waiting for client",
+      "[INFO] [TOOL_REGISTRY] waiting call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade timeout=25.0s",
+      "[INFO] [\u23f1 TIMING] audio.first_chunk elapsed_ms=4575 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=17568 bytes, PCM=281088 bytes, chunks=71",
+      "[INFO] [\u23f1 TIMING] tts.done n=0 elapsed_ms=919 chunks=71 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] [\u23f1 TIMING] tool_request.sent tool=read_messages_unread call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade elapsed_ms=4771 session=536bae30-7955-478d-a472-ecc0fab91051",
+      "[INFO] \u2192 StreamAudio: sending ActionMessage session=536bae30-7955-478d-a472-ecc0fab91051, command=read_messages_unread",
+      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=536bae30-7955-478d-a472-ecc0fab91051 command=read_messages_unread feature=",
+      "[INFO] REQUEST_PATH stage=action.streamed session=536bae30-7955-478d-a472-ecc0fab91051 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=read_messages_unread",
+      "[INFO] Decision: start",
+      "[INFO] [SUBMIT_TOOL] call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade session=536bae30-7955-478d-a472-ecc0fab91051 result_len=86",
+      "[INFO] Decision: complete",
+      "[INFO] [TOOL_REGISTRY] resolved call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade result_len=86",
+      "[INFO] [V3_DISPATCH] tool=read_messages_unread call_id=536bae30-7955-478d-a472-ecc0fab91051:613bc890-59fe-422a-9ab0-c5862fa3aade got result_len=86",
+      "[INFO] [\u23f1 TIMING] tool.done iter=2 tool=read_messages_unread elapsed_ms=749 result_len=99 session=536bae30-7955-478d-a472-ecc0fab91051"
     ]
   }
 ]
