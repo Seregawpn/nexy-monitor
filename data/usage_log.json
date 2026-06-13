@@ -9621,5 +9621,206 @@
     "output_tokens": 361,
     "cost_usd": 0.00127964,
     "tool_name": "skill_view"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:24+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8738,
+    "output_tokens": 567,
+    "cost_usd": 0.00070594,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:29+00:00",
+    "session_id": "e2e-email-read-recent",
+    "hardware_id": "e2e-email-read-recent-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 22029,
+    "output_tokens": 307,
+    "cost_usd": 0.00133305,
+    "tool_name": "email_read_all"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:31+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8979,
+    "output_tokens": 375,
+    "cost_usd": 0.00064183,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:33+00:00",
+    "session_id": "e2e-email-read-recent",
+    "hardware_id": "e2e-email-read-recent-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 22136,
+    "output_tokens": 339,
+    "cost_usd": 0.00135184,
+    "tool_name": "none",
+    "response_text": "There was an internal error while retrieving emails from the last 3 days. Would you like me to retry, perhaps with a 7-day window (last 7 days), or try again now with the same 3-day range?"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:36+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9212,
+    "output_tokens": 174,
+    "cost_usd": 0.00057436,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:39+00:00",
+    "session_id": "e2e-email-find-info",
+    "hardware_id": "e2e-email-find-info-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8515,
+    "output_tokens": 681,
+    "cost_usd": 0.00069815,
+    "tool_name": "skill_view",
+    "user_input": "Find information about any deliveries in my email"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:42+00:00",
+    "session_id": "e2e-email-find-info",
+    "hardware_id": "e2e-email-find-info-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21853,
+    "output_tokens": 170,
+    "cost_usd": 0.00116065,
+    "tool_name": "email_find_info"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:46+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9440,
+    "output_tokens": 505,
+    "cost_usd": 0.00071944,
+    "tool_name": "none",
+    "response_text": "I\u2019m ready to fetch the top Google result for Nexy AI assistant. Do you want me to search again now and return the first result title?"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:47+00:00",
+    "session_id": "e2e-email-find-info",
+    "hardware_id": "e2e-email-find-info-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21951,
+    "output_tokens": 382,
+    "cost_usd": 0.00129259,
+    "tool_name": "none",
+    "response_text": "I hit an internal error while searching your email for delivery information. The email module failed to load. Would you like me to retry with a different approach (e.g., search the last 7 days for delivery-related emails), or should I scan for likely delivery-related topics like receipts, invoices, or tracking numbers in the last couple of weeks? If you have a preference (e.g., look for invoices from merchants, or shipments from specific vendors), tell me and I\u2019ll tailor the search."
+  },
+  {
+    "timestamp": "2026-06-13T16:39:49+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8510,
+    "output_tokens": 234,
+    "cost_usd": 0.00056134,
+    "tool_name": "skill_view",
+    "user_input": "Close the browser"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:50+00:00",
+    "session_id": "e2e-email-find-code",
+    "hardware_id": "e2e-email-find-code-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8514,
+    "output_tokens": 297,
+    "cost_usd": 0.00058674,
+    "tool_name": "skill_view",
+    "user_input": "Find a verification code in my email"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:54+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9428,
+    "output_tokens": 298,
+    "cost_usd": 0.00063284,
+    "tool_name": "close_browser"
+  },
+  {
+    "timestamp": "2026-06-13T16:39:54+00:00",
+    "session_id": "e2e-email-find-code",
+    "hardware_id": "e2e-email-find-code-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21832,
+    "output_tokens": 242,
+    "cost_usd": 0.00123064,
+    "tool_name": "email_find_code"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:01+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9521,
+    "output_tokens": 319,
+    "cost_usd": 0.00064589,
+    "tool_name": "none",
+    "response_text": "I hit a hiccup closing the browser: the browser automation module isn't available. Would you like me to try again, or close manually by telling me which browser window to close?"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:05+00:00",
+    "session_id": "e2e-email-find-code",
+    "hardware_id": "e2e-email-find-code-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21938,
+    "output_tokens": 345,
+    "cost_usd": 0.0013437,
+    "tool_name": "none",
+    "response_text": "I attempted to find a verification code, but there was an internal error loading email actions. You can retry the search with a different window (e.g., days: 7 or 14), or I can look up verification codes by sender if you have a known sender. How would you like to proceed?"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:06+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8511,
+    "output_tokens": 233,
+    "cost_usd": 0.00051875,
+    "tool_name": "skill_view",
+    "user_input": "Check my Gmail inbox"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:09+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8514,
+    "output_tokens": 233,
+    "cost_usd": 0.00056114,
+    "tool_name": "skill_view",
+    "user_input": "Show me the files on my Desktop"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:14+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 15011,
+    "output_tokens": 234,
+    "cost_usd": 0.00088639,
+    "tool_name": "list_workspace_files"
+  },
+  {
+    "timestamp": "2026-06-13T16:40:20+00:00",
+    "session_id": "e2e-files-list-desktop",
+    "hardware_id": "e2e-files-list-desktop-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 15109,
+    "output_tokens": 472,
+    "cost_usd": 0.00101849,
+    "tool_name": "none",
+    "response_text": "I ran into a system error while listing your Desktop files. The desktop listing module isn\u2019t available right now. Would you like me to retry listing the Desktop files in a moment, or would you prefer I try a broader search (e.g., all documents on Desktop) once the service is back online?"
   }
 ]
