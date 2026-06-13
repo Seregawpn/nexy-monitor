@@ -8894,10 +8894,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-13",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "PyInstaller COLLECT splits the ProcessTapDuck.app nested bundle (Nexy.spec datas) between Contents/Frameworks (binary) and Contents/Resources (Info.plist/_CodeSignature), cross-linking each half with symlinks; codesign --deep --strict rejects the Frameworks copy because its Info.plist/_CodeSignature are symlinks.",
+    "solution": "sign_all_binaries.sh: reassemble ProcessTapDuck.app into a single non-split bundle under Contents/Resources before signing (move real MacOS dir from Frameworks copy, delete Frameworks copy), then re-seal the bundle with codesign --deep after the generic per-file signing pass (same pattern as nested Google Chrome for Testing.app). v5.0.0.352, commit aa18f254.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
