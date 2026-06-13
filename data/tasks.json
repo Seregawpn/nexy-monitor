@@ -8883,5 +8883,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_000615_85b5b27e",
+    "created_at": "2026-06-13T00:06:15+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "orchestrator",
+    "problem": "Standardize 6 skill SKILL.md files to one canonical structure (Rules & Flow -> Flows -> Tools -> Error Handling) and rewrite stale Russian SKILL_TEMPLATE.md in English",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
