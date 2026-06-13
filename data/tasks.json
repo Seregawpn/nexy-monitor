@@ -9002,5 +9002,22 @@
     "status": "open",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_160042_06a0d5c3",
+    "created_at": "2026-06-13T16:00:42+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "server/orchestrator/computer_skill",
+    "problem": "Repeat screen questions answered from stale screenshot in history instead of calling screenshot() again",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
