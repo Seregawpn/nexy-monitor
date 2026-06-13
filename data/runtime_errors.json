@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "browser_use",
-    "source": "client",
-    "error_type": "Error",
-    "message": "[SessionManager] \u274c Error during agent_focus recovery: RuntimeError: {'code': -32000, 'message': 'Failed to open new tab - no browser is open'}",
-    "traceback": "",
-    "timestamp": "2026-06-12T13:48:12+00:00",
-    "log_context": [
-      "[DEBUG] \ud83d\udd0d gRPC response #280: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #290: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #300: WhichOneof('content')=audio_chunk",
-      "[DEBUG] \ud83d\udd0d gRPC response #306: WhichOneof('content')=end_message",
-      "[INFO] gRPC received end_message: 'Processing complete' for session 64549a94-76c4-4343-b968-e66d96294389",
-      "[DEBUG] Started finalize_on_silence for gRPC session 64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] PTT_STATE: waiting_grpc -> idle (reason=grpc_completed_playback_tail, press_id=None, session=64549a94-76c4-4343-b968-e66d96294389)",
-      "[INFO] \ud83c\udf10 ProcessingWorkflow: gRPC request completed successfully.",
-      "[INFO] \ud83d\udd0d [GRPC_END] session=64549a94-76c4-4343-b968-e66d96294389 exit_reason=end_message summary={chunks=306, audio_chunks=300, silent_audio_chunks=77, non_silent_audio_chunks=223, text_chunks=4, action_chunks=1, had_audio=True, had_text=True, action_like_text=False} latency={recording_stop_to_grpc_start_ms=816, grpc_start_to_first_chunk_ms=5799, grpc_start_to_first_text_ms=5799, grpc_start_to_first_audio_ms=6461, grpc_start_to_terminal_ms=186187}",
-      "[INFO] Using Hardware ID: E03D2455... for session 64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] TRACE phase=grpc.start ts=25479249 session=64549a94-76c4-4343-b968-e66d96294389 extra={has_screenshot=True, text_len=320, delta_from_recording_stop_ms=187007}",
-      "[INFO] AUDIO_PIPELINE phase=processing_start source=grpc.request_started session=64549a94-76c4-4343-b968-e66d96294389 phase=REQUEST_PHASE_COMMIT has_screenshot=True text_len=320",
-      "[INFO] Starting gRPC stream for session 64549a94-76c4-4343-b968-e66d96294389 with prompt: '{\"intent\": \"action.execution_outcome.process\", \"se...'",
-      "[INFO] \ud83d\udd0d screen_info type: <class 'dict'>",
-      "[INFO] \ud83d\udd0d screen_info content: {'width': 1383, 'height': 900}",
-      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=1000 frames=2048 \u2014 engine rendered this buffer",
-      "[WARNING] [SessionManager] Agent focus target 650F8387... detached! Current focus: None (already cleared). Auto-recovering by switching to another target...",
-      "[WARNING] [SessionManager] No tabs remain! Creating new tab for agent...",
-      "[WARNING] Cannot navigate - browser not connected",
-      "[WARNING] Cannot navigate - browser not connected"
-    ]
-  },
-  {
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
@@ -2939,6 +2909,36 @@
       "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
       "[INFO] [F-2025-017] Subscription module disabled by config",
       "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 30622 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
+  },
+  {
+    "module_id": "mode_management_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
+    "traceback": "",
+    "timestamp": "2026-06-13T16:54:11+00:00",
+    "log_context": [
+      "[DEBUG] DUCK_MONITOR event=playback.started action=skip reason=reuse_mic_duck session=9966ef35-12d7-4f3a-b334-b9e64558e8a6",
+      "[INFO] [TTS] observed playback.started session=9966ef35-12d7-4f3a-b334-b9e64558e8a6 callback_loop=4605871440 wait_loop=4605871440",
+      "[INFO] [TTS] mark_playback_started session=9966ef35-12d7-4f3a-b334-b9e64558e8a6 wait_loop=4605871440",
+      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback_noop snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'Sergiy\u2019s AirPo:Bluetooth'} (suppressed 1191 similar in 5.0s)",
+      "[DEBUG] \u25b6\ufe0f Playback already active, start_playback is a no-op (suppressed 1191 similar in 5.0s)",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Incoming: shape=(2048,), dtype=float32, size=2048",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] INPUT peak=0.2689, min=-0.2688, max=0.2689",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Already float: peak=0.268860",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Made copy: peak after copy=0.268860",
+      "[DEBUG] \ud83d\udcca [ADD_AUDIO] Queued chunk chunk_4836371280: 2048 samples, queue_size=1",
+      "[DEBUG] \ud83d\udcca [QUEUE_EXTRACT] peak=0.268860, first_10=[0.20565796 0.20526123 0.20492554 0.2038269  0.20147705]",
+      "[DEBUG] AUDIO_PIPELINE phase=before_schedule kind=grpc_audio chunk=5350 frames=2048 peak=0.2689 rms=0.1636",
+      "[DEBUG] \ud83d\udcca Pre-copy peak (FULL): 0.2689, samples=2048",
+      "[DEBUG] \ud83d\udcca Buffer write check: idx=0 wrote=0.205658 read=0.205658",
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 2048 frames | src_peak=0.2689 written_peak=0.2689 | engine=True, player=True",
+      "[INFO] \u2705 [SERVER_TTS] Stream ended: Welcome audio generation completed",
+      "[INFO] \u2705 [SERVER_TTS] Completed: chunks_total=73 published_audio_chunks=48 silent_chunks=25",
+      "[DEBUG] Started finalize_on_silence for gRPC session 9966ef35-12d7-4f3a-b334-b9e64558e8a6",
+      "[INFO] [TTS] runner completed, waiting for playback.started session=9966ef35-12d7-4f3a-b334-b9e64558e8a6",
+      "[INFO] [TTS] playback.started observed, waiting for terminal session=9966ef35-12d7-4f3a-b334-b9e64558e8a6"
     ]
   }
 ]
