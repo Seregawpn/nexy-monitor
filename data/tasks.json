@@ -8968,5 +8968,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_150353_d263dd91",
+    "created_at": "2026-06-13T15:03:53+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "first_run_permissions",
+    "problem": "Reset first-run flags, permissions, and tutorial for all three Nexy instances",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "first_run state accumulated across sessions",
+    "solution": "Deleted permission_ledger.json and restart_completed.flag from all 3 instances (Nexy, Nexy-Dev, Nexy-Packaged-Isolated-2.0.0.60), reset TCC permissions (Microphone, ScreenCapture, Accessibility, ListenEvent) for com.nexy.assistant",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
