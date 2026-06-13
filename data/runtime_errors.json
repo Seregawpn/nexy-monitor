@@ -3,36 +3,6 @@
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
-    "message": "Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
-    "traceback": "",
-    "timestamp": "2026-06-12T14:15:01+00:00",
-    "log_context": [
-      "[INFO] \u2705 MemoryAnalyzer initialized successfully",
-      "[INFO] \u2705 MemoryManager initialized successfully",
-      "[INFO] Short-term memory cleanup loop started (interval=7200s, idle_hours=2)",
-      "[INFO] \u2705 Adapter memory_management initialized",
-      "[INFO] \u2705 Module 'memory_management' registered with capability 'memory_management'",
-      "[INFO] \u2705 Module 'memory_management' created and registered",
-      "[INFO] \u23f3 Loading module 'database'...",
-      "[INFO] Module database created",
-      "[INFO] \u2705 Module 'database' created through factory: DatabaseAdapter",
-      "[INFO] Registering module 'database' with capability 'database' (optional=True)",
-      "[INFO] Initializing adapter database...",
-      "[INFO] DatabaseManager initialized",
-      "[INFO] Initializing DatabaseManager...",
-      "[INFO] Provider postgresql created with priority 1",
-      "[INFO] PostgreSQL Provider initialized with host: localhost:5432",
-      "[INFO] Created database provider",
-      "[INFO] Initializing PostgreSQL Provider...",
-      "[ERROR] Error creating connection pool: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] Failed to initialize PostgreSQL Provider: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[ERROR] PostgreSQL Provider initialization failed"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
     "message": "Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. C",
     "traceback": "",
     "timestamp": "2026-06-12T14:15:01+00:00",
@@ -2939,6 +2909,36 @@
       "[DEBUG] \ud83d\udd0d gRPC response #174: WhichOneof('content')=error_message",
       "[ERROR] gRPC received error_message: 'Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 200000, Requested 9006. Please try again in 2.701s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}' for session f166e8d4-6787-4f98-83f1-35c596897b0b",
       "[INFO] TRACE phase=playback.end ts=24134303 session=f166e8d4-6787-4f98-83f1-35c596897b0b extra={error=Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 200000, Requested 9006. Please try again in 2.701s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}, failed=true}"
+    ]
+  },
+  {
+    "module_id": "mode_management_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
+    "traceback": "",
+    "timestamp": "2026-06-13T17:45:53+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udd0d gRPC response #1660: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1670: WhichOneof('content')=audio_chunk",
+      "[INFO] \ud83d\udd0a [AUDIO_RECV] _on_audio_chunk received: session=f7483c16-8d88-4cf7-b945-3759cdc5e98a, bytes=4096",
+      "[INFO] \ud83d\udd2c [RAW_AUDIO_DIAG] session=f7483c16-8d88-4cf7-b945-3759cdc5e98a bytes=4096 dtype=int16 first_bytes=b40087000800f5ff peak_int16=679.0000 all_zeros=False",
+      "[INFO] AUDIO_PIPELINE phase=before_queue session=f7483c16-8d88-4cf7-b945-3759cdc5e98a samples=2048 peak=0.0207 rms=0.0048 dtype=float32",
+      "[DEBUG] \ud83d\udd0d gRPC response #1680: WhichOneof('content')=audio_chunk",
+      "[INFO] AUDIO_SESSION_RUNTIME reason=start_playback_noop snapshot={'category': 'AVAudioSessionCategoryPlayback', 'mode': 'AVAudioSessionModeDefault', 'secondary_should_be_silenced': False, 'output_volume': 1.0, 'route': 'Sergiy\u2019s AirPo:Bluetooth'} (suppressed 1509 similar in 5.0s)",
+      "[DEBUG] \u25b6\ufe0f Playback already active, start_playback is a no-op (suppressed 1509 similar in 5.0s)",
+      "[WARNING] \u26a0\ufe0f [ADD_AUDIO] Incoming audio is very quiet (peak: 0.000092) (suppressed 29 similar in 5.0s)",
+      "[DEBUG] \ud83d\udd0d gRPC response #1690: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1700: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1708: WhichOneof('content')=end_message",
+      "[INFO] gRPC received end_message: 'Processing complete' for session f7483c16-8d88-4cf7-b945-3759cdc5e98a",
+      "[DEBUG] Started finalize_on_silence for gRPC session f7483c16-8d88-4cf7-b945-3759cdc5e98a",
+      "[INFO] PTT_STATE: waiting_grpc -> idle (reason=grpc_completed_playback_tail, press_id=None, session=f7483c16-8d88-4cf7-b945-3759cdc5e98a)",
+      "[INFO] \ud83c\udf10 ProcessingWorkflow: gRPC request completed successfully.",
+      "[INFO] \ud83d\udd0d [GRPC_END] session=f7483c16-8d88-4cf7-b945-3759cdc5e98a exit_reason=end_message summary={chunks=1708, audio_chunks=1705, silent_audio_chunks=136, non_silent_audio_chunks=1569, text_chunks=2, action_chunks=0, had_audio=True, had_text=True, action_like_text=False} latency={recording_stop_to_grpc_start_ms=1364, grpc_start_to_first_chunk_ms=2043, grpc_start_to_first_text_ms=2044, grpc_start_to_first_audio_ms=2479, grpc_start_to_terminal_ms=26488}",
+      "[DEBUG] gRPC session cleanup: session=f7483c16-8d88-4cf7-b945-3759cdc5e98a reason=stream_exit:end_message",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=450 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=500 frames=2048 \u2014 engine rendered this buffer"
     ]
   }
 ]
