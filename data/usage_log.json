@@ -24678,5 +24678,36 @@
     "tool_name": "none",
     "user_input": "Yes, send it",
     "response_text": "The message to John Smith has been sent: 'See you Friday'."
+  },
+  {
+    "timestamp": "2026-06-13T19:29:44+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error",
+    "user_input": "hello"
+  },
+  {
+    "timestamp": "2026-06-13T19:29:44+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-13T19:29:44+00:00",
+    "session_id": "s2",
+    "hardware_id": "hw2",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
   }
 ]
