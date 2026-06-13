@@ -5,36 +5,6 @@
     "error_type": "Error",
     "message": "Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to s",
     "traceback": "",
-    "timestamp": "2026-06-12T13:45:41+00:00",
-    "log_context": [
-      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 200 OK\"",
-      "[INFO] [\u23f1 TIMING] llm.first_token iter=2 elapsed_ms=2039 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] [\u23f1 TIMING] sentence.received n=1 len=49 elapsed_ms=8333 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] \u2192 StreamAudio: sending text_chunk len=49 for session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] [\u23f1 TIMING] tts.start n=1 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] EdgeTTS \u2192 generating speech for text: Opening YouTube now and setting playback speed...... (attempt 1/3)",
-      "[INFO] [\u23f1 TIMING] action.tool iter=2 elapsed_ms=2096 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=21744 bytes, PCM=347904 bytes, chunks=88",
-      "[INFO] [\u23f1 TIMING] tts.done n=1 elapsed_ms=571 chunks=88 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] [\u23f1 TIMING] llm.done iter=2 total_ms=2664 in=0 out=0 cost=$0.000000 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] [\u23f1 TIMING] tool.start iter=2 tool=browser_use args={'task': 'Open youtube.com and play music at 1.75x speed'} session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] [V3_DISPATCH] tool=browser_use call_id=64549a94-76c4-4343-b968-e66d96294389:eeede12e-d46c-4816-aedb-3d01b5a85f5e session=64549a94-76c4-4343-b968-e66d96294389 \u2014 waiting for client",
-      "[INFO] [TOOL_REGISTRY] waiting call_id=64549a94-76c4-4343-b968-e66d96294389:eeede12e-d46c-4816-aedb-3d01b5a85f5e timeout=180.0s",
-      "[INFO] [\u23f1 TIMING] tool_request.sent tool=browser_use call_id=64549a94-76c4-4343-b968-e66d96294389:eeede12e-d46c-4816-aedb-3d01b5a85f5e elapsed_ms=8917 session=64549a94-76c4-4343-b968-e66d96294389",
-      "[INFO] \u2192 StreamAudio: sending ActionMessage session=64549a94-76c4-4343-b968-e66d96294389, command=browser_use",
-      "[INFO] [ACTION_PIPELINE][SERVER] stage=stream_action_message session=64549a94-76c4-4343-b968-e66d96294389 command=browser_use feature=",
-      "[INFO] REQUEST_PATH stage=action.streamed session=64549a94-76c4-4343-b968-e66d96294389 hardware=E03D2455-8EF1-5270-AA03-13B5771C7CB2 command=browser_use",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:45:21 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 6965 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:45:34 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 5027 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Decision: start"
-    ]
-  },
-  {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
-    "message": "Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to s",
-    "traceback": "",
     "timestamp": "2026-06-12T13:46:45+00:00",
     "log_context": [
       "[INFO] EdgeTTS \u2192 generating speech for text: Opened YouTube... (attempt 1/3)",
@@ -2997,6 +2967,36 @@
       "[ERROR] PostgreSQL Provider initialization failed",
       "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
       "[ERROR] Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. Check that PostgreSQL is running and accessible 2. Verify database credentials in config.env 3. Ensure the database user 'nexy_user' exists and has proper permissions"
+    ]
+  },
+  {
+    "module_id": "mode_management_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
+    "traceback": "",
+    "timestamp": "2026-06-13T15:22:00+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udcca Buffer write check: idx=0 wrote=-0.049866 read=-0.049866",
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 2048 frames | src_peak=0.2077 written_peak=0.2077 | engine=True, player=True",
+      "[DEBUG] \ud83d\udd0d gRPC response #1450: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1460: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0a [AUDIO_DIAG] Stream progress session=7318c4f1-e4a2-4bda-92c9-ab1d07a69895 chunk#1450 (audio=1450 silent=182 non_silent=1268)",
+      "[DEBUG] \ud83d\udd0d gRPC response #1470: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #1478: WhichOneof('content')=end_message",
+      "[INFO] gRPC received end_message: 'Processing complete' for session 7318c4f1-e4a2-4bda-92c9-ab1d07a69895",
+      "[DEBUG] Started finalize_on_silence for gRPC session 7318c4f1-e4a2-4bda-92c9-ab1d07a69895",
+      "[INFO] PTT_STATE: waiting_grpc -> idle (reason=grpc_completed_playback_tail, press_id=None, session=7318c4f1-e4a2-4bda-92c9-ab1d07a69895)",
+      "[INFO] \ud83c\udf10 ProcessingWorkflow: gRPC request completed successfully.",
+      "[INFO] \ud83d\udd0d [GRPC_END] session=7318c4f1-e4a2-4bda-92c9-ab1d07a69895 exit_reason=end_message summary={chunks=1478, audio_chunks=1467, silent_audio_chunks=199, non_silent_audio_chunks=1268, text_chunks=10, action_chunks=0, had_audio=True, had_text=True, action_like_text=False} latency={recording_stop_to_grpc_start_ms=2166, grpc_start_to_first_chunk_ms=1957, grpc_start_to_first_text_ms=1957, grpc_start_to_first_audio_ms=2304, grpc_start_to_terminal_ms=15806}",
+      "[DEBUG] gRPC session cleanup: session=7318c4f1-e4a2-4bda-92c9-ab1d07a69895 reason=stream_exit:end_message",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4700 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4750 frames=1408 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4800 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4850 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4900 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=4950 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=5000 frames=2048 \u2014 engine rendered this buffer"
     ]
   }
 ]
