@@ -9121,5 +9121,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_174912_2fbe97a9",
+    "created_at": "2026-06-13T17:49:12+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "grpc_service",
+    "problem": "Add request_id (per-PTT-press UUID) end-to-end: proto field 11, client generation, server logging in usage_log.json, map aggregation",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
