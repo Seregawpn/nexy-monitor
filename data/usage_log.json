@@ -18788,5 +18788,16 @@
     "cost_usd": 0.00053549,
     "tool_name": "skill_view",
     "user_input": "What are my unread emails?"
+  },
+  {
+    "timestamp": "2026-06-13T18:02:22+00:00",
+    "session_id": "sess-2",
+    "hardware_id": "hw-test",
+    "model": "gpt-5-nano",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0001,
+    "tool_name": "none",
+    "request_id": "req-2"
   }
 ]
