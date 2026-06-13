@@ -9087,5 +9087,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_171400_712df312",
+    "created_at": "2026-06-13T17:14:00+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "tutorial_integration",
+    "problem": "set all tutorial step timeouts to 120s",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
