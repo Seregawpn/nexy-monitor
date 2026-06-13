@@ -9152,7 +9152,7 @@
     "root_cause": "Whisper base model hallucinations for non-native English accents caused client-side text gate to block valid tutorial requests for screen_understanding and internet_search steps",
     "solution": "Bypassed text gate for processing_response steps (runtime_gate returns allow always); added server-side tutorial_skill_emitter that fires when screenshot/web_search is dispatched during tutorial; client receives tutorial.skill.used ActionMessage and sets correct_skill_seen; on_processing_terminal validates skill match before marking completed",
     "verified": false,
-    "status": "resolved",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
