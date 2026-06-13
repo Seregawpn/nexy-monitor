@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
-    "message": "Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to s",
-    "traceback": "",
-    "timestamp": "2026-06-12T13:54:23+00:00",
-    "log_context": [
-      "[INFO] Metrics snapshot",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:52:27 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 1810 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Decision: start",
-      "[ERROR] Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[WARNING] [TokenUsage] Failed to record usage for browser_agent",
-      "[INFO] \ud83d\udcca Token usage reported: browser_agent (4486/175) for E03D2455-8EF1-5270-AA03-13B5771C7CB2",
-      "[INFO] Decision: complete",
-      "[INFO] Metrics snapshot",
-      "[INFO] Decision: start",
-      "[INFO] Decision: start",
-      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 14",
-      "[INFO] EdgeTTS \u2192 generating speech for text: Initial state.... (attempt 1/3)",
-      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=11664 bytes, PCM=186624 bytes, chunks=46",
-      "[INFO] Decision: complete",
-      "[INFO] Decision: complete",
-      "[INFO] Metrics snapshot",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:52:36 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 59600 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Metrics snapshot",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:54:17 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 5844 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Decision: start"
-    ]
-  },
-  {
     "module_id": "processing_workflow",
     "source": "client",
     "error_type": "Error",
@@ -2939,6 +2909,36 @@
       "[INFO] \u2705 grpc stopped",
       "[INFO] \u23f9\ufe0f Stop action_execution...",
       "[INFO] Stopping ActionExecutionIntegration..."
+    ]
+  },
+  {
+    "module_id": "mode_management_integration",
+    "source": "client",
+    "error_type": "Error",
+    "message": "E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
+    "traceback": "",
+    "timestamp": "2026-06-13T17:04:12+00:00",
+    "log_context": [
+      "[DEBUG] \ud83d\udcca [QUEUE_EXTRACT] peak=0.063599, first_10=[0.0135498  0.01373291 0.01370239 0.01367188 0.01394653]",
+      "[DEBUG] AUDIO_PIPELINE phase=before_schedule kind=grpc_audio chunk=4150 frames=2048 peak=0.0636 rms=0.0161",
+      "[DEBUG] \ud83d\udcca Pre-copy peak (FULL): 0.0636, samples=2048",
+      "[DEBUG] \ud83d\udcca Buffer write check: idx=0 wrote=0.013550 read=0.013550",
+      "[DEBUG] \u25b6\ufe0f Scheduled chunk: 2048 frames | src_peak=0.0636 written_peak=0.0636 | engine=True, player=True",
+      "[DEBUG] \ud83d\udd0d gRPC response #2570: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #2580: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #2590: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #2600: WhichOneof('content')=audio_chunk",
+      "[DEBUG] \ud83d\udd0d gRPC response #2607: WhichOneof('content')=end_message",
+      "[INFO] gRPC received end_message: 'Processing complete' for session 6af4a22d-3e19-4bef-828d-ac529031ef2a",
+      "[DEBUG] Started finalize_on_silence for gRPC session 6af4a22d-3e19-4bef-828d-ac529031ef2a",
+      "[INFO] PTT_STATE: waiting_grpc -> idle (reason=grpc_completed_playback_tail, press_id=None, session=6af4a22d-3e19-4bef-828d-ac529031ef2a)",
+      "[INFO] \ud83c\udf10 ProcessingWorkflow: gRPC request completed successfully.",
+      "[INFO] \ud83d\udd0d [GRPC_END] session=6af4a22d-3e19-4bef-828d-ac529031ef2a exit_reason=end_message summary={chunks=2607, audio_chunks=2600, silent_audio_chunks=214, non_silent_audio_chunks=2386, text_chunks=6, action_chunks=0, had_audio=True, had_text=True, action_like_text=False} latency={recording_stop_to_grpc_start_ms=916, grpc_start_to_first_chunk_ms=3099, grpc_start_to_first_text_ms=3100, grpc_start_to_first_audio_ms=4750, grpc_start_to_terminal_ms=23373}",
+      "[DEBUG] gRPC session cleanup: session=6af4a22d-3e19-4bef-828d-ac529031ef2a reason=stream_exit:end_message",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=2000 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=2050 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=2100 frames=2048 \u2014 engine rendered this buffer",
+      "[DEBUG] \u2705 [BUFFER_CONSUMED] chunk=2150 frames=2048 \u2014 engine rendered this buffer"
     ]
   }
 ]
