@@ -9115,10 +9115,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-13",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "set_override(None) called for default hotkey on capture acceptance, deleting override key from JSON and making file appear unconfigured",
+    "solution": "Always call set_override(spec); added regression test",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
