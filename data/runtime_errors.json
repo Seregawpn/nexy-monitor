@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "database",
-    "source": "server",
-    "error_type": "Error",
-    "message": "Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to s",
-    "traceback": "",
-    "timestamp": "2026-06-12T13:46:45+00:00",
-    "log_context": [
-      "[INFO] EdgeTTS \u2192 generating speech for text: Opened YouTube... (attempt 1/3)",
-      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=11664 bytes, PCM=186624 bytes, chunks=47",
-      "[INFO] Decision: complete",
-      "[INFO] Decision: complete",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:46:05 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 7886 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Decision: start",
-      "[ERROR] Error recording token usage: connection to server at \"localhost\" (127.0.0.1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"localhost\" (::1), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\n",
-      "[WARNING] [TokenUsage] Failed to record usage for browser_agent",
-      "[INFO] \ud83d\udcca Token usage reported: browser_agent (10248/1053) for E03D2455-8EF1-5270-AA03-13B5771C7CB2",
-      "[INFO] Decision: complete",
-      "[INFO] Decision: start",
-      "[INFO] Decision: start",
-      "[INFO] \ud83c\udfb5 GenerateWelcomeAudio: generating audio for text length: 13",
-      "[INFO] EdgeTTS \u2192 generating speech for text: Typed 'music'... (attempt 1/3)",
-      "[WARNING] EdgeTTS \u2192 initial PCM window is silent (chunks=1, bytes=4096, elapsed=1.287s); continuing stream",
-      "[INFO] EdgeTTS \u2192 streaming conversion complete: MP3=11664 bytes, PCM=186624 bytes, chunks=46",
-      "[INFO] Decision: complete",
-      "[INFO] Decision: complete",
-      "[INFO] 127.0.0.1 [12/Jun/2026:09:46:31 -0400] \"POST /v1/chat/completions HTTP/1.1\" 200 9952 \"-\" \"AsyncOpenAI/Python 2.36.0\"",
-      "[INFO] Decision: start"
-    ]
-  },
-  {
     "module_id": "browser_use",
     "source": "client",
     "error_type": "Error",
@@ -2907,6 +2877,68 @@
       "[ERROR] PostgreSQL Provider initialization failed",
       "[ERROR] Error initializing PostgreSQL Provider: PostgreSQL Provider initialization failed",
       "[ERROR] Failed to initialize DatabaseManager: PostgreSQL Provider initialization failed. This is a non-critical error - the server will continue without database functionality. To fix this issue, please: 1. Check that PostgreSQL is running and accessible 2. Verify database credentials in config.env 3. Ensure the database user 'nexy_user' exists and has proper permissions"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 30622 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set ",
+    "traceback": "",
+    "timestamp": "2026-06-13T16:43:27+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-13T16:43:27+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 30622 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 30622 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set ",
+    "traceback": "",
+    "timestamp": "2026-06-13T16:43:39+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config"
+    ]
+  },
+  {
+    "module_id": "__main__",
+    "source": "server",
+    "error_type": "Error",
+    "message": "Critical error: [Errno 48] error while attempting to bind on address ('0.0.0.0', 8080): [errno 48] address already in use",
+    "traceback": "",
+    "timestamp": "2026-06-13T16:43:39+00:00",
+    "log_context": [
+      "[INFO] Update Server module found",
+      "[INFO] Backpressure idle-cleanup started (timeout: 900s)",
+      "[INFO] Server started",
+      "[INFO] [F-2025-017] Subscription module disabled by config - skipping initialization",
+      "[INFO] [F-2025-017] Subscription module disabled by config",
+      "[ERROR] Failed to start HTTP server on 0.0.0.0:8080.The port is occupied by the PID 30622 (/Library/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python) process.Solution: set HTTP_PORT=<other_port> or stop the process:lsof -ti :8080 | xargs kill"
     ]
   }
 ]
