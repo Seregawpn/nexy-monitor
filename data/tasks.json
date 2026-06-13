@@ -8951,5 +8951,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_041211_1b4124ea",
+    "created_at": "2026-06-13T04:12:11+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "browser_use_integration",
+    "problem": "Prefetch Chromium download at tutorial start instead of on first browser request",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "Chromium download only started on explicit browser request; tutorial start event was not used as prefetch trigger",
+    "solution": "Extended _on_startup_intro_started in browser_use_integration.py: when kind==tutorial and _is_local_chromium_ready() is False, fire ensure_runtime_browser_ready(reason=tutorial_prefetch) as a tracked background task",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
