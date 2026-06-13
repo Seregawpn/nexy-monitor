@@ -9155,5 +9155,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_215844_af828bce",
+    "created_at": "2026-06-13T21:58:44+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "client/modules/tutorial",
+    "problem": "domain_action tutorial steps (messages_summary, email_summary, notes_summary, browser_website) blocked by STT text-gate before request reaches server, causing wrong_intent despite correct tool dispatch",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
