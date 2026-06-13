@@ -8985,5 +8985,22 @@
     "status": "resolved",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_152942_65df6585",
+    "created_at": "2026-06-13T15:29:42+00:00",
+    "source": "manual",
+    "priority": "medium",
+    "module_id": "map_monitor",
+    "problem": "Finance tab on nexy-monitor GitHub Pages shows no data \u2014 static /usage shim maps to raw usage_log.json instead of aggregated _aggregate_usage() output",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
