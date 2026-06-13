@@ -9098,10 +9098,27 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-13",
+    "root_cause": "all tutorial steps had timeouts from 20-60s, insufficient for long gRPC+playback cycles and user reaction time",
+    "solution": "set all 11 step timeouts and default_step_timeout_sec to 120s, updated 2 test assertions",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260613_172006_b915087a",
+    "created_at": "2026-06-13T17:20:06+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "input_processing",
+    "problem": "Hotkey set on first run not persisted: set_override(None) for default removes override from JSON, causing re-capture on next launch",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
     "root_cause": "",
     "solution": "",
     "verified": false,
-    "status": "in_progress",
+    "status": "open",
     "recurrence": 1,
     "notes": ""
   }
