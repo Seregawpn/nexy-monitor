@@ -9070,5 +9070,22 @@
     "status": "closed",
     "recurrence": 1,
     "notes": ""
+  },
+  {
+    "id": "task_20260613_171120_79361018",
+    "created_at": "2026-06-13T17:11:20+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "tutorial_integration",
+    "problem": "screen_understanding and internet_search steps time out because PROCESSING_TERMINAL arrives after the 45s/60s window \u2014 increase both to 120s",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "processing_response steps wait for PROCESSING_TERMINAL which fires after full gRPC+playback cycle; screen_understanding needed ~48s but had 45s window, internet_search needed ~70-80s but had 60s window",
+    "solution": "increased both timeout_sec to 120.0 in unified_config.yaml",
+    "verified": false,
+    "status": "resolved",
+    "recurrence": 1,
+    "notes": ""
   }
 ]
