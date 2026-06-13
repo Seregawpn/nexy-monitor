@@ -665,7 +665,7 @@ if (IS_STATIC) {
   var _STATIC_BASE = 'https://raw.githubusercontent.com/Seregawpn/nexy-monitor/gh-pages/data';
   var _STATIC_MAP = { '/data': '/map_data.json', '/tasks': '/tasks.json', '/changelog': '/changelog.json', '/phases': '/phases.json' };
   function _staticUrl(url) {
-    if (url.startsWith('/usage')) return _STATIC_BASE + '/usage_log.json?_t=' + Date.now();
+    if (url.startsWith('/usage')) return _STATIC_BASE + '/usage.json?_t=' + Date.now();
     return _STATIC_MAP[url] ? _STATIC_BASE + _STATIC_MAP[url] + '?_t=' + Date.now() : null;
   }
   var _origFetch = window.fetch.bind(window);
