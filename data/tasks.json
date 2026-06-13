@@ -8928,10 +8928,10 @@
     "error_type": "",
     "traceback": "",
     "date_detected": "2026-06-13",
-    "root_cause": "",
-    "solution": "",
+    "root_cause": "FileIndexWatcherIntegration._do_start() started FileWatcher unconditionally, scanning ~/Desktop, ~/Downloads, ~/Documents before FDA was granted \u2014 triggering macOS Files and Folders TCC dialog during first-run",
+    "solution": "Added first-run gate: check StateKeys.FIRST_RUN_COMPLETED \u2014 if true, start immediately; otherwise subscribe to permissions.first_run_completed event and defer scan. FDA is a superset of Files and Folders, so once FDA is granted the dialog will not appear.",
     "verified": false,
-    "status": "in_progress",
+    "status": "resolved",
     "recurrence": 1,
     "notes": ""
   }
