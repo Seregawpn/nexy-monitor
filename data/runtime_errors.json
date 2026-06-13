@@ -1,35 +1,5 @@
 [
   {
-    "module_id": "browser_use",
-    "source": "client",
-    "error_type": "Error",
-    "message": "[SessionManager] \u274c Error during agent_focus recovery: RuntimeError: {'code': -32000, 'message': 'Failed to open new tab - no browser is open'}",
-    "traceback": "",
-    "timestamp": "2026-06-12T14:18:11+00:00",
-    "log_context": [
-      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
-      "[INFO] idle_cpu_pct=1.00",
-      "[INFO] idle_ram_mb=177.31",
-      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 1.00%, RAM: 177.31 MB",
-      "[ERROR] E-MOD-004 watchdog: mode stuck non-SLEEPING for >30s (started_as=AppMode.PROCESSING, current=AppMode.PROCESSING) \u2014 forcing SLEEPING",
-      "[INFO] \ud83d\udd04 MODE_REQUEST: target=AppMode.SLEEPING, source=watchdog_E-MOD-004, session_id=None, priority=None",
-      "[INFO] \ud83d\udd04 MODE_REQUEST: current_mode=AppMode.PROCESSING, target=AppMode.SLEEPING, source=watchdog_E-MOD-004",
-      "[INFO] MODE_REQUEST rejected: non-owner SLEEPING source during PROCESSING (source=watchdog_E-MOD-004, session_id=40be7b27-47c5-41d5-86ae-d04b62904ad2)",
-      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3445 stderr_len=0",
-      "[WARNING] BROWSER_DIAGNOSTIC first_step_soft_timeout session_id=40be7b27-47c5-41d5-86ae-d04b62904ad2 timeout_sec=30.0 active_sessions=['40be7b27-47c5-41d5-86ae-d04b62904ad2']",
-      "[INFO] idle_cpu_pct=0.80",
-      "[INFO] idle_ram_mb=139.25",
-      "[DEBUG] \ud83d\udcca [METRICS] Idle CPU: 0.80%, RAM: 139.25 MB",
-      "[INFO] [EMAIL_BRIDGE] local start intent=list_account_inbox command=['list-account-inbox', '--account', 'Google', '--limit', '20']",
-      "[INFO] [EMAIL_BRIDGE] osascript start script_len=2124 timeout_sec=30.0 intent=list_account_inbox lane=fg",
-      "[INFO] [EMAIL_BRIDGE] osascript finish returncode=0 stdout_len=3445 stderr_len=0",
-      "[WARNING] [SessionManager] Agent focus target 6F05C166... detached! Current focus: None (already cleared). Auto-recovering by switching to another target...",
-      "[WARNING] [SessionManager] No tabs remain! Creating new tab for agent...",
-      "[WARNING] Cannot navigate - browser not connected",
-      "[WARNING] Cannot navigate - browser not connected"
-    ]
-  },
-  {
     "module_id": "database",
     "source": "server",
     "error_type": "Error",
@@ -2938,6 +2908,36 @@
       "[INFO] Retrying request to /chat/completions in 4.896000 seconds",
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
       "[INFO] Retrying request to /chat/completions in 0.166000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\""
+    ]
+  },
+  {
+    "module_id": "provider",
+    "source": "server",
+    "error_type": "RateLimitError",
+    "message": "[V3] arun_streaming failed: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 195445, ",
+    "traceback": "hunk in self._astream(\n    ...<25 lines>...\n        yielded = True\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 3361, in _astream\n    async for chunk in super()._astream(*args, **kwargs):\n        yield chunk\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1865, in _astream\n    _handle_openai_api_error(e)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/langchain_openai/chat_models/base.py\", line 1834, in _astream\n    response = await self.async_client.create(**payload)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/resources/chat/completions/completions.py\", line 2714, in create\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<49 lines>...\n    )\n    ^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1913, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sergiyzasorin/Fix_new/downloads/Nexy_v1.6.1.27/server/.venv/lib/python3.13/site-packages/openai/_base_client.py\", line 1698, in request\n    raise self._make_status_error_from_response(err.response) from None\nopenai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-5-nano in organization org-hTcQk28BxNNSU2nhSLNw5ONu on tokens per min (TPM): Limit 200000, Used 195445, Requested 8860. Please try again in 1.291s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}\n",
+    "timestamp": "2026-06-13T18:51:41+00:00",
+    "log_context": [
+      "[INFO] REQUEST_PATH stage=stream.received session=852c033f-1d27-4170-a35e-732693777fe6 hardware=grpc-imessage-live-test has_prompt=True has_screenshot=False phase=REQUEST_PHASE_COMMIT",
+      "[INFO] REQUEST_PATH stage=stream.accepted session=852c033f-1d27-4170-a35e-732693777fe6 hardware=grpc-imessage-live-test phase=REQUEST_PHASE_COMMIT",
+      "[INFO] COMMIT merge: session=852c033f-1d27-4170-a35e-732693777fe6 hardware=grpc-imessage-live-test collect_chunks=0 collect_text_len=0 commit_prompt_len=17 final_prompt_len=17 preflight_status=miss preflight_fresh=False preflight_prepare_ms=None commit_merge_ms=0.08",
+      "[INFO] REQUEST_PATH stage=commit.ready session=852c033f-1d27-4170-a35e-732693777fe6 hardware=grpc-imessage-live-test media_attachments=0 prompt_len=17 screenshot_len=0",
+      "[INFO] \ud83d\udce8 Received StreamRequest: session=852c033f-1d27-4170-a35e-732693777fe6, hardware_id=grpc-imessage-live-test, phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udce8 StreamRequest data: prompt_len=17, screenshot_len=0",
+      "[INFO] Stream acquired: 852c033f-1d27-4170-a35e-732693777fe6 (active: 1)",
+      "[WARNING] \u26a0\ufe0f Slow response: 13.86s (limit: 5.0s)",
+      "[INFO] \ud83d\udd04 Processing request via modules...",
+      "[INFO] REQUEST_PATH stage=workflow.dispatch session=852c033f-1d27-4170-a35e-732693777fe6 hardware=grpc-imessage-live-test phase=REQUEST_PHASE_COMMIT",
+      "[INFO] \ud83d\udd04 Request data prepared: phase=REQUEST_PHASE_COMMIT text='Any new messages?...', screenshot_exists=False",
+      "[INFO] \ud83d\udd04 Starting streaming processing for 852c033f-1d27-4170-a35e-732693777fe6",
+      "[INFO] [\u23f1 TIMING] request.start session=852c033f-1d27-4170-a35e-732693777fe6 input='Any new messages?'",
+      "[INFO] [\u23f1 TIMING] context.ready elapsed_ms=1 history_msgs=0 session=852c033f-1d27-4170-a35e-732693777fe6",
+      "[INFO] [\u23f1 TIMING] llm.start iter=1 session=852c033f-1d27-4170-a35e-732693777fe6",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 2.658000 seconds",
+      "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\"",
+      "[INFO] Retrying request to /chat/completions in 2.658000 seconds",
       "[INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions \"HTTP/1.1 429 Too Many Requests\""
     ]
   }
