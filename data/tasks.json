@@ -8930,8 +8930,25 @@
     "date_detected": "2026-06-13",
     "root_cause": "FileIndexWatcherIntegration._do_start() started FileWatcher unconditionally, scanning ~/Desktop, ~/Downloads, ~/Documents before FDA was granted \u2014 triggering macOS Files and Folders TCC dialog during first-run",
     "solution": "Added first-run gate: check StateKeys.FIRST_RUN_COMPLETED \u2014 if true, start immediately; otherwise subscribe to permissions.first_run_completed event and defer scan. FDA is a superset of Files and Folders, so once FDA is granted the dialog will not appear.",
+    "verified": true,
+    "status": "closed",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260613_015042_2771c500",
+    "created_at": "2026-06-13T01:50:42+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "instance_manager_integration",
+    "problem": "integration_factory.py reads instance_manager config from wrong top-level key instead of integrations.* \u2014 auto_restart defaults to True, kills running tutorial on every app reopen",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "integration_factory.py:148 used config_data.get(\"instance_manager\", {}) \u2014 top-level key that does not exist; correct path is integrations.instance_manager. Result: instance_config={}, auto_restart defaulted to True despite false in config.",
+    "solution": "Changed to (config_data.get(\"integrations\") or {}).get(\"instance_manager\") or {} \u2014 consistent with how tray_controller config is read on line 165.",
     "verified": false,
-    "status": "resolved",
+    "status": "closed",
     "recurrence": 1,
     "notes": ""
   }
