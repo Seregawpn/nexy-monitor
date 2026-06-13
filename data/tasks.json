@@ -9186,7 +9186,24 @@
     "root_cause": "",
     "solution": "",
     "verified": false,
-    "status": "open",
+    "status": "in_progress",
+    "recurrence": 1,
+    "notes": ""
+  },
+  {
+    "id": "task_20260613_220826_deda0292",
+    "created_at": "2026-06-13T22:08:26+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "server.assistant_runtime_v3.orchestrator",
+    "problem": "asyncio.create_task for _write_session_to_db has no stored reference / done_callback \u2014 token usage and commands/llm_answers DB writes can be silently dropped if GC collects the task",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-06-13",
+    "root_cause": "evaluate_terminal_recognition fell through to text-match branch for kind=domain_action, returning wrong_intent on STT (Whisper) hallucination and blocking the gRPC request before the server could dispatch any tool",
+    "solution": "Extended the pass-through bypass (already used for processing_response since v5.0.0.382) to domain_action: runtime_gate.py now returns outcome=allow/reason=tutorial_domain_action_pass_through for messages_summary, email_summary, notes_summary, browser_website. Completion still validated by expected_action_commands/special_intent in _run_domain_action_step.",
+    "verified": false,
+    "status": "in_progress",
     "recurrence": 1,
     "notes": ""
   }
