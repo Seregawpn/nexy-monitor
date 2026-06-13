@@ -18799,5 +18799,442 @@
     "cost_usd": 0.0001,
     "tool_name": "none",
     "request_id": "req-2"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:30+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error",
+    "user_input": "hello"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:30+00:00",
+    "session_id": "s1",
+    "hardware_id": "hw1",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:30+00:00",
+    "session_id": "s2",
+    "hardware_id": "hw2",
+    "model": "unknown",
+    "input_tokens": 10,
+    "output_tokens": 5,
+    "cost_usd": 0.0,
+    "tool_name": "parse_error"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:36+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8520,
+    "output_tokens": 377,
+    "cost_usd": 0.0005768,
+    "tool_name": "browser_use",
+    "user_input": "Go to example.com and tell me what you see on the page"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:39+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8642,
+    "output_tokens": 234,
+    "cost_usd": 0.00056794,
+    "tool_name": "skill_view"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:41+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9570,
+    "output_tokens": 127,
+    "cost_usd": 0.00057218,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:44+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9697,
+    "output_tokens": 317,
+    "cost_usd": 0.00065901,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:52+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9913,
+    "output_tokens": 293,
+    "cost_usd": 0.00066085,
+    "tool_name": "screenshot"
+  },
+  {
+    "timestamp": "2026-06-13T18:35:54+00:00",
+    "session_id": "e2e-browser-navigation",
+    "hardware_id": "e2e-browser-navigation-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10234,
+    "output_tokens": 105,
+    "cost_usd": 0.00060298,
+    "tool_name": "none",
+    "response_text": "Example Domain\n\nThe page displays a heading labeled 'Example Domain' with a short paragraph explaining that this domain is for illustrative purposes in documents and may be used without prior coordination. There is a link labeled 'More information...' that leads to IANA's page. The layout is minimal with plenty of white space and no heavy graphics."
+  },
+  {
+    "timestamp": "2026-06-13T18:35:58+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8526,
+    "output_tokens": 442,
+    "cost_usd": 0.00064534,
+    "tool_name": "web_search",
+    "user_input": "On google.com, search for 'nexy ai assistant' and return the first result title"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:05+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8710,
+    "output_tokens": 501,
+    "cost_usd": 0.00067814,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:12+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9039,
+    "output_tokens": 375,
+    "cost_usd": 0.00064483,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:22+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9514,
+    "output_tokens": 374,
+    "cost_usd": 0.0006701,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:29+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9734,
+    "output_tokens": 374,
+    "cost_usd": 0.00068302,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:37+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9952,
+    "output_tokens": 502,
+    "cost_usd": 0.0007464,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:48+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10241,
+    "output_tokens": 565,
+    "cost_usd": 0.00078733,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:36:58+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10544,
+    "output_tokens": 379,
+    "cost_usd": 0.00072936,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:09+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10904,
+    "output_tokens": 506,
+    "cost_usd": 0.00080008,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:17+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11057,
+    "output_tokens": 374,
+    "cost_usd": 0.00075621,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:24+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11348,
+    "output_tokens": 314,
+    "cost_usd": 0.00074804,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:36+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 11916,
+    "output_tokens": 447,
+    "cost_usd": 0.00083092,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:49+00:00",
+    "session_id": "e2e-browser-multistep",
+    "hardware_id": "e2e-browser-multistep-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 12210,
+    "output_tokens": 562,
+    "cost_usd": 0.00089418,
+    "tool_name": "none",
+    "response_text": "The first Google result title is: \"Nexy Chrome extension \u2014 Nexy, your smart browser assistant\"."
+  },
+  {
+    "timestamp": "2026-06-13T18:37:55+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8510,
+    "output_tokens": 490,
+    "cost_usd": 0.0006215,
+    "tool_name": "skill_view",
+    "user_input": "Close the browser"
+  },
+  {
+    "timestamp": "2026-06-13T18:37:56+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9428,
+    "output_tokens": 106,
+    "cost_usd": 0.00055604,
+    "tool_name": "close_browser"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:00+00:00",
+    "session_id": "e2e-browser-close",
+    "hardware_id": "e2e-browser-close-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9521,
+    "output_tokens": 317,
+    "cost_usd": 0.00064957,
+    "tool_name": "none",
+    "response_text": "I couldn't close the browser due to a technical issue with the automation module. Would you like me to try again, or should I close the browser manually from the menu?"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:02+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8511,
+    "output_tokens": 105,
+    "cost_usd": 0.00046755,
+    "tool_name": "skill_view",
+    "user_input": "Check my Gmail inbox"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:06+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21831,
+    "output_tokens": 368,
+    "cost_usd": 0.00128099,
+    "tool_name": "email_read_unread"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:10+00:00",
+    "session_id": "e2e-browser-routing-gmail",
+    "hardware_id": "e2e-browser-routing-gmail-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 21967,
+    "output_tokens": 257,
+    "cost_usd": 0.00130995,
+    "tool_name": "none",
+    "response_text": "You have 2 unread emails. One from Peter about the meeting, and one from Mom asking you to call. Would you like me to read them now or open the Peter email first?"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:14+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8519,
+    "output_tokens": 426,
+    "cost_usd": 0.00063859,
+    "tool_name": "skill_view",
+    "user_input": "Go to booking.com and find hotels in Paris for next weekend"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:17+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9446,
+    "output_tokens": 192,
+    "cost_usd": 0.00059134,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:18+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9576,
+    "output_tokens": 123,
+    "cost_usd": 0.00057472,
+    "tool_name": "web_search"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:26+00:00",
+    "session_id": "e2e-browser-routing-booking",
+    "hardware_id": "e2e-browser-routing-booking-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 9934,
+    "output_tokens": 255,
+    "cost_usd": 0.00064606,
+    "tool_name": "none",
+    "response_text": "Would you like check-in Friday the 19th and checkout Sunday the 21st, or Saturday the 20th to Sunday the 21st for Paris hotels next weekend?"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:29+00:00",
+    "session_id": "e2e-computer-term-echo",
+    "hardware_id": "e2e-computer-term-echo-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8517,
+    "output_tokens": 169,
+    "cost_usd": 0.00053569,
+    "tool_name": "skill_view",
+    "user_input": "Run the command: echo hello_nexy_test"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:31+00:00",
+    "session_id": "e2e-computer-term-echo",
+    "hardware_id": "e2e-computer-term-echo-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10135,
+    "output_tokens": 180,
+    "cost_usd": 0.00062099,
+    "tool_name": "run_terminal"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:36+00:00",
+    "session_id": "e2e-computer-term-ls",
+    "hardware_id": "e2e-computer-term-ls-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8516,
+    "output_tokens": 617,
+    "cost_usd": 0.00071484,
+    "tool_name": "skill_view",
+    "user_input": "Show me what's in my Desktop folder using Terminal"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:40+00:00",
+    "session_id": "e2e-computer-term-ls",
+    "hardware_id": "e2e-computer-term-ls-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10133,
+    "output_tokens": 307,
+    "cost_usd": 0.00067169,
+    "tool_name": "run_terminal"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:41+00:00",
+    "session_id": "e2e-computer-open-app",
+    "hardware_id": "e2e-computer-open-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8509,
+    "output_tokens": 169,
+    "cost_usd": 0.00053529,
+    "tool_name": "skill_view",
+    "user_input": "Open Calculator"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:44+00:00",
+    "session_id": "e2e-computer-open-app",
+    "hardware_id": "e2e-computer-open-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10119,
+    "output_tokens": 172,
+    "cost_usd": 0.00061699,
+    "tool_name": "open_app"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:45+00:00",
+    "session_id": "e2e-computer-open-app",
+    "hardware_id": "e2e-computer-open-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10193,
+    "output_tokens": 37,
+    "cost_usd": 0.00057437,
+    "tool_name": "none",
+    "response_text": "Calculator is now open. What calculation would you like to perform?"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:55+00:00",
+    "session_id": "e2e-computer-close-app",
+    "hardware_id": "e2e-computer-close-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 8509,
+    "output_tokens": 489,
+    "cost_usd": 0.00066329,
+    "tool_name": "skill_view",
+    "user_input": "Close Calculator"
+  },
+  {
+    "timestamp": "2026-06-13T18:38:59+00:00",
+    "session_id": "e2e-computer-close-app",
+    "hardware_id": "e2e-computer-close-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10119,
+    "output_tokens": 173,
+    "cost_usd": 0.00057515,
+    "tool_name": "close_app"
+  },
+  {
+    "timestamp": "2026-06-13T18:39:00+00:00",
+    "session_id": "e2e-computer-close-app",
+    "hardware_id": "e2e-computer-close-app-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10194,
+    "output_tokens": 25,
+    "cost_usd": 0.00056962,
+    "tool_name": "none",
+    "response_text": "Calculator is closed."
   }
 ]
