@@ -87,6 +87,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .rp-modal-text { font-size: 13px; color: #c9d1d9; line-height: 1.7; white-space: pre-wrap; word-break: break-word; background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 12px 14px; }
 .rp-empty-row td { color: #8b949e; font-style: italic; text-align: center; padding: 20px; }
 
+/* ── Roadmap ── */
+.rm-wrap { flex: 1; overflow-y: auto; padding: 18px 24px; display: flex; flex-direction: column; gap: 12px; }
+.rm-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+.rm-stat { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 8px 14px; }
+.rm-stat-n { font-size: 20px; font-weight: 700; line-height: 1.1; }
+.rm-stat-l { font-size: 11px; color: #8b949e; margin-top: 2px; }
+.rm-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.rm-table th { text-align: left; padding: 7px 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #8b949e; border-bottom: 1px solid #21262d; }
+.rm-table td { padding: 7px 10px; border-bottom: 1px solid #161b22; color: #c9d1d9; vertical-align: top; }
+.rm-table tr:hover td { background: #1c2128; cursor: pointer; }
+.rm-group-td { background: #0d1117 !important; color: #8b949e !important; font-size: 10px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 1px !important; padding: 10px 10px 4px !important; border-bottom: 1px solid #30363d !important; }
+.rm-name { font-weight: 500; font-size: 12px; color: #e1e4e8; }
+.rm-desc { font-size: 11px; color: #8b949e; margin-top: 2px; line-height: 1.4; }
+.rm-date { font-size: 12px; }
+.rm-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.rm-badge.ok { background: #1a3a1a; color: #3fb950; border: 1px solid #1f5a1f; }
+.rm-badge.wip { background: #3a2a00; color: #e3b341; border: 1px solid #5a4200; }
+.rm-badge.open { background: #3a1a1a; color: #f85149; border: 1px solid #5a2020; }
+.rm-badge.plan { background: #1a2a3a; color: #58a6ff; border: 1px solid #1f3a5a; }
+
 /* ── Phase CRUD ── */
 .ph-header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
 .ph-title { font-size: 15px; font-weight: 700; color: #e1e4e8; }
@@ -408,6 +428,7 @@ svg#deps-svg { display: block; }
   <div class="tab" id="tab-overview" onclick="showView('overview')">Overview</div>
   <div class="tab" id="tab-changelog" onclick="showView('changelog')">Changelog</div>
   <div class="tab" id="tab-tasks" onclick="showView('tasks')">Bugs<span class="tab-count" id="tasks-tab-count"></span></div>
+  <div class="tab" id="tab-roadmap" onclick="showView('roadmap')">Roadmap</div>
 </div>
 
 <!-- Critical alert banner — shown when critical open bugs exist -->
@@ -647,6 +668,12 @@ svg#deps-svg { display: block; }
     </div>
   </div>
 
+  <div class="view" id="v-roadmap" style="overflow-y:auto">
+    <div class="rm-wrap" id="rm-content">
+      <div style="padding:24px;color:#8b949e">Loading roadmap...</div>
+    </div>
+  </div>
+
   <div class="view" id="v-team" style="flex-direction:column;align-items:center;justify-content:center;flex:1">
     <div style="text-align:center;padding:40px">
       <div style="font-size:48px;margin-bottom:20px;opacity:0.3">&#128736;</div>
@@ -663,7 +690,7 @@ mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' }
 var IS_STATIC = location.hostname !== 'localhost' && location.hostname !== '127.0.0.1';
 if (IS_STATIC) {
   var _STATIC_BASE = 'https://raw.githubusercontent.com/Seregawpn/nexy-monitor/gh-pages/data';
-  var _STATIC_MAP = { '/data': '/map_data.json', '/tasks': '/tasks.json', '/changelog': '/changelog.json', '/phases': '/phases.json' };
+  var _STATIC_MAP = { '/data': '/map_data.json', '/tasks': '/tasks.json', '/changelog': '/changelog.json', '/phases': '/phases.json', '/roadmap': '/roadmap.json' };
   function _staticUrl(url) {
     if (url.startsWith('/usage')) return _STATIC_BASE + '/usage.json?_t=' + Date.now();
     return _STATIC_MAP[url] ? _STATIC_BASE + _STATIC_MAP[url] + '?_t=' + Date.now() : null;
@@ -909,7 +936,7 @@ function showSection(name) {
   var subtabbarReports = document.getElementById('subtabbar-reports');
   if (subtabbarReports) subtabbarReports.classList.toggle('hidden', name !== 'reports');
 
-  var allViews = ['arch','flow','tree','deps','overview','changelog','tasks','team','finance','phases'];
+  var allViews = ['arch','flow','tree','deps','overview','changelog','tasks','roadmap','team','finance','phases'];
   allViews.forEach(function(v) {
     var el = document.getElementById('v-' + v);
     if (el) el.classList.remove('active');
@@ -939,7 +966,7 @@ function showReportsView(name) {
 
 function showView(name) {
   _lastSubView = name;
-  ['arch','flow','tree','deps','overview','changelog','tasks'].forEach(function(v) {
+  ['arch','flow','tree','deps','overview','changelog','tasks','roadmap'].forEach(function(v) {
     document.getElementById('v-' + v).classList.toggle('active', v === name);
     document.getElementById('tab-' + v).classList.toggle('active', v === name);
   });
@@ -947,6 +974,7 @@ function showView(name) {
   if (name === 'overview' && typeof renderProduct === 'function') { renderProduct(); }
   if (name === 'changelog') loadChangelog();
   if (name === 'tasks') loadTasks();
+  if (name === 'roadmap') loadRoadmap();
 }
 
 /* ─── DEPENDENCIES VIEW ────────────────────────────────────────────────── */
@@ -3398,6 +3426,143 @@ function phDeleteAttachment(phaseId, filename) {
   if (!confirm('Remove "' + filename + '"?')) return;
   fetch(phAttachmentUrl(phaseId, filename), { method: 'DELETE' })
     .then(function(){ phReloadAndReopen(phaseId); });
+}
+
+/* ─── ROADMAP VIEW ──────────────────────────────────────────────────────── */
+
+function _rmStatusClass(s) {
+  if (s === 'done' || s === 'fixed') return 'ok';
+  if (s === 'in_progress') return 'wip';
+  if (s === 'open') return 'open';
+  return 'plan';
+}
+
+function _rmStatusLabel(s) {
+  return { done: 'done', fixed: 'fixed', in_progress: 'in progress', open: 'open', planned: 'planned' }[s] || s;
+}
+
+function _rmClear(el) { while (el.firstChild) el.removeChild(el.firstChild); }
+
+function rmCycleStatus(id, current) {
+  var cycle = ['open', 'in_progress', 'done', 'planned'];
+  var next = cycle[(cycle.indexOf(current) + 1) % cycle.length];
+  fetch('/roadmap/' + id, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ status: next })
+  }).then(function(){ loadRoadmap(); });
+}
+
+function loadRoadmap() {
+  var el = document.getElementById('rm-content');
+  if (!el) return;
+  _rmClear(el);
+  var msg = document.createElement('div');
+  msg.style.cssText = 'padding:24px;color:#8b949e';
+  msg.textContent = 'Loading roadmap...';
+  el.appendChild(msg);
+  fetch('/roadmap').then(function(r){ return r.json(); }).then(function(data){
+    renderRoadmap(data);
+  }).catch(function(){
+    var errEl = document.getElementById('rm-content');
+    if (!errEl) return;
+    _rmClear(errEl);
+    var e = document.createElement('div');
+    e.style.cssText = 'padding:24px;color:#8b949e';
+    e.textContent = 'Failed to load roadmap.';
+    errEl.appendChild(e);
+  });
+}
+
+function renderRoadmap(data) {
+  var el = document.getElementById('rm-content');
+  if (!el) return;
+  _rmClear(el);
+  var items = (data && data.items) || [];
+
+  var counts = { ok: 0, wip: 0, open: 0, plan: 0 };
+  items.forEach(function(it) { counts[_rmStatusClass(it.status)]++; });
+
+  var statsDiv = document.createElement('div');
+  statsDiv.className = 'rm-stats';
+  [['#3fb950', counts.ok, 'done'], ['#e3b341', counts.wip, 'in progress'],
+   ['#f85149', counts.open, 'open'], ['#58a6ff', counts.plan, 'planned']
+  ].forEach(function(sd) {
+    var s = document.createElement('div'); s.className = 'rm-stat';
+    var n = document.createElement('div'); n.className = 'rm-stat-n'; n.style.color = sd[0]; n.textContent = sd[1];
+    var l = document.createElement('div'); l.className = 'rm-stat-l'; l.textContent = sd[2];
+    s.appendChild(n); s.appendChild(l); statsDiv.appendChild(s);
+  });
+  el.appendChild(statsDiv);
+
+  var table = document.createElement('table');
+  table.className = 'rm-table';
+  var thead = document.createElement('thead');
+  var hrow = document.createElement('tr');
+  ['Flow / task', 'Status', 'Analyze', 'Fix', 'Task'].forEach(function(h) {
+    var th = document.createElement('th'); th.textContent = h; hrow.appendChild(th);
+  });
+  thead.appendChild(hrow); table.appendChild(thead);
+
+  var tbody = document.createElement('tbody');
+  var groups = [], groupMap = {};
+  items.forEach(function(it) {
+    var w = it.week || 'Other';
+    if (!groupMap[w]) { groupMap[w] = []; groups.push(w); }
+    groupMap[w].push(it);
+  });
+
+  groups.forEach(function(week) {
+    var gtr = document.createElement('tr');
+    var gtd = document.createElement('td'); gtd.className = 'rm-group-td'; gtd.colSpan = 5; gtd.textContent = week;
+    gtr.appendChild(gtd); tbody.appendChild(gtr);
+
+    groupMap[week].forEach(function(it) {
+      var tr = document.createElement('tr');
+      tr.title = 'Click to cycle status';
+      tr.style.cursor = 'pointer';
+      tr.addEventListener('click', (function(id, st) {
+        return function() { rmCycleStatus(id, st); };
+      })(it.id, it.status));
+
+      var tdN = document.createElement('td');
+      var dn = document.createElement('div'); dn.className = 'rm-name'; dn.textContent = it.flow || '';
+      var dd = document.createElement('div'); dd.className = 'rm-desc'; dd.textContent = it.desc || '';
+      tdN.appendChild(dn); tdN.appendChild(dd); tr.appendChild(tdN);
+
+      var tdS = document.createElement('td');
+      var badge = document.createElement('span');
+      badge.className = 'rm-badge ' + _rmStatusClass(it.status);
+      badge.textContent = _rmStatusLabel(it.status);
+      tdS.appendChild(badge); tr.appendChild(tdS);
+
+      ['analyze_date', 'fix_date'].forEach(function(k) {
+        var td = document.createElement('td'); td.className = 'rm-date'; td.textContent = it[k] || '—'; tr.appendChild(td);
+      });
+
+      var tdT = document.createElement('td');
+      if (it.task_id) {
+        var sp = document.createElement('span');
+        sp.style.cssText = 'font-family:monospace;font-size:10px;color:#58a6ff';
+        sp.textContent = it.task_id.slice(0, 24) + '…';
+        tdT.appendChild(sp);
+      } else {
+        tdT.textContent = '—'; tdT.style.color = '#8b949e';
+      }
+      tr.appendChild(tdT);
+      tbody.appendChild(tr);
+    });
+  });
+
+  table.appendChild(tbody);
+  el.appendChild(table);
+
+  if (data.last_updated) {
+    var footer = document.createElement('div');
+    footer.style.cssText = 'font-size:11px;color:#8b949e;margin-top:8px';
+    footer.textContent = 'Last updated: ' + data.last_updated;
+    el.appendChild(footer);
+  }
 }
 </script>
 </body>
