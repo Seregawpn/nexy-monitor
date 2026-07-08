@@ -37,11 +37,7 @@
 </div>
 
 <div class="subtabbar hidden" id="subtabbar-workspace">
-  <div class="tab active" id="wstab-overview" onclick="showWsView('overview')">Overview</div>
-  <div class="tab" id="wstab-goals" onclick="showWsView('goals')">Goals</div>
-  <div class="tab" id="wstab-board" onclick="showWsView('board')">Board</div>
-  <div class="tab" id="wstab-sprint" onclick="showWsView('sprint')">Sprint</div>
-  <div class="tab" id="wstab-gantt" onclick="showWsView('gantt')">Gantt</div>
+  <div class="tab active" id="wstab-roadmap" onclick="showWsView('roadmap')">Roadmap</div>
 </div>
 <div class="subtabbar hidden" id="subtabbar-reports">
   <div class="tab active" id="tab-finance" onclick="showReportsView('finance')">Finance</div>
@@ -56,7 +52,6 @@
   <div class="tab" id="tab-overview" onclick="showView('overview')">Overview</div>
   <div class="tab" id="tab-changelog" onclick="showView('changelog')">Changelog</div>
   <div class="tab" id="tab-tasks" onclick="showView('tasks')">Bugs<span class="tab-count" id="tasks-tab-count"></span></div>
-  <div class="tab" id="tab-roadmap" onclick="showView('roadmap')">Roadmap</div>
   <div class="tab" id="tab-build" onclick="showView('build')">Package</div>
 </div>
 
@@ -320,12 +315,6 @@
     </div>
   </div>
 
-  <div class="view" id="v-roadmap" style="overflow-y:auto">
-    <div class="rm-wrap" id="rm-content">
-      <div style="padding:24px;color:#8b949e">Loading roadmap...</div>
-    </div>
-  </div>
-
 
   <div class="view" id="v-build">
     <div class="bld-wrap">
@@ -419,11 +408,11 @@
   </div>
 
   <!-- Workspace views -->
-  <div class="view" id="v-ws-overview" style="overflow-y:auto;padding:24px;flex-direction:column"></div>
-  <div class="view" id="v-ws-goals" style="overflow-y:auto;padding:24px;flex-direction:column"></div>
-  <div class="view" id="v-ws-board" style="overflow:hidden;flex-direction:column"></div>
-  <div class="view" id="v-ws-sprint" style="overflow-y:auto;padding:24px;flex-direction:column"></div>
-  <div class="view" id="v-ws-gantt" style="overflow:auto;padding:24px;flex-direction:column"></div>
+  <div class="view" id="v-ws-roadmap" style="overflow:hidden;flex-direction:column">
+    <div class="rm-wrap" id="rm-content">
+      <div style="padding:24px;color:#8b949e">Loading roadmap...</div>
+    </div>
+  </div>
 
   <!-- Monitoring views (shared between Client and Server) -->
   <div class="view" id="v-mon-status"></div>
