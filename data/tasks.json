@@ -17481,5 +17481,31 @@
     "parent_id": "",
     "seq": 0,
     "plan_file": ""
+  },
+  {
+    "id": "task_20260714_155810_0855ed1c",
+    "created_at": "2026-07-14T15:58:10+00:00",
+    "source": "manual",
+    "priority": "low",
+    "module_id": "nexy_real_pipeline_check/index.html",
+    "problem": "Harness raw data dump per browser step is a flat JSON blob, mixing model input (dom_text) with model output (thinking/next_goal/raw_actions) and diagnostics",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-07-14",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": "[2026-07-14] Analysis complete\n  Plan: Docs/plans/2026-07-14-harness-step-raw-data-input-output-split-feature.md\n  Root cause: index.html addMsg() dumps full event as one flat raw-data JSON block, no input/output separation\n  Location: index.html:146-168\n[2026-07-14] Plan approved\n  Option chosen: new renderStepRawGroups() helper, addMsg() untouched\n  Files: experiments/nexy_real_pipeline_check/index.html\n  Steps: 2 steps",
+    "type": "improvement",
+    "severity": "low",
+    "sprint_id": "",
+    "goal_id": "",
+    "roadmap_id": "stage_20260709_000946_9b04472a",
+    "board_status": "todo",
+    "parent_id": "",
+    "seq": 0,
+    "plan_file": ""
   }
 ]
