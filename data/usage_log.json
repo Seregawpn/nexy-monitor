@@ -12114,5 +12114,95 @@
     "output_tokens": 253,
     "cost_usd": 0.00067191,
     "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T15:39:16+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10136,
+    "output_tokens": 311,
+    "cost_usd": 0.00068048,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T15:45:42+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10135,
+    "output_tokens": 195,
+    "cost_usd": 0.00063403,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T17:49:24+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10140,
+    "output_tokens": 514,
+    "cost_usd": 0.0007126,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T17:50:11+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10340,
+    "output_tokens": 394,
+    "cost_usd": 0.00072452,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T20:34:42+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10375,
+    "output_tokens": 403,
+    "cost_usd": 0.00072987,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T20:35:23+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10497,
+    "output_tokens": 313,
+    "cost_usd": 0.00070061,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T20:35:56+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10585,
+    "output_tokens": 269,
+    "cost_usd": 0.00068805,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T20:38:30+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10766,
+    "output_tokens": 400,
+    "cost_usd": 0.00075014,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-14T20:39:17+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10883,
+    "output_tokens": 208,
+    "cost_usd": 0.00067983,
+    "tool_name": "browser_use"
   }
 ]
