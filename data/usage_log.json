@@ -12204,5 +12204,86 @@
     "output_tokens": 208,
     "cost_usd": 0.00067983,
     "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-15T17:03:33+00:00",
+    "session_id": "38a72248-7b75-45e3-a4f4-dfc5e2e00fd3",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10911,
+    "output_tokens": 1329,
+    "cost_usd": 0.00107715,
+    "tool_name": "none",
+    "user_input": "What\u2019s the weather in Montreal?",
+    "response_text": "Montreal weather update:\nCurrent conditions: Partly sunny, 26\u00b0C (80\u00b0F).\nToday (July 15, 2026): Clouds breaking for some sun and less humid, high 28\u00b0C (82\u00b0F), low 18\u00b0C (65\u00b0F).\nThursday (July 16, 2026): Times of clouds and sunshine with a thunderstorm, high 25\u00b0C (76\u00b0F), low 15\u00b0C (59\u00b0F).\nFriday (July 17, 2026): Mostly sunny, high 25\u00b0C (77\u00b0F), low 17\u00b0C (63\u00b0F).\nSaturday (July 18, 2026): Cloudy with a couple of showers in the afternoon, high 24\u00b0C (75\u00b0F), low 16\u00b0C (62\u00b0F).\nSunday (July 19, 2026): Partly sunny with a shower in spots, high 26\u00b0C (78\u00b0F), low 17\u00b0C (62\u00b0F).\nMonday (July 20, 2026): Times of clouds and sun with a couple of showers in the afternoon, high 27\u00b0C (80\u00b0F), low 17\u00b0C (63\u00b0F).\nTuesday (July 21, 2026): Cloudy with rain and a thunderstorm in the afternoon, high 25\u00b0C (76\u00b0F), low 16\u00b0C (60\u00b0F)."
+  },
+  {
+    "timestamp": "2026-07-15T17:04:27+00:00",
+    "session_id": "c02827ef-0ce6-4188-9859-d48ecd27ff5b",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10304,
+    "output_tokens": 337,
+    "cost_usd": 0.00065,
+    "tool_name": "none",
+    "user_input": "Who wrote 1984",
+    "response_text": "George Orwell wrote 1984."
+  },
+  {
+    "timestamp": "2026-07-15T17:04:57+00:00",
+    "session_id": "172586d1-5b32-446e-8adb-27c0cc39d11a",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10372,
+    "output_tokens": 326,
+    "cost_usd": 0.000649,
+    "tool_name": "none",
+    "user_input": "What does \u201cambivalent\u201d mean?",
+    "response_text": "Ambivalent means having mixed or contradictory feelings about something; you feel both positive and negative about it, or unsure about it."
+  },
+  {
+    "timestamp": "2026-07-15T17:05:17+00:00",
+    "session_id": "007dbbfa-e3af-4433-a6cf-2ebb0ac0a623",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10456,
+    "output_tokens": 151,
+    "cost_usd": 0.0005832,
+    "tool_name": "none",
+    "user_input": "How many kilometres are in a mile?",
+    "response_text": "1 mile is equal to 1.60934 kilometres (approximately 1.609 km)."
+  },
+  {
+    "timestamp": "2026-07-15T17:05:35+00:00",
+    "session_id": "f3d6ea56-c9dc-4fb0-b809-c0e9e899a977",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10534,
+    "output_tokens": 168,
+    "cost_usd": 0.0005939,
+    "tool_name": "none",
+    "user_input": "What is the capital of Australia?",
+    "response_text": "The capital of Australia is Canberra."
+  },
+  {
+    "timestamp": "2026-07-15T17:06:12+00:00",
+    "session_id": "6fc9e4a4-3f8e-43f5-9cae-168b4f31dfe6",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "unknown",
+    "input_tokens": 10994,
+    "output_tokens": 470,
+    "cost_usd": 0.0007377,
+    "tool_name": "browser_use",
+    "user_input": "Find the official Apple accessibility page"
+  },
+  {
+    "timestamp": "2026-07-16T01:24:16+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10150,
+    "output_tokens": 475,
+    "cost_usd": 0.00074678,
+    "tool_name": "browser_use"
   }
 ]
