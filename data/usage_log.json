@@ -12813,5 +12813,35 @@
     "cost_usd": 0.00078685,
     "tool_name": "browser_use",
     "user_input": "open my youtube watch history"
+  },
+  {
+    "timestamp": "2026-07-23T01:03:17+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10155,
+    "output_tokens": 186,
+    "cost_usd": 0.00063143,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-23T01:08:45+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10141,
+    "output_tokens": 515,
+    "cost_usd": 0.00076233,
+    "tool_name": "browser_use"
+  },
+  {
+    "timestamp": "2026-07-23T01:13:08+00:00",
+    "session_id": "nexy-real-pipeline-check-session",
+    "hardware_id": "nexy-real-pipeline-check-hw",
+    "model": "gpt-5-nano",
+    "input_tokens": 10138,
+    "output_tokens": 179,
+    "cost_usd": 0.00062778,
+    "tool_name": "browser_use"
   }
 ]
