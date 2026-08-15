@@ -18335,5 +18335,31 @@
     "recurrence": 1,
     "notes": "",
     "roadmap_id": "stage_20260707_182106_d8131916"
+  },
+  {
+    "id": "task_20260815_043712_41acb8f5",
+    "created_at": "2026-08-15T04:37:12+00:00",
+    "source": "manual",
+    "priority": "high",
+    "module_id": "client/settings_ui",
+    "problem": "Settings menu item in menu-bar dropdown does nothing - app foregrounds but settings window never opens (reported by user Raymond Gay)",
+    "error_type": "",
+    "traceback": "",
+    "date_detected": "2026-08-15",
+    "root_cause": "",
+    "solution": "",
+    "verified": false,
+    "status": "open",
+    "recurrence": 1,
+    "notes": "User feedback source: app review/comment thread. Raymond confirmed via clarification: clicking Settings in Nexy menu bar app brings Nexy to front but no settings window appears. Not a macOS permissions issue - the app own settings window fails to open.",
+    "type": "bug",
+    "severity": "high",
+    "sprint_id": "",
+    "goal_id": "",
+    "roadmap_id": "",
+    "board_status": "todo",
+    "parent_id": "",
+    "seq": 0,
+    "plan_file": ""
   }
 ]
